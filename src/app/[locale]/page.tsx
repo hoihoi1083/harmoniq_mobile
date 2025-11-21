@@ -383,6 +383,17 @@ export default function Home() {
 	const handleSendMessage = async () => {
 		if (!inputMessage.trim() || isLoading) return;
 
+		// Prepare headers for mobile payment
+		const headers: Record<string, string> = {
+			"Content-Type": "application/json",
+		};
+
+		if (isCapacitorMobile && effectiveSession?.user?.email) {
+			headers["X-User-Email"] = effectiveSession.user.email;
+			// @ts-ignore - id might not be in the type definition but is often present
+			headers["X-User-ID"] = effectiveSession.user.id || effectiveSession.user.email;
+		}
+
 		// 🔥 MOBILE FIX: Allow anonymous chat without login (Updated 2025-11-12)
 		// Authentication check disabled for mobile testing
 		// if (!session) {
@@ -455,9 +466,7 @@ export default function Home() {
 
 				const paymentResponse = await fetch("/api/payment-couple", {
 					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-					},
+					headers: headers,
 					body: JSON.stringify({
 						locale: currentLocale,
 						specificProblem: problemToUse,
@@ -759,9 +768,7 @@ export default function Home() {
 							); // 使用 Stripe Checkout Session APIs (payment4 或 payment2)
 							paymentResponse = await fetch(paymentEndpoint, {
 								method: "POST",
-								headers: {
-									"Content-Type": "application/json",
-								},
+								headers: headers,
 								body: JSON.stringify({
 									quantity: 1, // 固定數量
 									directPayment: true, // 標記為直接付款
@@ -792,9 +799,7 @@ export default function Home() {
 							// 使用 couple payment API
 							paymentResponse = await fetch(paymentEndpoint, {
 								method: "POST",
-								headers: {
-									"Content-Type": "application/json",
-								},
+								headers: headers,
 								body: JSON.stringify({
 									locale: freshLocale,
 									region: storedRegion,
@@ -837,9 +842,7 @@ export default function Home() {
 							// 使用新的 fortune category API，與 price page 保持一致
 							paymentResponse = await fetch(paymentEndpoint, {
 								method: "POST",
-								headers: {
-									"Content-Type": "application/json",
-								},
+								headers: headers,
 								body: JSON.stringify({
 									concernType: concernType, // 使用 concernType 而不是 concern
 									locale: freshLocale,
@@ -1965,7 +1968,7 @@ export default function Home() {
 												onClick={() =>
 													handleShortcutClick(
 														t("shortcuts.raise")
-													)
+																									)
 												}
 												className="flex items-center px-4 py-2 space-x-2 text-xs font-medium text-gray-700 transition-shadow bg-white border border-gray-200 rounded-lg shadow-md whitespace-nowrap md:px-6 md:py-3 md:text-sm hover:shadow-lg hover:text-gray-900"
 											>

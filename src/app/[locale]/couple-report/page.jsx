@@ -715,36 +715,40 @@ export default function CoupleReportPage({ params }) {
 				{/* Navbar */}
 				<Navbar from="report" backgroundColor="white" />
 
-				{/* Historical Report Banner */}
-				{showHistoricalBanner && (
-					<div
-						className="container px-4 mx-auto mb-6"
-						style={{ paddingTop: "80px" }}
-					>
-						<div className="p-4 border border-yellow-200 rounded-lg bg-yellow-50">
-							<p className="text-yellow-800">
-								<strong>{t("historicalBannerNotice")}</strong>
-								{t("historicalBannerText")}
-								{t("calculationTime")}{" "}
-								{reportData.reportGeneratedAt
-									? new Date(
-											reportData.reportGeneratedAt
-										).toLocaleString()
-									: "N/A"}
-								)。
-								<a
-									href="/price"
-									className="ml-2 text-blue-600 underline hover:text-blue-800"
-								>
-									{t("generateNewReport")}
-								</a>
-							</p>
+				{/* Main content container with proper top padding for navbar */}
+				<div 
+					style={{ 
+						paddingTop: "calc(4rem + env(safe-area-inset-top))",
+						minHeight: "100vh"
+					}}
+				>
+					{/* Historical Report Banner */}
+					{showHistoricalBanner && (
+						<div className="container px-4 mx-auto mb-6">
+							<div className="p-4 border border-yellow-200 rounded-lg bg-yellow-50">
+								<p className="text-yellow-800">
+									<strong>{t("historicalBannerNotice")}</strong>
+									{t("historicalBannerText")}
+									{t("calculationTime")}{" "}
+									{reportData.reportGeneratedAt
+										? new Date(
+												reportData.reportGeneratedAt
+											).toLocaleString()
+										: "N/A"}
+									)。
+									<a
+										href="/price"
+										className="ml-2 text-blue-600 underline hover:text-blue-800"
+									>
+										{t("generateNewReport")}
+									</a>
+								</p>
+							</div>
 						</div>
-					</div>
-				)}
+					)}
 
-				{/* Navigation Row */}
-				<div className="w-full mt-16 bg-gradient-to-r from-[#C74772] to-[#D09900] py-4 sm:py-6">
+					{/* Navigation Row */}
+					<div className="w-full bg-gradient-to-r from-[#C74772] to-[#D09900] py-4 sm:py-6">
 					<div className="max-w-6xl px-3 mx-auto sm:px-4">
 						<div className="flex items-center justify-center gap-3 sm:justify-between md:justify-center lg:justify-center xl:justify-center sm:gap-6">
 							{/* 姻緣合盤流年分析報告 Tab */}
@@ -1161,6 +1165,8 @@ export default function CoupleReportPage({ params }) {
 
 				{/* Footer */}
 				<Footer />
+				</div>
+				{/* End of main content wrapper */}
 			</CoupleAnalysisProvider>
 		</LoadingProvider>
 	);

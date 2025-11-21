@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { headers } from "next/headers";
 import Stripe from "stripe";
 import {
 	getRegionalPriceId,
@@ -20,7 +21,14 @@ export async function POST(request) {
 			specificProblem,
 			concern,
 			fromChat,
+			// 🔥 MOBILE FIX: Get mobile flag from request body instead of headers
+			isMobile,
+			userEmail,
+			userId,
 		} = body;
+
+		// Check if this is a mobile request (from body flag or presence of user info)
+		const isMobileRequest = isMobile === true || !!(userEmail || userId);
 
 		console.log("🔍 Payment-couple API received data:", {
 			requestLocale,
@@ -28,6 +36,10 @@ export async function POST(request) {
 			specificProblem,
 			concern,
 			fromChat,
+			isMobileRequest,
+			isMobileFlag: isMobile,
+			userEmail,
+			userId,
 		});
 
 		// Detect user's locale and region (prioritize request body, then headers)
@@ -52,6 +64,10 @@ export async function POST(request) {
 
 		// Build success URL with chat context if available
 		let successUrl = `${process.env.NEXTAUTH_URL}/${detectedLocale}/success?session_id={CHECKOUT_SESSION_ID}&type=couple`;
+
+		if (isMobileRequest) {
+			successUrl += "&mobile=true";
+		}
 
 		if (fromChat && (specificProblem || concern)) {
 			if (specificProblem) {

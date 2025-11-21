@@ -40,6 +40,14 @@ export async function POST(request) {
 		const quantity = Number(body.quantity) || 1;
 		const squareMeters = Number(body.squareMeters) || quantity;
 
+		// 📱 MOBILE FIX: Detect if this is from mobile app and use appropriate success URL
+		const isMobileRequest = !!(mobileUserEmail || mobileUserId);
+		let successUrl = `${origin}/success?session_id={CHECKOUT_SESSION_ID}`;
+
+		if (isMobileRequest) {
+			successUrl += "&mobile=true";
+		}
+
 		// Create Checkout Sessions for China premium using special price
 		const session = await stripe.checkout.sessions.create({
 			line_items: [
@@ -50,7 +58,7 @@ export async function POST(request) {
 			],
 			mode: "payment", // One-time payment mode
 			allow_promotion_codes: false,
-			success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}`,
+			success_url: successUrl,
 			cancel_url: `${origin}/price?payment=cancelled`,
 			metadata: {
 				userId: userInfo.userId,

@@ -1181,7 +1181,9 @@
 		"fillBothPersonsData": "请填写两人的性别和生日",
 		"enterSpecificQuestion": "请输入您的具体问题",
 		"submitError": "提交资料时发生错误，请重试",
-		"generalCoupleAnalysis": "一般情侣关系分析"
+		"generalCoupleAnalysis": "一般情侣关系分析",
+		"checkingAuth": "检查认证中...",
+		"redirectingToLogin": "请登录以继续..."
 	},
 	"coupleReport": {
 		"loadingTitle": "小铃正在为你们准备专属合盤分析报告",

@@ -9,19 +9,28 @@ export const dynamic = "force-static";
 
 export async function GET(request) {
 	try {
-		// Get mobile session headers
+		// 🔥 MOBILE FIX: Try multiple auth methods
+		// 1. Check mobile session headers (for mobile app)
 		const mobileUserEmail = request.headers.get("X-User-Email");
 		const mobileUserId = request.headers.get("X-User-ID");
 
-		// Get user session (web or mobile)
+		// 2. Get web session (for browser)
 		const session = await auth();
+		
+		// 3. Use whichever is available
 		const userEmail = mobileUserEmail || session?.user?.email;
 
 		if (!userEmail) {
-			return NextResponse.json(
-				{ error: "Not authenticated" },
-				{ status: 401 }
-			);
+			// 🔥 Don't fail with 401 - just return empty data
+			// This allows the birthday-entry page to load without prefilled data
+			console.log("📱 get-user-birthday: No auth session, returning empty data");
+			return NextResponse.json({
+				success: true,
+				birthday: "",
+				birthTime: "",
+				gender: "",
+				source: "none",
+			});
 		}
 
 		console.log(

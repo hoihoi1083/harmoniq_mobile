@@ -57,6 +57,14 @@ export async function POST(request) {
 		const priceId = getRegionalPriceId(locale, "fengshui");
 		console.log(`💰 Using price ID: ${priceId} for fengshui ${locale}`);
 
+		// 📱 MOBILE FIX: Detect if this is from mobile app and use appropriate success URL
+		const isMobileRequest = !!(mobileUserEmail || mobileUserId);
+		let successUrl = `${origin}/success?session_id={CHECKOUT_SESSION_ID}`;
+
+		if (isMobileRequest) {
+			successUrl += "&mobile=true";
+		}
+
 		// Create Checkout Sessions for premium using regional price ID
 		const session = await stripe.checkout.sessions.create({
 			line_items: [
@@ -67,7 +75,7 @@ export async function POST(request) {
 			],
 			mode: "payment", // One-time payment mode
 			allow_promotion_codes: false,
-			success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}`,
+			success_url: successUrl,
 			cancel_url: `${origin}/price?payment=cancelled`,
 			metadata: {
 				userId: (userInfo as any).userId || userInfo.id,

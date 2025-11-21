@@ -51,6 +51,14 @@ export async function POST(request) {
 			userId: userInfo.userId,
 		});
 
+		// 📱 MOBILE FIX: Detect if this is from mobile app and use appropriate success URL
+		const isMobileRequest = !!(mobileUserEmail || mobileUserId);
+		let successUrl = `${origin}/success?session_id={CHECKOUT_SESSION_ID}&type=expert188`;
+
+		if (isMobileRequest) {
+			successUrl += "&mobile=true";
+		}
+
 		// Create Checkout Sessions for $188 Expert Card using PRICE_ID1 (testing)
 		const session = await stripe.checkout.sessions.create({
 			line_items: [
@@ -61,7 +69,7 @@ export async function POST(request) {
 			],
 			mode: "payment",
 			allow_promotion_codes: true,
-			success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}&type=expert188`,
+			success_url: successUrl,
 			cancel_url: `${origin}/price?payment=cancelled`,
 			metadata: {
 				userId: userInfo.userId,

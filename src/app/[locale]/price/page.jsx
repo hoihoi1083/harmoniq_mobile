@@ -578,33 +578,26 @@ export default function YourPage() {
 				"from URL (region:",
 				storedRegion,
 				"is for pricing only)"
-			); // Create checkout session for expert88
+			);
 
-			// 🔥 MOBILE FIX: Include user info for mobile sessions
-			const headers = {
-				"Content-Type": "application/json",
-			};
-
-			// Add mobile user info if on mobile
-			if (isCapacitorMobile && effectiveSession?.user) {
-				headers["X-User-Email"] =
-					effectiveSession.user.email || effectiveSession.user.userId;
-				headers["X-User-ID"] =
-					effectiveSession.user.userId || effectiveSession.user.id;
-			}
-
+			// 🔥 MOBILE FIX: Pass mobile flag in request body instead of headers
 			const response = await fetch("/api/checkoutSessions/payment4", {
 				method: "POST",
-				headers,
+				headers: {
+					"Content-Type": "application/json",
+				},
 				body: JSON.stringify({
 					quantity: 1, // Fixed quantity for expert plan
 					locale: freshLocale, // Add locale parameter
 					region: storedRegion, // Add region parameter for NTD support
-					userId:
-						effectiveSession?.user?.userId ||
-						effectiveSession?.user?.email, // 🔥 Add user ID
+					userId: effectiveSession?.user?.userId || effectiveSession?.user?.email,
+					// 🔥 Add mobile flag in body
+					isMobile: true,
+					userEmail: effectiveSession?.user?.email || effectiveSession?.user?.userId,
 				}),
 			});
+
+			console.log("📱 Expert88 payment request sent with mobile flag");
 
 			if (response.ok) {
 				const data = await response.json();
@@ -801,6 +794,10 @@ export default function YourPage() {
 			const requestBody = {
 				locale: freshLocale, // Use detected locale
 				region: storedRegion, // 🔥 Add region parameter for NTD support
+				// 🔥 MOBILE FIX: Add mobile flag directly in body since headers don't work with Next.js fetch
+				isMobile: true, // Always mark as mobile for logged-in users
+				userEmail: effectiveSession?.user?.email || effectiveSession?.user?.userId,
+				userId: effectiveSession?.user?.userId || effectiveSession?.user?.id,
 			};
 
 			// Include chat-specific data if coming from chat
@@ -827,7 +824,13 @@ export default function YourPage() {
 				);
 			}
 
-			// Create checkout session for couple analysis
+			console.log("📱 Couple payment request body (isMobile flag in body):", {
+				isMobile: requestBody.isMobile,
+				userEmail: requestBody.userEmail,
+				userId: requestBody.userId,
+				isCapacitorMobile,
+			});
+
 			const response = await fetch("/api/payment-couple", {
 				method: "POST",
 				headers: {

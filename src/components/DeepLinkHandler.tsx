@@ -61,12 +61,13 @@ export default function DeepLinkHandler() {
 							return;
 						}
 
-						// Build the internal app route
+						// 🔥 Build route to success page for ALL payment types
+						// The success page will show thank you message and then redirect to data entry
 						let appRoute = `/${locale}/success?session_id=${sessionId}`;
 						if (type) appRoute += `&type=${type}`;
 						if (concern) appRoute += `&concern=${concern}`;
 
-						// Add all other params except mobile
+						// Add all other params except mobile (but keep mobile flag for success page logic)
 						params.forEach((value, key) => {
 							if (
 								![
@@ -74,7 +75,6 @@ export default function DeepLinkHandler() {
 									"type",
 									"concern",
 									"locale",
-									"mobile",
 								].includes(key)
 							) {
 								appRoute += `&${key}=${encodeURIComponent(value)}`;

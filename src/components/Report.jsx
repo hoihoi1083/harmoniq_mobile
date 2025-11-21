@@ -2570,7 +2570,7 @@ export default function ReportPage({
 
 			{/* Historical Report Banner */}
 			{!isPrinting && showHistorical && (
-				<div className="max-w-6xl px-4 pt-4 mx-auto mt-16">
+				<div className="max-w-6xl px-4 mx-auto" style={{ paddingTop: "calc(4rem + env(safe-area-inset-top))" }}>
 					<div className="p-4 border border-yellow-200 rounded-lg bg-yellow-50">
 						<p className="text-yellow-800">
 							<strong>注意：</strong>
@@ -2588,7 +2588,7 @@ export default function ReportPage({
 
 			{/* Navigation Row */}
 			{!isPrinting && (
-				<div className="w-full mt-16 bg-gradient-to-r from-[#A3B116] to-[#3D5C2D] py-4 sm:py-6">
+				<div className="w-full bg-gradient-to-r from-[#A3B116] to-[#3D5C2D] py-4 sm:py-6" style={{ marginTop: showHistorical ? "1rem" : "calc(4rem + env(safe-area-inset-top))" }}>
 					<div className="max-w-6xl px-3 mx-auto sm:px-4">
 						<div className="flex items-center justify-center gap-3 sm:justify-between md:justify-center lg:justify-center xl:justify-center sm:gap-6">
 							{/* 命理分析報告 Tab */}

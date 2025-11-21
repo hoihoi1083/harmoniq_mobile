@@ -276,7 +276,14 @@ export default function FengShuiReportPage() {
 				headers: {
 					"Content-Type": "application/json",
 				},
-				body: JSON.stringify({ sessionId }),
+				body: JSON.stringify({
+					sessionId,
+					birthday,
+					gender,
+					concern,
+					problem,
+					partnerBirthday,
+				}),
 			});
 
 			const checkData = await checkResponse.json();

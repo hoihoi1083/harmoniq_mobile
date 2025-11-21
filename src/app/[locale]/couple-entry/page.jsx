@@ -5,6 +5,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { use } from "react";
 import { useSession } from "next-auth/react";
+import { useMobileAuth } from "@/hooks/useMobileAuth";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/home/Footer";
 
@@ -14,6 +15,15 @@ export default function CoupleEntryPage({ params }) {
 	const searchParams = useSearchParams();
 	const router = useRouter();
 	const { data: session, status } = useSession();
+	// 🔥 MOBILE FIX: Add mobile session support
+	const { mobileSession, isLoading: mobileLoading, isMobile: isCapacitorMobile } = useMobileAuth();
+	
+	// Combine web and mobile sessions
+	const effectiveSession = isCapacitorMobile && mobileSession ? mobileSession : session;
+	const effectiveStatus = isCapacitorMobile 
+		? (mobileLoading ? "loading" : (mobileSession ? "authenticated" : "unauthenticated"))
+		: status;
+	
 	const sessionId = searchParams.get("session_id");
 	const specificProblem = searchParams.get("specificProblem") || "";
 	const fromChat = searchParams.get("fromChat") === "true";
@@ -61,17 +71,22 @@ export default function CoupleEntryPage({ params }) {
 
 	// Check authentication before allowing access
 	useEffect(() => {
-		if (status === "loading") return; // Wait for session to load
+		if (effectiveStatus === "loading") return; // Wait for session to load
 
-		if (status === "unauthenticated") {
+		if (effectiveStatus === "unauthenticated") {
 			console.log("❌ User not logged in, redirecting to login page");
 			// Preserve the session_id and other params for after login
 			const redirectUrl = `/couple-entry${sessionId ? `?session_id=${sessionId}` : ""}${specificProblem ? `&specificProblem=${encodeURIComponent(specificProblem)}` : ""}${fromChat ? "&fromChat=true" : ""}`;
 			router.push(
 				`/${locale}/auth/login?redirect=${encodeURIComponent(redirectUrl)}`
 			);
+		} else if (effectiveStatus === "authenticated") {
+			console.log("✅ User authenticated:", {
+				isMobile: isCapacitorMobile,
+				userEmail: effectiveSession?.user?.email
+			});
 		}
-	}, [status, locale, router, sessionId, specificProblem, fromChat]);
+	}, [effectiveStatus, locale, router, sessionId, specificProblem, fromChat, isCapacitorMobile, effectiveSession]);
 
 	// Verify payment on component mount
 	useEffect(() => {
@@ -206,13 +221,13 @@ export default function CoupleEntryPage({ params }) {
 		}
 	};
 
-	if (isVerifying || status === "loading") {
+	if (isVerifying || effectiveStatus === "loading") {
 		return (
 			<div className="min-h-screen bg-[#EFEFEF] flex items-center justify-center">
 				<div className="text-center">
 					<div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#A3B116] mx-auto mb-4"></div>
 					<p className="text-lg text-gray-600">
-						{status === "loading"
+						{effectiveStatus === "loading"
 							? t("checkingAuth") || "檢查登入狀態..."
 							: t("verifyingPayment")}
 					</p>

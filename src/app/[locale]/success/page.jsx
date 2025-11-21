@@ -29,27 +29,91 @@ export default function Success({ searchParams }) {
 		const { mobile } = params;
 		const isInCapacitorApp = Capacitor.isNativePlatform();
 
+		console.log("🔍 Success page mobile check:", {
+			mobile,
+			isInCapacitorApp,
+			userAgent: typeof window !== "undefined" ? window.navigator.userAgent : "N/A"
+		});
+
 		// Only redirect if mobile=true AND we're NOT already in the Capacitor app
 		if (mobile === "true" && !isInCapacitorApp) {
 			console.log(
 				"📱 Mobile payment detected in browser, preparing to redirect back to app..."
 			);
 
-			// Show a brief message then attempt to return to app
-			setTimeout(() => {
-				// Try to redirect to app using custom URL scheme
-				// Format: harmoniq://success?session_id=...&type=...&concern=...
-				const appUrl = `harmoniq://success${window.location.search}`;
-				console.log("📱 Attempting to open app with URL:", appUrl);
-				window.location.href = appUrl;
+			// Show immediate visual feedback
+			const messageDiv = document.createElement("div");
+			messageDiv.style.cssText = `
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background: white;
+				padding: 24px;
+				border-radius: 16px;
+				box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+				z-index: 10000;
+				text-align: center;
+				max-width: 80%;
+			`;
+			messageDiv.innerHTML = `
+				<div style="font-size: 48px; margin-bottom: 16px;">✅</div>
+				<div style="font-size: 18px; font-weight: bold; margin-bottom: 8px;">付款成功！</div>
+				<div style="font-size: 14px; color: #666;">正在返回應用程式...</div>
+			`;
+			document.body.appendChild(messageDiv);
 
-				// Fallback: if app doesn't open after 2 seconds, show instruction
-				setTimeout(() => {
-					alert(
-						"請返回應用程式查看您的報告 / Please return to the app to view your report"
-					);
-				}, 2000);
-			}, 1500); // Wait 1.5 seconds to show success message
+			// Try to redirect to app using custom URL scheme
+			// Format: harmoniq://success?session_id=...&type=...&concern=...
+			const appUrl = `harmoniq://success${window.location.search}`;
+			console.log("📱 Attempting to open app with URL:", appUrl);
+			
+			// Try multiple redirect methods for better compatibility
+			setTimeout(() => {
+				// Method 1: Direct window.location
+				window.location.href = appUrl;
+				
+				// Method 2: Create invisible iframe (sometimes more reliable)
+				const iframe = document.createElement("iframe");
+				iframe.style.display = "none";
+				iframe.src = appUrl;
+				document.body.appendChild(iframe);
+				
+				// Method 3: Create a link and click it
+				const link = document.createElement("a");
+				link.href = appUrl;
+				link.click();
+				
+				console.log("📱 All redirect methods attempted");
+			}, 500);
+
+			// Fallback: if app doesn't open after 3 seconds, show instruction
+			setTimeout(() => {
+				const instructionDiv = document.createElement("div");
+				instructionDiv.style.cssText = `
+					position: fixed;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					background: white;
+					padding: 24px;
+					border-radius: 16px;
+					box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+					z-index: 10001;
+					text-align: center;
+					max-width: 80%;
+				`;
+				instructionDiv.innerHTML = `
+					<div style="font-size: 48px; margin-bottom: 16px;">⚠️</div>
+					<div style="font-size: 18px; font-weight: bold; margin-bottom: 8px;">無法自動返回應用程式</div>
+					<div style="font-size: 14px; color: #666; margin-bottom: 16px;">請手動返回應用程式查看您的報告</div>
+					<button onclick="window.location.href='${appUrl}'" style="background: #A3B116; color: white; padding: 12px 24px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">
+						點擊返回應用程式
+					</button>
+				`;
+				document.body.innerHTML = "";
+				document.body.appendChild(instructionDiv);
+			}, 3000);
 		} else if (isInCapacitorApp) {
 			console.log(
 				"📱 Already in Capacitor app, proceeding with normal flow"

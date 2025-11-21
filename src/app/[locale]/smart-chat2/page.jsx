@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { useSession } from "next-auth/react";
+import { useMobileAuth } from "@/hooks/useMobileAuth";
 import { usePathname } from "next/navigation";
 import { Link } from "@/i18n/navigation";
 import {
@@ -21,7 +22,12 @@ import Navbar from "@/components/Navbar";
 
 export default function SmartChat2() {
 	const { data: session } = useSession();
+	const { mobileSession, isMobile: isCapacitorMobile } = useMobileAuth();
 	const pathname = usePathname();
+
+	// Combine web and mobile sessions
+	const effectiveSession =
+		isCapacitorMobile && mobileSession ? mobileSession : session;
 
 	// Get user's stored region preference directly
 	const [userRegion, setUserRegion] = useState("hongkong");
@@ -109,8 +115,8 @@ export default function SmartChat2() {
 
 		// 使用session中的email作為用戶ID，fallback到本地存儲的ID
 		let userId;
-		if (session?.user?.email) {
-			userId = session.user.email;
+		if (effectiveSession?.user?.email) {
+			userId = effectiveSession.user.email;
 		} else {
 			userId = localStorage.getItem("feng-shui-user-id");
 			if (!userId) {
@@ -139,7 +145,7 @@ export default function SmartChat2() {
 		// 加載對話歷史
 		loadConversationHistory(userId);
 		setIsInitialized(true);
-	}, [session?.user?.email, isInitialized, currentUserId, messages.length]); // 只在用戶email變化時重新初始化，而不是整個session對象
+	}, [effectiveSession?.user?.email, isInitialized, currentUserId, messages.length]); // 只在用戶email變化時重新初始化，而不是整個session對象
 
 	// Auto-scroll to bottom when new messages are added
 	useEffect(() => {
@@ -224,6 +230,17 @@ export default function SmartChat2() {
 			try {
 				setIsLoading(true);
 
+				// Prepare headers for mobile payment
+				const headers = {
+					"Content-Type": "application/json",
+				};
+
+				if (isCapacitorMobile && effectiveSession?.user?.email) {
+					headers["X-User-Email"] = effectiveSession.user.email;
+					// @ts-ignore
+					headers["X-User-ID"] = effectiveSession.user.id || effectiveSession.user.email;
+				}
+
 				// Get fresh locale from localStorage to ensure consistency
 				const storedRegion = localStorage.getItem("userRegion");
 				// 🔧 FIX: Use URL locale as source of truth
@@ -245,9 +262,7 @@ export default function SmartChat2() {
 
 				const paymentResponse = await fetch("/api/payment-couple", {
 					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-					},
+					headers: headers,
 					body: JSON.stringify({
 						locale: freshLocale, // Use fresh locale from localStorage
 						specificProblem: problemToUse,

@@ -231,15 +231,27 @@ export const dynamic = 'force-static';
 
 export async function POST(request) {
 	try {
-		const {
-			birthday,
-			birthday2,
-			gender,
-			gender2,
-			problem,
-			sessionId,
-			isSimplified = false,
-		} = await request.json();
+		// Robust parameter extraction - try JSON body first, then fall back to URL parameters
+		let body = {};
+		try {
+			body = await request.json();
+		} catch (e) {
+			console.log("⚠️ Request body is not JSON or empty");
+		}
+
+		const searchParams = request.nextUrl.searchParams;
+
+		// Extract parameters from both sources, prioritizing body
+		const birthday = body.birthday || searchParams.get("birthday");
+		const birthday2 = body.birthday2 || searchParams.get("birthday2");
+		const gender = body.gender || searchParams.get("gender") || "male";
+		const gender2 = body.gender2 || searchParams.get("gender2") || "female";
+		const problem = body.problem || searchParams.get("problem");
+		const sessionId = body.sessionId || searchParams.get("sessionId");
+		const isSimplified =
+			body.isSimplified !== undefined
+				? body.isSimplified
+				: searchParams.get("isSimplified") === "true";
 
 		console.log("🚀 開始情侶分析 API 調用");
 		console.log("📝 分析參數:", {
@@ -251,6 +263,18 @@ export async function POST(request) {
 			sessionId,
 			isSimplified,
 		});
+
+		// Validate required parameters
+		if (!birthday || !birthday2) {
+			console.error("❌ Missing required parameters: birthday or birthday2");
+			return NextResponse.json(
+				{
+					error: "缺少必要的生日信息",
+					details: "Both birthday and birthday2 are required",
+				},
+				{ status: 400 }
+			);
+		}
 
 		// Check if DEEPSEEK_API_KEY is available
 		if (!process.env.DEEPSEEK_API_KEY) {

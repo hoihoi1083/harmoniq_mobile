@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { use } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/home/Footer";
+import { useMobileAuth } from "@/hooks/useMobileAuth";
 
 export default function BirthdayEntryPage({ params }) {
 	const { locale } = use(params);
@@ -13,6 +14,9 @@ export default function BirthdayEntryPage({ params }) {
 	const searchParams = useSearchParams();
 	const router = useRouter();
 	const sessionId = searchParams.get("session_id");
+
+	// 🔥 MOBILE FIX: Support mobile authentication
+	useMobileAuth();
 
 	const [formData, setFormData] = useState({
 		birthDate: "",
@@ -167,7 +171,7 @@ export default function BirthdayEntryPage({ params }) {
 	return (
 		<div className="min-h-screen bg-[#EFEFEF]">
 			<Navbar />
-			<div className="container px-4 py-20 mx-auto">
+			<div className="container px-4 mx-auto" style={{ paddingTop: "calc(4rem + env(safe-area-inset-top))", paddingBottom: "2rem" }}>
 				<div className="max-w-md p-8 mx-auto bg-white shadow-lg rounded-xl">
 					<div className="mb-8 text-center">
 						<p className="text-gray-600">{t("fillDataPrompt")}</p>

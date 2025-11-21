@@ -20,6 +20,40 @@ export async function POST(request) {
 			);
 		}
 
+		// Extract params from body (preferred) or URL
+		const bodyParams = {
+			birthday: body.birthday || "",
+			gender: body.gender || "",
+			concern: body.concern || "",
+			problem: body.problem || "",
+			partnerBirthday: body.partnerBirthday || "",
+		};
+
+		// Also get URL parameters from the request if available (fallback)
+		let urlParams = {};
+		try {
+			const url = new URL(request.url);
+			urlParams = {
+				birthday: url.searchParams.get("birthday") || "",
+				gender: url.searchParams.get("gender") || "",
+				concern: url.searchParams.get("concern") || "",
+				problem: url.searchParams.get("problem") || "",
+				partnerBirthday: url.searchParams.get("partnerBirthday") || "",
+			};
+		} catch (e) {
+			console.log("Error parsing URL params:", e);
+		}
+
+		// Merge params, body takes precedence if present (or URL if body is empty, but we want to support both)
+		// Actually, let's use a strategy: Body > URL > Metadata
+		const mergedParams = {
+			birthday: bodyParams.birthday || urlParams.birthday || "",
+			gender: bodyParams.gender || urlParams.gender || "",
+			concern: bodyParams.concern || urlParams.concern || "",
+			problem: bodyParams.problem || urlParams.problem || "",
+			partnerBirthday: bodyParams.partnerBirthday || urlParams.partnerBirthday || "",
+		};
+
 		// 🔐 獲取登入用戶會話信息
 		const authSession = await auth();
 		const loggedInUserEmail = authSession?.user?.email;
@@ -48,25 +82,15 @@ export async function POST(request) {
 		let fortuneReport = await FortuneReport.findOne({ sessionId });
 
 		if (fortuneReport) {
-			// Get current URL parameters to potentially update user inputs
-			const url = new URL(request.url);
-			const urlParams = {
-				birthday: url.searchParams.get("birthday") || "",
-				gender: url.searchParams.get("gender") || "",
-				concern: url.searchParams.get("concern") || "",
-				problem: url.searchParams.get("problem") || "",
-				partnerBirthday: url.searchParams.get("partnerBirthday") || "",
-			};
-
-			// Check if we have more complete user inputs from URL
+			// Check if we have more complete user inputs from request (Body or URL)
 			const hasNewInputs =
-				urlParams.birthday || urlParams.concern || urlParams.problem;
+				mergedParams.birthday || mergedParams.concern || mergedParams.problem;
 
 			console.log("Found existing report:", {
 				sessionId,
 				reportGenerated: fortuneReport.reportGenerated,
 				currentInputs: fortuneReport.userInputs,
-				newUrlParams: urlParams,
+				newParams: mergedParams,
 				hasNewInputs,
 				hasValidCurrentInputs: Boolean(
 					fortuneReport.userInputs?.birthday &&
@@ -80,28 +104,28 @@ export async function POST(request) {
 				const metadata = session.metadata || {};
 				fortuneReport.userInputs = {
 					birthday:
-						urlParams.birthday ||
+						mergedParams.birthday ||
 						fortuneReport.userInputs?.birthday ||
 						metadata.birthday ||
 						"",
 					gender:
-						urlParams.gender ||
+						mergedParams.gender ||
 						fortuneReport.userInputs?.gender ||
 						metadata.gender ||
 						"",
 					concern:
-						urlParams.concern ||
+						mergedParams.concern ||
 						fortuneReport.userInputs?.concern ||
 						metadata.concern ||
 						"",
 					problem:
-						urlParams.problem ||
+						mergedParams.problem ||
 						fortuneReport.userInputs?.problem ||
 						metadata.specificProblem ||
 						metadata.problem ||
 						"",
 					partnerBirthday:
-						urlParams.partnerBirthday ||
+						mergedParams.partnerBirthday ||
 						fortuneReport.userInputs?.partnerBirthday ||
 						metadata.partnerBirthday ||
 						"",
@@ -133,34 +157,24 @@ export async function POST(request) {
 			// Extract user data from URL parameters or session metadata
 			const metadata = session.metadata || {};
 
-			// Also get URL parameters from the request if available
-			const url = new URL(request.url);
-			const urlParams = {
-				birthday: url.searchParams.get("birthday") || "",
-				gender: url.searchParams.get("gender") || "",
-				concern: url.searchParams.get("concern") || "",
-				problem: url.searchParams.get("problem") || "",
-				partnerBirthday: url.searchParams.get("partnerBirthday") || "",
-			};
-
 			const finalUserInputs = {
-				// Priority: URL params > metadata > defaults
-				birthday: urlParams.birthday || metadata.birthday || "",
-				gender: urlParams.gender || metadata.gender || "",
-				concern: urlParams.concern || metadata.concern || "",
+				// Priority: Request params (Body/URL) > metadata > defaults
+				birthday: mergedParams.birthday || metadata.birthday || "",
+				gender: mergedParams.gender || metadata.gender || "",
+				concern: mergedParams.concern || metadata.concern || "",
 				problem:
-					urlParams.problem ||
+					mergedParams.problem ||
 					metadata.specificProblem ||
 					metadata.problem ||
 					"",
 				partnerBirthday:
-					urlParams.partnerBirthday || metadata.partnerBirthday || "",
+					mergedParams.partnerBirthday || metadata.partnerBirthday || "",
 			};
 
 			console.log("Creating new report with inputs:", {
 				sessionId,
 				loggedInUserId,
-				urlParams,
+				mergedParams,
 				metadata,
 				finalUserInputs,
 				hasRequiredInputs: Boolean(

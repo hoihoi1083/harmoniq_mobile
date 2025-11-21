@@ -1188,7 +1188,9 @@
 		"fillBothPersonsData": "請填寫兩人的性別和生日",
 		"enterSpecificQuestion": "請輸入您的具體問題",
 		"submitError": "提交資料時發生錯誤，請重試",
-		"generalCoupleAnalysis": "一般情侶關係分析"
+		"generalCoupleAnalysis": "一般情侶關係分析",
+		"checkingAuth": "檢查認證中...",
+		"redirectingToLogin": "請登錄以繼續..."
 	},
 	"coupleReport": {
 		"loadingTitle": "小鈴正在為你們準備專屬合盤分析報告",
