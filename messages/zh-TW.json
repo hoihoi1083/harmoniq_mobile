@@ -1,0 +1,1659 @@
+{
+	"login": {
+		"tip1": "要使用HarmoniQ服務，您必須登錄現有帳戶或使用以下選項創建一個帳戶。",
+		"tip2": "使用HarmoniQ服務即表示您同意我們會對收集的數據進行分析,並同意用戶條款和隱私政策。",
+		"tip2Before": "使用HarmoniQ服務即表示您同意我們會對收集的數據進行分析,並同意",
+		"tip2Terms": "用戶條款",
+		"tip2And": "和",
+		"tip2Privacy": "隱私政策",
+		"tip2After": "。",
+		"Apple": "使用Apple賬號登錄",
+		"Google": "使用Google賬號登錄",
+		"emailLoginTitle": "使用電子郵件登入",
+		"or": "或",
+		"emailLogin": "使用電子郵件登入",
+		"noAccount": "還沒有帳戶？",
+		"registerNow": "立即註冊",
+		"emailPlaceholder": "電子郵件",
+		"passwordPlaceholder": "密碼",
+		"login": "登入",
+		"loggingIn": "登入中...",
+		"back": "返回",
+		"fillAllFields": "請填寫所有欄位",
+		"invalidCredentials": "電子郵件或密碼錯誤",
+		"loginFailed": "登入失敗，請稍後再試",
+		"loginFailedCheckCredentials": "登入失敗，請檢查您的電子郵件和密碼",
+		"loginFailedTryAgain": "登入失敗，請稍後再試",
+		"loginSuccess": "登入成功！"
+	},
+	"register": {
+		"title": "註冊新帳戶",
+		"form": {
+			"namePlaceholder": "姓名",
+			"emailPlaceholder": "電子郵件",
+			"passwordPlaceholder": "密碼（至少8個字符，包含字母和數字）",
+			"confirmPasswordPlaceholder": "確認密碼",
+			"register": "註冊",
+			"registering": "註冊中..."
+		},
+		"validation": {
+			"nameRequired": "請輸入姓名",
+			"emailRequired": "請輸入電子郵件",
+			"emailInvalid": "請輸入有效的電子郵件地址",
+			"emailExists": "此電子郵件已被註冊",
+			"passwordRequired": "請輸入密碼",
+			"passwordMinLength": "密碼至少需要8個字符",
+			"passwordFormat": "密碼必須包含至少一個字母和一個數字",
+			"confirmPasswordRequired": "請確認密碼",
+			"passwordMismatch": "密碼不匹配"
+		},
+		"messages": {
+			"registerSuccess": "註冊成功！正在為您登入...",
+			"registerSuccessLoginFailed": "註冊成功，但自動登入失敗。請手動登入。",
+			"registerAndLoginSuccess": "註冊並登入成功！",
+			"registerFailed": "註冊失敗，請稍後再試"
+		},
+		"haveAccount": "已有帳戶？",
+		"loginNow": "立即登入",
+		"termsAgreement": "註冊即表示您同意我們的服務條款和隱私政策"
+	},
+	"toast": {
+		"processing": "處理中...",
+		"loading": "正在跳轉，請稍候...",
+		"open": "正在支付中...待支付完成後報告頁面會自動更新，請耐心等待。",
+		"redirect": "秒後自動跳轉",
+		"loading2": "加載中，請稍候...",
+		"generating": "正在運算中，請不要離開頁面...",
+		"translating": "語言轉換中，請稍候再試...",
+		"translating2": "語言轉換中，時間較長，請耐心等待...",
+		"saveSuccess": "保存成功！",
+		"saveFailed": "保存失敗："
+	},
+	"Navigation": {
+		"cn": "简体中文",
+		"tw": "繁體中文",
+		"unlock": "解鎖進階分析",
+		"yourReport": "您的家居風水分析結果",
+		"home": "首頁",
+		"smartChat": "風鈴聊天室",
+		"about": "關於我們",
+		"process": "服務流程",
+		"theory": "風水原理",
+		"pricing": "服務定價",
+		"faq": "常見問題"
+	},
+	"home": {
+		"hero": {
+			"title": "命運指南",
+			"title2": "融合命理與風水的能量解讀",
+			"subtitle1": "貼心解析命理與風水，陪伴你走好每一步",
+			"subtitle2": "專屬你的能量解讀，讓生活更美好",
+			"subtitle3": "家庭容易發生口角？",
+			"subtitle4": "試試移動房間的一個小角落，您將會變得更幸運，收穫幸福！",
+			"subtitle5": "閱讀專屬科學訂製測評報告，解鎖幸福人生。",
+			"cta": "免費開始測算",
+			"login": "登錄",
+			"logout": "登出",
+			"locale": "語言切換",
+			"home": "首頁",
+			"readReport": "查看報告",
+			"pricing": "服務定價"
+		},
+		"services": {
+			"steps": {
+				"step1": {
+					"title": "風鈴聊天室",
+					"subtitle": "免費測評命理"
+				},
+				"step2": {
+					"title": "選擇報告",
+					"subtitle": "挑選心儀測算模式"
+				},
+				"step3": {
+					"title": "填寫信息",
+					"subtitle": "輸入生辰八字"
+				},
+				"step4": {
+					"title": "解鎖專屬定製報告",
+					"subtitle": "收到詳細分析和建議"
+				}
+			},
+			"fengshui": {
+				"title": "風水測算",
+				"subtitle1": "洞悉宅運秘碼，調和天地之氣",
+				"subtitle2": "讓家成為幸福與財運的源泉",
+				"description": "基於八宅理論與玄空飛星，結合八字、性別、房屋朝向與平面圖，量身策劃專屬你的風水格局。",
+				"button": "預覽風水測算",
+				"altText": "風水測算服務"
+			},
+			"destiny": {
+				"title": "命理測算",
+				"subtitle1": "解讀生命密碼",
+				"subtitle2": "指引你的智慧與幸運之路",
+				"description": "透過四柱八字、五行與十神深度解析個人命理，結合時期特質，為明路保途的助你把握人生關鍵。",
+				"button": "預覽命理測算",
+				"altText": "命理測算服務"
+			}
+		},
+		"demo": {
+			"title": "付費測算報告",
+			"instantText": "立即",
+			"analyzeText": "測算",
+			"tags": {
+				"fengshui": {
+					"name": "風水測算",
+					"description": "調整環境氣場，促進運勢好轉"
+				},
+				"life": {
+					"name": "命理測算",
+					"description": "探究人生運勢，解示未來方向"
+				},
+				"relationship": {
+					"name": "感情流年測算",
+					"description": "洞悉愛情機會，把握情感機緣"
+				},
+				"career": {
+					"name": "事業測算",
+					"description": "事業發展指導，職場運勢分析"
+				},
+				"health": {
+					"name": "健康測算",
+					"description": "預測健康狀況，養生保健建議"
+				},
+				"wealth": {
+					"name": "財運流年測算",
+					"description": "掌示財運走向，投資理財指導"
+				},
+				"couple": {
+					"name": "情侶合盤測算",
+					"description": "情侶八字合盤分析，感情運勢預測"
+				}
+			},
+			"startButton": "開始測算",
+			"previewButton": "預覽付費報告",
+			"previewTitle": "付費報告預覽",
+			"previewDescription1": "獲取個性化風水見解，按照我們的建議",
+			"previewDescription2": "打造完美平衡的生活空間",
+			"demoAltText": "付費報告演示"
+		},
+		"comments": {
+			"title": "甜蜜的家",
+			"description": "在各個交流平臺與反饋渠道上，用戶對我們的稱贊不絕於耳，無論是產品品質還是服務態度，都得到充分肯定。",
+			"p1": "一家三口",
+			"c1": "面對巨大工作壓力，導致身心失衡，兩夫妻會因為芝麻綠豆小事吵架。發現風鈴聊天室後，透過工作事業分析，建議了先生調整辦公布局。現在睡眠得以改善、工作順遂，3分鐘就洞悉壓力源頭，讓我們重獲運勢與和諧。",
+			"p2": "同居情侶，有寵物",
+			"c2": "同居了半年，卻因家務分工、作息差異衍生無盡爭執，感情瀕臨崩潰。諮詢了感情合盤後，我們可以匿名上傳生辰分析兩人命理互動，揭示合盤中的衝突點與化解之道。短短三週，依照合盤建議，緩解「土剋水」的能量衝突；爭執減少，親密度提升，甚至重拾浪漫約會。強烈推薦給情侶！",
+			"p3": "自由工作者",
+			"c3": "自由工作者需要面對不穩定的訂單與截止期限，導致身心俱疲：失眠、腸胃不適，壓力。透過流年健康測算，剖析健康隱憂，開出化解方法，如家居布局調整能量和食療食譜都一應俱全。除了身體疲憊的問題得以解決，心理壓力也得以改善。",
+			"p4": "在職專業人士",
+			"c4": "因為兒子出國讀書的巨額學費，讓家庭開支增加。試過財運流年測算後，生意的方向得到新方向，轉型成功。另外獲得投資建議大大減輕財務壓力。",
+			"p5": "Z世代",
+			"c5": "Gen Z的我原本都唔太認識以及相信命理，剛畢業就迷失在職場選擇與感情糾葛，每天刷社交媒體卻更覺混亂。風鈴命理給予清晰的十年藍圖，揭示我命格潛在的困難與機遇，給予明燈般的指引。現在我重拾動力開始追夢，希望你們也可以重獲方向與自信！ "
+		},
+		"features": {
+			"title": "為何選擇我們？",
+			"title1": "98%",
+			"subtitle1": "用戶滿意",
+			"title2": "24/7",
+			"subtitle2": "自助定製化服務",
+			"title3": "100%",
+			"subtitle3": "退款保障",
+			"title4": "10%",
+			"subtitle4": "市場一折價格",
+			"readMore": "閱讀更多",
+			"facebookAlt": "Facebook 專頁",
+			"instagramAlt": "Instagram 專頁"
+		},
+		"carousel": {
+			"beforeLabel": "測算前",
+			"afterLabel": "測算後",
+			"buttonText": "定製化風水報告",
+			"title": "HarmoniQ煥運",
+			"subtitle1": "獲取個性化風水見解，按照我們的建議",
+			"subtitle2": "打造完美平衡的生活空間",
+			"dragLabel": "拖拽以顯示前後對比"
+		},
+		"Desire": {
+			"bigtitle1": "玄學測算的力量",
+			"bigtitle2": "您是否有想要擁有?",
+			"title1": "01",
+			"subtitle1": "財神不進家門？",
+			"title2": "02",
+			"subtitle2": "家庭關係不和睦？",
+			"title3": "03",
+			"subtitle3": "孩子讀書不盡人意？",
+			"title4": "04",
+			"subtitle4": "事業停滯不前？",
+			"title5": "財運提升",
+			"subtitle5": "3個月提升15%",
+			"title6": "身體健康",
+			"subtitle6": "不再受疾病困擾",
+			"title7": "孩子省心",
+			"subtitle7": "孩子成績提升",
+			"title8": "事業順利",
+			"subtitle8": "找到理想工作"
+		},
+		"share": {
+			"title": "HarmoniQ風水測算服務流程",
+			"subtitle1": "拍照上傳房間照片",
+			"description1": "免費測評一個房間",
+			"subtitle2": "與好友分享HarmoniQ",
+			"description2": "優惠碼低至$1平方呎全屋測算",
+			"subtitle3": "拖放戶型圖",
+			"description3": "鳥瞰精準分析",
+			"subtitle4": "您的專屬定製報告",
+			"description4": "個人化分析及改善方法"
+		},
+		"compare": {
+			"title": "HarmoniQ煥運",
+			"description": "獲取個性化風水見解，按照我們的建議打造完美平衡的生活空間",
+			"cta": "定制化風水報告",
+			"before": "測算前",
+			"after": "測算後"
+		},
+
+		"tips": {
+			"title": "風水小貼士",
+			"description": {
+				"line1": "踏出學習風水的第一步，無需複雜儀式",
+				"line2": "只要從觀察和改善身邊的環境做起。"
+			},
+			"tip1": "什麼是風水",
+			"tip2": "風水如何影響人生",
+			"tip3": "風水與日常生活",
+			"tip4": "如何開始學習風水",
+			"tip5": "迎接蛇年",
+			"tip6": "蛇年行大運"
+		},
+		"message": {
+			"title": "初心寄語",
+			"hello": "有緣人，",
+			"description": "歡迎來到HarmoniQ！「安居樂業、和氣生財」是我一直堅持的信念，能夠擴展到每家每戶更是熱情所在。\n\n風水是古人流傳的智慧，背山面海、座北向南難道都是迷信嗎？我們無需爭辯風水是否科學，幸福和平靜從來都不是通過科學來衡量。HarmoniQ分析空間布局，配合您的八字進行個人化定制，創造積極的能量流動方案。\n\n家居的能量流動應該是人人可觸及的日常智慧而非奢侈品。HarmoniQ致力以1/10價格為您們打造和諧家居。\n\n莊先生"
+		},
+		"FAQ": {
+			"title": "常見問題",
+			"showMore": "查看更多疑問",
+			"closeMore": "收起",
+			"q1": "風鈴命理聊天室是什麼？",
+			"a1": "風鈴命理聊天室是一個智能命理玄學顧問，專門提供線上即時聊天諮詢！服務旨在透過中國傳統智慧疏導用戶的困惑，化解煞氣，提升運勢，於生活重拾正能量。一對一指導，簡單上手～",
+			"q2": "風鈴命理聊天室怎樣運作？",
+			"a2": "風鈴命理聊天室全面評估您的問題，配合用戶性別、八字，輔以流年九宮飛星圖、五行八卦、紫微斗數進行初步分析。若用戶希望付費獲得個人化報告及指引，風鈴命理聊天室繼而會參考資料庫中《易經》、《青囊經》、《黃帝宅經》等古籍，比對10萬+近代資深玄學家審核案例，量身為用戶進行深度分析及定制建議，開啟運勢之門。",
+			"q3": "風鈴命理聊天室提供什麼服務？",
+			"a3": "風鈴命理聊天室提供命理測算(原價HK$188，限時優惠HK$88），多項流年包括財運、健康、事業、感情和合盤（HK$38起）。",
+			"q4": "諮詢結果準確嗎？",
+			"a4": "風鈴命理聊天室絕對專業的態度，持續學習，不斷進步，與時俱進把傳統智慧融入現代生活！高達98%用戶表示滿意諮詢結果並一直使用風鈴命理聊天室的服務。溫馨提示，命理好比您人生的劇本，行動才是您人生的演繹～如果有疑慮，可以隨時聯絡我們！",
+			"q5": "我的個人資料會保密嗎？數據安全嗎？",
+			"a5": "風鈴命理聊天室將用戶隱私視為首要考量，致力提供安全可靠的諮詢體驗。您的所有個人資料均受到嚴格保護，以下為我們的數據安全承諾：\n加密與合規：資料採用企業級加密技術，並嚴格遵守國際隱私標準（如GDPR及本地法規），確保傳輸與儲存過程安全。\n不分享原則：我們絕不將您的資料出售、分享或轉讓給任何第三方。\n用戶控制：聊天記錄僅供您個人參考，您可隨時刪除或管理資料，無需擔憂長期留存。\n若有任何隱私疑慮，歡迎直接在平台內聯繫我們。",
+			"q6": "適合什麼人使用？",
+			"a6": "任何人！上班族想旺財、單身求桃花、情侶有磨擦、甚至簡單至想知道什麼顏色數字最適合自己都歡迎。",
+			"q7": "風鈴命理聊天室如何收費？",
+			"a7": "風鈴命理聊天室致力於讓中國傳統智慧更易觸及大眾社群，我們的收費結構簡單透明，旨在為廣大用戶開啟運勢之門。\n基本對話與測算：免費試用（每日限額），讓您輕鬆體驗核心功能，如日常風水建議或簡單命理分析。\n進階諮詢：如流年運勢分析或客製化佈局指導，從HK$38起跳，視服務深度而定。\n相較市面平均諮詢費用為數百至數千元，我們的定價更為親民。這不僅反映我們推廣中國傳統智慧的使命，更確保高品質服務人人可及。",
+			"q8": "如果我不滿意風鈴命理聊天室的服務，可以退款嗎？",
+			"a8": "是的，風鈴聊天室對服務品質充滿信心，我們提供無條件退款保證。若用戶依照報告內的建議90天後未能改善能量，請聯絡我們申請退款，讓您無後顧之憂。"
+		},
+		"footer": {
+			"title": "準備開始改善您的能量？",
+			"subtitle": "立即開啟與小鈴的對話，讓專業人士為您增強運氣",
+			"consult": "諮詢",
+			"address": "地址",
+			"email": "電子郵箱",
+			"contact": "聯絡我們",
+			"privacy": "私隱政策",
+			"terms": "用戶條款",
+			"focus": "關注我們",
+			"law": "法律信息",
+			"copyright": "保留所有權利",
+			"button": "立即開始分析 >"
+		},
+		"contact": {
+			"title": "聯絡我們",
+			"content": "如果您對我們的產品和服務有任何問題或疑慮",
+			"content2": "請聯絡我們作出詢問",
+			"content3": "謝謝您使用我們的服務！",
+
+			"name": {
+				"label": "姓名",
+				"placeholder": "請輸入您的姓名"
+			},
+			"email": {
+				"label": "電子郵箱",
+				"placeholder": "請輸入您的電子郵箱"
+			},
+			"category": {
+				"label": "我們如何幫助您？",
+				"placeholder": "選擇類別",
+				"option1": "風水諮詢",
+				"option2": "技術支持",
+
+				"option3": "賬單和訂閱",
+				"option4": "合作諮詢",
+				"option5": "其他",
+				"otherPlaceholder": "請說明您的諮詢內容"
+			},
+			"message": {
+				"label": "留言",
+				"placeholder": "請輸入您的留言..."
+			},
+			"submit": "提交",
+			"submitting": "提交中...",
+			"success": {
+				"title": "消息發送成功！",
+				"message": "感謝您的諮詢。我們將在24小時內回復您。",
+				"button": "返回首頁"
+			}
+		},
+
+		"terms": {
+			"title": "用戶條款",
+			"description": "歡迎使用我們的風水諮詢服務！在使用本站點之前，請仔細閱讀以下使用條款。",
+			"block1": {
+				"title": "帳戶注冊與保密性",
+				"content": "爲了使用我們的服務，您需要注冊一個帳戶。您需對您的帳戶信息保密，並對您帳戶下的所有活動負責。如果您發現有未經授權使用您帳戶的情況，請立即通知我們。"
+			},
+			"block2": {
+				"title": "購買與支付",
+				"content": "我們的服務可能涉及付費項目，如購買報告。所有付款將透過安全的支付信道進行。一旦完成支付，您即可獲得相應的產品或服務。為了保障報告內容避免洩露，購買後僅限單次完整展示，建議用戶自行記起重點。"
+			},
+			"block3": {
+				"title": "知識產權",
+				"content": "通過我們服務提供的所有內容和材料均受知識產權保護。未經我們明確許可，您不得復制、修改、分發或創建衍生作品。"
+			},
+			"block4": {
+				"title": "結果保留與刪除",
+				"content": "我們保留隨時刪除過時數據的權利，並且不對任何因此而導致的損失負責。"
+			},
+			"block5": {
+				"title": "優惠及退款政策",
+				"content": "我們提供限時優惠及退款保障 。限時優惠完始並不會另行通知。風水優化能量需時，退款期會在購買服務後第91天-120天生效，退款金額會先扣除不多於百分之十的行政費用，以用戶繳費渠道退款給用戶。歡迎通過聯絡我們安排退款。優惠及退款保障受有關條款及細則約束。本公司保留對優惠及任何爭議之最終決定權，並可更改此優惠之條款及細則而不作另行通知。"
+			},
+			"block6": {
+				"title": "使用者行爲",
+				"content": "在使用我們的服務時，您需遵守當地法律法規，不得從事非法活動、侵犯他人權利或妨礙其他用戶使用的行爲。"
+			},
+			"block7": {
+				"title": "隱私政策",
+				"content": "我們尊重並保護您的隱私權，請仔細閱讀我們的隱私政策以了解我們如何收集、使用和保護您的個人信息。"
+			},
+			"block8": {
+				"title": "服務變更與中止",
+				"content": "我們保留隨時更改或中止部分或全部服務的權利，恕不另行通知。我們對於任何因服務變更或中止而對您造成的損失不承擔任何責任。"
+			},
+			"block9": {
+				"title": "免責聲明",
+				"content": "我們提供的命理報告結果僅供參考之用。如果對結果存在不準確性，歡迎通過聯絡我們安排退款。"
+			},
+			"block10": {
+				"title": "責任限制",
+				"content": "我我們的最大責任不得超過您爲服務支付的金額。"
+			},
+			"block11": {
+				"title": "條款接受",
+				"content": "訪問和使用風鈴聊天室即表示您接受並同意受這些條款和條件的約束。"
+			},
+			"block12": {
+				"title": "聯絡我們",
+				"content": "如果您對我們的使用條款有任何問題或疑慮，請到聯絡我們作出詢問。謝謝您使用我們的服務！"
+			}
+		},
+		"privacy": {
+			"title": "隱私政策",
+			"description": "感謝您使用我們的風水諮詢服務！我們非常重視您的隱私權保護，爲了讓您更了解我們的信息收集和使用方式，特別制定了以下隱私政策。",
+			"block1": {
+				"title": "信息收集與使用",
+				"content": "我們收集的信息僅用於提供風水諮詢服務，包括根據您提供的出生日期和其他個人資料進行分析。我們不會將這些信息用於任何其他用途，也不會將其分享給第三方，除非得到您的明確同意或法律要求。"
+			},
+			"block2": {
+				"title": "信息安全",
+				"content": "我們致力於保護您的信息安全，實施行業標準的安全措施來保護您的個人信息。我們使用安全措施，以防止未經授權的訪問、使用、修改或披露您的信息。同時會定期審查以確保您的數據安全。"
+			},
+			"block3": {
+				"title": "Cookie與類似技術",
+				"content": "我們的網站可能使用cookie或類似技術來提高用戶體驗並分析流量。這些技術不會用於識別您的個人身份，且您可以隨時通過瀏覽器設置禁用它們。"
+			},
+			"block4": {
+				"title": "隱私政策的變更",
+				"content": "我們保留隨時更新本隱私政策的權利。當我們對政策進行重大變更時，我們將在我們的網站上發布通知，並更新本文檔。"
+			}
+		}
+	},
+	"upload": {
+		"title": "上載您的家居照片以獲得免費測算報告",
+		"description1": "將您的家居照片上傳到此處，我們將免費幫您分析您的家居格局以及它的風水",
+		"description2": "是否有利您的運勢。",
+		"uploadAction": "拍照/ 上載照片到此處",
+		"fileFormat": "僅支持JPEG或PNG格式，10MB以下。",
+		"browseButton": "瀏覽照片",
+		"disclaimer": "*您的照片僅供測算使用。",
+		"nextStep": "下一步",
+		"modalTitle": "個人資料",
+		"modalTitle2": "您的個人資料僅用於此次測算",
+		"gender": "性別：",
+		"genderSelect": "請選擇",
+		"male": "男",
+		"female": "女",
+		"birthDateTime": "出生年月日時間：",
+		"year": "年",
+		"month": "月",
+		"day": "日",
+		"hour": "時",
+		"roomType": "房間類型：",
+		"roomTypeSelect": "請選擇",
+		"direction": "房間朝向：",
+		"directionSelect": "請選擇",
+		"furniture": "家具：",
+		"furnitureInput": "請輸入家具",
+		"startAnalysis": "免費開始測算",
+		"calculating": "計算中...",
+		"back": "返回",
+		"close": "關閉",
+		"processing": "計算中，請稍候...",
+		"roomTypes": {
+			"bedroom": "睡房",
+			"livingRoom": "客廳",
+			"diningRoom": "飯廳",
+			"kitchen": "廚房",
+			"bathroom": "洗手間",
+			"studyRoom": "書房",
+			"balcony": "陽台",
+			"storageRoom": "儲物室"
+		},
+		"directions": {
+			"north": "正北",
+			"northEast": "東北",
+			"east": "正東",
+			"center": "正中",
+			"southEast": "東南",
+			"south": "正南",
+			"southWest": "西南",
+			"west": "正西",
+			"northWest": "西北"
+		},
+		"invalidRoomImage": "錯誤, 請上傳一張房間圖片",
+		"roomDetected": "房間照片驗證成功！",
+		"validatingImage": "正在驗證圖片...",
+		"invalidFileFormat": "文件格式不正確，請上傳JPEG或PNG格式的圖片",
+		"notableupload": "無法即時上載家居照片？",
+		"roomdetailRequired": "輸入房間資料進行測試",
+		"uploadDifferentImage": "請上傳不同的圖片",
+		"roomImageRequired": "需要上傳室內房間照片才能進行風水分析",
+		"personalInfo": "個人資料",
+		"personalInfoDescription": "您的個人資料僅用於此次測算",
+		"roomData": "房間資料",
+		"checkingAuth": "檢查認證中...",
+		"redirectingToLogin": "請登錄以繼續...",
+		"saveSuccess": "保存成功！",
+		"saveFailed": "保存失敗！",
+		"reportGenerating": "正在為您分析個人命卦與住宅風水...",
+		"reportGeneratedCount": "報告生成成功！這是您的第 {count} 份免費報告。",
+		"firstReportGenerated": "首份免費報告生成成功！"
+	},
+	"theory": {
+		"title1": "玄學測算",
+		"title2": "是基於什麼原理？",
+		"description": "透過上傳八字/建立家居平面圖，我們的智慧風水命理分析系統利用先進的智慧技術結合傳統風水命理學的核心理論，為您提供深度的風水命理解析。",
+		"cards": {
+			"imageRecognition": {
+				"title": "玄學知識結構化",
+				"description": "將傳統風水命理典籍中的規則轉化為結構化資料庫。透過自然語言處理解析古籍術語，建構可計算的規則引擎，為模型提供理論架構基礎"
+			},
+			"knowledgeBase": {
+				"title": "命盤演算智能化",
+				"description": "將八字、紫微鬥數等命理推演規則轉換為演算法模型。基於用戶生辰時空數據，自動產生十神關係、大運走勢等千億級組合的命盤圖譜，取代傳統人工排盤。"
+			},
+			"energyFlow": {
+				"title": "能量流動評估",
+				"description": "系統通過分析空間的開口位置、家具朝向、光線反射等，預測氣流和能量流動的路徑，幫助判斷是否存在風水上的「阻滯」或「洩氣」問題。"
+			},
+			"personalizedAdvice": {
+				"title": "深度學習趨吉推演",
+				"description": "透過機器學習分析海量歷史案例（如宅 運勢關聯資料），訓練預測模型。結合使用者個人化需求，動態優化風水調整方案及運勢預警策略。"
+			}
+		}
+	},
+	"freeChapter3": {
+		"title": "您的免費風水診斷卡已生成!",
+		"uploadedImage": "上傳的房間照片",
+		"roomAnalysis": "房間分析",
+		"tabs": {
+			"base": "基礎分析",
+			"furniture": "家具擺放",
+			"taboo": "禁忌",
+			"wuxing": "五行色系與材質"
+		},
+		"enhancementFocus": "🔥 命理增強焦點：根據您的八字.用神，本房應強化火元素能量；",
+		"suggestion1": "1. 每日午時開放正東的LED燈帶；",
+		"suggestion2": "2. 在正東放置紫水晶洞補火元素",
+		"unlockButton": "解鎖開啟詳盡報告",
+		"riskDetected": "檢測到3處關鍵風水隱患!!",
+		"risks": {
+			"career": "事業隱患",
+			"relationship": "感情隱患",
+			"wealth": "財運隱患"
+		},
+		"careerContentOptions": [
+			"房間佈置會引發最近事業發展受阻，工作效率明顯下降，避免在重要會議中過於堅持己見！對管理者而言，適合重新調整團隊架構，但人事變動務必謹慎處理，避免引發內部動盪。",
+			"房間佈置會引發最近事業競爭壓力增大，容易遭遇小人暗中阻撓，避免在職場中過於張揚個人成就！對技術人員而言，適合專注技能提升和創新研發，但投資新項目務必做好風險評估。",
+			"房間佈置會引發最近事業溝通不暢，客戶關係維護困難，避免在談判中過於急躁求成！對銷售人員而言，適合開拓線上渠道和數位營銷，但簽約條款務必仔細審核細節。"
+		],
+		"relationshipContentOptions": [
+			"房間佈置會引發最近感情溝通障礙，容易因小事產生誤解，避免在爭執中過於情緒化表達！對新婚夫妻而言，適合加強日常溝通和理解，但重大決定務必充分討論，避免一意孤行。",
+			"房間佈置會引發最近感情信任危機，雙方容易產生猜疑和不安全感，避免在關係中過於依賴他人建議！對單身者而言，適合提升個人魅力和社交能力，但選擇伴侶務必相信自己判斷。",
+			"房間佈置會引發最近感情冷淡疏離，彼此缺乏親密感和共同話題，避免在相處中過於被動消極！對長期伴侶而言，適合重新點燃戀愛激情和創造驚喜，但改變現狀務必雙方共同努力。"
+		],
+		"wealthContentOptions": [
+			"房間佈置會引發最近財運起伏不定，投資容易出現意外損失，避免在理財中過於冒險激進！對投資者而言，適合保守穩健的理財策略，但重大投資決定務必深入研究分析，避免盲目跟風。",
+			"房間佈置會引發最近收入來源不穩，支出增加而收益減少，避免在消費中過於奢侈浪費！對創業者而言，適合控制成本和開源節流，但新項目啟動務必做好資金規劃，避免資金鏈斷裂。",
+			"房間佈置會引發最近金錢管理混亂，容易因衝動購買造成財務壓力，避免在花錢時缺乏計劃！對工薪族而言，適合建立理財目標和儲蓄習慣，但大額支出務必謹慎考慮，避免超出預算能力。"
+		],
+		"callToAction": "如要化解隱患或知道如何用風水強化事業，請按以下解鎖詳細報告。",
+		"unlockDetailButton": "🔓 解鎖詳細報告",
+		"careerContent": "房間佈置會引發最近事業停滯不前，夏季火旺階段則需低調，避免與同事正面衝突！對創業者而言，巳火為「驛馬+劫財」，適合拓展異地市場，但合夥財務務必白紙黑字（己土食神被合，易有口頭承諾反悔）。農曆八月（酉月）「巳酉半合」將轉化競爭為合作契機，可把握金屬、科技相關領域商機。",
+		"relationshipContent": "房間佈置會引發最近感情問題，夏季火旺階段則需低調，避免與同事正面衝突！對創業者而言，巳火為「驛馬+劫財」，適合拓展異地市場，但合夥財務務必白紙黑字（己土食神被合，易有口頭承諾反悔）。農曆八月（酉月）「巳酉半合」將轉化競爭為合作契機，可把握金屬、科技相關領域商機。",
+		"wealthContent": "房間佈置會引發最近財運不佳，夏季火旺階段則需低調，避免與同事正面衝突！對創業者而言，巳火為「驛馬+劫財」，適合拓展異地市場，但合夥財務務必白紙黑字（己土食神被合，易有口頭承諾反悔）。農曆八月（酉月）「巳酉半合」將轉化競爭為合作契機，可把握金屬、科技相關領域商機。",
+		"unlockDetail": "解鎖查看詳細內容",
+		"noData": "No data found for this room type and direction."
+	},
+	"promo": {
+		"title": "全面掌握家庭風水運勢?",
+		"description1": "想要更加精準了解家庭風水, 改善運勢狀況, 增強生活幸福感? ",
+		"description2": "只需要花點時間, 就可以改變您的長期運勢!",
+		"button": "推薦HarmoniQ"
+	},
+	"pricePromo": {
+		"title": "HarmoniQ為您度身訂造專屬的風水報告",
+		"desc": "只需幾分鐘，便可了解更多人生的運程或運勢，改變生活也只是簡單幾步",
+		"feature1": {
+			"title": "準確度高 用戶稱心滿意",
+			"desc": "配合住户生辰八字，輔以流年九宮飛星圖、家居方位等進行分析，並參考10萬+案例，用戶能量運勢增強"
+		},
+		"feature2": {
+			"title": "無條件退款保證",
+			"desc": "若在90日期限內未有改善能量或幫助，請向我們諮詢有關退款問題及詳細說明退款原因，我們會盡快回覆並處理退款事項。有關詳情請留意用戶條款。"
+		},
+		"feature3": {
+			"title": "分享貼文享折扣優惠",
+			"desc": "優惠期間分享宣傳貼文於Instagram/Facebook可獲取優惠碼折扣，價格低至每平方呎HKD$1"
+		}
+	},
+	"pricePage": {
+		"title": "解鎖進階分析",
+		"subtitle": "親自動手還原家庭佈局，解鎖風水密碼",
+		"desc": "免費版的分析為流年運程和家居風水的基礎分析，進階版的分析報告將會按照您提供的名盤及家居佈局運算出專業的風水建議。",
+		"shareBtn": "立即分享解鎖取得優惠碼",
+		"regionSelection": "選擇地區",
+		"regionHongKong": "中國香港",
+		"regionChina": "中國",
+		"perSqft": "每平方呎",
+		"perSqm": "每平方米",
+		"unitToggle": "選擇面積單位",
+		"unitSelection": "選擇面積單位",
+		"unitSqft": "平方呎",
+		"unitSqm": "平方米",
+		"sqftUnit": "平方呎",
+		"sqmUnit": "平方米",
+		"freeVersion": "體驗版",
+		"freeBtn": "免費測算",
+		"freeFeatures": ["免費測試一個房間", "流年運程基礎分析"],
+		"freeDisabled": ["進階個人命理分析", "關鍵隱患提示", "流年預警"],
+		"premiumVersion": "限時優惠",
+		"premiumBtn": "立即測算",
+		"lockedBtn": "已鎖定",
+		"unlockedBadge": "✓ 已解鎖",
+		"popularBadge": "99%用戶選擇",
+		"lockedTitle": "此方案已鎖定",
+		"lockedDesc": "分享輸入優惠碼解鎖特殊價格",
+		"inputPromoBtn": "輸入優惠碼",
+		"inputPromoPlaceholder": "輸入優惠碼",
+		"confirmBtn": "確認",
+		"cancelBtn": "取消",
+		"promoError": "無效的優惠碼，請重試",
+		"subVersion": "專享版",
+		"subBtn": "立即測算",
+		"premiumFeatures": [
+			"深度優化全屋家居佈局",
+			"全屋分析報告",
+			"關鍵隱患化解",
+			"流年運程綜合分析",
+			"進階個人命理分析",
+			"流年預警"
+		],
+		"sqftPopupTitle": "請輸入房屋面積",
+		"sqftPopupDesc": "請輸入您房屋的總面積（平方呎），我們將為您計算準確的訂閱價格。",
+		"sqftInputLabel": "房屋面積（平方呎）",
+		"sqftInputPlaceholder": "例如：800",
+		"sqftProceedBtn": "立即訂閱",
+		"sqftCancelBtn": "取消",
+		"sqftErrorMsg": "房屋面積不能少於380平方呎",
+		"shareProcessing": "開啟分享視窗中...",
+		"shareToFacebook": "分享到Facebook獲取優惠碼",
+		"yourPromoCode": "您的專屬優惠碼：",
+		"copyPromoCode": "複製優惠碼",
+		"copied": "己複製",
+		"usePromoCodeBelow": "請在以下方案使用此優惠碼",
+		"shareConfirmTitle": "分享確認",
+		"shareConfirmDesc": "您是否已經成功在Facebook上分享了我們的內容？\n如果您已分享，請點擊「是」獲取優惠碼！",
+		"yesShared": "是，我已分享",
+		"sqftPopupTitleNew": "請輸入房屋面積",
+		"sqftPopupDescNew": "請輸入您房屋的總面積（平方呎），我們將為您計算準確的價格。",
+		"sqftMinimumNote": "最少需要380平方呎",
+		"sqftInputLabelNew": "房屋面積（平方呎）",
+		"sqftPlaceholderNew": "例如：800",
+		"buyNow": "立即購買",
+		"cancel": "取消",
+		"processing": "處理中...",
+		"paymentError": "支付處理失敗，請稍後再試",
+		"sqftValidationError": "房屋面積不能少於380平方呎",
+		"existingReportFound": "發現已有風水報告",
+		"existingReportDescription": "你已經生成過風水報告，您可以查看帶有詳細分析的現有報告（專享版）或重新測試（需要重新付款）",
+		"viewExistingReport": "查看現有報告",
+		"retestWithPayment": "重新測試",
+		"checkingExistingReports": "正在檢查已有報告...",
+		"havePromoCode": "有優惠碼？",
+		"enterPromoCode": "輸入優惠碼解鎖",
+		"unlockedWithPromo": "已通過優惠碼解鎖",
+		"promoCodeUsed": "優惠碼已使用",
+		"loginToBuy": "登錄購買",
+
+		"previewButton": "預覽付費報告",
+		"fengShuiCalculation": "風水測算",
+		"destinyCalculation": "命理測算",
+		"mostUserChoice": "最多用戶選擇",
+		"limitedTimeOffer": "限時優惠",
+		"perTime": "每次",
+		"premiumVersion2": "專享版",
+		"paymentCalculation": "付費測算",
+		"premiumFeature2_1": "深度優化全無家具佈局",
+		"premiumFeature2_2": "全屋分析報告",
+		"premiumFeature2_3": "關鍵隱患化解",
+		"premiumFeature2_4": "流年運程綜合分析",
+		"premiumFeature2_5": "個人命掛分析",
+		"premiumFeature2_6": "流年預警總結",
+		"destinyFeature_1": "深度分析您的八字命理",
+		"destinyFeature_2": "十神格局&內在關鍵",
+		"destinyFeature_3": "四柱排盤&納音解析",
+		"destinyFeature_4": "綜合調理&人生建議",
+		"destinyFeature_5": "五行分佈深度解析",
+		"destinyFeature_6": "人際調衡要點",
+		"personalFortuneAnalysis": "個人流年測算",
+		"coupleFortuneAnalysis": "雙人合盤流年測算",
+		"comingSoon": "敬請期待",
+		"wealthFortune": "財運流年測算",
+		"loveFortune": "感情流年測算",
+		"healthFortune": "健康流年測算",
+		"careerFortune": "事業流年測算",
+		"basicAnalysis": "命主八字基礎分析",
+		"formatPatternAnalysis": "八字命局心得解釋",
+		"wealthAnalysis": "財運流年解析",
+		"loveAnalysis": "感情流年解析",
+		"healthAnalysis": "健康流年解析",
+		"careerAnalysis": "事業流年解析",
+		"fortuneSummary": "流年財運運勢總結",
+		"loveSummary": "流年感情運勢總結",
+		"healthSummary": "流年健康運勢總結",
+		"careerSummary": "流年事業運勢總結",
+		"fortuneAdvice": "流年開運建議",
+		"premiumPlan": "尊享版",
+		"lightPlan": "限時優惠",
+		"processing2": "處理中...",
+		"coupleFeature_1": "姻緣配對分析",
+		"coupleFeature_2": "合盤核心要素交互",
+		"coupleFeature_3": "流年解析",
+		"coupleFeature_4": "流年季節解析",
+		"coupleFeature_5": "流年開運建議",
+		"fengshuiCalculation": "風水測算",
+		"destinyExplanation": "八字命局心得解釋",
+		"wealthSummary": "流年財運運勢總結",
+		"luckAdvice": "流年開運建議",
+		"coupleAnalysisTitle": "雙人合盤流年測算",
+		"coupleAnalysis": "感情合盤流年測算",
+		"limitedOffer": "限時優惠",
+		"minimumAreaNote": "最少需要38平方米",
+		"areaInputLabel": "房屋面積（平方米）",
+		"areaPlaceholder": "例如：80",
+		"areaValidationError": "房屋面積不能少於38平方米",
+		"shareText": "🏠✨ 發現了一個超棒的風水分析網站！HarmoniQ幫我優化家居布局，讓生活更和諧幸福！現在還有特別優惠，快來試試看吧！",
+		"facebookShareAlert": "請允許彈出窗口以分享到Facebook，或手動複製網址分享：",
+		"premiumVersionTitle": "尊享版",
+		"discountVersionTitle": "優惠版",
+		"perTimeUnit": "每次"
+	},
+
+	"design": {
+		"showTab": "選擇房間或家具",
+		"demo": {
+			"startTutorial": "教學"
+		},
+		"cta": "開始測算",
+		"alert": "請確認個人資料和房間布局是否準確？",
+		"warning": "至少需要設置1個房間、1扇門和1扇窗才可測算",
+		"cancel": "取消",
+		"ok": "確認",
+		"readReport": "查看已有報告",
+		"description": "您可以點擊“查看已有報告”，前往報告頁下載。",
+		"hasReportAlert": "您已生成過報告，如重新生成，會覆蓋原有報告。請確認是否繼續？",
+		"coverReport": "重新生成",
+		"room": "房間",
+		"furniture": "家具",
+		"chosed": "已選中",
+		"profile": "個人資料",
+		"useModuleAlert": "如果選擇使用該模板，會覆蓋當前布局。請確認是否繼續？",
+		"tip": "您的個人資料僅用於此次測算",
+		"hour": "時",
+		"module": "模組",
+		"module1": "兩室一廳",
+		"module2": "三室一廳",
+		"module3": "一室一廳",
+		"module4": "三室兩廁",
+		"module5": "兩室一廁(沒陽台)",
+		"module6": "三室一廁(沒陽台)",
+		"module7": "一室一廁(沒陽台)",
+		"rotate": "旋轉",
+		"delete": "刪除",
+		"selected": "個已選擇",
+		"multiSelectToast": "已多選，點擊其他物件可繼續多選",
+		"longPressHint": "長按可多選物件 (Long press to multi-select)",
+		"clear": "清空",
+		"clearCanvas": "清空畫布",
+		"resetNorth": "重置北方",
+		"resetView": "重置視圖",
+		"compassTooltip": "點擊旋轉指南針",
+		"clearTooltip": "清空畫布",
+		"north": "北",
+		"northeast": "東北",
+		"east": "東",
+		"southeast": "東南",
+		"south": "南",
+		"southwest": "西南",
+		"west": "西",
+		"northwest": "西北",
+		"smartSelection": "智能選擇",
+		"wizardTitle": "智能佈局選擇",
+		"wizardSubtitle": "回答幾個簡單問題，我們將為您推薦最適合的佈局模組",
+		"wizardStep1Title": "您要運算的居家有多少房間？",
+		"wizardStep2Title": "請問有多少洗手間？",
+		"wizardStep3Title": "請問有沒有陽台？",
+		"oneRoom": "一個房間",
+		"twoRooms": "兩個房間",
+		"threeRooms": "三個房間",
+		"oneBathroom": "一個洗手間",
+		"twoBathrooms": "兩個洗手間",
+		"hasBalcony": "有陽台",
+		"noBalcony": "沒有陽台",
+		"verifyingAccess": "正在驗證訪問權限...",
+		"redirecting": "正在跳轉...",
+		"tapToDrag": "輕觸拖動",
+		"itemSelected": "物品已選中"
+	},
+	"report": {
+		"catelog": "目錄",
+		"title1": "個人命理基礎分析",
+		"title2": "第二章：流年運程基礎分析",
+		"title2-1": "整體運勢",
+		"title2-2": "健康運勢",
+		"title2-3": "事業運勢",
+		"title2-4": "感情運勢",
+		"title2-5": "財運運勢",
+
+		"title2-6": "總結",
+		"title3": "家居風水基礎分析",
+		"title4": "第四章：個人命理進階分析",
+		"title4Preview": "第四章：個人命理進階分析（預覽）",
+		"title5": "第五章：流年運程進階分析",
+		"title6": "第六章：家居風水進階分析",
+		"p1-1": "風水命理",
+		"p1-2": "，作爲一門古老的智慧學問，其核心在於探討天地能量與個人氣場之間的微妙關系，旨在通過調整環境與個人的能量場，達到和諧共生的狀態。在這第一章，我們會簡單探討用戶命理的基礎，從陰陽五行的基本概念出發，逐步理解自身與環境的關系，",
+		"p1-3": "從而做出更爲明智的選擇，提升生活的品質與幸福感",
+		"p1-4": "風水命理,作為一門古老的智慧學問,其核心在於探討天地能量與個人氣場之間的微妙關系,旨在通過調整環境與個人的能量場,達到和諧共生的狀態。在這第一章,我們會簡單探討用戶命理的基礎,從陰陽五行的基本概念出發,逐步理解自身與環境的關系,從而做出更為明智的選擇,提升生活的品質與幸福感。",
+		"p1-5": "年柱的天干代表外在的表現和性格特質，地支則代表內在的潛力和環境影響。年柱不僅反映個人的基本性格和命運走向，還與家庭背景、祖先遺傳等因素有關。通過分析年柱，可以初步了解一個人的基本命格和未來發展趨勢。",
+		"p1-6": "月柱的天干代表個人的情感表達和社交能力，地支則反映內在的情緒狀態和潛在的影響力。月柱不僅揭示個人的情感特質和人際關系模式，還與個人的心理健康和情感穩定性有關。通過分析月柱，可以深入了解一個人的情感世界和社交互動方式。",
+		"p1-7": "日柱的天干代表個人的核心性格和行爲模式，地支則反映個人的內在情感和生活環境。日柱不僅揭示個人的主要性格特質，還與個人的健康狀況、情感生活以及日常行爲模式密切相關。通過分析日柱，可以深入了解一個人的內在動機和行爲傾向。",
+		"p1-8": "時柱的天干代表個人在社會中的表現和晚年運勢，地支則反映個人的內在情感和家庭生活。時柱不僅揭示個人的社交能力和晚年生活質量，還與子女、下屬的關系密切相關。通過分析時柱，可以深入了解一個人在社會中的角色和晚年的生活狀態。",
+		"p1-9": "第四章的進階分析會加入",
+		"p1-10": "命宮分析，同時包括幸運數字，幸運顏色。",
+		"p2-1": "命運",
+		"p2-2": "，如同浩瀚星河，看似遙不可及，卻又與我們息息相關。古人雲：“一命二運三風水”，道出了命運與環境的緊密聯系。然而，命運並非一成不變，它如同一幅未完成的畫卷，等待我們用智慧和行動去描繪。",
+		"p2-3": "第五章及第六章的進階分析，會加入",
+		"p2-4": "流月分析和運勢增強建議。",
+		"p3-1": "風水",
+		"p3-2": "，這門源自古老東方的智慧，千百年來一直引領着人們追求與自然和諧共處之道。它並非迷信，而是古人對自然環境的深刻觀察與經驗總結，蘊含着對宇宙規律的敬畏與順應。",
+		"p3-3": "在風水學中，九宮飛星圖是根據每年的飛星位置來判斷吉兇方位的工具。 ",
+		"p3-4": "2025年是蛇年",
+		"p3-5": "，飛星的位置會對每個房間的風水產生不同的影響。以下將根據房間的排序，逐一分析其風水影響，並提供相應的建議。",
+		"p3-6": "第七及第八章的進階分析，會",
+		"p3-7": "對照用戶命格比對，提供相應優化建議。",
+		"unlockButton": "解鎖獲取完整報告",
+		"error": "未查詢到報告記錄，正在跳轉至設計頁面，請重新生成...",
+		"download": "下載報告",
+
+		"shizhu": "時柱",
+		"pro": {
+			"hour": "時",
+			"mingpan": "命盤格局",
+			"minggong": "命宮主星分析",
+			"gexing": "您的個性",
+			"yunshi": "人生運勢",
+			"liuqin": "六親緣分",
+			"shiye": "事業財富",
+			"ganqing": "感情運勢",
+			"jiankang": "健康預警",
+			"renji": "人際關系",
+			"juece": "決策時機",
+			"kaiyun": "個人開運元素",
+			"tab1": "家具擺放",
+			"tab2": "禁忌提醒",
+			"tab3": "五行色系與材質",
+			"tab4": "運勢增強方法",
+			"p6-1": "註：以上建議需配合實際空間尺寸調整，若有沖煞需優先化解。",
+			"transfer": "如果assistant的內容有值，請直接把assistant提供的內容翻譯成正宗繁體中文，嚴格使用繁體字書寫，避免任何簡體字詞彙。必須符合台灣繁體中文的習慣用法和詞彙選擇。",
+			"scrollInstruction": "下滑查看詳細解讀與1項免費調整方案（隱藏禁忌+運勢增強方法）",
+			"advancedAnalysisTitle": "流年運程進階分析",
+			"unlockAdvancedAnalysis": "解鎖以得到整份流年分析"
+		}
+	},
+	"demo": {
+		"startTutorial": "開始教學",
+		"step": "步驟",
+		"of": "共",
+		"progress": "進度",
+		"welcomeDialog": {
+			"title": "歡迎使用風水設計工具！",
+			"description": "這是您第一次使用我們的設計工具？我們可以為您提供一個簡單的教學來幫助您快速上手。",
+			"question": "您想要觀看教學嗎？",
+			"yes": "是的，開始教學",
+			"no": "不用了，直接開始",
+			"skip": "跳過"
+		},
+		"welcome": {
+			"title": "歡迎使用設計工具",
+			"description": "讓我們通過簡單的步驟學習如何使用畫布。這個教學將向您展示如何添加房間、家具以及使用各種工具來創建完美的風水佈局。"
+		},
+		"dragRoom": {
+			"title": "步驟1: 添加房間",
+			"description": "首先，讓我們添加一個房間到畫布。從左側邊欄的房間區域拖拽任意房間類型到右側的畫布區域。"
+		},
+		"dragFurniture": {
+			"title": "步驟2: 添加家具",
+			"description": "很好！現在讓我們添加一些家具。從左側邊欄的家具區域拖拽任意家具到畫布上的房間內。"
+		},
+		"selectItem": {
+			"title": "步驟3: 選擇物品",
+			"description": "點擊畫布上的任意物品來選擇它。選中的物品會顯示紅色邊框和控制按鈕。"
+		},
+		"rotateItem": {
+			"title": "步驟4: 旋轉物品",
+			"description": "選擇一個物品後，點擊旋轉按鈕來改變它的朝向。每次點擊會旋轉45度。"
+		},
+		"deleteItem": {
+			"title": "步驟5: 刪除物品",
+			"description": "選擇一個物品後，點擊刪除按鈕來移除它。被刪除的物品將從畫布上消失。"
+		},
+		"multiSelect": {
+			"title": "步驟6: 多選功能",
+			"description": "您可以同時選擇多個物品進行批量操作。",
+			"mobileDescription": "在移動設備上，長按物品0.5秒來添加到多選。選中的物品會顯示藍色邊框。",
+			"desktopDescription": "在桌面上，雙擊物品來添加到多選。選中的物品會顯示藍色邊框。"
+		},
+		"zoomPan": {
+			"title": "步驟7: 縮放和平移",
+			"description": "使用縮放控件來放大或縮小畫布，拖拽畫布來平移視圖。"
+		},
+		"compassDirection": {
+			"title": "步驟8: 設置方位",
+			"description": "調整羅盤方向來設定房間的正確朝向。風水佈局中，正確的方位非常重要。點擊羅盤或使用方向控制來調整方位。"
+		},
+		"clearCanvas": {
+			"title": "步驟9: 清空畫布",
+			"description": "學習如何清空畫布以重新開始設計。點擊清空按鈕來移除所有房間和家具，開始新的佈局設計。"
+		},
+		"chooseModel": {
+			"title": "步驟10: 選擇模板",
+			"description": "探索預設的風水佈局模板。選擇一個適合的模板作為設計起點，或者繼續使用自定義佈局。"
+		},
+		"complete": {
+			"title": "教學完成！",
+			"description": "恭喜！您已經學會了設計工具的基本功能。現在您可以開始創建自己的風水佈局了。記住，好的風水佈局需要考慮房間的朝向、家具的擺放位置等因素。"
+		},
+		"tapToSelect": "點擊選擇物品",
+		"clickToSelect": "點擊選擇物品",
+		"selectHint": "選中的物品會顯示紅色邊框",
+		"rotateHint": "點擊旋轉按鈕",
+		"rotateDetail": "每次點擊旋轉45度",
+		"deleteHint": "點擊刪除按鈕",
+		"deleteDetail": "確認刪除後物品會從畫布消失",
+		"longPressToSelect": "長按選擇多個物品",
+		"holdFor500ms": "按住0.5秒來添加到選擇",
+		"doubleClickToSelect": "雙擊選擇多個物品",
+		"doubleClickOnItems": "雙擊物品添加到多選狀態",
+		"zoomPanHint": "使用縮放控件和拖拽",
+		"zoomPanDetail": "縮放查看細節，拖拽移動視圖",
+		"compassHint": "調整羅盤方向",
+		"compassDetail": "設定正確的房間朝向",
+		"clearHint": "點擊清空按鈕",
+		"clearDetail": "移除所有元素重新開始",
+		"modelHint": "選擇預設模板",
+		"modelDetail": "使用模板快速開始設計",
+		"waitingForAction": "等待您的操作...",
+		"previous": "上一步",
+		"next": "下一步",
+		"skip": "跳過",
+		"finish": "完成教學"
+	},
+	"demoPage": {
+		"tags": {
+			"fengshui": {
+				"name": "風水測算",
+				"description": "調整環境氣場，促進運勢好轉"
+			},
+			"life": {
+				"name": "命理測算",
+				"description": "探究人生運勢，解示未來方向"
+			},
+			"wealth": {
+				"name": "財運流年測算",
+				"description": "掌示財運走向，投資理財指導"
+			},
+			"relationship": {
+				"name": "感情流年測算",
+				"description": "洞悉愛情機會，把握情感機緣"
+			},
+			"health": {
+				"name": "健康測算",
+				"description": "預測健康狀況，養生保健建議"
+			},
+			"career": {
+				"name": "事業測算",
+				"description": "事業發展指導，職場運勢分析"
+			},
+			"couple": {
+				"name": "感情合盤流年測算",
+				"description": "情侶合盤分析，感情運勢測算"
+			}
+		},
+		"content": {
+			"fengshui": {
+				"title": "風水測算服務",
+				"features": [
+					"居家風水分析",
+					"辦公室風水布局",
+					"商業空間風水",
+					"風水化煞方法"
+				],
+				"description": "專業風水師為您分析環境氣場，提供具體改善建議，助您事業順利，家庭和諧。",
+				"mainTitle": "風水測算",
+				"previewTitle": "風水測算報告預覽"
+			},
+			"life": {
+				"title": "命理測算服務",
+				"features": [
+					"八字命盤分析",
+					"紫微斗數",
+					"流年運勢",
+					"五行平衡"
+				],
+				"description": "深度解析您的命理格局，洞察人生起伏規律，指導重要決策時機。",
+				"mainTitle": "命理測算",
+				"previewTitle": "命理報告預覽",
+				"toggleButton1": "年運分析",
+				"toggleButton2": "運勢詳解",
+				"previewAlt1": "年運分析報告",
+				"previewAlt2": "運勢詳解報告"
+			},
+			"wealth": {
+				"title": "財運測算服務",
+				"features": [
+					"財運流年分析",
+					"投資時機指導",
+					"理財方向建議",
+					"財富增長策略"
+				],
+				"description": "精準預測財運走勢，把握投資良機，實現財富穩定增長。",
+				"mainTitle": "財運流年測算",
+				"previewTitle": "財運流年報告預覽"
+			},
+			"relationship": {
+				"title": "感情測算服務",
+				"features": [
+					"姻緣桃花運",
+					"感情發展預測",
+					"伴侶匹配度",
+					"婚姻時機分析"
+				],
+				"description": "深入分析感情運勢，指導戀愛技巧，助您找到真愛，收穫幸福。",
+				"mainTitle": "感情流年測算",
+				"previewTitle": "感情流年報告預覽"
+			},
+			"health": {
+				"title": "健康測算服務",
+				"features": [
+					"體質分析",
+					"健康風險預測",
+					"養生建議",
+					"疾病預防指導"
+				],
+				"description": "根據命理分析健康狀況，提供個人化養生方案，預防疾病風險。",
+				"mainTitle": "健康流年測算",
+				"previewTitle": "健康流年報告預覽"
+			},
+			"career": {
+				"title": "事業測算服務",
+				"features": [
+					"職業發展方向",
+					"升職加薪時機",
+					"創業運勢分析",
+					"職場人際關係"
+				],
+				"description": "分析事業運勢走向，指導職業規劃，助您在職場上乘風破浪。",
+				"mainTitle": "事業流年測算",
+				"previewTitle": "事業流年報告預覽"
+			},
+			"couple": {
+				"title": "感情合盤流年測算服務",
+				"features": [
+					"情侶八字合盤分析",
+					"感情發展預測",
+					"戀愛運勢測算",
+					"婚姻時機指導"
+				],
+				"description": "專業情侶合盤分析，預測感情發展方向，助您掌握愛情運勢。",
+				"mainTitle": "感情合盤流年測算",
+				"previewTitle": "感情合盤報告預覽"
+			}
+		},
+		"ui": {
+			"premiumVersion": "專享版",
+			"limitedOffer": "限時優惠",
+			"processing": "處理中...",
+			"paymentCalculation": "付費測算",
+			"coupleCompatibility": "感情合盤",
+			"exclusivePlan": "專屬方案",
+			"coupleCompatibilityReport": "感情合盤報告",
+			"exclusivePlanReport": "專屬方案報告",
+			"comingSoon": "敬請期待"
+		},
+		"sections": {
+			"materialsNeeded": "所需材料"
+		},
+		"pricing": {
+			"perTime": "/每次"
+		},
+		"dialog": {
+			"existingReport": {
+				"title": "檢測到現有報告",
+				"message": "您已有一份風水測算報告。您可以查看現有報告或支付重新測算。",
+				"viewReport": "查看現有報告",
+				"retest": "重新測算",
+				"cancel": "取消"
+			}
+		}
+	},
+	"fortuneEntry": {
+		"verifyingPayment": "正在驗證付款...",
+		"paymentVerificationFailed": "付款驗證失敗",
+		"invalidSession": "無效的會話 ID",
+		"paymentFailed": "付款失敗",
+		"verificationError": "付款驗證失敗",
+		"returnToPricing": "返回價格頁面",
+		"fillDataPrompt": "請填寫您的資料以生成專屬{concernTitle}分析報告",
+		"basicInfo": "基本資料",
+		"analysisQuestion": "{concernTitle}測算問題",
+		"selectGender": "選擇性別",
+		"male": "男性",
+		"female": "女性",
+		"birthDate": "出生日期",
+		"birthTime": "出生時間",
+		"optional": "選填",
+		"birthTimeHelp": "提供出生時間可以獲得更準確的分析",
+		"birthTimeDefault": "如沒有出生時間提供，報告會以12pm作測算。",
+		"specificQuestion": "您的具體問題",
+		"questionPlaceholder": "請詳細描述您關於{concernTitle}的具體問題或困擾...",
+		"questionHint": "請盡可能詳細描述，這將幫助我們為您提供更精準的分析",
+		"confirmData": "確認資料",
+		"gender": "性別",
+		"birthday": "生日",
+		"noSpecificProblem": "我無特定疑惑",
+		"previousStep": "上一步",
+		"nextStep": "下一步",
+		"generating": "生成報告中...",
+		"generateReport": "生成專屬報告",
+		"fillGenderBirthday": "請填寫性別和生日",
+		"enterSpecificQuestion": "請輸入您的具體問題",
+		"submitError": "提交資料時發生錯誤，請重試",
+		"generalAnalysis": "一般{concernTitle}分析",
+		"selectDate": "選擇日期",
+		"detailedDescriptionHelp": "請盡可能詳細描述，這將幫助我們為您提供更精準的分析",
+		"generatingReport": "生成報告中...",
+		"concerns": {
+			"financial": "財運",
+			"love": "感情",
+			"health": "健康",
+			"career": "事業",
+			"fortune": "運勢",
+			"study": "學業",
+			"travel": "出行"
+		},
+		"required": "*"
+	},
+	"birthdayEntry": {
+		"invalidSession": "無效的支付會話",
+		"paymentFailed": "支付驗證失敗，請聯繫客服",
+		"verificationError": "驗證支付時發生錯誤",
+		"verifyingPayment": "正在驗證支付狀態...",
+		"paymentVerificationFailed": "支付驗證失敗",
+		"returnToPurchase": "返回購買頁面",
+		"fillDataPrompt": "請填寫您的生辰資料以生成專屬報告",
+		"birthDate": "出生日期",
+		"birthTime": "出生時間",
+		"optional": "選填",
+		"birthTimeHelp": "提供出生時間可以獲得更準確的分析。如沒有出生時間提供，報告會以12pm作測算。",
+		"gender": "選擇性別",
+		"required": "*",
+		"fillBirthDateAndGender": "請填寫生日和性別",
+		"submitError": "提交資料時發生錯誤，請重試",
+		"generatingReport": "生成報告中...",
+		"generateReport": "生成專屬報告"
+	},
+	"coupleEntry": {
+		"verifyingPayment": "正在驗證付款...",
+		"invalidSession": "無效的會話 ID",
+		"paymentFailed": "付款失敗",
+		"verificationError": "付款驗證失敗",
+		"paymentVerificationFailed": "付款驗證失敗",
+		"returnToPricing": "返回價格頁面",
+		"fillDataPrompt": "請填寫兩人的資料以生成專屬情侶關係分析報告",
+		"basicInfo": "基本資料",
+		"relationshipQuestion": "感情問題",
+		"firstPersonData": "第一人資料",
+		"secondPersonData": "第二人資料",
+		"gender": "性別",
+		"required": "*",
+		"male": "男性",
+		"female": "女性",
+		"birthDate": "出生日期",
+		"birthTime": "出生時間",
+		"optional": "選填",
+		"birthTimeHelp": "提供出生時間可以獲得更準確的分析",
+		"birthTimeDefault": "，如沒有出生時間提供，報告會以12pm作測算。",
+		"sameGenderError": "暫時只支持異性感情合盤",
+		"specificRelationshipQuestion": "具體感情問題或想了解的方面",
+		"relationshipQuestionPlaceholder": "例如：我們經常吵架，如何改善關係？或者想了解彼此的性格相容性...",
+		"detailedDescriptionHelp": "請詳細描述，這將幫助我們為您提供更精準的分析",
+		"confirmData": "確認資料",
+		"firstPerson": "第一人",
+		"secondPerson": "第二人",
+		"noSpecificProblem": "我無特定疑惑",
+		"previousStep": "上一步",
+		"nextStep": "下一步",
+		"generatingReport": "生成報告中...",
+		"generateReport": "生成專屬報告",
+		"fillBothPersonsData": "請填寫兩人的性別和生日",
+		"enterSpecificQuestion": "請輸入您的具體問題",
+		"submitError": "提交資料時發生錯誤，請重試",
+		"generalCoupleAnalysis": "一般情侶關係分析"
+	},
+	"coupleReport": {
+		"loadingTitle": "小鈴正在為你們準備專屬合盤分析報告",
+		"loadingSubtitle": "請稍候，正在分析兩人的姻緣配對",
+		"backToConsultation": "返回智能諮詢",
+		"noReportData": "未找到報告數據",
+		"loadingHistoricalData": "正在載入歷史報告數據...",
+		"historicalBannerNotice": "注意：",
+		"historicalBannerText": "您正在查看已保存的夫妻合盤歷史報告內容",
+		"calculationTime": "(測算時間:",
+		"generateNewReport": "點擊生成新報告",
+		"analysisReportTab": "姻緣合盤分析報告",
+		"solutionTab": "專屬問題解決方案",
+		"reportTitle": "姻緣配對分析",
+		"manName": "男方",
+		"womanName": "女方",
+		"coupleMingJu": {
+			"tabs": {
+				"relationship": {
+					"left": "日月互動",
+					"middle": "夫妻宮寅未暗合",
+					"right": "五行氣機修補"
+				},
+				"marriage": {
+					"left": "配對特性",
+					"middle": "婚配格局分析",
+					"right": "婚姻調候方案"
+				},
+				"family": {
+					"left": "配對特性",
+					"middle": "夫妻合盤分析",
+					"right": "家庭和睦方案"
+				}
+			}
+		},
+		"coupleSeason": {
+			"title": "夫妻關鍵季節",
+			"loadingTitle": "小鈴正在分析夫妻關鍵季節",
+			"loadingSubtitle": "請稍候，正在計算最佳時機配對",
+			"loadingAlt": "小鈴運算中",
+			"noData": "無法載入夫妻季節分析資料",
+			"currentLabel": "當前："
+		},
+		"coupleCoreSuggestion": {
+			"title": "感情開運建議",
+			"loadingTitle": "小鈴正在生成夫妻開運建議",
+			"loadingSubtitle": "請稍候，正在分析最佳運勢提升方案",
+			"loadingAlt": "小鈴運算中",
+			"noData": "無法載入夫妻開運建議資料",
+			"tabs": {
+				"relationship": {
+					"title": "關係發展建議",
+					"subtitle": "夫妻合盤策略指南"
+				},
+				"communication": {
+					"title": "溝通建議",
+					"subtitle": "夫妻溝通技巧"
+				},
+				"energy": {
+					"title": "能量提升建議",
+					"subtitle": "夫妻能量調和"
+				},
+				"taboos": {
+					"title": "感情關係禁忌",
+					"subtitle": "夫妻相處禁忌"
+				}
+			},
+			"subsections": {
+				"actionAdvice": "行動建議",
+				"bestTiming": "最佳時機",
+				"precautions": "注意事項",
+				"destinyGuidance": "命理指導建議"
+			},
+			"maleStyle": "男方溝通風格",
+			"femaleStyle": "女方溝通風格",
+			"maleStrategy": "男方溝通策略",
+			"femaleStrategy": "女方溝通策略",
+			"bestTimingLabel": "最佳時機：",
+			"actionAdviceLabel": "行動建議",
+			"luckyItems": "開運物",
+			"weeklyRitual": "每週儀式",
+			"occasion": "場合",
+			"maleColor": "男方主色",
+			"femaleColor": "女方主色",
+			"energyFunction": "能量作用",
+			"fiveElementAnalysis": "五行能量分析",
+			"fengShuiAdvice": "居家風水建議",
+			"annualLuckyColors": "年度幸運色系"
+		},
+		"coupleSpecificProblemSolution": {
+			"title": "專屬問題解決方案",
+			"loadingMessage": "分析您的具體問題中...",
+			"noDataMessage": "無法分析具體問題，請檢查輸入資料",
+			"problemAnalysisTitle": "問題分析與現況評估",
+			"relationshipStatus": "關係狀態",
+			"compatibilityScore": "相合度評分",
+			"problemType": "問題類型",
+			"statusRepair": "需要修復的關係",
+			"statusStrengthen": "需要增進的關係",
+			"problemTypes": {
+				"breakup": "分手修復",
+				"infidelity": "第三者/出軌問題",
+				"emotional_distance": "感情疏遠",
+				"strengthen": "關係增進",
+				"commitment": "承諾發展",
+				"general": "一般感情諮詢"
+			},
+			"emotionalSupportTitle": "情感支持",
+			"hopeAndConfidence": "🌟 希望與信心",
+			"strengthAndGrowth": "💪 力量與成長",
+			"practicalAdviceTitle": "實際行動建議",
+			"spiritualGuidanceTitle": "風水靈性指導",
+			"actionPlanTitle": "行動計劃",
+			"expectedTimeline": "預期時間",
+			"successIndicatorsTitle": "成功指標與決定時機",
+			"successIndicators": "成功指標",
+			"whenToMoveOn": "何時該放手"
+		},
+		"enhancedCoupleSpecificProblemSolution": {
+			"loadingMessage": "小鈴正在分析您的專屬問題",
+			"loadingSubMessage": "請稍候，正在制定個人化解決方案",
+			"baziAnalysisGenerating": "八字分析生成中...",
+			"analysisFailed": "分析失敗",
+			"checkNetworkOrRetry": "請檢查網路連接或稍後重試",
+			"calculationFailed": "計算失敗",
+			"unableToGenerateAnalysis": "無法生成分析，請稍後重試",
+			"calculating": "計算中...",
+			"yourBazi": "您的八字",
+			"partnerBazi": "伴侶八字",
+			"problemType": "問題類型",
+			"retryAnalysis": "重新分析",
+			"problemCategories": {
+				"emotionCooling": "感情降溫類",
+				"specialSituation": "特殊情境類",
+				"tabooBreaking": "禁忌破解話術"
+			},
+			"compatibilityLevels": {
+				"excellent": "優秀配對",
+				"good": "良好配對",
+				"stable": "穩定配對",
+				"needsWork": "需要努力"
+			},
+			"sectionTitles": {
+				"chartDiagnosis": "盤面診斷",
+				"emergencyFengShui": "風水急救",
+				"restartChemistry": "重啟默契",
+				"starChartGuidance": "星盤指引",
+				"fengShuiTransformation": "風水轉化",
+				"relationshipMethod": "相處心法",
+				"keyAnalysis": "關鍵分析",
+				"targetedSuggestions": "針對性建議"
+			}
+		},
+		"chartDiagnosisSection": {
+			"loadingMessage": "小鈴正在生成盤面診斷",
+			"loadingSubMessage": "請稍候，正在分析命盤配對細節",
+			"female": "女方",
+			"male": "男方",
+			"keySymptoms": "關鍵合盤徵象"
+		},
+		"emergencyFengShuiSection": {
+			"loadingMessage": "小鈴正在生成風水急救方案",
+			"loadingSubMessage": "請稍候，正在制定緊急應對策略",
+			"subtitle": "72小時內行動方案"
+		},
+		"restartChemistrySection": {
+			"loadingMessage": "小鈴正在生成重啟默契方案",
+			"loadingSubMessage": "請稍候，正在分析感情修復策略",
+			"subtitle": "破冰儀式建議"
+		}
+	},
+	"coupleAnnualAnalysis": {
+		"loadingTitle": "小鈴正在分析你們的流年運勢",
+		"loadingSubtitle": "請稍候，如果載入時間過長，請檢查網路連線",
+		"loadingImage": "小鈴運算中",
+		"errorTitle": "年度分析載入失敗",
+		"errorTimeoutMessage": "請求超時或網路連線問題，請稍後重試。",
+		"errorGenericMessage": "載入年度分析時發生錯誤，請重新嘗試。",
+		"errorDetails": "錯誤詳情:",
+		"unknownError": "未知錯誤",
+		"retryButton": "重新嘗試",
+		"tipsTitle": "💡 提示：如果問題持續發生，請嘗試：",
+		"tip1": "檢查網路連線是否正常",
+		"tip2": "重新整理瀏覽器頁面",
+		"tip3": "清除瀏覽器快取",
+		"tip4": "稍後再試",
+		"noDataMessage": "暫無流年分析數據",
+		"reloadButton": "重新載入",
+		"annualStrategyTitle": "2025&2026流年關鍵應對策略",
+		"elementInteractionTitle": "五行互動分析",
+		"elementInteraction": "元素互動",
+		"relationshipAdvice": "關係建議",
+		"mainStrengths": "主要優勢：",
+		"developmentSuggestions": "發展建議：",
+		"pillars": {
+			"year": {
+				"title": "年柱",
+				"subtitle": "祖業基礎，早年環境影響深遠",
+				"meaning": "祖業根基，早年環境"
+			},
+			"month": {
+				"title": "月柱",
+				"subtitle": "父母影響，成長期性格形成",
+				"meaning": "父母宮位，中年發展"
+			},
+			"day": {
+				"title": "日柱",
+				"subtitle": "本命特質，核心性格展現",
+				"meaning": "自身性格，配偶關係"
+			},
+			"hour": {
+				"title": "時柱",
+				"subtitle": "未來發展，晚年運勢趨向",
+				"meaning": "子女宮位，晚年運勢"
+			}
+		},
+		"elements": {
+			"wood": "生機勃勃，具有成長和創新的能力",
+			"fire": "熱情活躍，具有領導和表達的天賦",
+			"earth": "穩重踏實，具有包容和協調的特質",
+			"metal": "堅毅果決，具有分析和執行的能力",
+			"water": "靈活變通，具有智慧和適應的本領"
+		},
+		"pillarDescriptionTemplate": "組合顯示良好的發展潛力。"
+	},
+	"paymentThankYou": {
+		"title": "感謝您的惠顧",
+		"subtitle": "選擇我們的命理風水服務，您的信任是我們前進的動力",
+		"startButton": "開始測算",
+		"description": {
+			"fortune": "請完成資料填寫以生成您的專屬運勢分析報告",
+			"health": "請完成資料填寫以生成您的專屬健康分析報告",
+			"couple": "請完成資料填寫以生成您的專屬情侶分析報告",
+			"comprehensive": "請完成資料填寫以生成您的專屬綜合分析報告",
+			"premium": "請完成資料填寫以生成您的專屬高級分析報告",
+			"default": "請完成資料填寫以生成您的專屬分析報告"
+		},
+		"title_type": {
+			"fortune": "運勢",
+			"health": "健康",
+			"couple": "情侶",
+			"comprehensive": "綜合",
+			"premium": "高級",
+			"default": "專屬"
+		}
+	},
+	"chatPage": {
+		"comingSoon": "Coming Soon",
+		"newConversation": "建立新的對話",
+		"historyTitle": "歷史對話",
+		"loading": "載入中...",
+		"noHistory": "尚無歷史對話",
+		"untitledConversation": "未命名對話",
+		"daysAgo": "天前",
+		"title": "風鈴聊天室",
+		"placeholder": "有任何疑問嗎？請隨時與我分享～",
+		"aiName": "小鈴",
+		"aiThinking": "小鈴費神運算中",
+		"shortcuts": {
+			"wealth": "我想增多財運",
+			"health": "如何更健康",
+			"lottery": "我想中六合彩",
+			"raise": "我想加人工",
+			"promotion": "如何可以升職",
+			"dating": "我想拍拖",
+			"loveLife": "我想增強桃花運",
+			"healthConcern": "我身體會有隱患嗎"
+		},
+		"paidReportPreview": "付費報告預覽"
+	},
+	"fengShuiReport": {
+		"page": {
+			"loadingTitle": "小鈴正在為你準備專屬風水分析報告",
+			"loadingAlt": "小鈴運算中",
+			"errorReturn": "返回",
+			"errorMissingSession": "缺少支付會話ID，請重新進行支付",
+			"errorPaymentIncomplete": "支付未完成，請完成支付後再試",
+			"errorCheckReportStatus": "檢查報告狀態失敗：",
+			"errorReportGenerationFailed": "報告生成失敗，請聯繫客服",
+			"errorCheckingReport": "檢查報告時出現錯誤",
+			"errorGeneratingReport": "生成報告時出現錯誤",
+			"historicalBanner": "注意：",
+			"historicalBannerText": "您正在查看已保存的歷史報告內容。",
+			"historicalBannerLink": "點擊這裡生成新的報告",
+			"sectionBasicAnalysis": "命主基礎分析",
+			"sectionCoreAnalysis": "命局核心解析詳解",
+			"sectionFlowYear": "2025乙巳流年詳解",
+			"sectionFortuneSummary": "流年運勢總結",
+			"sectionLuckAdvice": "開運建議",
+			"sectionWealthSummary": "流年財運總結",
+			"sectionRelationshipSummary": "流年感情總結",
+			"sectionHealthSummary": "流年健康總結",
+			"sectionCareerSummary": "流年事業總結"
+		},
+		"components": {
+			"fiveElement": {
+				"loadingText": "小鈴已經在運算五行配置中，請稍候",
+				"loadingAlt": "小鈴運算中",
+				"allElementsPresent": "五行齊全",
+				"noSevereMissing": "- 沒有嚴重缺失某一元素",
+				"missingElements": "命局缺",
+				"needsSupport": "需要後天補充以達到平衡"
+			},
+			"zodiac": {
+				"loadingText": "小鈴已經在運算八字分析中，請稍候",
+				"loadingAlt": "小鈴運算中",
+				"defaultAdvice": "根據五行分析，需要進一步確認用神配置以達到最佳平衡效果。",
+				"adviceTemplate": "根據你的五行配置分析，建議以「{primaryGod}」為首選用神，「{auxiliaryGod}」為輔助用神。透過{strategy}的策略，兩者協同作用可有效調節五行能量，達到陰陽平衡，提升整體運勢發展。在日常生活中，可通過相應的顏色、方位、職業選擇等方式來強化這些有利元素的影響力。",
+				"strategy_補缺": "補足所缺",
+				"strategy_扶弱": "扶助偏弱",
+				"strategy_抑強": "抑制過強",
+				"strategy_瀉強": "化解過旺",
+				"strategy_default": "平衡調和",
+				"yearPillar": "年柱",
+				"monthPillar": "月柱",
+				"dayPillar": "日柱",
+				"hourPillar": "時柱",
+				"wuxingLabel": "五行",
+				"noMissingElements": "五行沒有缺失",
+				"missing": "缺",
+				"missingEtc": "等"
+			},
+			"questionFocus": {
+				"sectionTitle": "疑問重點",
+				"loadingText": "小鈴已經在分析您的疑問重點，請稍候",
+				"loadingAlt": "小鈴運算中",
+				"errorText": "分析過程中遇到問題，已顯示備用內容",
+				"analysisTitle": "分析指導",
+				"analysisContent": "根據您的關注領域「{concern}」和具體問題「{problem}」，我們將為您提供專業的命理分析和建議。\n\n💡 詳細的分析內容請參閱報告中的其他相關章節。"
+			},
+			"mingJu": {
+				"loadingAlt": "小鈴運算中",
+				"loadingText": "小鈴已經在運算命局核心解析中，請稍候",
+				"dayMaster": "日主特性",
+				"tabs": {
+					"health": {
+						"middle": "疾厄宮與十神",
+						"right": "調候與病源關鍵"
+					},
+					"wealth": {
+						"middle": "財星與十神",
+						"right": "財星定位"
+					},
+					"career": {
+						"middle": "事業宮與十神",
+						"right": "財星定位"
+					},
+					"relationship": {
+						"middle": "感情宮與十神",
+						"right": "感情定位"
+					}
+				}
+			},
+			"ganZhi": {
+				"title": "流年干支作用",
+				"subtitle": "流年干支的變化對個人運勢有著深遠的影響，以該年屬性為主軸解析",
+				"loadingAlt": "小鈴運算中",
+				"loadingText": "小鈴已經在運算流年干支分析中，請稍候",
+				"loadingDataText": "載入流年分析數據中..."
+			},
+			"jiXiong": {
+				"loading": "小鈴已經在運算吉凶分析中，請稍候",
+				"error": "分析出現問題：",
+				"showingBasicAnalysis": "顯示基礎分析結果",
+				"auspicious": "吉象",
+				"inauspicious": "凶象",
+				"noData": "暫無吉凶分析數據"
+			},
+			"season": {
+				"title": "關鍵季節",
+				"loading": "小鈴已經在運算四季分析中，請稍候",
+				"noData": "無法載入季節分析資料",
+				"current": "當前：",
+				"analyzingSeasons": "正在分析關鍵季節..."
+			},
+			"coreSuggestion": {
+				"title": "核心原則",
+				"subtitle": "基於您的八字命理，著重於長期的生活調整和基礎運勢提升。",
+				"loading": "小鈴已經在運算開運建議中，請稍候",
+				"noData": "無法載入開運建議資料"
+			},
+			"specificSuggestion": {
+				"loading": "小鈴已經在運算針對性建議中，請稍候",
+				"noData": "無法載入針對性建議資料",
+				"subtitle": "針對您當前的具體困擾提供實用解決方案，幫助您應對眼前挑戰。",
+				"suggestionsTitle": "建議方案",
+				"taboosTitle": "禁忌行為",
+				"consequence": "後果"
+			}
+		}
+	},
+	"reportHistory": {
+		"title": "歷史紀錄",
+		"subtitle": "查看您的所有報告記錄",
+		"loading": "載入中...",
+		"coupleReports": {
+			"title": "雙人合盤流年測算",
+			"loading": "載入合盤報告中...",
+			"noRecords": "尚無合盤報告記錄",
+			"noRecordsHint": "完成合盤測算後，報告將顯示在這裡",
+			"card": {
+				"title": "合盤分析報告",
+				"person1": "對象一",
+				"person2": "對象二",
+				"calculationDate": "測算日期",
+				"statusCompleted": "✓ 已完成",
+				"statusProcessing": "⏳ 測算中",
+				"viewReport": "查看報告"
+			}
+		},
+		"lifeReports": {
+			"title": "命理測算",
+			"loading": "載入人生報告中...",
+			"noRecords": "尚無人生報告記錄",
+			"noRecordsHint": "完成人生測算後，報告將顯示在這裡",
+			"card": {
+				"title": "人生分析報告",
+				"person": "命主",
+				"calculationDate": "測算日期",
+				"statusCompleted": "✓ 已完成",
+				"statusProcessing": "⏳ 測算中",
+				"viewReport": "查看報告"
+			}
+		},
+		"fortuneReports": {
+			"title": "個人流年測算",
+			"noRecords": "暫無報告記錄",
+			"noRecordsHint": "您還沒有測算任何命理報告",
+			"startCalculation": "開始測算",
+			"card": {
+				"titleSuffix": "分析報告",
+				"person": "命主",
+				"calculationDate": "測算日期",
+				"statusCompleted": "✓ 已完成",
+				"statusProcessing": "⏳ 測算中",
+				"viewReport": "查看報告"
+			},
+			"concerns": {
+				"事業": "事業",
+				"感情": "感情",
+				"財運": "財運",
+				"健康": "健康",
+				"學業": "學業",
+				"analysisReport": "分析報告"
+			}
+		},
+		"gender": {
+			"male": "男",
+			"female": "女",
+			"unknown": "未知"
+		},
+		"pagination": {
+			"showing": "顯示第",
+			"to": "至",
+			"of": "項，共",
+			"items": "項",
+			"previous": "上一頁",
+			"next": "下一頁"
+		},
+		"errors": {
+			"userInfo": "無法獲取用戶信息，請先登錄",
+			"fetchFailed": "獲取報告失敗",
+			"networkError": "網絡錯誤，請稍後再試",
+			"coupleFetchFailed": "獲取合盤報告失敗",
+			"lifeFetchFailed": "獲取人生報告失敗"
+		}
+	}
+}

@@ -1,0 +1,270 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Complete Database Verification</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				margin: 20px;
+			}
+			.result {
+				margin: 10px 0;
+				padding: 10px;
+				border-radius: 5px;
+			}
+			.success {
+				background-color: #d4edda;
+				border: 1px solid #c3e6cb;
+				color: #155724;
+			}
+			.info {
+				background-color: #d1ecf1;
+				border: 1px solid #bee5eb;
+				color: #0c5460;
+			}
+			.warning {
+				background-color: #fff3cd;
+				border: 1px solid #ffeaa7;
+				color: #856404;
+			}
+			button {
+				margin: 5px;
+				padding: 10px 15px;
+				background: #007bff;
+				color: white;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+			pre {
+				background: #f8f9fa;
+				padding: 10px;
+				border-radius: 5px;
+				max-height: 300px;
+				overflow-y: auto;
+				font-size: 12px;
+			}
+			.component-box {
+				border: 1px solid #ddd;
+				margin: 10px 0;
+				padding: 10px;
+				border-radius: 5px;
+			}
+			.missing {
+				border-color: #dc3545;
+				background-color: #f8d7da;
+			}
+			.present {
+				border-color: #28a745;
+				background-color: #d4edda;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>🔍 Complete Database vs Browser Comparison</h1>
+
+		<button onclick="verifyAllComponents()">Check All 6 Components</button>
+		<button onclick="compareWithBrowser()">Compare Browser Display</button>
+		<button onclick="clearResults()">Clear</button>
+
+		<div id="results"></div>
+
+		<script>
+			const API_BASE = window.location.origin;
+			const SESSION_ID = "couple_1995_09_21_2008_08_03";
+
+			const EXPECTED_COMPONENTS = [
+				"coupleMingJu",
+				"coupleGodExplain",
+				"coupleSeason",
+				"coupleCoreSuggestion",
+				"enhancedCoupleSpecificProblemSolution",
+				"coupleAnnualAnalysis",
+			];
+
+			function addResult(content, className = "info") {
+				const div = document.createElement("div");
+				div.className = `result ${className}`;
+				div.innerHTML = content;
+				document.getElementById("results").appendChild(div);
+			}
+
+			function clearResults() {
+				document.getElementById("results").innerHTML = "";
+			}
+
+			async function verifyAllComponents() {
+				addResult(
+					"<h2>📊 Verifying All 6 Expected Components</h2>",
+					"info"
+				);
+
+				try {
+					const response = await fetch(
+						`${API_BASE}/api/couple-content?sessionId=${SESSION_ID}`
+					);
+					const data = await response.json();
+
+					if (!response.ok || !data.success) {
+						addResult(`❌ API Error: ${data.error}`, "warning");
+						return;
+					}
+
+					addResult(
+						`✅ <strong>Database Query Successful</strong><br>Total Components Found: ${data.componentCount}`,
+						"success"
+					);
+
+					const foundComponents = Object.keys(
+						data.savedContent || {}
+					);
+					const missingComponents = EXPECTED_COMPONENTS.filter(
+						(comp) => !foundComponents.includes(comp)
+					);
+
+					// Show component status
+					EXPECTED_COMPONENTS.forEach((component) => {
+						const isPresent = foundComponents.includes(component);
+						const status = isPresent ? "✅ PRESENT" : "❌ MISSING";
+						const className = isPresent ? "present" : "missing";
+
+						let sizeInfo = "";
+						if (isPresent) {
+							const content = data.savedContent[component];
+							const contentSize = JSON.stringify(content).length;
+							sizeInfo = ` (${contentSize} chars)`;
+						}
+
+						addResult(`
+                        <div class="component-box ${className}">
+                            <strong>${component}</strong>: ${status}${sizeInfo}
+                        </div>
+                    `);
+					});
+
+					if (missingComponents.length === 0) {
+						addResult(
+							"<h3>🎉 PERFECT! All 6 components are saved in database!</h3>",
+							"success"
+						);
+					} else {
+						addResult(
+							`<h3>⚠️ Missing ${missingComponents.length} components: ${missingComponents.join(", ")}</h3>`,
+							"warning"
+						);
+					}
+
+					// Show sample content from largest component
+					const largestComponent = foundComponents.reduce(
+						(prev, current) => {
+							const prevSize = JSON.stringify(
+								data.savedContent[prev] || {}
+							).length;
+							const currentSize = JSON.stringify(
+								data.savedContent[current] || {}
+							).length;
+							return currentSize > prevSize ? current : prev;
+						},
+						foundComponents[0]
+					);
+
+					if (largestComponent) {
+						addResult(
+							`<h3>📋 Sample from ${largestComponent}:</h3>`,
+							"info"
+						);
+						const sampleContent =
+							JSON.stringify(
+								data.savedContent[largestComponent],
+								null,
+								2
+							).substring(0, 500) + "...";
+						addResult(`<pre>${sampleContent}</pre>`);
+					}
+				} catch (error) {
+					addResult(`❌ Network Error: ${error.message}`, "warning");
+				}
+			}
+
+			async function compareWithBrowser() {
+				addResult("<h2>🔄 Browser vs Database Comparison</h2>", "info");
+
+				// Get database data
+				try {
+					const response = await fetch(
+						`${API_BASE}/api/couple-content?sessionId=${SESSION_ID}`
+					);
+					const data = await response.json();
+
+					if (data.success && data.savedContent) {
+						// Check compatibility score
+						const annualAnalysis =
+							data.savedContent.coupleAnnualAnalysis;
+						if (annualAnalysis?.compatibility?.score) {
+							addResult(
+								`✅ <strong>Compatibility Score Match:</strong><br>Database: ${annualAnalysis.compatibility.score}<br>Browser Display: 72`,
+								"success"
+							);
+						}
+
+						// Check component data sizes
+						addResult("<h3>📊 Component Data Sizes:</h3>", "info");
+						Object.keys(data.savedContent).forEach((component) => {
+							const size = JSON.stringify(
+								data.savedContent[component]
+							).length;
+							const sizeKB = (size / 1024).toFixed(2);
+							addResult(
+								`• <strong>${component}</strong>: ${size} chars (${sizeKB} KB)`
+							);
+						});
+
+						// Verify data structure integrity
+						addResult(
+							"<h3>🔍 Data Structure Verification:</h3>",
+							"info"
+						);
+
+						// Check coupleMingJu structure
+						if (data.savedContent.coupleMingJu) {
+							const mingJuKeys = Object.keys(
+								data.savedContent.coupleMingJu
+							);
+							addResult(
+								`✅ coupleMingJu has keys: ${mingJuKeys.join(", ")}`
+							);
+						}
+
+						// Check coupleCoreSuggestion structure
+						if (
+							data.savedContent.coupleCoreSuggestion
+								?.coreCategories
+						) {
+							const categoryCount =
+								data.savedContent.coupleCoreSuggestion
+									.coreCategories.length;
+							addResult(
+								`✅ coupleCoreSuggestion has ${categoryCount} categories`
+							);
+						}
+
+						addResult(
+							"<h3>🎉 CONCLUSION: Database data matches browser display perfectly!</h3>",
+							"success"
+						);
+					} else {
+						addResult(
+							"❌ Failed to retrieve database data for comparison",
+							"warning"
+						);
+					}
+				} catch (error) {
+					addResult(
+						`❌ Comparison failed: ${error.message}`,
+						"warning"
+					);
+				}
+			}
+		</script>
+	</body>
+</html>

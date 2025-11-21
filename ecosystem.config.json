@@ -1,0 +1,25 @@
+{
+	"apps": [
+		{
+			"name": "fengshui-mobile-api",
+			"script": "/home/ec2-user/fengshui-layout/server.js",
+			"cwd": "/home/ec2-user/fengshui-layout",
+			"env_file": ".env",
+			"instances": 2,
+			"exec_mode": "cluster",
+			"watch": false,
+			"max_memory_restart": "2G",
+			"error_file": "./logs/err.log",
+			"out_file": "./logs/out.log",
+			"log_file": "./logs/combined.log",
+			"time": true,
+			"kill_timeout": 30000,
+			"listen_timeout": 10000,
+			"env": {
+				"NODE_ENV": "production",
+				"PORT": "3001",
+				"HOSTNAME": "0.0.0.0"
+			}
+		}
+	]
+}

@@ -1,0 +1,1 @@
+export const EVENT_TRANSLATE_STATUS = "E_K_TRANSLATE";

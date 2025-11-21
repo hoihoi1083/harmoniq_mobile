@@ -1,0 +1,1652 @@
+{
+	"login": {
+		"tip1": "要使用HarmoniQ服务，您必须登录现有账户或使用以下选项创建一个账户。",
+		"tip2": "使用HarmoniQ服务即表示您同意我们会对收集的数据进行分析,并同意用户条款和隐私政策。",
+		"tip2Before": "使用HarmoniQ服务即表示您同意我们会对收集的数据进行分析,并同意",
+		"tip2Terms": "用户条款",
+		"tip2And": "和",
+		"tip2Privacy": "隐私政策",
+		"tip2After": "。",
+		"Apple": "使用Apple账号登录",
+		"Google": "使用Google账号登录",
+		"emailLoginTitle": "使用电子邮件登入",
+		"or": "或",
+		"emailLogin": "使用电子邮件登入",
+		"noAccount": "还没有账户？",
+		"registerNow": "立即注册",
+		"emailPlaceholder": "电子邮件",
+		"passwordPlaceholder": "密码",
+		"login": "登入",
+		"loggingIn": "登入中...",
+		"back": "返回",
+		"fillAllFields": "请填写所有栏位",
+		"invalidCredentials": "电子邮件或密码错误",
+		"loginFailed": "登入失败，请稍后再试",
+		"loginFailedCheckCredentials": "登入失败，请检查您的电子邮件和密码",
+		"loginFailedTryAgain": "登入失败，请稍后再试",
+		"loginSuccess": "登入成功！"
+	},
+	"register": {
+		"title": "注册新账户",
+		"form": {
+			"namePlaceholder": "姓名",
+			"emailPlaceholder": "电子邮件",
+			"passwordPlaceholder": "密码（至少8个字符，包含字母和数字）",
+			"confirmPasswordPlaceholder": "确认密码",
+			"register": "注册",
+			"registering": "注册中..."
+		},
+		"validation": {
+			"nameRequired": "请输入姓名",
+			"emailRequired": "请输入电子邮件",
+			"emailInvalid": "请输入有效的电子邮件地址",
+			"emailExists": "此电子邮件已被注册",
+			"passwordRequired": "请输入密码",
+			"passwordMinLength": "密码至少需要8个字符",
+			"passwordFormat": "密码必须包含至少一个字母和一个数字",
+			"confirmPasswordRequired": "请确认密码",
+			"passwordMismatch": "密码不匹配"
+		},
+		"messages": {
+			"registerSuccess": "注册成功！正在为您登入...",
+			"registerSuccessLoginFailed": "注册成功，但自动登入失败。请手动登入。",
+			"registerAndLoginSuccess": "注册并登入成功！",
+			"registerFailed": "注册失败，请稍后再试"
+		},
+		"haveAccount": "已有账户？",
+		"loginNow": "立即登入",
+		"termsAgreement": "注册即表示您同意我们的服务条款和隐私政策"
+	},
+	"toast": {
+		"processing": "处理中...",
+		"loading": "正在跳转，请稍候...",
+		"open": "正在支付中...待支付完成后报告页面会自动更新，请耐心等待。",
+		"redirect": "秒后自动跳转",
+		"loading2": "加载中，请稍候...",
+		"generating": "正在运算中，请不要离开页面...",
+		"translating": "语言转换中，请稍候再试...",
+		"translating2": "语言转换中，时间较长，请耐心等待...",
+		"saveSuccess": "保存成功！",
+		"saveFailed": "保存失败："
+	},
+	"Navigation": {
+		"cn": "简体中文",
+		"tw": "繁体中文",
+		"unlock": "解锁进阶分析",
+		"yourReport": "您的家居风水分析结果",
+		"home": "首页",
+		"smartChat": "风铃聊天室",
+		"about": "关于我们",
+		"process": "服务流程",
+		"theory": "风水原理",
+		"pricing": "服务定价",
+		"faq": "常见问题"
+	},
+	"home": {
+		"hero": {
+			"title": "命运指南",
+			"title2": "融合命理与风水的能量解读",
+			"subtitle1": "贴心解析命理与风水，陪伴你走好每一步",
+			"subtitle2": "专属你的能量解读，让生活更美好",
+			"subtitle3": "家庭容易发生口角？",
+			"subtitle4": "试试移动房间的一个小角落，您将会变得更幸运，收获幸福！",
+			"subtitle5": "阅读专属科学订制测评报告，解锁幸福人生。",
+			"cta": "免费开始测算",
+			"login": "登录",
+			"logout": "登出",
+			"locale": "语言切换",
+			"home": "首页",
+			"readReport": "查看报告",
+			"pricing": "服务定价"
+		},
+		"services": {
+			"steps": {
+				"step1": {
+					"title": "风铃聊天室",
+					"subtitle": "免费测评命理"
+				},
+				"step2": {
+					"title": "选择报告",
+					"subtitle": "挑选心仪测算模式"
+				},
+				"step3": {
+					"title": "填写信息",
+					"subtitle": "输入生辰八字"
+				},
+				"step4": {
+					"title": "解锁专属定制报告",
+					"subtitle": "收到详细分析和建议"
+				}
+			},
+			"fengshui": {
+				"title": "风水测算",
+				"subtitle1": "洞悉宅运秘码，调和天地之气",
+				"subtitle2": "让家成为幸福与财运的源泉",
+				"description": "基于八宅理论与玄空飞星，结合八字、性别、房屋朝向与平面图，量身策划专属你的风水格局。",
+				"button": "预览风水测算",
+				"altText": "风水测算服务"
+			},
+			"destiny": {
+				"title": "命理测算",
+				"subtitle1": "解读生命密码",
+				"subtitle2": "指引你的智慧与幸运之路",
+				"description": "通过四柱八字、五行与十神深度解析个人命理，结合时期特质，为明路保途的助你把握人生关键。",
+				"button": "预览命理测算",
+				"altText": "命理测算服务"
+			}
+		},
+		"demo": {
+			"title": "付费测算报告",
+			"instantText": "立即",
+			"analyzeText": "测算",
+			"tags": {
+				"fengshui": {
+					"name": "风水测算",
+					"description": "调整环境气场，促进运势好转"
+				},
+				"life": {
+					"name": "命理测算",
+					"description": "探究人生运势，解示未来方向"
+				},
+				"relationship": {
+					"name": "感情流年测算",
+					"description": "洞悉爱情机会，把握情感机缘"
+				},
+				"career": {
+					"name": "事业测算",
+					"description": "事业发展指导，职场运势分析"
+				},
+				"health": {
+					"name": "健康测算",
+					"description": "预测健康状况，养生保健建议"
+				},
+				"wealth": {
+					"name": "财运流年测算",
+					"description": "掌示财运走向，投资理财指导"
+				},
+				"couple": {
+					"name": "情侣合盘测算",
+					"description": "情侣八字合盘分析，感情运势预测"
+				}
+			},
+			"startButton": "开始测算",
+			"previewButton": "预览付费报告",
+			"previewTitle": "付费报告预览",
+			"previewDescription1": "获取个性化风水见解，按照我们的建议",
+			"previewDescription2": "打造完美平衡的生活空间",
+			"demoAltText": "付费报告演示"
+		},
+		"comments": {
+			"title": "甜蜜的家",
+			"description": "在各个交流平台与反馈渠道上，用户对我们的称赞不绝于耳，无论是产品品质还是服务态度，都得到充分肯定。",
+			"p1": "一家三口",
+			"c1": "面对巨大工作压力，导致身心失衡，两夫妻会因为芝麻绿豆小事吵架。发现风铃聊天室后，透过工作事业分析，建议了先生调整办公布局。现在睡眠得以改善、工作顺遂，3分钟就洞悉压力源头，让我们重获运势与和谐。",
+			"p2": "同居情侣，有宠物",
+			"c2": "同居了半年，却因家务分工、作息差异衍生无尽争执，感情濒临崩溃。咨询了感情合盘后，我们可以匿名上传生辰分析两人命理互动，揭示合盘中的冲突点与化解之道。短短三周，依照合盘建议，缓解「土克水」的能量冲突；争执减少，亲密度提升，甚至重拾浪漫约会。强烈推荐给情侣！",
+			"p3": "自由工作者",
+			"c3": "自由工作者需要面对不稳定的订单与截止期限，导致身心俱疲：失眠、肠胃不适，压力。透过流年健康测算，剖析健康隐忧，开出化解方法，如家居布局调整能量和食疗食谱都一应俱全。除了身体疲惫的问题得以解决，心理压力也得以改善。",
+			"p4": "在职专业人士",
+			"c4": "因为儿子出国读书的巨额学费，让家庭开支增加。试过财运流年测算后，生意的方向得到新方向，转型成功。另外获得投资建议大大减轻财务压力。",
+			"p5": "Z世代",
+			"c5": "Gen Z的我原本都不太认识以及相信命理，刚毕业就迷失在职场选择与感情纠葛，每天刷社交媒体却更觉混乱。风铃命理给予清晰的十年蓝图，揭示我命格潜在的困难与机遇，给予明灯般的指引。现在我重拾动力开始追梦，希望你们也可以重获方向与自信！ "
+		},
+		"features": {
+			"title": "为何选择我们？",
+			"title1": "98%",
+			"subtitle1": "用户满意",
+			"title2": "24/7",
+			"subtitle2": "自助定制化服务",
+			"title3": "100%",
+			"subtitle3": "退款保障",
+			"title4": "10%",
+			"subtitle4": "市场一折价格",
+			"readMore": "阅读更多",
+			"facebookAlt": "Facebook 主页",
+			"instagramAlt": "Instagram 主页"
+		},
+		"carousel": {
+			"beforeLabel": "测算前",
+			"afterLabel": "测算后",
+			"buttonText": "定制化风水报告",
+			"title": "HarmoniQ焕运",
+			"subtitle1": "获取个性化风水见解，按照我们的建议",
+			"subtitle2": "打造完美平衡的生活空间",
+			"dragLabel": "拖拽以显示前后对比"
+		},
+		"Desire": {
+			"bigtitle1": "玄学测算的力量",
+			"bigtitle2": "您是否有想要拥有?",
+			"title1": "01",
+			"subtitle1": "财神不进家门？",
+			"title2": "02",
+			"subtitle2": "家庭关系不和睦？",
+			"title3": "03",
+			"subtitle3": "孩子读书不尽人意？",
+			"title4": "04",
+			"subtitle4": "事业停滞不前？",
+			"title5": "财运提升",
+			"subtitle5": "3个月提升15%",
+			"title6": "身体健康",
+			"subtitle6": "不再受疾病困扰",
+			"title7": "孩子省心",
+			"subtitle7": "孩子成绩提升",
+			"title8": "事业顺利",
+			"subtitle8": "找到理想工作"
+		},
+		"share": {
+			"title": "HarmoniQ风水测算服务流程",
+			"subtitle1": "拍照上传房间照片",
+			"description1": "免费测评一个房间",
+			"subtitle2": "与好友分享HarmoniQ",
+			"description2": "优惠码低至$1平方尺全屋测算",
+			"subtitle3": "拖放户型图",
+			"description3": "鸟瞰精准分析",
+			"subtitle4": "您的专属定制报告",
+			"description4": "个人化分析及改善方法"
+		},
+		"compare": {
+			"title": "HarmoniQ换运",
+			"description": "获取个性化风水见解，按照我们的建议打造完美平衡的生活空间",
+			"cta": "定制化风水报告",
+			"before": "测算前",
+			"after": "测算后"
+		},
+		"tips": {
+			"title": "风水小贴士",
+			"description": {
+				"line1": "踏出学习风水的第一步，无需复杂仪式",
+				"line2": "只要从观察和改善身边的环境做起。"
+			},
+			"tip1": "什么是风水",
+			"tip2": "风水如何影响人生",
+			"tip3": "风水与日常生活",
+			"tip4": "如何开始学习风水",
+			"tip5": "迎接蛇年",
+			"tip6": "蛇年行大运"
+		},
+		"message": {
+			"title": "初心寄语",
+			"hello": "有缘人，",
+			"description": "欢迎来到HarmoniQ！「安居乐业、和气生财」是我一直坚持的信念，能够扩展到每家每户更是热情所在。\n\n风水是古人流传的智慧，背山面海、座北向南难道都是迷信吗？我们无需争辩风水是否科学，幸福和平静从来都不是通过科学来衡量。HarmoniQ分析空间布局，配合您的八字进行个人化定制，创造积极的能量流动方案。\n\n家居的能量流动应该是人人可触及的日常智慧而非奢侈品。HarmoniQ致力以1/10价格为您们打造和谐家居。\n\n庄先生"
+		},
+		"FAQ": {
+			"title": "常见问题",
+			"showMore": "查看更多疑问",
+			"closeMore": "收起",
+			"q1": "风铃命理聊天室是什么？",
+			"a1": "风铃命理聊天室是一个智能命理玄学顾问，专门提供线上即时聊天咨询！服务旨在透过中国传统智慧疏导用户的困惑，化解煞气，提升运势，于生活重拾正能量。一对一指导，简单上手～",
+			"q2": "风铃命理聊天室怎样运作？",
+			"a2": "风铃命理聊天室全面评估您的问题，配合用户性别、八字，辅以流年九宫飞星图、五行八卦、紫微斗数进行初步分析。若用户希望付费获得个人化报告及指引，风铃命理聊天室继而会参考资料库中《易经》、《青囊经》、《黄帝宅经》等古籍，比对10万+近代资深玄学家审核案例，量身为用户进行深度分析及定制建议，开启运势之门。",
+			"q3": "风铃命理聊天室提供什么服务？",
+			"a3": "风铃命理聊天室提供命理测算(原价HK$188，限时优惠HK$88），多项流年包括财运、健康、事业、感情和合盘（HK$38起）。",
+			"q4": "咨询结果准确吗？",
+			"a4": "风铃命理聊天室绝对专业的态度，持续学习，不断进步，与时俱进把传统智慧融入现代生活！高达98%用户表示满意咨询结果并一直使用风铃命理聊天室的服务。温馨提示，命理好比您人生的剧本，行动才是您人生的演绎～如果有疑虑，可以随时联络我们！",
+			"q5": "我的个人资料会保密吗？数据安全吗？",
+			"a5": "风铃命理聊天室将用户隐私视为首要考量，致力提供安全可靠的咨询体验。您的所有个人资料均受到严格保护，以下为我们的数据安全承诺：\n加密与合规：资料采用企业级加密技术，并严格遵守国际隐私标准（如GDPR及本地法规），确保传输与储存过程安全。\n不分享原则：我们绝不将您的资料出售、分享或转让给任何第三方。\n用户控制：聊天记录仅供您个人参考，您可随时删除或管理资料，无需担忧长期留存。\n若有任何隐私疑虑，欢迎直接在平台内联系我们。",
+			"q6": "适合什么人使用？",
+			"a6": "任何人！上班族想旺财、单身求桃花、情侣有磨擦、甚至简单至想知道什么颜色数字最适合自己都欢迎。",
+			"q7": "风铃命理聊天室如何收费？",
+			"a7": "风铃命理聊天室致力于让中国传统智慧更易触及大众社群，我们的收费结构简单透明，旨在为广大用户开启运势之门。\n基本对话与测算：免费试用（每日限额），让您轻松体验核心功能，如日常风水建议或简单命理分析。\n进阶咨询：如流年运势分析或客制化布局指导，从HK$38起跳，视服务深度而定。\n相较市面平均咨询费用为数百至数千元，我们的定价更为亲民。这不仅反映我们推广中国传统智慧的使命，更确保高品质服务人人可及。",
+			"q8": "如果我不满意风铃命理聊天室的服务，可以退款吗？",
+			"a8": "是的，风铃聊天室对服务品质充满信心，我们提供无条件退款保证。若用户依照报告内的建议90天后未能改善能量，请联络我们申请退款，让您无后顾之忧。"
+		},
+		"footer": {
+			"title": "准备开始改善您的能量？",
+			"subtitle": "立即开启与小铃的对话，让专业人士为您增强运气",
+			"consult": "咨询",
+			"address": "地址",
+			"email": "电子邮箱",
+			"contact": "联络我们",
+			"privacy": "隐私政策",
+			"terms": "用户条款",
+			"focus": "关注我们",
+			"law": "法律信息",
+			"copyright": "保留所有权利",
+			"button": "立即开始分析 >"
+		},
+		"contact": {
+			"title": "联络我们",
+			"content": "如果您对我们的产品和服务有任何问题或疑虑",
+			"content2": "请联络我们作出询问",
+			"content3": "谢谢您使用我们的服务！",
+			"name": {
+				"label": "姓名",
+				"placeholder": "请输入您的姓名"
+			},
+			"email": {
+				"label": "电子邮箱",
+				"placeholder": "请输入您的电子邮箱"
+			},
+			"category": {
+				"label": "我们如何帮助您？",
+				"placeholder": "选择类别",
+				"option1": "风水咨询",
+				"option2": "技术支持",
+				"option3": "账单和订阅",
+				"option4": "合作咨询",
+				"option5": "其他",
+				"otherPlaceholder": "请说明您的咨询内容"
+			},
+			"message": {
+				"label": "留言",
+				"placeholder": "请输入您的留言..."
+			},
+			"submit": "提交",
+			"submitting": "提交中...",
+			"success": {
+				"title": "消息发送成功！",
+				"message": "感谢您的咨询。我们将在24小时内回复您。",
+				"button": "返回首页"
+			}
+		},
+		"terms": {
+			"title": "用户条款",
+			"description": "欢迎使用我们的风水咨询服务！在使用本站点之前，请仔细阅读以下使用条款。",
+			"block1": {
+				"title": "帐户注册与保密性",
+				"content": "为了使用我们的服务，您需要注册一个帐户。您需对您的帐户信息保密，并对您帐户下的所有活动负责。如果您发现有未经授权使用您帐户的情况，请立即通知我们。"
+			},
+			"block2": {
+				"title": "购买与支付",
+				"content": "我们的服务可能涉及付费项目，如购买报告。所有付款将透过安全的支付信道进行。一旦完成支付，您即可获得相应的产品或服务。为了保障报告内容避免泄露，购买后仅限单次完整展示，建议用户自行记起重点。"
+			},
+			"block3": {
+				"title": "知识产权",
+				"content": "通过我们服务提供的所有内容和材料均受知识产权保护。未经我们明确许可，您不得复制、修改、分发或创建衍生作品。"
+			},
+			"block4": {
+				"title": "结果保留与删除",
+				"content": "我们保留随时删除过时数据的权利，并且不对任何因此而导致的损失负责。"
+			},
+			"block5": {
+				"title": "优惠及退款政策",
+				"content": "我们提供限时优惠及退款保障 。限时优惠完始并不会另行通知。风水优化能量需时，退款期会在购买服务后第91天-120天生效，退款金额会先扣除不多于百分之十的行政费用，以用户缴费渠道退款给用户。欢迎通过联络我们安排退款。优惠及退款保障受有关条款及细则约束。本公司保留对优惠及任何争议之最终决定权，并可更改此优惠之条款及细则而不作另行通知。"
+			},
+			"block6": {
+				"title": "使用者行为",
+				"content": "在使用我们的服务时，您需遵守当地法律法规，不得从事非法活动、侵犯他人权利或妨碍其他用户使用的行为。"
+			},
+			"block7": {
+				"title": "隐私政策",
+				"content": "我们尊重并保护您的隐私权，请仔细阅读我们的隐私政策以了解我们如何收集、使用和保护您的个人信息。"
+			},
+			"block8": {
+				"title": "服务变更与中止",
+				"content": "我们保留随时更改或中止部分或全部服务的权利，恕不另行通知。我们对于任何因服务变更或中止而对您造成的损失不承担任何责任。"
+			},
+			"block9": {
+				"title": "免责声明",
+				"content": "我们提供的命理报告结果仅供参考之用。如果对结果存在不准确性，欢迎通过联络我们安排退款。"
+			},
+			"block10": {
+				"title": "责任限制",
+				"content": "我我们的最大责任不得超过您为服务支付的金额。"
+			},
+			"block11": {
+				"title": "条款接受",
+				"content": "访问和使用风铃聊天室即表示您接受并同意受这些条款和条件的约束。"
+			},
+			"block12": {
+				"title": "联络我们",
+				"content": "如果您对我们的使用条款有任何问题或疑虑，请到联络我们作出询问。谢谢您使用我们的服务！"
+			}
+		},
+		"privacy": {
+			"title": "隐私政策",
+			"description": "感谢您使用我们的风水咨询服务！我们非常重视您的隐私权保护，为了让您更了解我们的信息收集和使用方式，特别制定了以下隐私政策。",
+			"block1": {
+				"title": "信息收集与使用",
+				"content": "我们收集的信息仅用于提供风水咨询服务，包括根据您提供的出生日期和其他个人资料进行分析。我们不会将这些信息用于任何其他用途，也不会将其分享给第三方，除非得到您的明确同意或法律要求。"
+			},
+			"block2": {
+				"title": "信息安全",
+				"content": "我们致力于保护您的信息安全，实施行业标准的安全措施来保护您的个人信息。我们使用安全措施，以防止未经授权的访问、使用、修改或披露您的信息。同时会定期审查以确保您的数据安全。"
+			},
+			"block3": {
+				"title": "Cookie与类似技术",
+				"content": "我们的网站可能使用cookie或类似技术来提高用户体验并分析流量。这些技术不会用于识别您的个人身份，且您可以随时通过浏览器设置禁用它们。"
+			},
+			"block4": {
+				"title": "隐私政策的变更",
+				"content": "我们保留随时更新本隐私政策的权利。当我们对政策进行重大变更时，我们将在我们的网站上发布通知，并更新本文档。"
+			}
+		}
+	},
+	"upload": {
+		"title": "上载您的家居照片以获得免费测算报告",
+		"description1": "将您的家居照片上传到此处，我们将免费帮您分析您的家居格局以及它的风水",
+		"description2": "是否有利您的运势。",
+		"uploadAction": "拍照/ 上载照片到此处",
+		"fileFormat": "仅支持JPEG或PNG格式，10MB以下。",
+		"browseButton": "浏览照片",
+		"disclaimer": "*您的照片仅供测算使用。",
+		"nextStep": "下一步",
+		"modalTitle": "个人资料",
+		"modalTitle2": "您的个人资料仅用于此次测算",
+		"gender": "性别：",
+		"genderSelect": "请选择",
+		"male": "男",
+		"female": "女",
+		"birthDateTime": "出生年月日时间：",
+		"year": "年",
+		"month": "月",
+		"day": "日",
+		"hour": "时",
+		"roomType": "房间类型：",
+		"roomTypeSelect": "请选择",
+		"direction": "房间朝向：",
+		"directionSelect": "请选择",
+		"furniture": "家具：",
+		"furnitureInput": "请输入家具",
+		"startAnalysis": "免费开始测算",
+		"calculating": "计算中...",
+		"back": "返回",
+		"close": "关闭",
+		"processing": "计算中，请稍候...",
+		"roomTypes": {
+			"bedroom": "睡房",
+			"livingRoom": "客厅",
+			"diningRoom": "饭厅",
+			"kitchen": "厨房",
+			"bathroom": "洗手间",
+			"studyRoom": "书房",
+			"balcony": "阳台",
+			"storageRoom": "储物室"
+		},
+		"directions": {
+			"north": "正北",
+			"northEast": "东北",
+			"east": "正东",
+			"center": "正中",
+			"southEast": "东南",
+			"south": "正南",
+			"southWest": "西南",
+			"west": "正西",
+			"northWest": "西北"
+		},
+		"invalidRoomImage": "错误, 请上传一张房间图片",
+		"roomDetected": "房间照片验证成功！",
+		"validatingImage": "正在验证图片...",
+		"invalidFileFormat": "文件格式不正确，请上传JPEG或PNG格式的图片",
+		"notableupload": "无法即时上载家居照片？",
+		"roomdetailRequired": "输入房间资料进行测试",
+		"uploadDifferentImage": "请上传不同的图片",
+		"roomImageRequired": "需要房间图片",
+		"personalInfo": "个人资料",
+		"personalInfoDescription": "您的个人资料仅用于此次测算",
+		"roomData": "房间资料",
+		"checkingAuth": "检查认证中...",
+		"redirectingToLogin": "请登录以继续...",
+		"saveSuccess": "保存成功！",
+		"saveFailed": "保存失败！",
+		"reportGenerating": "正在为您分析个人命卦与住宅风水...",
+		"reportGeneratedCount": "报告生成成功！这是您的第 {count} 份免费报告。",
+		"firstReportGenerated": "首份免费报告生成成功！"
+	},
+	"theory": {
+		"title1": "玄学测算",
+		"title2": "是基于什么原理？",
+		"description": "透过上传八字/建立家居平面图，我们的智慧风水命理分析系统利用先进的智慧技术结合传统风水命理学的核心理论，为您提供深度的风水命理解析。",
+		"cards": {
+			"imageRecognition": {
+				"title": "玄学知识结构化",
+				"description": "将传统风水命理典籍中的规则转化为结构化数据库。透过自然语言处理解析古籍术语，建构可计算的规则引擎，为模型提供理论架构基础"
+			},
+			"knowledgeBase": {
+				"title": "命盘演算智能化",
+				"description": "将八字、紫微斗数等命理推演规则转换为算法模型。基于用户生辰时空数据，自动产生十神关系、大运走势等千亿级组合的命盘图谱，取代传统人工排盘。"
+			},
+			"energyFlow": {
+				"title": "能量流动评估",
+				"description": "系统通过分析空间的开口位置、家具朝向、光线反射等，预测气流和能量流动的路径，帮助判断是否存在风水上的「阻滞」或「泄气」问题。"
+			},
+			"personalizedAdvice": {
+				"title": "深度学习趋吉推演",
+				"description": "透过机器学习分析海量历史案例（如宅运势关联数据），训练预测模型。结合使用者个人化需求，动态优化风水调整方案及运势预警策略。"
+			}
+		}
+	},
+	"freeChapter3": {
+		"title": "您的免费风水诊断卡已生成!",
+		"uploadedImage": "上传的房间照片",
+		"roomAnalysis": "房间分析",
+		"tabs": {
+			"base": "基础分析",
+			"furniture": "家具摆放",
+			"taboo": "禁忌",
+			"wuxing": "五行色系与材质"
+		},
+		"enhancementFocus": "🔥 命理增强焦点：根据您的八字.用神，本房应强化火元素能量；",
+		"suggestion1": "1. 每日午时开放正东的LED灯带；",
+		"suggestion2": "2. 在正东放置紫水晶洞补火元素",
+		"unlockButton": "解锁开启详尽报告",
+		"riskDetected": "检测到3处关键风水隐患!!",
+		"risks": {
+			"career": "事业隐患",
+			"relationship": "感情隐患",
+			"wealth": "财运隐患"
+		},
+		"careerContentOptions": [
+			"房间布置会引发最近事业发展受阻，工作效率明显下降，避免在重要会议中过于坚持己见！对管理者而言，适合重新调整团队架构，但人事变动务必谨慎处理，避免引发内部动荡。",
+			"房间布置会引发最近事业竞争压力增大，容易遭遇小人暗中阻挠，避免在职场中过于张扬个人成就！对技术人员而言，适合专注技能提升和创新研发，但投资新项目务必做好风险评估。",
+			"房间布置会引发最近事业沟通不畅，客户关系维护困难，避免在谈判中过于急躁求成！对销售人员而言，适合开拓线上渠道和数字营销，但签约条款务必仔细审核细节。"
+		],
+		"relationshipContentOptions": [
+			"房间布置会引发最近感情沟通障碍，容易因小事产生误解，避免在争执中过于情绪化表达！对新婚夫妻而言，适合加强日常沟通和理解，但重大决定务必充分讨论，避免一意孤行。",
+			"房间布置会引发最近感情信任危机，双方容易产生猜疑和不安全感，避免在关系中过于依赖他人建议！对单身者而言，适合提升个人魅力和社交能力，但选择伴侣务必相信自己判断。",
+			"房间布置会引发最近感情冷淡疏离，彼此缺乏亲密感和共同话题，避免在相处中过于被动消极！对长期伴侣而言，适合重新点燃恋爱激情和创造惊喜，但改变现状务必双方共同努力。"
+		],
+		"wealthContentOptions": [
+			"房间布置会引发最近财运起伏不定，投资容易出现意外损失，避免在理财中过于冒险激进！对投资者而言，适合保守稳健的理财策略，但重大投资决定务必深入研究分析，避免盲目跟风。",
+			"房间布置会引发最近收入来源不稳，支出增加而收益减少，避免在消费中过于奢侈浪费！对创业者而言，适合控制成本和开源节流，但新项目启动务必做好资金规划，避免资金链断裂。",
+			"房间布置会引发最近金钱管理混乱，容易因冲动购买造成财务压力，避免在花钱时缺乏计划！对工薪族而言，适合建立理财目标和储蓄习惯，但大额支出务必谨慎考虑，避免超出预算能力。"
+		],
+		"callToAction": "如要化解隐患或知道如何用风水强化事业，请按以下解锁详细报告。",
+		"unlockDetailButton": "🔓 解锁详细报告",
+		"careerContent": "房间布置会引发最近事业停滞不前，夏季火旺阶段则需低调，避免与同事正面冲突！对创业者而言，巳火为「驿马+劫财」，适合拓展异地市场，但合伙财务务必白纸黑字（己土食神被合，易有口头承诺反悔）。农历八月（酉月）「巳酉半合」将转化竞争为合作契机，可把握金属、科技相关领域商机。",
+		"relationshipContent": "房间布置会引发最近感情问题，夏季火旺阶段则需低调，避免与同事正面冲突！对创业者而言，巳火为「驿马+劫财」，适合拓展异地市场，但合伙财务务必白纸黑字（己土食神被合，易有口头承诺反悔）。农历八月（酉月）「巳酉半合」将转化竞争为合作契机，可把握金属、科技相关领域商机。",
+		"wealthContent": "房间布置会引发最近财运不佳，夏季火旺阶段则需低调，避免与同事正面冲突！对创业者而言，巳火为「驿马+劫财」，适合拓展异地市场，但合伙财务务必白纸黑字（己土食神被合，易有口头承诺反悔）。农历八月（酉月）「巳酉半合」将转化竞争为合作契机，可把握金属、科技相关领域商机。",
+		"unlockDetail": "解锁查看详细内容",
+		"noData": "No data found for this room type and direction."
+	},
+	"promo": {
+		"title": "全面掌握家庭风水运势?",
+		"description1": "想要更加精准了解家庭风水, 改善运势状况, 增强生活幸福感? ",
+		"description2": "只需要花点时间, 就可以改变您的长期运势!",
+		"button": "推荐HarmoniQ"
+	},
+	"pricePromo": {
+		"title": "HarmoniQ为您度身订造专属的风水报告",
+		"desc": "只需几分钟，便可了解更多人生的运程或运势，改变生活也只是简单几步",
+		"feature1": {
+			"title": "准确度高 用户称心满意",
+			"desc": "配合住户生辰八字，辅以流年九宫飞星图、家居方位等进行分析，并参考10万+案例，用户能量运势增强"
+		},
+		"feature2": {
+			"title": "无条件退款保证",
+			"desc": "若在90日期限内未有改善能量或帮助，请向我们咨询有关退款问题及详细说明退款原因，我们会尽快回复并处理退款事项。有关详情请留意用户条款。"
+		},
+		"feature3": {
+			"title": "分享帖文享折扣优惠",
+			"desc": "优惠期间分享宣传帖文于Instagram/Facebook可获取优惠码折扣，价格低至每平方尺HKD$1"
+		}
+	},
+	"pricePage": {
+		"title": "解锁进阶分析",
+		"subtitle": "亲自动手还原家庭布局，解锁风水密码",
+		"desc": "免费版的分析为流年运程和家居风水的基础分析，进阶版的分析报告将会按照您提供的名盘及家居布局运算出专业的风水建议。",
+		"shareBtn": "立即分享解锁取得优惠码",
+		"regionSelection": "选择地区",
+		"regionHongKong": "中国香港",
+		"regionChina": "中国",
+		"perSqft": "每平方尺",
+		"perSqm": "每平方米",
+		"unitToggle": "选择面积单位",
+		"unitSelection": "选择面积单位",
+		"unitSqft": "平方尺",
+		"unitSqm": "平方米",
+		"sqftUnit": "平方尺",
+		"sqmUnit": "平方米",
+		"freeVersion": "体验版",
+		"freeBtn": "免费测算",
+		"freeFeatures": ["免费测试一个房间", "流年运程基础分析"],
+		"freeDisabled": ["进阶个人命理分析", "关键隐患提示", "流年预警"],
+		"premiumVersion": "限时优惠",
+		"premiumBtn": "立即测算",
+		"lockedBtn": "已锁定",
+		"unlockedBadge": "✓ 已解锁",
+		"popularBadge": "99%用户选择",
+		"lockedTitle": "此方案已锁定",
+		"lockedDesc": "分享输入优惠码解锁特殊价格",
+		"inputPromoBtn": "输入优惠码",
+		"inputPromoPlaceholder": "输入优惠码",
+		"confirmBtn": "确认",
+		"cancelBtn": "取消",
+		"promoError": "无效的优惠码，请重试",
+		"subVersion": "专享版",
+		"subBtn": "立即测算",
+		"premiumFeatures": [
+			"深度优化全屋家居布局",
+			"全屋分析报告",
+			"关键隐患化解",
+			"流年运程综合分析",
+			"进阶个人命理分析",
+			"流年预警"
+		],
+		"sqftPopupTitle": "请输入房屋面积",
+		"sqftPopupDesc": "请输入您房屋的总面积（平方尺），我们将为您计算准确的订阅价格。",
+		"sqftInputLabel": "房屋面积（平方尺）",
+		"sqftInputPlaceholder": "例如：800",
+		"sqftProceedBtn": "立即订阅",
+		"sqftCancelBtn": "取消",
+		"sqftErrorMsg": "房屋面积不能少于380平方尺",
+		"shareProcessing": "开启分享视窗中...",
+		"shareToFacebook": "分享到Facebook获取优惠码",
+		"yourPromoCode": "您的专属优惠码：",
+		"copyPromoCode": "复制优惠码",
+		"copied": "己复制",
+		"usePromoCodeBelow": "请在以下方案使用此优惠码",
+		"shareConfirmTitle": "分享确认",
+		"shareConfirmDesc": "您是否已经成功在Facebook上分享了我们的内容？\n如果您已分享，请点击「是」获取优惠码！",
+		"yesShared": "是，我已分享",
+		"sqftPopupTitleNew": "请输入房屋面积",
+		"sqftPopupDescNew": "请输入您房屋的总面积（平方尺），我们将为您计算准确的价格。",
+		"sqftMinimumNote": "最少需要380平方尺",
+		"sqftInputLabelNew": "房屋面积（平方尺）",
+		"sqftPlaceholderNew": "例如：800",
+		"buyNow": "立即购买",
+		"cancel": "取消",
+		"processing": "处理中...",
+		"paymentError": "支付处理失败，请稍后再试",
+		"sqftValidationError": "房屋面积不能少于380平方尺",
+		"existingReportFound": "发现已有风水报告",
+		"existingReportDescription": "你已经生成过风水报告，您可以查看带有详细分析的现有报告（专享版）或重新测试（需要重新付款）",
+		"viewExistingReport": "查看现有报告",
+		"retestWithPayment": "重新测试",
+		"checkingExistingReports": "正在检查已有报告...",
+		"havePromoCode": "有优惠码？",
+		"enterPromoCode": "输入优惠码解锁",
+		"unlockedWithPromo": "已通过优惠码解锁",
+		"promoCodeUsed": "优惠码已使用",
+		"loginToBuy": "登录购买",
+
+		"previewButton": "预览付费报告",
+		"fengShuiCalculation": "风水测算",
+		"destinyCalculation": "命理测算",
+		"mostUserChoice": "最多用户选择",
+		"limitedTimeOffer": "限时优惠",
+		"perTime": "每次",
+		"premiumVersion2": "专享版",
+		"paymentCalculation": "付费测算",
+		"premiumFeature2_1": "深度优化全无家具布局",
+		"premiumFeature2_2": "全屋分析报告",
+		"premiumFeature2_3": "关键隐患化解",
+		"premiumFeature2_4": "流年运程综合分析",
+		"premiumFeature2_5": "个人命挂分析",
+		"premiumFeature2_6": "流年预警总结",
+		"destinyFeature_1": "深度分析您的八字命理",
+		"destinyFeature_2": "十神格局&内在关键",
+		"destinyFeature_3": "四柱排盘&纳音解析",
+		"destinyFeature_4": "综合调理&人生建议",
+		"destinyFeature_5": "五行分布深度解析",
+		"destinyFeature_6": "人际调衡要点",
+		"personalFortuneAnalysis": "个人流年测算",
+		"coupleFortuneAnalysis": "双人合盘流年测算",
+		"comingSoon": "敬请期待",
+		"wealthFortune": "财运流年测算",
+		"loveFortune": "感情流年测算",
+		"healthFortune": "健康流年测算",
+		"careerFortune": "事业流年测算",
+		"basicAnalysis": "命主八字基础分析",
+		"formatPatternAnalysis": "八字命局心得解释",
+		"wealthAnalysis": "财运流年解析",
+		"loveAnalysis": "感情流年解析",
+		"healthAnalysis": "健康流年解析",
+		"careerAnalysis": "事业流年解析",
+		"fortuneSummary": "流年财运运势总结",
+		"loveSummary": "流年感情运势总结",
+		"healthSummary": "流年健康运势总结",
+		"careerSummary": "流年事业运势总结",
+		"fortuneAdvice": "流年开运建议",
+		"premiumPlan": "专享版",
+		"lightPlan": "限时优惠",
+		"processing2": "处理中...",
+		"coupleFeature_1": "姻缘配对分析",
+		"coupleFeature_2": "合盤核心要素交互",
+		"coupleFeature_3": "流年解析",
+		"coupleFeature_4": "流年季节解析",
+		"coupleFeature_5": "流年开运建议",
+		"fengshuiCalculation": "风水测算",
+		"destinyExplanation": "八字命局心得解释",
+		"wealthSummary": "流年财运运势总结",
+		"luckAdvice": "流年开运建议",
+		"coupleAnalysisTitle": "双人合盘流年测算",
+		"coupleAnalysis": "感情合盘流年测算",
+		"limitedOffer": "限时优惠",
+		"minimumAreaNote": "最少需要38平方米",
+		"areaInputLabel": "房屋面积（平方米）",
+		"areaPlaceholder": "例如：80",
+		"areaValidationError": "房屋面积不能少于38平方米",
+		"shareText": "🏠✨ 发现了一个超棒的风水分析网站！HarmoniQ帮我优化家居布局，让生活更和谐幸福！现在还有特别优惠，快来试试看吧！",
+		"facebookShareAlert": "请允许弹出窗口以分享到Facebook，或手动复制网址分享：",
+		"premiumVersionTitle": "尊享版",
+		"discountVersionTitle": "优惠版",
+		"perTimeUnit": "每次"
+	},
+	"design": {
+		"showTab": "选择房间或家具",
+		"demo": {
+			"startTutorial": "教学"
+		},
+		"cta": "开始测算",
+		"alert": "请确认个人资料和房间布局是否准确？",
+		"warning": "至少需要设置1个房间、1扇门和1扇窗才可测算",
+		"cancel": "取消",
+		"ok": "确认",
+		"readReport": "查看已有报告",
+		"description": "您可以点击\"查看已有报告\"，前往报告页下载。",
+		"hasReportAlert": "您已生成过报告，如重新生成，会覆盖原有报告。请确认是否继续？",
+		"coverReport": "重新生成",
+		"room": "房间",
+		"furniture": "家具",
+		"chosed": "已选中",
+		"profile": "个人资料",
+		"useModuleAlert": "如果选择使用该模板，会覆盖当前布局。请确认是否继续？",
+		"tip": "您的个人资料仅用于此次测算",
+		"hour": "时",
+		"module": "模组",
+		"module1": "两室一厅",
+		"module2": "三室一厅",
+		"module3": "一室一厅",
+		"module4": "三室两厕",
+		"module5": "两室一厕(没阳台)",
+		"module6": "三室一厕(没阳台)",
+		"module7": "一室一厕(没阳台)",
+		"rotate": "旋转",
+		"delete": "删除",
+		"selected": "个已选择",
+		"multiSelectToast": "已多选，点击其他物件可继续多选",
+		"longPressHint": "长按可多选物件 (Long press to multi-select)",
+		"clear": "清空",
+		"clearCanvas": "清空画布",
+		"resetNorth": "重置北方",
+		"resetView": "重置视图",
+		"compassTooltip": "点击旋转指南针",
+		"clearTooltip": "清空画布",
+		"north": "北",
+		"northeast": "东北",
+		"east": "东",
+		"southeast": "东南",
+		"south": "南",
+		"southwest": "西南",
+		"west": "西",
+		"northwest": "西北",
+		"smartSelection": "智能选择",
+		"wizardTitle": "智能布局选择",
+		"wizardSubtitle": "回答几个简单问题，我们将为您推荐最适合的布局模组",
+		"wizardStep1Title": "您要运算的居家有多少房间？",
+		"wizardStep2Title": "请问有多少洗手间？",
+		"wizardStep3Title": "请问有没有阳台？",
+		"oneRoom": "一个房间",
+		"twoRooms": "两个房间",
+		"threeRooms": "三个房间",
+		"oneBathroom": "一个洗手间",
+		"twoBathrooms": "两个洗手间",
+		"hasBalcony": "有阳台",
+		"noBalcony": "没有阳台",
+		"verifyingAccess": "正在验证访问权限...",
+		"redirecting": "正在跳转...",
+		"tapToDrag": "轻触拖动",
+		"itemSelected": "物品已选中"
+	},
+	"report": {
+		"catelog": "目录",
+		"title1": "个人命理基础分析",
+		"title2": "第二章：流年运程基础分析",
+		"title2-1": "整体运势",
+		"title2-2": "健康运势",
+		"title2-3": "事业运势",
+		"title2-4": "感情运势",
+		"title2-5": "财运运势",
+		"title2-6": "总结",
+		"title3": "家居风水基础分析",
+		"title4": "第四章：个人命理进阶分析",
+		"title4Preview": "第四章：个人命理进阶分析（预览）",
+		"title5": "第五章：流年运程进阶分析",
+		"title6": "第六章：家居风水进阶分析",
+		"p1-1": "风水命理",
+		"p1-2": "，作为一门古老的智慧学问，其核心在于探讨天地能量与个人气场之间的微妙关系，旨在通过调整环境与个人的能量场，达到和谐共生的状态。在这第一章，我们会简单探讨用户命理的基础，从阴阳五行的基本概念出发，逐步理解自身与环境的关系，",
+		"p1-3": "从而做出更为明智的选择，提升生活的品质与幸福感",
+		"p1-4": "风水命理,作为一门古老的智慧学问,其核心在于探讨天地能量与个人气场之间的微妙关系,旨在通过调整环境与个人的能量场,达到和谐共生的状态。在这第一章,我们会简单探讨用户命理的基础,从阴阳五行的基本概念出发,逐步理解自身与环境的关系,从而做出更为明智的选择,提升生活的品质与幸福感。",
+		"p1-5": "年柱的天干代表外在的表现和性格特质，地支则代表内在的潜力和环境影响。年柱不仅反映个人的基本性格和命运走向，还与家庭背景、祖先遗传等因素有关。通过分析年柱，可以初步了解一个人的基本命格和未来发展趋势。",
+		"p1-6": "月柱的天干代表个人的情感表达和社交能力，地支则反映内在的情绪状态和潜在的影响力。月柱不仅揭示个人的情感特质和人际关系模式，还与个人的心理健康和情感稳定性有关。通过分析月柱，可以深入了解一个人的情感世界和社交互动方式。",
+		"p1-7": "日柱的天干代表个人的核心性格和行为模式，地支则反映个人的内在情感和生活环境。日柱不仅揭示个人的主要性格特质，还与个人的健康状况、情感生活以及日常行为模式密切相关。通过分析日柱，可以深入了解一个人的内在动机和行为倾向。",
+		"p1-8": "时柱的天干代表个人在社会中的表现和晚年运势，地支则反映个人的内在情感和家庭生活。时柱不仅揭示个人的社交能力和晚年生活质量，还与子女、下属的关系密切相关。通过分析时柱，可以深入了解一个人在社会中的角色和晚年的生活状态。",
+		"p1-9": "第四章的进阶分析会加入",
+		"p1-10": "命宫分析，同时包括幸运数字，幸运颜色。",
+		"p2-1": "命运",
+		"p2-2": "，如同浩瀚星河，看似遥不可及，却又与我们息息相关。古人云：\"一命二运三风水\"，道出了命运与环境的紧密联系。然而，命运并非一成不变，它如同一幅未完成的画卷，等待我们用智慧和行动去描绘。",
+		"p2-3": "第五章及第六章的进阶分析，会加入",
+		"p2-4": "流月分析和运势增强建议。",
+		"p3-1": "风水",
+		"p3-2": "，这门源自古老东方的智慧，千百年来一直引领着人们追求与自然和谐共处之道。它并非迷信，而是古人对自然环境的深刻观察与经验总结，蕴含着对宇宙规律的敬畏与顺应。",
+		"p3-3": "在风水学中，九宫飞星图是根据每年的飞星位置来判断吉凶方位的工具。 ",
+		"p3-4": "2025年是蛇年",
+		"p3-5": "，飞星的位置会对每个房间的风水产生不同的影响。以下将根据房间的排序，逐一分析其风水影响，并提供相应的建议。",
+		"p3-6": "第七及第八章的进阶分析，会",
+		"p3-7": "对照用户命格比对，提供相应优化建议。",
+		"unlockButton": "解锁获取完整报告",
+		"error": "未查询到报告记录，正在跳转至设计页面，请重新生成...",
+		"download": "下载报告",
+		"shizhu": "时柱",
+		"pro": {
+			"hour": "时",
+			"mingpan": "命盘格局",
+			"minggong": "命宫主星分析",
+			"gexing": "您的个性",
+			"yunshi": "人生运势",
+			"liuqin": "六亲缘分",
+			"shiye": "事业财富",
+			"ganqing": "感情运势",
+			"jiankang": "健康预警",
+			"renji": "人际关系",
+			"juece": "决策时机",
+			"kaiyun": "个人开运元素",
+			"tab1": "家具摆放",
+			"tab2": "禁忌提醒",
+			"tab3": "五行色系与材质",
+			"tab4": "运势增强方法",
+			"p6-1": "注：以上建议需配合实际空间尺寸调整，若有冲煞需优先化解。",
+			"transfer": "如果assistant的内容有值，请直接把assistant提供的内容翻译成正宗简体中文，严格使用简体字书写，避免任何繁体字词汇。必须符合中国大陆简体中文的习惯用法和词汇选择。",
+			"scrollInstruction": "下滑查看详细解读与1项免费调整方案（隐藏禁忌+运势增强方法）",
+			"advancedAnalysisTitle": "流年运程进阶分析",
+			"unlockAdvancedAnalysis": "解锁以得到整份流年分析"
+		}
+	},
+	"demo": {
+		"startTutorial": "开始教学",
+		"step": "步骤",
+		"of": "共",
+		"progress": "进度",
+		"welcomeDialog": {
+			"title": "欢迎使用风水设计工具！",
+			"description": "这是您第一次使用我们的设计工具？我们可以为您提供一个简单的教学来帮助您快速上手。",
+			"question": "您想要观看教学吗？",
+			"yes": "是的，开始教学",
+			"no": "不用了，直接开始",
+			"skip": "跳过"
+		},
+		"welcome": {
+			"title": "欢迎使用设计工具",
+			"description": "让我们通过简单的步骤学习如何使用画布。这个教学将向您展示如何添加房间、家具以及使用各种工具来创建完美的风水布局。"
+		},
+		"dragRoom": {
+			"title": "步骤1: 添加房间",
+			"description": "首先，让我们添加一个房间到画布。从左侧边栏的房间区域拖拽任意房间类型到右侧的画布区域。"
+		},
+		"dragFurniture": {
+			"title": "步骤2: 添加家具",
+			"description": "很好！现在让我们添加一些家具。从左侧边栏的家具区域拖拽任意家具到画布上的房间内。"
+		},
+		"selectItem": {
+			"title": "步骤3: 选择物品",
+			"description": "点击画布上的任意物品来选择它。选中的物品会显示红色边框和控制按钮。"
+		},
+		"rotateItem": {
+			"title": "步骤4: 旋转物品",
+			"description": "选择一个物品后，点击旋转按钮来改变它的朝向。每次点击会旋转45度。"
+		},
+		"deleteItem": {
+			"title": "步骤5: 删除物品",
+			"description": "选择一个物品后，点击删除按钮来移除它。被删除的物品将从画布上消失。"
+		},
+		"multiSelect": {
+			"title": "步骤6: 多选功能",
+			"description": "您可以同时选择多个物品进行批量操作。",
+			"mobileDescription": "在移动设备上，长按物品0.5秒来添加到多选。选中的物品会显示蓝色边框。",
+			"desktopDescription": "在桌面上，双击物品来添加到多选。选中的物品会显示蓝色边框。"
+		},
+		"zoomPan": {
+			"title": "步骤7: 缩放和平移",
+			"description": "使用缩放控件来放大或缩小画布，拖拽画布来平移视图。"
+		},
+		"compassDirection": {
+			"title": "步骤8: 设置方位",
+			"description": "调整罗盘方向来设定房间的正确朝向。风水布局中，正确的方位非常重要。点击罗盘或使用方向控制来调整方位。"
+		},
+		"clearCanvas": {
+			"title": "步骤9: 清空画布",
+			"description": "学习如何清空画布以重新开始设计。点击清空按钮来移除所有房间和家具，开始新的布局设计。"
+		},
+		"chooseModel": {
+			"title": "步骤10: 选择模板",
+			"description": "探索预设的风水布局模板。选择一个适合的模板作为设计起点，或者继续使用自定义布局。"
+		},
+		"complete": {
+			"title": "教学完成！",
+			"description": "恭喜！您已经学会了设计工具的基本功能。现在您可以开始创建自己的风水布局了。记住，好的风水布局需要考虑房间的朝向、家具的摆放位置等因素。"
+		},
+		"tapToSelect": "点击选择物品",
+		"clickToSelect": "点击选择物品",
+		"selectHint": "选中的物品会显示红色边框",
+		"rotateHint": "点击旋转按钮",
+		"rotateDetail": "每次点击旋转45度",
+		"deleteHint": "点击删除按钮",
+		"deleteDetail": "确认删除后物品会从画布消失",
+		"longPressToSelect": "长按选择多个物品",
+		"holdFor500ms": "按住0.5秒来添加到选择",
+		"doubleClickToSelect": "双击选择多个物品",
+		"doubleClickOnItems": "双击物品添加到多选状态",
+		"zoomPanHint": "使用缩放控件和拖拽",
+		"zoomPanDetail": "缩放查看细节，拖拽移动视图",
+		"compassHint": "调整罗盘方向",
+		"compassDetail": "设定正确的房间朝向",
+		"clearHint": "点击清空按钮",
+		"clearDetail": "移除所有元素重新开始",
+		"modelHint": "选择预设模板",
+		"modelDetail": "使用模板快速开始设计",
+		"waitingForAction": "等待您的操作...",
+		"previous": "上一步",
+		"next": "下一步",
+		"skip": "跳过",
+		"finish": "完成教学"
+	},
+	"demoPage": {
+		"tags": {
+			"fengshui": {
+				"name": "风水测算",
+				"description": "调整环境气场，促进运势好转"
+			},
+			"life": {
+				"name": "命理测算",
+				"description": "探究人生运势，解示未来方向"
+			},
+			"wealth": {
+				"name": "财运流年测算",
+				"description": "掌示财运走向，投资理财指导"
+			},
+			"relationship": {
+				"name": "感情流年测算",
+				"description": "洞悉爱情机会，把握情感机缘"
+			},
+			"health": {
+				"name": "健康测算",
+				"description": "预测健康状况，养生保健建议"
+			},
+			"career": {
+				"name": "事业测算",
+				"description": "事业发展指导，职场运势分析"
+			},
+			"couple": {
+				"name": "感情合盘流年测算",
+				"description": "情侣合盘分析，感情运势测算"
+			}
+		},
+		"content": {
+			"fengshui": {
+				"title": "风水测算服务",
+				"features": [
+					"居家风水分析",
+					"办公室风水布局",
+					"商业空间风水",
+					"风水化煞方法"
+				],
+				"description": "专业风水师为您分析环境气场，提供具体改善建议，助您事业顺利，家庭和谐。",
+				"mainTitle": "风水测算",
+				"previewTitle": "风水测算报告预览"
+			},
+			"life": {
+				"title": "命理测算服务",
+				"features": [
+					"八字命盘分析",
+					"紫微斗数",
+					"流年运势",
+					"五行平衡"
+				],
+				"description": "深度解析您的命理格局，洞察人生起伏规律，指导重要决策时机。",
+				"mainTitle": "命理测算",
+				"previewTitle": "命理报告预览",
+				"toggleButton1": "年运分析",
+				"toggleButton2": "运势详解",
+				"previewAlt1": "年运分析报告",
+				"previewAlt2": "运势详解报告"
+			},
+			"wealth": {
+				"title": "财运测算服务",
+				"features": [
+					"财运流年分析",
+					"投资时机指导",
+					"理财方向建议",
+					"财富增长策略"
+				],
+				"description": "精准预测财运走势，把握投资良机，实现财富稳定增长。",
+				"mainTitle": "财运流年测算",
+				"previewTitle": "财运流年报告预览"
+			},
+			"relationship": {
+				"title": "感情测算服务",
+				"features": [
+					"姻缘桃花运",
+					"感情发展预测",
+					"伴侣匹配度",
+					"婚姻时机分析"
+				],
+				"description": "深入分析感情运势，指导恋爱技巧，助您找到真爱，收获幸福。",
+				"mainTitle": "感情流年测算",
+				"previewTitle": "感情流年报告预览"
+			},
+			"health": {
+				"title": "健康测算服务",
+				"features": [
+					"体质分析",
+					"健康风险预测",
+					"养生建议",
+					"疾病预防指导"
+				],
+				"description": "根据命理分析健康状况，提供个人化养生方案，预防疾病风险。",
+				"mainTitle": "健康流年测算",
+				"previewTitle": "健康流年报告预览"
+			},
+			"career": {
+				"title": "事业测算服务",
+				"features": [
+					"职业发展方向",
+					"升职加薪时机",
+					"创业运势分析",
+					"职场人际关系"
+				],
+				"description": "分析事业运势走向，指导职业规划，助您在职场上乘风破浪。",
+				"mainTitle": "事业流年测算",
+				"previewTitle": "事业流年报告预览"
+			},
+			"couple": {
+				"title": "感情合盘流年测算服务",
+				"features": [
+					"情侣八字合盘分析",
+					"感情发展预测",
+					"恋爱运势测算",
+					"婚姻时机指导"
+				],
+				"description": "专业情侣合盘分析，预测感情发展方向，助您掌握爱情运势。",
+				"mainTitle": "感情合盘流年测算",
+				"previewTitle": "感情合盘报告预览"
+			}
+		},
+		"ui": {
+			"premiumVersion": "专享版",
+			"limitedOffer": "限时优惠",
+			"processing": "处理中...",
+			"paymentCalculation": "付费测算",
+			"coupleCompatibility": "感情合盘",
+			"exclusivePlan": "专属方案",
+			"coupleCompatibilityReport": "感情合盘报告",
+			"exclusivePlanReport": "专属方案报告",
+			"comingSoon": "敬请期待"
+		},
+		"sections": {
+			"materialsNeeded": "所需物料"
+		},
+		"pricing": {
+			"perTime": "/每次"
+		},
+		"dialog": {
+			"existingReport": {
+				"title": "检测到现有报告",
+				"message": "您已有一份风水测算报告。您可以查看现有报告或支付重新测算。",
+				"viewReport": "查看现有报告",
+				"retest": "重新测算",
+				"cancel": "取消"
+			}
+		}
+	},
+	"fortuneEntry": {
+		"verifyingPayment": "正在验证付款...",
+		"paymentVerificationFailed": "付款验证失败",
+		"invalidSession": "无效的会话 ID",
+		"paymentFailed": "付款失败",
+		"verificationError": "付款验证失败",
+		"returnToPricing": "返回价格页面",
+		"fillDataPrompt": "请填写您的资料以生成专属{concernTitle}分析报告",
+		"basicInfo": "基本资料",
+		"analysisQuestion": "{concernTitle}测算问题",
+		"selectGender": "选择性别",
+		"male": "男性",
+		"female": "女性",
+		"birthDate": "出生日期",
+		"birthTime": "出生时间",
+		"optional": "选填",
+		"birthTimeHelp": "提供出生时间可以获得更准确的分析",
+		"birthTimeDefault": "如没有出生时间提供，报告会以12pm作测算。",
+		"specificQuestion": "您的具体问题",
+		"questionPlaceholder": "请详细描述您关于{concernTitle}的具体问题或困扰...",
+		"questionHint": "请尽可能详细描述，这将帮助我们为您提供更精准的分析",
+		"confirmData": "确认资料",
+		"gender": "性别",
+		"birthday": "生日",
+		"noSpecificProblem": "我无特定疑惑",
+		"previousStep": "上一步",
+		"nextStep": "下一步",
+		"generating": "生成报告中...",
+		"generateReport": "生成专属报告",
+		"fillGenderBirthday": "请填写性别和生日",
+		"enterSpecificQuestion": "请输入您的具体问题",
+		"submitError": "提交资料时发生错误，请重试",
+		"generalAnalysis": "一般{concernTitle}分析",
+		"selectDate": "选择日期",
+		"detailedDescriptionHelp": "请尽可能详细描述，这将帮助我们为您提供更精准的分析",
+		"generatingReport": "生成报告中...",
+		"concerns": {
+			"financial": "财运",
+			"love": "感情",
+			"health": "健康",
+			"career": "事业",
+			"fortune": "运势",
+			"study": "学业",
+			"travel": "出行"
+		},
+		"required": "*"
+	},
+	"birthdayEntry": {
+		"invalidSession": "无效的支付会话",
+		"paymentFailed": "支付验证失败，请联系客服",
+		"verificationError": "验证支付时发生错误",
+		"verifyingPayment": "正在验证支付状态...",
+		"paymentVerificationFailed": "支付验证失败",
+		"returnToPurchase": "返回购买页面",
+		"fillDataPrompt": "请填写您的生辰资料以生成专属报告",
+		"birthDate": "出生日期",
+		"birthTime": "出生时间",
+		"optional": "选填",
+		"birthTimeHelp": "提供出生时间可以获得更准确的分析。如没有出生时间提供，报告会以12pm作测算。",
+		"gender": "选择性别",
+		"required": "*",
+		"fillBirthDateAndGender": "请填写生日和性别",
+		"submitError": "提交资料时发生错误，请重试",
+		"generatingReport": "生成报告中...",
+		"generateReport": "生成专属报告"
+	},
+	"coupleEntry": {
+		"verifyingPayment": "正在验证付款...",
+		"invalidSession": "无效的会话 ID",
+		"paymentFailed": "付款失败",
+		"verificationError": "付款验证失败",
+		"paymentVerificationFailed": "付款验证失败",
+		"returnToPricing": "返回价格页面",
+		"fillDataPrompt": "请填写两人的资料以生成专属情侣关系分析报告",
+		"basicInfo": "基本资料",
+		"relationshipQuestion": "感情问题",
+		"firstPersonData": "第一人资料",
+		"secondPersonData": "第二人资料",
+		"gender": "性别",
+		"required": "*",
+		"male": "男性",
+		"female": "女性",
+		"birthDate": "出生日期",
+		"birthTime": "出生时间",
+		"optional": "选填",
+		"birthTimeHelp": "提供出生时间可以获得更准确的分析",
+		"birthTimeDefault": "，如没有出生时间提供，报告会以12pm作测算。",
+		"sameGenderError": "暂时只支持异性感情合盘",
+		"specificRelationshipQuestion": "具体感情问题或想了解的方面",
+		"relationshipQuestionPlaceholder": "例如：我们经常吵架，如何改善关系？或者想了解彼此的性格相容性...",
+		"detailedDescriptionHelp": "请详细描述，这将帮助我们为您提供更精准的分析",
+		"confirmData": "确认资料",
+		"firstPerson": "第一人",
+		"secondPerson": "第二人",
+		"noSpecificProblem": "我无特定疑惑",
+		"previousStep": "上一步",
+		"nextStep": "下一步",
+		"generatingReport": "生成报告中...",
+		"generateReport": "生成专属报告",
+		"fillBothPersonsData": "请填写两人的性别和生日",
+		"enterSpecificQuestion": "请输入您的具体问题",
+		"submitError": "提交资料时发生错误，请重试",
+		"generalCoupleAnalysis": "一般情侣关系分析"
+	},
+	"coupleReport": {
+		"loadingTitle": "小铃正在为你们准备专属合盤分析报告",
+		"loadingSubtitle": "请稍候，正在分析两人的姻缘配对",
+		"backToConsultation": "返回智能咨询",
+		"noReportData": "未找到报告数据",
+		"loadingHistoricalData": "正在载入历史报告数据...",
+		"historicalBannerNotice": "注意：",
+		"historicalBannerText": "您正在查看已保存的夫妻合盤历史报告内容",
+		"calculationTime": "(测算时间:",
+		"generateNewReport": "点击生成新报告",
+		"analysisReportTab": "姻缘合盘分析报告",
+		"solutionTab": "专属问题解决方案",
+		"reportTitle": "姻缘配对分析",
+		"manName": "男方",
+		"womanName": "女方",
+		"coupleMingJu": {
+			"tabs": {
+				"relationship": {
+					"left": "日月互动",
+					"middle": "夫妻宫寅未暗合",
+					"right": "五行气机修补"
+				},
+				"marriage": {
+					"left": "配对特性",
+					"middle": "婚配格局分析",
+					"right": "婚姻调候方案"
+				},
+				"family": {
+					"left": "配对特性",
+					"middle": "夫妻合盘分析",
+					"right": "家庭和睦方案"
+				}
+			}
+		},
+		"coupleSeason": {
+			"title": "夫妻关键季节",
+			"loadingTitle": "小铃正在分析夫妻关键季节",
+			"loadingSubtitle": "请稍候，正在计算最佳时机配对",
+			"loadingAlt": "小铃运算中",
+			"noData": "无法载入夫妻季节分析资料",
+			"currentLabel": "当前："
+		},
+		"coupleCoreSuggestion": {
+			"title": "感情开运建议",
+			"loadingTitle": "小铃正在生成夫妻开运建议",
+			"loadingSubtitle": "请稍候，正在分析最佳运势提升方案",
+			"loadingAlt": "小铃运算中",
+			"noData": "无法载入夫妻开运建议资料",
+			"tabs": {
+				"relationship": {
+					"title": "关系发展建议",
+					"subtitle": "夫妻合盘策略指南"
+				},
+				"communication": {
+					"title": "沟通建议",
+					"subtitle": "夫妻沟通技巧"
+				},
+				"energy": {
+					"title": "能量提升建议",
+					"subtitle": "夫妻能量调和"
+				},
+				"taboos": {
+					"title": "感情关系禁忌",
+					"subtitle": "夫妻相处禁忌"
+				}
+			},
+			"subsections": {
+				"actionAdvice": "行动建议",
+				"bestTiming": "最佳时机",
+				"precautions": "注意事项",
+				"destinyGuidance": "命理指导建议"
+			},
+			"maleStyle": "男方沟通风格",
+			"femaleStyle": "女方沟通风格",
+			"maleStrategy": "男方沟通策略",
+			"femaleStrategy": "女方沟通策略",
+			"bestTimingLabel": "最佳时机：",
+			"actionAdviceLabel": "行动建议",
+			"luckyItems": "开运物",
+			"weeklyRitual": "每周仪式",
+			"occasion": "场合",
+			"maleColor": "男方主色",
+			"femaleColor": "女方主色",
+			"energyFunction": "能量作用",
+			"fiveElementAnalysis": "五行能量分析",
+			"fengShuiAdvice": "居家风水建议",
+			"annualLuckyColors": "年度幸运色系"
+		},
+		"coupleSpecificProblemSolution": {
+			"title": "专属问题解决方案",
+			"loadingMessage": "分析您的具体问题中...",
+			"noDataMessage": "无法分析具体问题，请检查输入资料",
+			"problemAnalysisTitle": "问题分析与现况评估",
+			"relationshipStatus": "关系状态",
+			"compatibilityScore": "相合度评分",
+			"problemType": "问题类型",
+			"statusRepair": "需要修复的关系",
+			"statusStrengthen": "需要增进的关系",
+			"problemTypes": {
+				"breakup": "分手修复",
+				"infidelity": "第三者/出轨问题",
+				"emotional_distance": "感情疏远",
+				"strengthen": "关系增进",
+				"commitment": "承诺发展",
+				"general": "一般感情咨询"
+			},
+			"emotionalSupportTitle": "情感支持",
+			"hopeAndConfidence": "🌟 希望与信心",
+			"strengthAndGrowth": "💪 力量与成长",
+			"practicalAdviceTitle": "实际行动建议",
+			"spiritualGuidanceTitle": "风水灵性指导",
+			"actionPlanTitle": "行动计划",
+			"expectedTimeline": "预期时间",
+			"successIndicatorsTitle": "成功指标与决定时机",
+			"successIndicators": "成功指标",
+			"whenToMoveOn": "何时该放手"
+		},
+		"enhancedCoupleSpecificProblemSolution": {
+			"loadingMessage": "小铃正在分析您的专属问题",
+			"loadingSubMessage": "请稍候，正在制定个人化解决方案",
+			"baziAnalysisGenerating": "八字分析生成中...",
+			"analysisFailed": "分析失败",
+			"checkNetworkOrRetry": "请检查网络连接或稍后重试",
+			"calculationFailed": "计算失败",
+			"unableToGenerateAnalysis": "无法生成分析，请稍后重试",
+			"calculating": "计算中...",
+			"yourBazi": "您的八字",
+			"partnerBazi": "伴侣八字",
+			"problemType": "问题类型",
+			"retryAnalysis": "重新分析",
+			"problemCategories": {
+				"emotionCooling": "感情降温类",
+				"specialSituation": "特殊情境类",
+				"tabooBreaking": "禁忌破解话术"
+			},
+			"compatibilityLevels": {
+				"excellent": "优秀配对",
+				"good": "良好配对",
+				"stable": "稳定配对",
+				"needsWork": "需要努力"
+			},
+			"sectionTitles": {
+				"chartDiagnosis": "盘面诊断",
+				"emergencyFengShui": "风水急救",
+				"restartChemistry": "重启默契",
+				"starChartGuidance": "星盘指引",
+				"fengShuiTransformation": "风水转化",
+				"relationshipMethod": "相处心法",
+				"keyAnalysis": "关键分析",
+				"targetedSuggestions": "针对性建议"
+			}
+		},
+		"chartDiagnosisSection": {
+			"loadingMessage": "小铃正在生成盘面诊断",
+			"loadingSubMessage": "请稍候，正在分析命盘配对细节",
+			"female": "女方",
+			"male": "男方",
+			"keySymptoms": "关键合盘征象"
+		},
+		"emergencyFengShuiSection": {
+			"loadingMessage": "小铃正在生成风水急救方案",
+			"loadingSubMessage": "请稍候，正在制定紧急应对策略",
+			"subtitle": "72小时内行动方案"
+		},
+		"restartChemistrySection": {
+			"loadingMessage": "小铃正在生成重启默契方案",
+			"loadingSubMessage": "请稍候，正在分析感情修复策略",
+			"subtitle": "破冰仪式建议"
+		}
+	},
+	"coupleAnnualAnalysis": {
+		"loadingTitle": "小铃正在分析你们的流年运势",
+		"loadingSubtitle": "请稍候，如果载入时间过长，请检查网络连接",
+		"loadingImage": "小铃运算中",
+		"errorTitle": "年度分析载入失败",
+		"errorTimeoutMessage": "请求超时或网络连接问题，请稍后重试。",
+		"errorGenericMessage": "载入年度分析时发生错误，请重新尝试。",
+		"errorDetails": "错误详情:",
+		"unknownError": "未知错误",
+		"retryButton": "重新尝试",
+		"tipsTitle": "💡 提示：如果问题持续发生，请尝试：",
+		"tip1": "检查网络连接是否正常",
+		"tip2": "重新刷新浏览器页面",
+		"tip3": "清除浏览器缓存",
+		"tip4": "稍后再试",
+		"noDataMessage": "暂无流年分析数据",
+		"reloadButton": "重新载入",
+		"annualStrategyTitle": "2025&2026流年关键应对策略",
+		"elementInteractionTitle": "五行互动分析",
+		"elementInteraction": "元素互动",
+		"relationshipAdvice": "关系建议",
+		"mainStrengths": "主要优势：",
+		"developmentSuggestions": "发展建议：",
+		"pillars": {
+			"year": {
+				"title": "年柱",
+				"subtitle": "祖业基础，早年环境影响深远",
+				"meaning": "祖业根基，早年环境"
+			},
+			"month": {
+				"title": "月柱",
+				"subtitle": "父母影响，成长期性格形成",
+				"meaning": "父母宫位，中年发展"
+			},
+			"day": {
+				"title": "日柱",
+				"subtitle": "本命特质，核心性格展现",
+				"meaning": "自身性格，配偶关系"
+			},
+			"hour": {
+				"title": "时柱",
+				"subtitle": "未来发展，晚年运势趋向",
+				"meaning": "子女宫位，晚年运势"
+			}
+		},
+		"elements": {
+			"wood": "生机勃勃，具有成长和创新的能力",
+			"fire": "热情活跃，具有领导和表达的天赋",
+			"earth": "稳重踏实，具有包容和协调的特质",
+			"metal": "坚毅果决，具有分析和执行的能力",
+			"water": "灵活变通，具有智慧和适应的本领"
+		},
+		"pillarDescriptionTemplate": "组合显示良好的发展潜力。"
+	},
+	"paymentThankYou": {
+		"title": "感谢您的惠顾",
+		"subtitle": "选择我们的命理风水服务，您的信任是我们前进的动力",
+		"startButton": "开始测算",
+		"description": {
+			"fortune": "请完成资料填写以生成您的专属运势分析报告",
+			"health": "请完成资料填写以生成您的专属健康分析报告",
+			"couple": "请完成资料填写以生成您的专属情侣分析报告",
+			"comprehensive": "请完成资料填写以生成您的专属综合分析报告",
+			"premium": "请完成资料填写以生成您的专属高级分析报告",
+			"default": "请完成资料填写以生成您的专属分析报告"
+		},
+		"title_type": {
+			"fortune": "运势",
+			"health": "健康",
+			"couple": "情侣",
+			"comprehensive": "综合",
+			"premium": "高级",
+			"default": "专属"
+		}
+	},
+	"chatPage": {
+		"comingSoon": "Coming Soon",
+		"newConversation": "建立新的对话",
+		"historyTitle": "历史对话",
+		"loading": "载入中...",
+		"noHistory": "尚无历史对话",
+		"untitledConversation": "未命名对话",
+		"daysAgo": "天前",
+		"title": "风铃聊天室",
+		"placeholder": "有任何疑问吗？请随时与我分享～",
+		"aiName": "小铃",
+		"aiThinking": "小铃费神运算中",
+		"shortcuts": {
+			"wealth": "我想增多财运",
+			"health": "如何更健康",
+			"lottery": "我想中六合彩",
+			"raise": "我想加人工",
+			"promotion": "如何可以升职",
+			"dating": "我想拍拖",
+			"loveLife": "我想增强桃花运",
+			"healthConcern": "我身体会有隐患吗"
+		},
+		"paidReportPreview": "付费报告预览"
+	},
+	"fengShuiReport": {
+		"page": {
+			"loadingTitle": "小铃正在为你准备专属风水分析报告",
+			"loadingAlt": "小铃运算中",
+			"errorReturn": "返回",
+			"errorMissingSession": "缺少支付会话ID，请重新进行支付",
+			"errorPaymentIncomplete": "支付未完成，请完成支付后再试",
+			"errorCheckReportStatus": "检查报告状态失败：",
+			"errorReportGenerationFailed": "报告生成失败，请联系客服",
+			"errorCheckingReport": "检查报告时出现错误",
+			"errorGeneratingReport": "生成报告时出现错误",
+			"historicalBanner": "注意：",
+			"historicalBannerText": "您正在查看已保存的历史报告内容。",
+			"historicalBannerLink": "点击这里生成新的报告",
+			"sectionBasicAnalysis": "命主基础分析",
+			"sectionCoreAnalysis": "命局核心解析详解",
+			"sectionFlowYear": "2025乙巳流年详解",
+			"sectionFortuneSummary": "流年运势总结",
+			"sectionLuckAdvice": "开运建议",
+			"sectionWealthSummary": "流年财运总结",
+			"sectionRelationshipSummary": "流年感情总结",
+			"sectionHealthSummary": "流年健康总结",
+			"sectionCareerSummary": "流年事业总结"
+		},
+		"components": {
+			"fiveElement": {
+				"loadingText": "小铃已经在运算五行配置中，请稍候",
+				"loadingAlt": "小铃运算中",
+				"allElementsPresent": "五行齐全",
+				"noSevereMissing": "- 没有严重缺失某一元素",
+				"missingElements": "命局缺",
+				"needsSupport": "需要后天补充以达到平衡"
+			},
+			"zodiac": {
+				"loadingText": "小铃已经在运算八字分析中，请稍候",
+				"loadingAlt": "小铃运算中",
+				"defaultAdvice": "根据五行分析，需要进一步确认用神配置以达到最佳平衡效果。",
+				"adviceTemplate": "根据你的五行配置分析，建议以「{primaryGod}」为首选用神，「{auxiliaryGod}」为辅助用神。透过{strategy}的策略，两者协同作用可有效调节五行能量，达到阴阳平衡，提升整体运势发展。在日常生活中，可通过相应的颜色、方位、职业选择等方式来强化这些有利元素的影响力。",
+				"strategy_補缺": "补足所缺",
+				"strategy_扶弱": "扶助偏弱",
+				"strategy_抑強": "抑制过强",
+				"strategy_瀉強": "化解过旺",
+				"strategy_default": "平衡调和",
+				"yearPillar": "年柱",
+				"monthPillar": "月柱",
+				"dayPillar": "日柱",
+				"hourPillar": "时柱",
+				"wuxingLabel": "五行",
+				"noMissingElements": "五行没有缺失",
+				"missing": "缺",
+				"missingEtc": "等"
+			},
+			"questionFocus": {
+				"sectionTitle": "疑问重点",
+				"loadingText": "小铃已经在分析您的疑问重点，请稍候",
+				"loadingAlt": "小铃运算中",
+				"errorText": "分析过程中遇到问题，已显示备用内容",
+				"analysisTitle": "分析指导",
+				"analysisContent": "根据您的关注领域「{concern}」和具体问题「{problem}」，我们将为您提供专业的命理分析和建议。\n\n💡 详细的分析内容请参阅报告中的其他相关章节。"
+			},
+			"mingJu": {
+				"loadingAlt": "小铃运算中",
+				"loadingText": "小铃已经在运算命局核心解析中，请稍候",
+				"dayMaster": "日主特性",
+				"tabs": {
+					"health": {
+						"middle": "疾厄宫与十神",
+						"right": "调候与病源关键"
+					},
+					"wealth": {
+						"middle": "财星与十神",
+						"right": "财星定位"
+					},
+					"career": {
+						"middle": "事业宫与十神",
+						"right": "财星定位"
+					},
+					"relationship": {
+						"middle": "感情宫与十神",
+						"right": "感情定位"
+					}
+				}
+			},
+			"ganZhi": {
+				"title": "流年干支作用",
+				"subtitle": "流年干支的变化对个人运势有着深远的影响，以该年属性为主轴解析",
+				"loadingAlt": "小铃运算中",
+				"loadingText": "小铃已经在运算流年干支分析中，请稍候",
+				"loadingDataText": "载入流年分析数据中..."
+			},
+			"jiXiong": {
+				"loading": "小铃已经在运算吉凶分析中，请稍候",
+				"error": "分析出现问题：",
+				"showingBasicAnalysis": "显示基础分析结果",
+				"auspicious": "吉象",
+				"inauspicious": "凶象",
+				"noData": "暂无吉凶分析数据"
+			},
+			"season": {
+				"title": "关键季节",
+				"loading": "小铃已经在运算四季分析中，请稍候",
+				"noData": "无法载入季节分析数据",
+				"current": "当前：",
+				"analyzingSeasons": "正在分析关键季节..."
+			},
+			"coreSuggestion": {
+				"title": "核心原则",
+				"subtitle": "基于您的八字命理，着重于长期的生活调整和基础运势提升。",
+				"loading": "小铃已经在运算开运建议中，请稍候",
+				"noData": "无法载入开运建议数据"
+			},
+			"specificSuggestion": {
+				"loading": "小铃已经在运算针对性建议中，请稍候",
+				"noData": "无法载入针对性建议数据",
+				"subtitle": "针对您当前的具体困扰提供实用解决方案，帮助您应对眼前挑战。",
+				"suggestionsTitle": "建议方案",
+				"taboosTitle": "禁忌行为",
+				"consequence": "后果"
+			}
+		}
+	},
+	"reportHistory": {
+		"title": "历史记录",
+		"subtitle": "查看您的所有报告记录",
+		"loading": "载入中...",
+		"coupleReports": {
+			"title": "双人合盘流年测算",
+			"loading": "载入合盘报告中...",
+			"noRecords": "尚无合盘报告记录",
+			"noRecordsHint": "完成合盘测算后，报告将显示在这里",
+			"card": {
+				"title": "合盘分析报告",
+				"person1": "对象一",
+				"person2": "对象二",
+				"calculationDate": "测算日期",
+				"statusCompleted": "✓ 已完成",
+				"statusProcessing": "⏳ 测算中",
+				"viewReport": "查看报告"
+			}
+		},
+		"lifeReports": {
+			"title": "命理测算",
+			"loading": "载入人生报告中...",
+			"noRecords": "尚无人生报告记录",
+			"noRecordsHint": "完成人生测算后，报告将显示在这里",
+			"card": {
+				"title": "人生分析报告",
+				"person": "命主",
+				"calculationDate": "测算日期",
+				"statusCompleted": "✓ 已完成",
+				"statusProcessing": "⏳ 测算中",
+				"viewReport": "查看报告"
+			}
+		},
+		"fortuneReports": {
+			"title": "个人流年测算",
+			"noRecords": "暂无报告记录",
+			"noRecordsHint": "您还没有测算任何命理报告",
+			"startCalculation": "开始测算",
+			"card": {
+				"titleSuffix": "分析报告",
+				"person": "命主",
+				"calculationDate": "测算日期",
+				"statusCompleted": "✓ 已完成",
+				"statusProcessing": "⏳ 测算中",
+				"viewReport": "查看报告"
+			},
+			"concerns": {
+				"事業": "事业",
+				"感情": "感情",
+				"財運": "财运",
+				"健康": "健康",
+				"學業": "学业",
+				"analysisReport": "分析报告"
+			}
+		},
+		"gender": {
+			"male": "男",
+			"female": "女",
+			"unknown": "未知"
+		},
+		"pagination": {
+			"showing": "显示第",
+			"to": "至",
+			"of": "项，共",
+			"items": "项",
+			"previous": "上一页",
+			"next": "下一页"
+		},
+		"errors": {
+			"userInfo": "无法获取用户信息，请先登录",
+			"fetchFailed": "获取报告失败",
+			"networkError": "网络错误，请稍后再试",
+			"coupleFetchFailed": "获取合盘报告失败",
+			"lifeFetchFailed": "获取人生报告失败"
+		}
+	}
+}

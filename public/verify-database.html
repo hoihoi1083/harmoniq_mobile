@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Database Verification</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				margin: 20px;
+			}
+			.result {
+				margin: 10px 0;
+				padding: 10px;
+				border-radius: 5px;
+				white-space: pre-wrap;
+			}
+			.success {
+				background-color: #d4edda;
+				border: 1px solid #c3e6cb;
+				color: #155724;
+			}
+			.error {
+				background-color: #f8d7da;
+				border: 1px solid #f5c6cb;
+				color: #721c24;
+			}
+			button {
+				margin: 5px;
+				padding: 10px 15px;
+				background: #007bff;
+				color: white;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+			button:hover {
+				background: #0056b3;
+			}
+			pre {
+				background: #f8f9fa;
+				padding: 10px;
+				border-radius: 5px;
+				max-height: 300px;
+				overflow-y: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>🔍 Database Content Verification</h1>
+		<button onclick="checkRealSession()">Check Real Session Data</button>
+		<button onclick="checkAllSessions()">List All Sessions</button>
+		<button onclick="clearResults()">Clear Results</button>
+
+		<div id="results"></div>
+
+		<script>
+			const API_BASE = window.location.origin;
+
+			function addResult(message, isSuccess = true) {
+				const div = document.createElement("div");
+				div.className = `result ${isSuccess ? "success" : "error"}`;
+				div.textContent = message;
+				document.getElementById("results").appendChild(div);
+			}
+
+			function addJsonResult(data) {
+				const div = document.createElement("div");
+				div.className = "result";
+				const pre = document.createElement("pre");
+				pre.textContent = JSON.stringify(data, null, 2);
+				div.appendChild(pre);
+				document.getElementById("results").appendChild(div);
+			}
+
+			function clearResults() {
+				document.getElementById("results").innerHTML = "";
+			}
+
+			async function checkRealSession() {
+				addResult(
+					"🔍 Checking real couple session data (couple_1995_09_21_2008_08_03)..."
+				);
+
+				try {
+					const response = await fetch(
+						`${API_BASE}/api/couple-content?sessionId=couple_1995_09_21_2008_08_03`
+					);
+					if (response.ok) {
+						const data = await response.json();
+						if (data.success) {
+							addResult(
+								`✅ SUCCESS: Found ${data.componentCount || 0} components for real session`
+							);
+							addResult(
+								`📋 Components: ${Object.keys(data.savedContent || {}).join(", ")}`
+							);
+							addResult(
+								`📅 Last saved: ${data.lastSaved || "Unknown"}`
+							);
+							addResult(
+								`👥 Users: ${data.metadata?.birthday} & ${data.metadata?.birthday2}`
+							);
+							addJsonResult(data);
+						} else {
+							addResult(
+								`❌ API returned success: false - ${data.error}`,
+								false
+							);
+						}
+					} else {
+						addResult(
+							`❌ HTTP Error: ${response.status} ${response.statusText}`,
+							false
+						);
+					}
+				} catch (error) {
+					addResult(`❌ Network Error: ${error.message}`, false);
+				}
+			}
+
+			async function checkAllSessions() {
+				addResult(
+					"🔍 This would require a different API endpoint to list all sessions..."
+				);
+				addResult("💡 But we can try some common session patterns:");
+
+				const testSessions = [
+					"couple_1995_09_21_2008_08_03",
+					"test_couple_1990-01-01_1992-02-02",
+					"couple_complete_test",
+				];
+
+				for (const sessionId of testSessions) {
+					try {
+						const response = await fetch(
+							`${API_BASE}/api/couple-content?sessionId=${sessionId}`
+						);
+						if (response.ok) {
+							const data = await response.json();
+							if (data.success && data.componentCount > 0) {
+								addResult(
+									`✅ Session "${sessionId}": ${data.componentCount} components`
+								);
+							} else {
+								addResult(
+									`📭 Session "${sessionId}": Empty or not found`
+								);
+							}
+						}
+					} catch (error) {
+						addResult(
+							`❌ Error checking "${sessionId}": ${error.message}`,
+							false
+						);
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

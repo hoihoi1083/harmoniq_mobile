@@ -1,0 +1,39 @@
+name: deploy test ec2
+
+on:
+  push:
+    branches:
+      - test-deploy
+
+jobs:
+  Deploy:
+    name: Deploy to EC2
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build & Deploy
+        env:
+          PRIVATE_KEY: ${{ secrets.FENGSHUI_PEM }}
+          HOSTNAME: ${{secrets.EC2_IP}}
+          USER_NAME: ${{secrets.EC2_USERNAME}}
+
+        run: |
+          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+            # Now we have got the access of EC2 and we will start the deploy .
+            cd /home/workspace/FengShuiLayout/ ;
+            echo '------ cd done ------' ;
+            sudo git checkout test-deploy ;
+            sudo git checkout . ;
+            sudo git pull origin test-deploy ;
+            echo '------ git pull done ------' ;
+            sudo docker rm $(sudo docker stop $(sudo docker ps -a -q --filter ancestor=fengshui-web-docker)) ;
+            echo '------ docker rm done ------' ;
+            sudo docker build -t fengshui-web-docker . ;
+            echo '------ docker build done ------'
+            sudo docker run -d -p 3000:3000 fengshui-web-docker ;
+            echo '------ docker run done ------' ;
+            '
+          rm -rf private_key
+
+
