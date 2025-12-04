@@ -12,6 +12,7 @@ import { useRouter } from "next/navigation";
 import { useRegionDetectionWithRedirect } from "@/hooks/useRegionDetectionEnhanced";
 import { useMobileAuth } from "@/hooks/useMobileAuth";
 import { Capacitor } from "@capacitor/core";
+import { navigateMobile } from "@/utils/mobileNavigation";
 import {
 	AlertDialog,
 	AlertDialogAction,
@@ -521,13 +522,19 @@ export default function YourPage() {
 			}
 
 			// Create checkout session for expert188
-			const response = await fetch("/api/checkoutSessions/payment3", {
-				method: "POST",
-				headers,
-				body: JSON.stringify({
-					quantity: 1, // Fixed quantity for expert plan
-				}),
-			});
+			const API_BASE =
+				process.env.NEXT_PUBLIC_API_BASE_URL ||
+				"https://www.harmoniqfengshui.com";
+			const response = await fetch(
+				`${API_BASE}/api/checkoutSessions/payment3`,
+				{
+					method: "POST",
+					headers,
+					body: JSON.stringify({
+						quantity: 1, // Fixed quantity for expert plan
+					}),
+				}
+			);
 
 			if (response.ok) {
 				const data = await response.json();
@@ -580,22 +587,34 @@ export default function YourPage() {
 				"is for pricing only)"
 			);
 
+			// 🔥 MOBILE FIX: Define API_BASE for this function
+			const API_BASE =
+				process.env.NEXT_PUBLIC_API_BASE_URL ||
+				"https://www.harmoniqfengshui.com";
+
 			// 🔥 MOBILE FIX: Pass mobile flag in request body instead of headers
-			const response = await fetch("/api/checkoutSessions/payment4", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({
-					quantity: 1, // Fixed quantity for expert plan
-					locale: freshLocale, // Add locale parameter
-					region: storedRegion, // Add region parameter for NTD support
-					userId: effectiveSession?.user?.userId || effectiveSession?.user?.email,
-					// 🔥 Add mobile flag in body
-					isMobile: true,
-					userEmail: effectiveSession?.user?.email || effectiveSession?.user?.userId,
-				}),
-			});
+			const response = await fetch(
+				`${API_BASE}/api/checkoutSessions/payment4`,
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						quantity: 1, // Fixed quantity for expert plan
+						locale: freshLocale, // Add locale parameter
+						region: storedRegion, // Add region parameter for NTD support
+						userId:
+							effectiveSession?.user?.userId ||
+							effectiveSession?.user?.email,
+						// 🔥 Add mobile flag in body
+						isMobile: true,
+						userEmail:
+							effectiveSession?.user?.email ||
+							effectiveSession?.user?.userId,
+					}),
+				}
+			);
 
 			console.log("📱 Expert88 payment request sent with mobile flag");
 
@@ -639,6 +658,12 @@ export default function YourPage() {
 			}
 		} catch (error) {
 			console.error("Expert88 payment error:", error);
+			console.error("Error details:", {
+				message: error?.message || "No message",
+				name: error?.name || "No name",
+				stack: error?.stack || "No stack",
+				toString: error?.toString?.() || "Cannot stringify",
+			});
 			setIsProcessingPayment(false);
 			setCurrentCardType("");
 		}
@@ -796,8 +821,12 @@ export default function YourPage() {
 				region: storedRegion, // 🔥 Add region parameter for NTD support
 				// 🔥 MOBILE FIX: Add mobile flag directly in body since headers don't work with Next.js fetch
 				isMobile: true, // Always mark as mobile for logged-in users
-				userEmail: effectiveSession?.user?.email || effectiveSession?.user?.userId,
-				userId: effectiveSession?.user?.userId || effectiveSession?.user?.id,
+				userEmail:
+					effectiveSession?.user?.email ||
+					effectiveSession?.user?.userId,
+				userId:
+					effectiveSession?.user?.userId ||
+					effectiveSession?.user?.id,
 			};
 
 			// Include chat-specific data if coming from chat
@@ -824,14 +853,22 @@ export default function YourPage() {
 				);
 			}
 
-			console.log("📱 Couple payment request body (isMobile flag in body):", {
-				isMobile: requestBody.isMobile,
-				userEmail: requestBody.userEmail,
-				userId: requestBody.userId,
-				isCapacitorMobile,
-			});
+			console.log(
+				"📱 Couple payment request body (isMobile flag in body):",
+				{
+					isMobile: requestBody.isMobile,
+					userEmail: requestBody.userEmail,
+					userId: requestBody.userId,
+					isCapacitorMobile,
+				}
+			);
 
-			const response = await fetch("/api/payment-couple", {
+			// 🔥 MOBILE FIX: Define API_BASE for this function
+			const API_BASE =
+				process.env.NEXT_PUBLIC_API_BASE_URL ||
+				"https://www.harmoniqfengshui.com";
+
+			const response = await fetch(`${API_BASE}/api/payment-couple`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -863,13 +900,26 @@ export default function YourPage() {
 					throw new Error("No session ID received");
 				}
 			} else {
+				console.error("❌ API error response status:", response.status);
 				const errorData = await response.json();
-				throw new Error(errorData.error || "Payment error");
+				console.error("❌ API error data:", errorData);
+				throw new Error(
+					errorData.error || errorData.message || "Payment error"
+				);
 			}
 		} catch (error) {
 			console.error("Couple payment error:", error);
+			console.error("❌ Detailed error:", {
+				message: error?.message || "No message",
+				name: error?.name || "No name",
+				cause: error?.cause || "No cause",
+				stack: error?.stack || "No stack",
+			});
 			setIsProcessingPayment(false);
 			setCurrentCardType("");
+			alert(
+				`Couple payment error: ${error?.message || "Network error - please check your connection"}`
+			);
 			// You could show an error message to the user here
 		}
 	};
@@ -975,7 +1025,7 @@ export default function YourPage() {
 		setShowShareConfirm(false);
 		if (confirmed) {
 			try {
-				const response = await fetch("/api/send-promo", {
+				const response = await fetch(`${API_BASE}/api/send-promo`, {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json",
@@ -1061,10 +1111,11 @@ export default function YourPage() {
 					className="self-stretch flex flex-col items-center justify-start mb-25 gap-16 sm:gap-24 lg:gap-[164px] max-w-full text-center text-2xl sm:text-3xl lg:text-[40px] text-[#073e31] font-[ABeeZee] px-4 sm:px-6 lg:px-0"
 					style={{ fontFamily: '"Noto Serif TC", serif' }}
 				>
-					<div 
+					<div
 						className="w-full max-w-[1200px] flex flex-col items-center justify-start gap-5 sm:gap-20 lg:gap-[40px]"
 						style={{
-							marginTop: "calc(4rem + env(safe-area-inset-top) + 1rem)"
+							marginTop:
+								"calc(4rem + env(safe-area-inset-top) + 1rem)",
 						}}
 					>
 						{/* Title Section */}
@@ -1155,7 +1206,7 @@ export default function YourPage() {
 										boxShadow:
 											"0 4px 12px rgba(0, 0, 0, 0.25)",
 									}}
-									onClick={() => router.push("/demo")}
+									onClick={() => navigateMobile("/demo")}
 								>
 									{t("previewButton")}
 								</button>
@@ -1766,7 +1817,7 @@ export default function YourPage() {
 														"0 4px 12px rgba(0, 0, 0, 0.25)",
 												}}
 												onClick={() =>
-													router.push("/demo")
+													navigateMobile("/demo")
 												}
 											>
 												{t("previewButton")}
@@ -1986,7 +2037,7 @@ export default function YourPage() {
 								<button
 									className="bg-[#A3B116] hover:bg-[#8B9914] text-white px-4 sm:px-6 py-2 text-base sm:text-lg lg:text-[20px] rounded-full font-medium transition-colors duration-300 shadow-lg"
 									onClick={() =>
-										router.push("/demo?category=wealth")
+										navigateMobile("/demo?category=wealth")
 									}
 								>
 									{t("previewButton")}
@@ -4105,7 +4156,7 @@ export default function YourPage() {
 								<button
 									className="bg-[#A3B116] hover:bg-[#8B9914] text-white px-4 sm:px-6 py-2 text-base sm:text-lg lg:text-[20px] rounded-full font-medium transition-colors duration-300 shadow-lg"
 									onClick={() =>
-										router.push("/demo?category=couple")
+										navigateMobile("/demo?category=couple")
 									}
 								>
 									{t("previewButton")}

@@ -16,6 +16,7 @@ export const saveComponentContent = async (
 	content,
 	metadata = {}
 ) => {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	try {
 		if (!sessionId || !componentName || !content) {
 			console.error("❌ Missing required parameters for saving");
@@ -26,7 +27,7 @@ export const saveComponentContent = async (
 			`💾 Saving ${componentName} content for session ${sessionId}${metadata.userId ? ` (user: ${metadata.userId})` : ""}`
 		);
 
-		const response = await fetch("/api/couple-content", {
+		const response = await fetch(`${API_BASE}/api/couple-content`, {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({

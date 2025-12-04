@@ -7,6 +7,7 @@ import { ComponentErrorBoundary } from "./ErrorHandling";
 import { getConcernColor } from "../utils/colorTheme";
 
 export default function CoreSuggestion({ userInfo, currentYear = 2025 }) {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const locale = useLocale();
 	const t = useTranslations("fengShuiReport.components.coreSuggestion");
 	const [analysisData, setAnalysisData] = useState(null);
@@ -27,7 +28,7 @@ export default function CoreSuggestion({ userInfo, currentYear = 2025 }) {
 				extractedTime ||
 				"未知";
 
-			const response = await fetch("/api/core-suggestion-analysis", {
+			const response = await fetch(`${API_BASE}/api/core-suggestion-analysis`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

@@ -5,6 +5,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 export default function PricingModal({ isOpen, onClose }) {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const { data: session } = useSession();
 	const router = useRouter();
 	const [isProcessingPayment, setIsProcessingPayment] = useState(false);
@@ -129,7 +130,7 @@ export default function PricingModal({ isOpen, onClose }) {
 		setShowShareConfirm(false);
 		if (confirmed) {
 			try {
-				const response = await fetch("/api/send-promo", {
+				const response = await fetch(`${API_BASE}/api/send-promo`, {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json",

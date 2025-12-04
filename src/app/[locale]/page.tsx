@@ -23,6 +23,7 @@ import { useRegionDetection } from "@/hooks/useRegionDetectionEnhanced";
 import { useTranslations } from "next-intl";
 
 export default function Home() {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const t = useTranslations("chatPage");
 	const { data: session, status } = useSession();
 	const { mobileSession, isMobile: isCapacitorMobile } = useMobileAuth();
@@ -391,17 +392,24 @@ export default function Home() {
 		if (isCapacitorMobile && effectiveSession?.user?.email) {
 			headers["X-User-Email"] = effectiveSession.user.email;
 			// @ts-ignore - id might not be in the type definition but is often present
-			headers["X-User-ID"] = effectiveSession.user.id || effectiveSession.user.email;
+			headers["X-User-ID"] =
+				effectiveSession.user.id || effectiveSession.user.email;
 		}
 
-		// 🔥 MOBILE FIX: Allow anonymous chat without login (Updated 2025-11-12)
-		// Authentication check disabled for mobile testing
-		// if (!session) {
-		// 	localStorage.setItem("pendingChatMessage", inputMessage.trim());
-		// 	localStorage.setItem("pendingChatTimestamp", Date.now().toString());
-		// 	router.push("/auth/login");
-		// 	return;
-		// }
+		// 🔥 Check for authentication before sending message
+		if (!effectiveSession) {
+			localStorage.setItem("pendingChatMessage", inputMessage.trim());
+			localStorage.setItem("pendingChatTimestamp", Date.now().toString());
+			
+			// Use window.location for Capacitor compatibility (static export)
+			const loginUrl = `/${currentLocale}/auth/login/index.html`;
+			if (isCapacitorMobile) {
+				window.location.href = loginUrl;
+			} else {
+				router.push(`/${currentLocale}/auth/login`);
+			}
+			return;
+		}
 
 		// 隱藏落地頁，顯示正常聊天界面
 		if (showLandingPage) {
@@ -464,7 +472,12 @@ export default function Home() {
 					sessionId: sessionId,
 				});
 
-				const paymentResponse = await fetch("/api/payment-couple", {
+				// 🌐 MOBILE FIX: Use full API URL to connect to live server
+				const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
+				const paymentApiUrl = `${API_BASE}/api/payment-couple`;
+				console.log("📡 Calling Payment API:", paymentApiUrl);
+
+				const paymentResponse = await fetch(paymentApiUrl, {
 					method: "POST",
 					headers: headers,
 					body: JSON.stringify({
@@ -557,18 +570,36 @@ export default function Home() {
 			const aiLocale = currentLocale; // Always use URL-based locale
 			console.log("🌐 AI response locale (from URL):", aiLocale);
 
-			const response = await fetch("/api/smart-chat2", {
+			// 🌐 MOBILE FIX: Use full API URL to connect to live server
+			const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
+			const apiUrl = `${API_BASE}/api/smart-chat2`;
+			console.log("📡 Calling API:", apiUrl);
+
+			const requestBody = {
+				message: userMessage.content,
+				sessionId: sessionId,
+				userId: currentUserId,
+				region: currentRegion, // 🌍 Add current region for accurate pricing display
+				locale: aiLocale, // 🌐 Add locale for AI response language (zh-CN for China, zh-TW for HK/TW)
+			};
+			console.log("📤 Request body:", JSON.stringify(requestBody));
+
+			const response = await fetch(apiUrl, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
 				},
-				body: JSON.stringify({
-					message: userMessage.content,
-					sessionId: sessionId,
-					userId: currentUserId,
-					region: currentRegion, // 🌍 Add current region for accurate pricing display
-					locale: aiLocale, // 🌐 Add locale for AI response language (zh-CN for China, zh-TW for HK/TW)
-				}),
+				body: JSON.stringify(requestBody),
+			});
+
+			console.log("📥 Response status:", response.status);
+			console.log("📥 Response ok:", response.ok);
+			console.log("📥 Response headers:", {
+				contentType: response.headers.get('content-type'),
+				corsHeaders: {
+					accessControlAllowOrigin: response.headers.get('access-control-allow-origin'),
+					accessControlAllowMethods: response.headers.get('access-control-allow-methods'),
+				}
 			});
 
 			const data = await response.json();
@@ -932,9 +963,15 @@ export default function Home() {
 			}
 		} catch (error) {
 			console.error("發送訊息失敗:", error);
+			console.error("❌ Error details:", {
+				message: error?.message || "Unknown error",
+				name: error?.name || "Unknown name",
+				stack: error?.stack || "No stack trace",
+				toString: error?.toString() || "Cannot convert to string"
+			});
 			const errorMessage = {
 				role: "assistant",
-				content: "抱歉，發送訊息時出現錯誤。請稍後再試。",
+				content: `抱歉，發送訊息時出現錯誤。請稍後再試。\n\n錯誤詳情: ${error?.message || error?.toString() || "Unknown error"}`,
 				timestamp: new Date(),
 				isError: true,
 			};
@@ -953,16 +990,15 @@ export default function Home() {
 
 	// 處理快捷標籤點擊
 	const handleShortcutClick = (shortcutText) => {
-		// Check if user is logged in (using mobile or web session)
-		if (!effectiveSession) {
-			// Save the shortcut text before redirecting to login
-			localStorage.setItem("pendingChatMessage", shortcutText);
-			localStorage.setItem("pendingChatTimestamp", Date.now().toString());
-			router.push("/auth/login");
-			return;
-		}
-
+		// 🔥 FIX: Always allow setting input message from shortcuts
+		// Login check happens on send, not on shortcut click
 		setInputMessage(shortcutText);
+		
+		// Hide landing page when shortcut is clicked
+		if (showLandingPage) {
+			setShowLandingPage(false);
+		}
+		
 		// 自動聚焦到輸入框
 		setTimeout(() => {
 			const textarea = document.querySelector("textarea");
@@ -1016,7 +1052,7 @@ export default function Home() {
 
 		// For individual analysis, continue with API call
 		try {
-			const response = await fetch("/api/smart-chat2", {
+			const response = await fetch(`${API_BASE}/api/smart-chat2`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -1115,7 +1151,7 @@ export default function Home() {
 					"⚠️ No session email in state, trying to fetch session..."
 				);
 				try {
-					const sessionResponse = await fetch("/api/auth/session");
+					const sessionResponse = await fetch(`${API_BASE}/api/auth/session`);
 					if (sessionResponse.ok) {
 						const sessionData = await sessionResponse.json();
 						console.log("📦 Fetched session data:", sessionData);
@@ -1194,7 +1230,7 @@ export default function Home() {
 				return;
 			}
 
-			const response = await fetch("/api/transfer-conversations", {
+			const response = await fetch(`${API_BASE}/api/transfer-conversations`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -1411,7 +1447,7 @@ export default function Home() {
 				<button
 					className="fixed z-50 p-2 bg-white rounded-lg shadow-lg xl:hidden left-2"
 					style={{
-						top: "calc(4rem + env(safe-area-inset-top) + 1rem)"
+						top: "calc(4rem + env(safe-area-inset-top) + 1rem)",
 					}}
 					onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
 				>
@@ -1456,88 +1492,100 @@ export default function Home() {
 					</div>
 
 					{/* 歷史對話 - 僅在登入時顯示 */}
-					{effectiveSession && effectiveStatus === "authenticated" && (
-						<div className="bg-[#E0E0E0] rounded-lg mx-4 mb-4">
-							<div className="p-4 border-b border-[#d0d0d0]">
-								<h3 className="flex items-center justify-between font-medium text-gray-800">
-									{t("historyTitle")}
-									{isLoadingHistory && (
-										<div className="w-4 h-4 border-b-2 border-gray-800 rounded-full animate-spin"></div>
-									)}
-								</h3>
-							</div>
-							<div className="p-2 overflow-y-auto max-h-48">
-								{conversationHistory.length === 0 ? (
-									<div className="p-3 text-sm text-center text-gray-600">
-										{isLoadingHistory
-											? t("loading")
-											: t("noHistory")}
-									</div>
-								) : (
-									conversationHistory.map((conversation) => (
-										<div
-											key={conversation.conversationId}
-											className="p-3 hover:bg-[#d0d0d0] rounded cursor-pointer transition-colors mb-1"
-											onClick={() => {
-												loadSpecificConversation(
-													conversation.conversationId
-												);
-												handleMobileNavigation();
-											}}
-										>
-											<div className="text-sm font-medium text-gray-800 truncate">
-												{conversation.title ||
-													t("untitledConversation")}
-											</div>
-											<div className="flex items-center justify-between mt-1 text-xs text-gray-600">
-												<span>
-													{formatConversationTime(
-														conversation.lastUpdated
-													)}
-												</span>
-												<span className="bg-[#d0d0d0] text-gray-800 px-2 py-0.5 rounded-full text-xs">
-													{conversation.messageCount ||
-														0}
-												</span>
-											</div>
-											{conversation.topics &&
-												conversation.topics.length >
-													0 && (
-													<div className="flex flex-wrap gap-1 mt-2">
-														{conversation.topics
-															.slice(0, 2)
-															.map(
-																(
-																	topic,
-																	index
-																) => (
-																	<span
-																		key={
-																			index
-																		}
-																		className="text-xs bg-[#c0c0c0] text-gray-800 px-2 py-0.5 rounded"
-																	>
-																		{topic}
-																	</span>
-																)
+					{effectiveSession &&
+						effectiveStatus === "authenticated" && (
+							<div className="bg-[#E0E0E0] rounded-lg mx-4 mb-4">
+								<div className="p-4 border-b border-[#d0d0d0]">
+									<h3 className="flex items-center justify-between font-medium text-gray-800">
+										{t("historyTitle")}
+										{isLoadingHistory && (
+											<div className="w-4 h-4 border-b-2 border-gray-800 rounded-full animate-spin"></div>
+										)}
+									</h3>
+								</div>
+								<div className="p-2 overflow-y-auto max-h-48">
+									{conversationHistory.length === 0 ? (
+										<div className="p-3 text-sm text-center text-gray-600">
+											{isLoadingHistory
+												? t("loading")
+												: t("noHistory")}
+										</div>
+									) : (
+										conversationHistory.map(
+											(conversation) => (
+												<div
+													key={
+														conversation.conversationId
+													}
+													className="p-3 hover:bg-[#d0d0d0] rounded cursor-pointer transition-colors mb-1"
+													onClick={() => {
+														loadSpecificConversation(
+															conversation.conversationId
+														);
+														handleMobileNavigation();
+													}}
+												>
+													<div className="text-sm font-medium text-gray-800 truncate">
+														{conversation.title ||
+															t(
+																"untitledConversation"
 															)}
-														{conversation.topics
-															.length > 2 && (
-															<span className="text-xs text-gray-600">
-																+
+													</div>
+													<div className="flex items-center justify-between mt-1 text-xs text-gray-600">
+														<span>
+															{formatConversationTime(
+																conversation.lastUpdated
+															)}
+														</span>
+														<span className="bg-[#d0d0d0] text-gray-800 px-2 py-0.5 rounded-full text-xs">
+															{conversation.messageCount ||
+																0}
+														</span>
+													</div>
+													{conversation.topics &&
+														conversation.topics
+															.length > 0 && (
+															<div className="flex flex-wrap gap-1 mt-2">
+																{conversation.topics
+																	.slice(0, 2)
+																	.map(
+																		(
+																			topic,
+																			index
+																		) => (
+																			<span
+																				key={
+																					index
+																				}
+																				className="text-xs bg-[#c0c0c0] text-gray-800 px-2 py-0.5 rounded"
+																			>
+																				{
+																					topic
+																				}
+																			</span>
+																		)
+																	)}
 																{conversation
 																	.topics
-																	.length - 2}
-															</span>
+																	.length >
+																	2 && (
+																	<span className="text-xs text-gray-600">
+																		+
+																		{conversation
+																			.topics
+																			.length -
+																			2}
+																	</span>
+																)}
+															</div>
 														)}
-													</div>
-												)}
-										</div>
-									))
-								)}
+												</div>
+											)
+										)
+									)}
+								</div>
 							</div>
-						</div>
-					)}
+						)}
 
 					{/* 付費報告預覽 */}
 					<div className="px-4 mb-4">
@@ -1554,10 +1602,11 @@ export default function Home() {
 					</div>
 
 					{/* 功能區域 */}
-					<div 
+					<div
 						className="flex-1 px-4 space-y-3 overflow-y-auto"
 						style={{
-							paddingBottom: "calc(4rem + env(safe-area-inset-bottom) + 1rem)"
+							paddingBottom:
+								"calc(4rem + env(safe-area-inset-bottom) + 1rem)",
 						}}
 					>
 						<Link href="/demo?category=life">
@@ -1676,15 +1725,14 @@ export default function Home() {
 						backgroundRepeat: "no-repeat",
 						boxShadow: "4px 4px 4px rgba(0, 0, 0, 0.25)",
 						border: "3px solid #E0E0E0",
-						paddingBottom: "calc(4rem + env(safe-area-inset-bottom))",
+						paddingBottom:
+							"calc(4rem + env(safe-area-inset-bottom))",
 					}}
 				>
 					{/* 聊天界面 */}
 					<div className="flex flex-col h-full min-h-0">
 						{/* 消息區域 */}
-						<div
-							className="flex-1 min-h-0 p-2 pt-2 space-y-4 overflow-y-auto sm:p-4 sm:pt-4 md:p-6 md:pt-6"
-						>
+						<div className="flex-1 min-h-0 p-2 pt-2 space-y-4 overflow-y-auto sm:p-4 sm:pt-4 md:p-6 md:pt-6">
 							{showLandingPage ? (
 								/* 落地頁 */
 								<div className="flex flex-col items-center justify-center h-full px-2 sm:px-4">
@@ -1968,7 +2016,7 @@ export default function Home() {
 												onClick={() =>
 													handleShortcutClick(
 														t("shortcuts.raise")
-																									)
+													)
 												}
 												className="flex items-center px-4 py-2 space-x-2 text-xs font-medium text-gray-700 transition-shadow bg-white border border-gray-200 rounded-lg shadow-md whitespace-nowrap md:px-6 md:py-3 md:text-sm hover:shadow-lg hover:text-gray-900"
 											>

@@ -65,7 +65,7 @@ const EmergencyFengShuiSection = ({
 
 			console.log("📤 Sending request body:", requestBody);
 
-			const response = await fetch("/api/emergency-feng-shui", {
+			const response = await fetch(`${API_BASE}/api/emergency-feng-shui`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(requestBody),
@@ -332,3 +332,5 @@ const EmergencyFengShuiSection = ({
 };
 
 export default EmergencyFengShuiSection;
+
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';

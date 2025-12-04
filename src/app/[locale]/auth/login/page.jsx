@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, use, useEffect } from "react";
+import { useState, use, useEffect, Suspense } from "react";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
@@ -14,11 +14,12 @@ import { GoogleAuth } from "@codetrix-studio/capacitor-google-auth";
 import { Capacitor } from "@capacitor/core";
 import { Preferences } from "@capacitor/preferences";
 
-export default function LoginPage({ searchParams }) {
+function LoginPageContent() {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const router = useRouter();
+	const searchParams = useSearchParams();
 	const t = useTranslations("login");
 	const t2 = useTranslations("toast");
-	const params = use(searchParams);
 
 	const [isLoading, setIsLoading] = useState(false);
 	const [showEmailLogin, setShowEmailLogin] = useState(false);
@@ -110,30 +111,40 @@ export default function LoginPage({ searchParams }) {
 						JSON.stringify(googleUser, null, 2)
 					);
 
-					// Send the ID token to our custom endpoint
-					const response = await fetch("/api/auth/google/mobile", {
-						method: "POST",
-						headers: {
-							"Content-Type": "application/json",
-						},
-						body: JSON.stringify({
-							idToken: googleUser.authentication.idToken,
-							email: googleUser.email,
-							name: googleUser.name,
-							imageUrl: googleUser.imageUrl,
-						}),
-					});
+				// Send the ID token to our custom endpoint
+				console.log("📡 Calling API:", `${API_BASE}/api/auth/google/mobile`);
+				console.log("📤 Request body:", JSON.stringify({
+					idToken: "REDACTED",
+					email: googleUser.email,
+					name: googleUser.name,
+					imageUrl: googleUser.imageUrl,
+				}));
 
-					const data = await response.json();
+				const response = await fetch(`${API_BASE}/api/auth/google/mobile`, {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						idToken: googleUser.authentication.idToken,
+						email: googleUser.email,
+						name: googleUser.name,
+						imageUrl: googleUser.imageUrl,
+					}),
+				});
 
-					if (!response.ok || !data.success) {
-						console.error("❌ Server error:", data.error);
-						toast.error(t("loginFailed"));
-						setIsLoading(false);
-						return;
-					}
+				console.log("📥 Response status:", response.status);
+				console.log("📥 Response ok:", response.ok);
 
-					console.log("✅ User created/updated:", data.user);
+				const data = await response.json();
+				console.log("📥 Response data:", JSON.stringify(data, null, 2));
+
+				if (!response.ok || !data.success) {
+					console.error("❌ Server error:", data.error);
+					toast.error(t("loginFailed"));
+					setIsLoading(false);
+					return;
+				}					console.log("✅ User created/updated:", data.user);
 
 					// Store user session in Capacitor Preferences
 					await Preferences.set({
@@ -146,14 +157,31 @@ export default function LoginPage({ searchParams }) {
 					});
 
 					console.log("✅ Session stored in Capacitor Preferences");
+					
+					// Verify storage
+					const { value } = await Preferences.get({ key: "userSession" });
+					console.log("🔍 Verified stored session:", value ? "✅ Exists" : "❌ Not found");
+					
 					toast.success(t("loginSuccess"));
 
-					// Redirect to home
-					router.push("/");
+					// Small delay to ensure storage completes, then redirect
+					await new Promise(resolve => setTimeout(resolve, 100));
+					
+					// Redirect to main chat page using window.location for Capacitor
+					const locale = window.location.pathname.split('/')[1] || 'zh-TW';
+					console.log("🔄 Redirecting to:", `/${locale}/index.html`);
+					window.location.href = `/${locale}/index.html`;
 					setIsLoading(false);
 					return;
 				} catch (error) {
 					console.error("❌ Native Google Sign-In error:", error);
+					console.error("❌ Error details:", {
+						message: error?.message || "Unknown error",
+						name: error?.name || "Unknown name",
+						stack: error?.stack || "No stack trace",
+						toString: error?.toString() || "Cannot convert to string",
+						code: error?.code || "No code"
+					});
 
 					if (
 						error?.message?.includes("cancel") ||
@@ -226,7 +254,7 @@ export default function LoginPage({ searchParams }) {
 					);
 
 					// Send the identity token to our custom endpoint
-					const response = await fetch("/api/auth/apple/ios", {
+					const response = await fetch(`${API_BASE}/api/auth/apple/ios`, {
 						method: "POST",
 						headers: {
 							"Content-Type": "application/json",
@@ -371,10 +399,10 @@ export default function LoginPage({ searchParams }) {
 				tip={t2("loading2")}
 				className="bg-[#fff9]"
 			/>
-			<div 
+			<div
 				className="flex flex-col items-center justify-center px-6 py-12 mx-auto bg-white md:bg-gray-50"
 				style={{
-					marginTop: "calc(4rem + env(safe-area-inset-top) + 2.5rem)"
+					marginTop: "calc(4rem + env(safe-area-inset-top) + 2.5rem)",
 				}}
 			>
 				<div
@@ -599,5 +627,13 @@ export default function LoginPage({ searchParams }) {
 				</div>
 			</div>
 		</div>
+	);
+}
+
+export default function LoginPage() {
+	return (
+		<Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
+			<LoginPageContent />
+		</Suspense>
 	);
 }

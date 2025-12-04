@@ -25,4 +25,30 @@ end
 
 post_install do |installer|
   assertDeploymentTarget(installer)
+  
+  # Add Privacy Manifests to GTM frameworks
+  installer.pods_project.targets.each do |target|
+    if target.name == 'GTMAppAuth'
+      privacy_file = File.join(target.project.path.dirname, 'GTMAppAuth/GTMAppAuth/Sources/Resources/PrivacyInfo.xcprivacy')
+      if File.exist?(privacy_file)
+        resource_build_phase = target.resources_build_phase
+        file_ref = target.project.new_file(privacy_file)
+        resource_build_phase.add_file_reference(file_ref, true)
+      end
+    elsif target.name == 'GTMSessionFetcher'
+      privacy_file = File.join(target.project.path.dirname, 'GTMSessionFetcher/Sources/Core/Resources/PrivacyInfo.xcprivacy')
+      if File.exist?(privacy_file)
+        resource_build_phase = target.resources_build_phase
+        file_ref = target.project.new_file(privacy_file)
+        resource_build_phase.add_file_reference(file_ref, true)
+      end
+    elsif target.name == 'GoogleSignIn-GoogleSignIn'
+      privacy_file = File.join(target.project.path.dirname, 'GoogleSignIn/GoogleSignIn/Sources/Resources/PrivacyInfo.xcprivacy')
+      if File.exist?(privacy_file)
+        resource_build_phase = target.resources_build_phase
+        file_ref = target.project.new_file(privacy_file)
+        resource_build_phase.add_file_reference(file_ref, true)
+      end
+    end
+  end
 end

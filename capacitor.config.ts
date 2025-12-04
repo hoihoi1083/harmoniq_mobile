@@ -1,16 +1,17 @@
 import type { CapacitorConfig } from "@capacitor/cli";
 
-// 🔥 DEVELOPMENT CONFIG - Points to localhost for live reload
+// ✅ BUNDLED APP - Best Practice for App Store
+// Frontend: Bundled in app (fast, offline)
+// Backend: API calls to live server
 const config: CapacitorConfig = {
-	appId: "com.chunhoi.fengshui", // 🔥 UPDATED: Changed from com.harmoniq.fengshui
-	appName: "HarmoniqFengShui (Dev)",
+	appId: "com.harmoniq.windbell",
+	appName: "風鈴聊天室",
 	webDir: "out",
 	server: {
-		// Point to your local development server
-		url: "http://localhost:3000",
-		cleartext: true, // Allow http in development
 		androidScheme: "https",
+		iosScheme: "capacitor"
 	},
+	// No server.url = loads from bundled files
 	plugins: {
 		GoogleAuth: {
 			scopes: ["profile", "email"],

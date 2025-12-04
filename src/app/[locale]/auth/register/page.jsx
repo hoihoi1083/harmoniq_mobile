@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 import { useTranslations } from "next-intl";
 
 export default function RegisterPage() {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const router = useRouter();
 	const t = useTranslations("register");
 	const t2 = useTranslations("toast");
@@ -79,7 +80,7 @@ export default function RegisterPage() {
 
 		try {
 			// Register user
-			const response = await fetch("/api/auth/register", {
+			const response = await fetch(`${API_BASE}/api/auth/register`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -138,10 +139,10 @@ export default function RegisterPage() {
 				tip={t2("processing")}
 				className="bg-[#fff9]"
 			/>
-			<div 
+			<div
 				className="flex flex-col items-center justify-center px-6 py-12 mx-auto bg-secondary md:bg-gray-50"
 				style={{
-					marginTop: "calc(4rem + env(safe-area-inset-top))"
+					marginTop: "calc(4rem + env(safe-area-inset-top))",
 				}}
 			>
 				<div className="w-full h-screen p-10 space-y-8 bg-secondary md:w-100 md:shadow-lg md:h-auto">

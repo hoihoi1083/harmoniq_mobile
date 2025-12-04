@@ -65,7 +65,7 @@ const RestartChemistrySection = ({
 
 			console.log("📤 Sending chemistry request body:", requestBody);
 
-			const response = await fetch("/api/restart-chemistry", {
+			const response = await fetch(`${API_BASE}/api/restart-chemistry`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(requestBody),
@@ -490,3 +490,5 @@ const RestartChemistrySection = ({
 };
 
 export default RestartChemistrySection;
+
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';

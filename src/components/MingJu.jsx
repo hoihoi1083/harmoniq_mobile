@@ -9,6 +9,7 @@ import getWuxingData from "../lib/nayin";
 
 // Helper function to normalize concern characters (simplified to traditional)
 const normalizeConcern = (concern) => {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const mapping = {
 		事业: "事業",
 		财运: "財運",
@@ -338,7 +339,7 @@ async function generateMingJuAnalysis(
 			);
 
 			// Call your AI API here (replace with your actual AI service)
-			const response = await fetch("/api/ai-analysis", {
+			const response = await fetch(`${API_BASE}/api/ai-analysis`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

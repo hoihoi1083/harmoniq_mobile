@@ -68,7 +68,7 @@ const ChartDiagnosisSection = ({
 				isSimplified: requestBody.isSimplified,
 			});
 
-			const response = await fetch("/api/chart-diagnosis", {
+			const response = await fetch(`${API_BASE}/api/chart-diagnosis`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(requestBody),
@@ -139,6 +139,7 @@ const ChartDiagnosisSection = ({
 	};
 
 	const generateFallbackAnalysis = (userData, gender) => {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 		if (!userData) return "分析數據準備中...";
 
 		const genderText = gender === "female" ? "您" : "伴侶";

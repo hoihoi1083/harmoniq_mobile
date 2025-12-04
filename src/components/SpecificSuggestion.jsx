@@ -7,6 +7,7 @@ import { ComponentErrorBoundary } from "./ErrorHandling";
 import { getConcernColor } from "../utils/colorTheme";
 
 export default function SpecificSuggestion({ userInfo, currentYear = 2025 }) {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const locale = useLocale();
 	const t = useTranslations("fengShuiReport.components.specificSuggestion");
 	const [analysisData, setAnalysisData] = useState(null);
@@ -17,7 +18,7 @@ export default function SpecificSuggestion({ userInfo, currentYear = 2025 }) {
 		try {
 			console.log("Generating AI analysis for:", userInfo);
 
-			const response = await fetch("/api/specific-suggestion-analysis", {
+			const response = await fetch(`${API_BASE}/api/specific-suggestion-analysis`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

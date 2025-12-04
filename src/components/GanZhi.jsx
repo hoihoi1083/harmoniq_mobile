@@ -10,6 +10,7 @@ import { convertByRegion } from "@/utils/chineseConverter";
 
 // Helper functions to map stems and branches to their elements
 const getStemElement = (stem) => {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const stemElements = {
 		甲: "木",
 		乙: "木",
@@ -446,7 +447,7 @@ export default function GanZhi({ userInfo, currentYear = 2025 }) {
 
 		try {
 			console.log("🌐 GanZhi component sending locale to API:", locale);
-			const response = await fetch("/api/ganzhi-analysis", {
+			const response = await fetch(`${API_BASE}/api/ganzhi-analysis`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

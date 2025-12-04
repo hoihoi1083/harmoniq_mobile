@@ -6,6 +6,7 @@ import { storeComponentData } from "../utils/componentDataStore";
 import getWuxingData from "@/lib/nayin.js";
 
 export default function QuestionFocus({ userInfo }) {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const t = useTranslations("fengShuiReport.components.questionFocus");
 	const locale = useLocale();
 	const [solution, setSolution] = useState(null);
@@ -116,7 +117,7 @@ export default function QuestionFocus({ userInfo }) {
 				}
 
 				// Call API
-				const response = await fetch("/api/question-focus-simple", {
+				const response = await fetch(`${API_BASE}/api/question-focus-simple`, {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
 					body: JSON.stringify({

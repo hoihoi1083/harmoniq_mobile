@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 
 const RelationshipMethodSection = ({ femaleUser, maleUser, analysisData }) => {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const [methodData, setMethodData] = useState(null);
 	const [loading, setLoading] = useState(false);
 
@@ -43,7 +44,7 @@ const RelationshipMethodSection = ({ femaleUser, maleUser, analysisData }) => {
 				requestBody
 			);
 
-			const response = await fetch("/api/relationship-method", {
+			const response = await fetch(`${API_BASE}/api/relationship-method`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(requestBody),

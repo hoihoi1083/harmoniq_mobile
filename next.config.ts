@@ -3,10 +3,18 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
 	eslint: {
-		ignoreDuringBuilds: true, // 忽略 eslint 检查
+		ignoreDuringBuilds: true,
 	},
 	typescript: {
-		ignoreBuildErrors: true, // 忽略 TypeScript 检查
+		ignoreBuildErrors: true,
+	},
+	// Exclude api.backup from builds
+	webpack: (config) => {
+		config.module.rules.push({
+			test: /\.jsx?$/,
+			exclude: /api\.backup/,
+		});
+		return config;
 	},
 	logging: {
 		fetches: {
@@ -14,21 +22,32 @@ const nextConfig: NextConfig = {
 		},
 	},
 	images: {
-		unoptimized: true, // Required for Capacitor static export
+		unoptimized: true,
 		remotePatterns: [
 			{
 				protocol: "https",
 				hostname: "d3cbeloe0vn1bb.cloudfront.net",
 				pathname: "/**",
 			},
+			{
+				protocol: "https",
+				hostname: "www.harmoniqfengshui.com",
+				pathname: "/**",
+			},
 		],
 	},
 	reactStrictMode: false,
-	// For mobile app: use 'export' for static pages
-	// API routes will connect to your deployed backend
-	output: process.env.CAPACITOR_BUILD === "true" ? "export" : "standalone",
-	// Disable trailing slashes for Capacitor compatibility
+	// ✅ MOBILE: Static export for bundled app
+	output: "export",
 	trailingSlash: true,
+	// Disable server features
+	experimental: {
+		// Optimize for client-side
+		optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
+	},
+	async rewrites() {
+		return [];
+	},
 	// experimental: {
 	//   turbo: {
 	//     resolveAlias: {

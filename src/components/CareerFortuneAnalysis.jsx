@@ -22,6 +22,7 @@ const CareerFortuneAnalysis = ({
 	showHistorical,
 	historicalData,
 }) => {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const { region } = useRegionDetection();
 	const [activeTab, setActiveTab] = useState("天賦特質解碼");
 	const [careerAnalysis, setCareerAnalysis] = useState(null);
@@ -63,7 +64,7 @@ const CareerFortuneAnalysis = ({
 			const prompt = generateCareerFortunePrompt(userInfo, wuxingData);
 
 			// Call the AI API
-			const response = await fetch("/api/career-fortune-analysis", {
+			const response = await fetch(`${API_BASE}/api/career-fortune-analysis`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ prompt, userInfo, wuxingData }),
@@ -131,6 +132,7 @@ const CareerFortuneAnalysis = ({
 	};
 
 	const generateMockCareerAnalysis = (userInfo, wuxingData) => {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 		const birthDate = new Date(userInfo.birthDateTime);
 		const currentYear = new Date().getFullYear();
 		const age = currentYear - birthDate.getFullYear();

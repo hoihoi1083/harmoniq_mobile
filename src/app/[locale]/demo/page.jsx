@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { useMobileAuth } from "@/hooks/useMobileAuth";
@@ -13,12 +13,13 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/home/Footer";
 import { getCurrencySymbol } from "@/utils/regionalPricing";
 
-export default function DemoPage() {
+function DemoPageContent() {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const t = useTranslations("demoPage");
 	const locale = useLocale();
 	const searchParams = useSearchParams();
 	const { data: session } = useSession();
-	
+
 	// 🔥 MOBILE FIX: Add mobile session support
 	const {
 		mobileSession,
@@ -418,7 +419,7 @@ export default function DemoPage() {
 					effectiveSession.user.userId || effectiveSession.user.id;
 			}
 
-			const response = await fetch("/api/checkoutSessions/payment2", {
+			const response = await fetch(`${API_BASE}/api/checkoutSessions/payment2`, {
 				method: "POST",
 				headers: headers,
 				body: JSON.stringify({
@@ -571,7 +572,7 @@ export default function DemoPage() {
 			}
 
 			// Create checkout session for couple analysis
-			const response = await fetch("/api/payment-couple", {
+			const response = await fetch(`${API_BASE}/api/payment-couple`, {
 				method: "POST",
 				headers: headers,
 				body: JSON.stringify(requestBody),
@@ -663,7 +664,7 @@ export default function DemoPage() {
 						effectiveSession.user.id;
 				}
 
-				const response = await fetch("/api/checkoutSessions/payment4", {
+				const response = await fetch(`${API_BASE}/api/checkoutSessions/payment4`, {
 					method: "POST",
 					headers: headers,
 					body: JSON.stringify({
@@ -1552,5 +1553,13 @@ export default function DemoPage() {
 			{/* Footer */}
 			<Footer />
 		</div>
+	);
+}
+
+export default function DemoPage(props) {
+	return (
+		<Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
+			<DemoPageContent {...props} />
+		</Suspense>
 	);
 }

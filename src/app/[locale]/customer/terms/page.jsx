@@ -1,3 +1,4 @@
+"use client";
 import TermsHeader from "./TermsHeader";
 import TermsContent from "./TermsContent";
 

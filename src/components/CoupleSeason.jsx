@@ -15,6 +15,7 @@ export default function CoupleSeason({
 	currentYear = 2025,
 	isSimplified = false,
 }) {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const { data: session } = useSession();
 	const { coupleSeasonCache, setCoupleSeasonCache } = useCoupleAnalysis();
 	const t = useTranslations("coupleReport.coupleSeason");
@@ -64,7 +65,7 @@ export default function CoupleSeason({
 			const seasonInfo = getCurrentSeasonInfo();
 			console.log("📅 CoupleSeason current season info:", seasonInfo);
 
-			const response = await fetch("/api/couple-season-analysis", {
+			const response = await fetch(`${API_BASE}/api/couple-season-analysis`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

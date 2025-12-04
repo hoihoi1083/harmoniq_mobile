@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
@@ -30,7 +30,8 @@ if (typeof window !== "undefined") {
 	window.componentDataStore = window.componentDataStore || {};
 }
 
-export default function FengShuiReportPage() {
+function FengShuiReportPageContent() {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const t = useTranslations("fengShuiReport.page");
 	const [reportData, setReportData] = useState(null);
 	const [loading, setLoading] = useState(true);
@@ -682,7 +683,7 @@ export default function FengShuiReportPage() {
 			);
 
 			// Save the generated report to database
-			const saveResponse = await fetch("/api/fortune-report", {
+			const saveResponse = await fetch(`${API_BASE}/api/fortune-report`, {
 				method: "PUT",
 				headers: {
 					"Content-Type": "application/json",
@@ -757,7 +758,7 @@ export default function FengShuiReportPage() {
 			);
 
 			// Update the database with complete content
-			const updateResponse = await fetch("/api/fortune-report", {
+			const updateResponse = await fetch(`${API_BASE}/api/fortune-report`, {
 				method: "PUT",
 				headers: {
 					"Content-Type": "application/json",
@@ -1199,5 +1200,13 @@ export default function FengShuiReportPage() {
 			</LoadingProvider>
 			<Footer />
 		</div>
+	);
+}
+
+export default function FengShuiReportPage() {
+	return (
+		<Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
+			<FengShuiReportPageContent />
+		</Suspense>
 	);
 }

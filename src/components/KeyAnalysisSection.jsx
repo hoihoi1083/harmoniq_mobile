@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 
 const KeyAnalysisSection = ({ femaleUser, maleUser, analysisData }) => {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const [keyAnalysisData, setKeyAnalysisData] = useState(null);
 	const [loading, setLoading] = useState(false);
 	const [activeTag, setActiveTag] = useState("fiveElements"); // Default to first tag
@@ -41,7 +42,7 @@ const KeyAnalysisSection = ({ femaleUser, maleUser, analysisData }) => {
 
 			console.log("📤 Sending key analysis request body:", requestBody);
 
-			const response = await fetch("/api/key-analysis", {
+			const response = await fetch(`${API_BASE}/api/key-analysis`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(requestBody),

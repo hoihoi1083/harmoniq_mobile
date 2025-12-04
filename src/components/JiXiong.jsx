@@ -64,7 +64,7 @@ const JiXiong = memo(function JiXiong({
 				}
 
 				// Fetch AI-generated JiXiong analysis
-				const response = await fetch("/api/jixiong-analysis", {
+				const response = await fetch(`${API_BASE}/api/jixiong-analysis`, {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json",
@@ -168,6 +168,7 @@ const JiXiong = memo(function JiXiong({
 
 	// Fallback functions for when AI is unavailable
 	const getFallbackJixiang = (concern) => {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 		const fallbacks = {
 			財運: [
 				{

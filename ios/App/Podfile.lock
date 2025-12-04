@@ -68,11 +68,11 @@ SPEC CHECKSUMS:
   CapacitorCommunityAppleSignIn: 271cb2860576fd2961508bbfa7a82117d93eadca
   CapacitorCordova: bf648a636f3c153f652d312ae145fb508b6ffced
   CapacitorPreferences: 65107ed7437d96ee72583df5763985e3c0ff2bc2
-  CodetrixStudioCapacitorGoogleAuth: 9dcfabfb7dd804ad6231a1513bc6e81e620cbec6
+  CodetrixStudioCapacitorGoogleAuth: fe4c53a046cdb63f38af562081709414eea1345a
   GoogleSignIn: 5651ce3a61e56ca864160e79b484cd9ed3f49b7a
   GTMAppAuth: 0ff230db599948a9ad7470ca667337803b3fc4dd
   GTMSessionFetcher: 3a63d75eecd6aa32c2fc79f578064e1214dfdec2
 
-PODFILE CHECKSUM: 79bb4ee4e8b73ca4e49f5ae53186098c98229ce2
+PODFILE CHECKSUM: f905c36a2c455cbf68b3d173d8ca664a6ab3ca67
 
 COCOAPODS: 1.16.2

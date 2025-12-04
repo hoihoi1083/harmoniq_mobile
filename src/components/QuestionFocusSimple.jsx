@@ -4,6 +4,7 @@ import { storeComponentData } from "../utils/componentDataStore";
 import getWuxingData from "@/lib/nayin.js";
 
 export default function QuestionFocusSimple({ userInfo }) {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const [solution, setSolution] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
@@ -56,7 +57,7 @@ export default function QuestionFocusSimple({ userInfo }) {
 				}
 
 				// Call API
-				const response = await fetch("/api/question-focus-simple", {
+				const response = await fetch(`${API_BASE}/api/question-focus-simple`, {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
 					body: JSON.stringify({

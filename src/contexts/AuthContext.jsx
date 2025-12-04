@@ -5,6 +5,7 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 const AuthContext = createContext();
 
 export const useAuth = () => {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const context = useContext(AuthContext);
 	if (!context) {
 		throw new Error("useAuth must be used within an AuthProvider");
@@ -24,7 +25,7 @@ export const AuthProvider = ({ children }) => {
 
 	const checkAuthStatus = async () => {
 		try {
-			const response = await fetch("/api/auth/status");
+			const response = await fetch(`${API_BASE}/api/auth/status");
 			const data = await response.json();
 
 			if (data.loggedIn) {
@@ -55,7 +56,7 @@ export const AuthProvider = ({ children }) => {
 	const logout = async () => {
 		try {
 			// Call logout API to clear server session
-			await fetch("/api/auth/logout", { method: "POST" });
+			await fetch(`${API_BASE}/api/auth/logout`, { method: "POST" });
 		} catch (error) {
 			console.error("Logout API call failed:", error);
 		} finally {

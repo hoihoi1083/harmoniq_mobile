@@ -1,3 +1,4 @@
+"use client";
 import { useTranslations } from "next-intl";
 import EnquiryForm from "./EnquiryForm";
 import Navbar from "@/components/Navbar";

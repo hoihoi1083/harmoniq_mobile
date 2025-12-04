@@ -10,6 +10,7 @@ import { useResponsiveScale } from "../../hooks/useResponsiveScale";
 import { useRegionDetection } from "@/hooks/useRegionDetectionEnhanced";
 
 export default function Hero() {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const t = useTranslations("home.hero");
 	const isMobile = useMobile();
 	const { scaleRatio, isMobileLayout } = useResponsiveScale();
@@ -49,7 +50,7 @@ export default function Hero() {
 
 		const fetchEndTime = async () => {
 			try {
-				const res = await fetch("/api/countdown-end");
+				const res = await fetch(`${API_BASE}/api/countdown-end`);
 				const data = await res.json();
 				end = data.endTime;
 

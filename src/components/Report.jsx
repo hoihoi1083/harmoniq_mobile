@@ -64,6 +64,7 @@ export default function ReportPage({
 	sessionId: propSessionId,
 	showHistorical,
 }) {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const isMobile = useMobile();
 	const router = useRouter();
 	const searchParams = useSearchParams();
@@ -414,7 +415,7 @@ export default function ReportPage({
 	// AI-based analysis for complex patterns
 	const analyzeComplexPatterns = async (wuxingData, userInfo) => {
 		try {
-			const response = await fetch("/api/wuxing-analysis", {
+			const response = await fetch(`${API_BASE}/api/wuxing-analysis`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -572,7 +573,7 @@ export default function ReportPage({
 		setIsLoadingFlowAnalysis(true);
 		try {
 			console.log("🔥 Generating fresh element flow analysis");
-			const response = await fetch("/api/element-flow-analysis", {
+			const response = await fetch(`${API_BASE}/api/element-flow-analysis`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -654,7 +655,7 @@ export default function ReportPage({
 
 			const stage = stageMapping[pillarType] || "人生阶段";
 
-			const response = await fetch("/api/life-stage-analysis", {
+			const response = await fetch(`${API_BASE}/api/life-stage-analysis`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -761,7 +762,7 @@ export default function ReportPage({
 			console.log(
 				`🔥 Generating fresh interpersonal advice for ${pillar}`
 			);
-			const response = await fetch("/api/interpersonal-advice", {
+			const response = await fetch(`${API_BASE}/api/interpersonal-advice`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -829,7 +830,7 @@ export default function ReportPage({
 
 		try {
 			console.log(`🔥 Generating fresh life advice for ${pillar}`);
-			const response = await fetch("/api/comprehensive-advice", {
+			const response = await fetch(`${API_BASE}/api/comprehensive-advice`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -883,7 +884,7 @@ export default function ReportPage({
 		wuxingData
 	) => {
 		try {
-			const response = await fetch("/api/comprehensive-interpersonal", {
+			const response = await fetch(`${API_BASE}/api/comprehensive-interpersonal`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -958,7 +959,7 @@ export default function ReportPage({
 
 		try {
 			console.log("🔥 Generating fresh comprehensive life advice");
-			const response = await fetch("/api/comprehensive-life-advice", {
+			const response = await fetch(`${API_BASE}/api/comprehensive-life-advice`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

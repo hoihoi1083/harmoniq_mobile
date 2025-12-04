@@ -10,6 +10,7 @@ import {
 } from "../utils/componentDataStore";
 
 export default function LiuNianKeyWord({ userInfo, currentYear = 2025 }) {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const [analysisData, setAnalysisData] = useState(null);
 	const [isLoading, setIsLoading] = useState(true);
 
@@ -253,7 +254,7 @@ export default function LiuNianKeyWord({ userInfo, currentYear = 2025 }) {
 					`LiuNian AI Analysis Attempt ${attempt} for ${concern}`
 				);
 
-				const response = await fetch("/api/ai-analysis", {
+				const response = await fetch(`${API_BASE}/api/ai-analysis`, {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json",

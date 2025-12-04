@@ -2,12 +2,13 @@
 import CountdownTimer from "./CountdownTimer"; // 假设CountdownTimer在同一目录下
 import FortuneDataModal from "@/components/FortuneDataModal";
 import PaymentThankYou from "@/components/PaymentThankYou";
-import { useState, useEffect, use } from "react";
+import { useState, useEffect, use, Suspense } from "react";
 import { Capacitor } from "@capacitor/core";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useLocale } from "next-intl";
 
-export default function Success({ searchParams }) {
+function SuccessContent() {
+	const searchParams = useSearchParams();
 	const router = useRouter();
 	const locale = useLocale();
 	const [sessionData, setSessionData] = useState(null);
@@ -32,7 +33,10 @@ export default function Success({ searchParams }) {
 		console.log("🔍 Success page mobile check:", {
 			mobile,
 			isInCapacitorApp,
-			userAgent: typeof window !== "undefined" ? window.navigator.userAgent : "N/A"
+			userAgent:
+				typeof window !== "undefined"
+					? window.navigator.userAgent
+					: "N/A",
 		});
 
 		// Only redirect if mobile=true AND we're NOT already in the Capacitor app
@@ -67,23 +71,23 @@ export default function Success({ searchParams }) {
 			// Format: harmoniq://success?session_id=...&type=...&concern=...
 			const appUrl = `harmoniq://success${window.location.search}`;
 			console.log("📱 Attempting to open app with URL:", appUrl);
-			
+
 			// Try multiple redirect methods for better compatibility
 			setTimeout(() => {
 				// Method 1: Direct window.location
 				window.location.href = appUrl;
-				
+
 				// Method 2: Create invisible iframe (sometimes more reliable)
 				const iframe = document.createElement("iframe");
 				iframe.style.display = "none";
 				iframe.src = appUrl;
 				document.body.appendChild(iframe);
-				
+
 				// Method 3: Create a link and click it
 				const link = document.createElement("a");
 				link.href = appUrl;
 				link.click();
-				
+
 				console.log("📱 All redirect methods attempted");
 			}, 500);
 
@@ -331,5 +335,13 @@ export default function Success({ searchParams }) {
 				chatContext={chatContext}
 			/>
 		</>
+	);
+}
+
+export default function Success() {
+	return (
+		<Suspense fallback={<div>Loading...</div>}>
+			<SuccessContent />
+		</Suspense>
 	);
 }

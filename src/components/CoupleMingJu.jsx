@@ -181,7 +181,7 @@ async function generateCoupleMingJuAnalysis(
 			);
 
 			// Call couple-specific AI analysis endpoint
-			const response = await fetch("/api/couple-mingju-analysis", {
+			const response = await fetch(`${API_BASE}/api/couple-mingju-analysis`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -1566,6 +1566,7 @@ function formatLeftTabContent(content) {
 
 	// Find sections
 	const findSectionContent = (startText) => {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 		const startIndex = lines.findIndex((line) => line.includes(startText));
 		if (startIndex === -1) return [];
 

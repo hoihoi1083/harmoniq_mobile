@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { MessageCircle, User } from "lucide-react";
 
 const WeChatLogin = ({ onSuccess, onError, className = "" }) => {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const [isLoading, setIsLoading] = useState(false);
 
 	const handleWeChatLogin = async () => {
@@ -54,7 +55,7 @@ const WeChatLogin = ({ onSuccess, onError, className = "" }) => {
 	const checkLoginStatus = async () => {
 		try {
 			// Check if user is now logged in
-			const response = await fetch("/api/auth/status");
+			const response = await fetch(`${API_BASE}/api/auth/status");
 			const data = await response.json();
 
 			if (data.loggedIn && onSuccess) {

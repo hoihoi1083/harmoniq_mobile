@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { use } from "react";
@@ -8,7 +8,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/home/Footer";
 import { useMobileAuth } from "@/hooks/useMobileAuth";
 
-export default function BirthdayEntryPage({ params }) {
+function BirthdayEntryPageContent({ params }) {
 	const { locale } = use(params);
 	const t = useTranslations("birthdayEntry");
 	const searchParams = useSearchParams();
@@ -292,5 +292,13 @@ export default function BirthdayEntryPage({ params }) {
 			</div>
 			<Footer />
 		</div>
+	);
+}
+
+export default function BirthdayEntryPage({ params }) {
+	return (
+		<Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
+			<BirthdayEntryPageContent params={params} />
+		</Suspense>
 	);
 }

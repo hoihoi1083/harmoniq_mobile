@@ -23,6 +23,7 @@ import { saveComponentContentWithUser } from "@/utils/simpleCoupleContentSave";
 
 // Helper function to calculate Ba Zi with accurate time-based hour pillar
 const calculateBaziWithTime = (birthDateTime) => {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	try {
 		// Handle missing time by defaulting to 12:00 (noon)
 		let fullDateTime = birthDateTime;
@@ -416,7 +417,7 @@ const CoupleAnnualAnalysis = ({
 				);
 			}, 60000); // 60 second timeout
 
-			const response = await fetch("/api/couple-annual-analysis", {
+			const response = await fetch(`${API_BASE}/api/couple-annual-analysis`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({
@@ -1336,7 +1337,7 @@ const IndividualAnalysisSection = ({
 						);
 					}, 45000); // 45 second timeout
 
-					const response = await fetch("/api/individual-analysis", {
+					const response = await fetch(`${API_BASE}/api/individual-analysis`, {
 						method: "POST",
 						headers: {
 							"Content-Type": "application/json",

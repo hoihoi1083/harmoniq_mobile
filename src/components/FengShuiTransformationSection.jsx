@@ -47,7 +47,7 @@ const FengShuiTransformationSection = ({
 				requestBody
 			);
 
-			const response = await fetch("/api/feng-shui-transformation", {
+			const response = await fetch(`${API_BASE}/api/feng-shui-transformation`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(requestBody),
@@ -421,3 +421,5 @@ const FengShuiTransformationSection = ({
 };
 
 export default FengShuiTransformationSection;
+
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';

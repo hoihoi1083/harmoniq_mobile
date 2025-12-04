@@ -53,7 +53,7 @@ class FengShuiUserTracker {
 
 		try {
 			// Send to your API endpoint
-			await fetch("/api/track-user-action", {
+			await fetch(`${API_BASE}/api/track-user-action`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -120,7 +120,7 @@ class FengShuiUserTracker {
 	// Get user journey data
 	async getUserJourney() {
 		try {
-			const response = await fetch(`/api/user-journey/${this.userId}`);
+			const response = await fetch(`${API_BASE}/api/user-journey/${this.userId}`);
 			return await response.json();
 		} catch (error) {
 			console.error("Error fetching user journey:", error);
@@ -133,3 +133,5 @@ class FengShuiUserTracker {
 export const fengShuiTracker = new FengShuiUserTracker();
 
 export default fengShuiTracker;
+
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';

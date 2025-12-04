@@ -1,3 +1,6 @@
+"use client";
+
+import { Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/home/Hero";
 import Features from "@/components/home/Features";
@@ -15,11 +18,12 @@ import TheoryTips from "@/components/home/TheoryTips";
 import ServiceSection from "@/components/home/service";
 import DemoSection from "@/components/home/DemoSection";
 
-import { get } from "@/lib/ajax";
 export default function Home() {
 	return (
 		<div className="min-h-screen bg-[#EFEFEF]">
-			<Navbar from="home" />
+			<Suspense fallback={<div className="h-16" />}>
+				<Navbar from="home" />
+			</Suspense>
 			<main>
 				<section id="hero">
 					<Hero />

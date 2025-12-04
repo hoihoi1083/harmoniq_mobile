@@ -19,6 +19,7 @@ import EmotionalAnalyzer from "@/components/EmotionalAnalyzer";
 import BirthdayAnalyzer from "@/components/BirthdayAnalyzer";
 
 export default function ChatPage() {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const { data: session } = useSession();
 	const router = useRouter();
 	const [messages, setMessages] = useState([
@@ -225,7 +226,7 @@ export default function ChatPage() {
 			const emotion = analyzeEmotion(input);
 
 			// Call AI API for emotionally intelligent response
-			const response = await fetch("/api/chat", {
+			const response = await fetch(`${API_BASE}/api/chat`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

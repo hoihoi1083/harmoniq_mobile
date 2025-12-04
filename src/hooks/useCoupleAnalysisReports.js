@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
 
 export const useCoupleAnalysisReports = () => {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
 
@@ -16,7 +17,7 @@ export const useCoupleAnalysisReports = () => {
 				problemCategory: reportData.problemAnalysis?.categoryType,
 			});
 
-			const response = await fetch("/api/couple-analysis-reports", {
+			const response = await fetch(`${API_BASE}/api/couple-analysis-reports`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

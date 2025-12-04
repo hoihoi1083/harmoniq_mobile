@@ -1,16 +1,17 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams, useRouter, useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { use } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/home/Footer";
 import { Capacitor } from "@capacitor/core";
 import { Preferences } from "@capacitor/preferences";
 
-export default function FortuneEntryPage({ params }) {
-	const { locale } = use(params);
+function FortuneEntryContent() {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
+	const params = useParams();
+	const { locale } = params;
 	const t = useTranslations("fortuneEntry");
 	const searchParams = useSearchParams();
 	const router = useRouter();
@@ -59,7 +60,7 @@ export default function FortuneEntryPage({ params }) {
 					if (userId) headers["X-User-ID"] = userId;
 				}
 
-				const response = await fetch("/api/get-user-birthday", {
+				const response = await fetch(`${API_BASE}/api/get-user-birthday`, {
 					headers,
 				});
 				if (response.ok) {
@@ -97,7 +98,7 @@ export default function FortuneEntryPage({ params }) {
 			}
 
 			try {
-				const response = await fetch("/api/verify-fortune-payment", {
+				const response = await fetch(`${API_BASE}/api/verify-fortune-payment`, {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json",
@@ -591,5 +592,13 @@ export default function FortuneEntryPage({ params }) {
 			</div>
 			<Footer />
 		</div>
+	);
+}
+
+export default function FortuneEntryPage() {
+	return (
+		<Suspense fallback={<div>Loading...</div>}>
+			<FortuneEntryContent />
+		</Suspense>
 	);
 }

@@ -1,12 +1,19 @@
+"use client";
+
 import { Suspense } from "react";
+import { useSearchParams } from "next/navigation";
+import { use } from "react";
 import Report from "@/components/Report";
 import { Skeleton } from "@/components/ui/skeleton";
 import Footer from "@/components/home/Footer";
 
-export default async function ReportPage({ params, searchParams }) {
-	const { locale } = await params;
-	const { birthDateTime, gender, sessionId, showHistorical } =
-		await searchParams;
+function ReportPageContent({ params }) {
+	const { locale } = use(params);
+	const searchParams = useSearchParams();
+	const birthDateTime = searchParams.get("birthDateTime");
+	const gender = searchParams.get("gender");
+	const sessionId = searchParams.get("sessionId");
+	const showHistorical = searchParams.get("showHistorical") === "true";
 
 	return (
 		<div>
@@ -15,9 +22,17 @@ export default async function ReportPage({ params, searchParams }) {
 				gender={gender}
 				sessionId={sessionId}
 				locale={locale}
-				showHistorical={showHistorical === "true"}
+				showHistorical={showHistorical}
 			/>
 			<Footer />
 		</div>
+	);
+}
+
+export default function ReportPage({ params }) {
+	return (
+		<Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
+			<ReportPageContent params={params} />
+		</Suspense>
 	);
 }

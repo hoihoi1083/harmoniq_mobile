@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { use } from "react";
@@ -9,21 +9,31 @@ import { useMobileAuth } from "@/hooks/useMobileAuth";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/home/Footer";
 
-export default function CoupleEntryPage({ params }) {
+function CoupleEntryPageContent({ params }) {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const { locale } = use(params);
 	const t = useTranslations("coupleEntry");
 	const searchParams = useSearchParams();
 	const router = useRouter();
 	const { data: session, status } = useSession();
 	// 🔥 MOBILE FIX: Add mobile session support
-	const { mobileSession, isLoading: mobileLoading, isMobile: isCapacitorMobile } = useMobileAuth();
-	
+	const {
+		mobileSession,
+		isLoading: mobileLoading,
+		isMobile: isCapacitorMobile,
+	} = useMobileAuth();
+
 	// Combine web and mobile sessions
-	const effectiveSession = isCapacitorMobile && mobileSession ? mobileSession : session;
-	const effectiveStatus = isCapacitorMobile 
-		? (mobileLoading ? "loading" : (mobileSession ? "authenticated" : "unauthenticated"))
+	const effectiveSession =
+		isCapacitorMobile && mobileSession ? mobileSession : session;
+	const effectiveStatus = isCapacitorMobile
+		? mobileLoading
+			? "loading"
+			: mobileSession
+				? "authenticated"
+				: "unauthenticated"
 		: status;
-	
+
 	const sessionId = searchParams.get("session_id");
 	const specificProblem = searchParams.get("specificProblem") || "";
 	const fromChat = searchParams.get("fromChat") === "true";
@@ -83,10 +93,19 @@ export default function CoupleEntryPage({ params }) {
 		} else if (effectiveStatus === "authenticated") {
 			console.log("✅ User authenticated:", {
 				isMobile: isCapacitorMobile,
-				userEmail: effectiveSession?.user?.email
+				userEmail: effectiveSession?.user?.email,
 			});
 		}
-	}, [effectiveStatus, locale, router, sessionId, specificProblem, fromChat, isCapacitorMobile, effectiveSession]);
+	}, [
+		effectiveStatus,
+		locale,
+		router,
+		sessionId,
+		specificProblem,
+		fromChat,
+		isCapacitorMobile,
+		effectiveSession,
+	]);
 
 	// Verify payment on component mount
 	useEffect(() => {
@@ -98,7 +117,7 @@ export default function CoupleEntryPage({ params }) {
 			}
 
 			try {
-				const response = await fetch("/api/verify-couple-payment", {
+				const response = await fetch(`${API_BASE}/api/verify-couple-payment`, {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json",
@@ -662,5 +681,13 @@ export default function CoupleEntryPage({ params }) {
 			</div>
 			<Footer />
 		</div>
+	);
+}
+
+export default function CoupleEntryPage(props) {
+	return (
+		<Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
+			<CoupleEntryPageContent {...props} />
+		</Suspense>
 	);
 }

@@ -144,7 +144,7 @@ async function generateMingJuAnalysis(
 			);
 
 			// Call your AI API here (replace with your actual AI service)
-			const response = await fetch("/api/ai-analysis", {
+			const response = await fetch(`${API_BASE}/api/ai-analysis`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -1447,6 +1447,7 @@ function getFallbackContent(concernArea, tab) {
 }
 
 export function MingJu({ userInfo, currentYear }) {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const [selectedTab, setSelectedTab] = useState("日主特性");
 	const [tabContent, setTabContent] = useState("");
 	const [aiContent, setAiContent] = useState("");

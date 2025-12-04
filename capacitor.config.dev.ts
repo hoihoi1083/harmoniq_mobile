@@ -2,8 +2,8 @@ import type { CapacitorConfig } from "@capacitor/cli";
 
 // 🔥 DEVELOPMENT CONFIG - Points to localhost for live reload
 const config: CapacitorConfig = {
-	appId: "com.chunhoi.fengshui", // 🔥 UPDATED: Changed from com.harmoniq.fengshui
-	appName: "HarmoniqFengShui (Dev)",
+	appId: "com.harmoniq.windbell",
+	appName: "風鈴聊天室 (Dev)",
 	webDir: "out",
 	server: {
 		// Point to your local development server

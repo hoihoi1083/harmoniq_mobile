@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 
 const TargetedSuggestionsSection = ({ femaleUser, maleUser, analysisData }) => {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const [targetedSuggestionsData, setTargetedSuggestionsData] =
 		useState(null);
 	const [loading, setLoading] = useState(false);
@@ -44,7 +45,7 @@ const TargetedSuggestionsSection = ({ femaleUser, maleUser, analysisData }) => {
 				requestBody
 			);
 
-			const response = await fetch("/api/targeted-suggestions", {
+			const response = await fetch(`${API_BASE}/api/targeted-suggestions`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(requestBody),

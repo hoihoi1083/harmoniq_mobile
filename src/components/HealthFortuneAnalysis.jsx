@@ -90,7 +90,7 @@ const HealthFortuneAnalysis = ({
 			const prompt = generateHealthFortunePrompt(userInfo, wuxingData);
 
 			// Call the AI API
-			const response = await fetch("/api/health-fortune-analysis", {
+			const response = await fetch(`${API_BASE}/api/health-fortune-analysis`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ prompt, userInfo, wuxingData }),
@@ -173,6 +173,7 @@ const HealthFortuneAnalysis = ({
 	};
 
 	const generateMockHealthAnalysis = (userInfo, wuxingData) => {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 		const birthDate = new Date(userInfo.birthDateTime);
 		const currentYear = new Date().getFullYear();
 		const age = currentYear - birthDate.getFullYear();

@@ -21,6 +21,7 @@ import BirthdayModal from "@/components/BirthdayModal";
 import Navbar from "@/components/Navbar";
 
 export default function SmartChat2() {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const { data: session } = useSession();
 	const { mobileSession, isMobile: isCapacitorMobile } = useMobileAuth();
 	const pathname = usePathname();
@@ -145,7 +146,12 @@ export default function SmartChat2() {
 		// 加載對話歷史
 		loadConversationHistory(userId);
 		setIsInitialized(true);
-	}, [effectiveSession?.user?.email, isInitialized, currentUserId, messages.length]); // 只在用戶email變化時重新初始化，而不是整個session對象
+	}, [
+		effectiveSession?.user?.email,
+		isInitialized,
+		currentUserId,
+		messages.length,
+	]); // 只在用戶email變化時重新初始化，而不是整個session對象
 
 	// Auto-scroll to bottom when new messages are added
 	useEffect(() => {
@@ -238,7 +244,8 @@ export default function SmartChat2() {
 				if (isCapacitorMobile && effectiveSession?.user?.email) {
 					headers["X-User-Email"] = effectiveSession.user.email;
 					// @ts-ignore
-					headers["X-User-ID"] = effectiveSession.user.id || effectiveSession.user.email;
+					headers["X-User-ID"] =
+						effectiveSession.user.id || effectiveSession.user.email;
 				}
 
 				// Get fresh locale from localStorage to ensure consistency
@@ -260,7 +267,7 @@ export default function SmartChat2() {
 					sessionId: sessionId,
 				});
 
-				const paymentResponse = await fetch("/api/payment-couple", {
+				const paymentResponse = await fetch(`${API_BASE}/api/payment-couple`, {
 					method: "POST",
 					headers: headers,
 					body: JSON.stringify({
@@ -335,7 +342,7 @@ export default function SmartChat2() {
 		setIsLoading(true);
 
 		try {
-			const response = await fetch("/api/smart-chat2", {
+			const response = await fetch(`${API_BASE}/api/smart-chat2`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -765,7 +772,7 @@ export default function SmartChat2() {
 
 		// For individual analysis, continue with API call
 		try {
-			const response = await fetch("/api/smart-chat2", {
+			const response = await fetch(`${API_BASE}/api/smart-chat2`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

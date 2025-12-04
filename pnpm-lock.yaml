@@ -33,7 +33,7 @@ importers:
         specifier: ^7.0.2
         version: 7.0.2(@capacitor/core@7.4.4)
       '@codetrix-studio/capacitor-google-auth':
-        specifier: ^3.4.0-rc.4
+        specifier: 3.4.0-rc.4
         version: 3.4.0-rc.4(@capacitor/core@7.4.4)
       '@dnd-kit/core':
         specifier: ^6.3.1

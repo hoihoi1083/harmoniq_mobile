@@ -14,6 +14,7 @@ export default function OverallBazhaiAnalysis({
 	roomAnalyses,
 	yearlyAdvice,
 }) {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const [activeSection, setActiveSection] = useState("overview");
 	const [activeRoomIndex, setActiveRoomIndex] = useState(0); // Set first room as active by default
 	const [localPersonalData, setLocalPersonalData] = useState(null);
@@ -221,7 +222,7 @@ export default function OverallBazhaiAnalysis({
 
 		setIsLoadingPersonalSummary(true);
 		try {
-			const response = await fetch("/api/bazhai-analysis", {
+			const response = await fetch(`${API_BASE}/api/bazhai-analysis`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -311,7 +312,7 @@ export default function OverallBazhaiAnalysis({
 
 			console.log("Generated prompt:", prompt);
 
-			const response = await fetch("/api/personal-analysis", {
+			const response = await fetch(`${API_BASE}/api/personal-analysis`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

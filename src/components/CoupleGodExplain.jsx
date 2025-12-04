@@ -9,6 +9,7 @@ import { EnhancedInitialAnalysis } from "@/lib/enhancedInitialAnalysis";
 import { saveComponentContentWithUser } from "@/utils/simpleCoupleContentSave";
 
 const CoupleGodExplain = ({ user1, user2 }) => {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const { data: session } = useSession();
 	const { analysisData, godAnalysisCache, setGodAnalysisCache } =
 		useCoupleAnalysis();
@@ -97,7 +98,7 @@ const CoupleGodExplain = ({ user1, user2 }) => {
 			const randomSeed = Math.random().toString(36).substring(7);
 			const cacheKey = `${timestamp}_${randomSeed}`;
 
-			const response = await fetch("/api/couple-god-analysis", {
+			const response = await fetch(`${API_BASE}/api/couple-god-analysis`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useTranslations, useLocale } from "next-intl";
 import { use } from "react";
@@ -45,7 +45,7 @@ import CoupleMingJu from "@/components/CoupleMingJu";
 import CoupleSeason from "@/components/CoupleSeason";
 import CoupleCoreSuggestion from "@/components/CoupleCoreSuggestion";
 
-export default function CoupleReportPage({ params }) {
+function CoupleReportPageContent({ params }) {
 	const { locale } = use(params);
 	const currentLocale = useLocale();
 	const isSimplified = currentLocale === "zh-CN";
@@ -716,10 +716,10 @@ export default function CoupleReportPage({ params }) {
 				<Navbar from="report" backgroundColor="white" />
 
 				{/* Main content container with proper top padding for navbar */}
-				<div 
-					style={{ 
+				<div
+					style={{
 						paddingTop: "calc(4rem + env(safe-area-inset-top))",
-						minHeight: "100vh"
+						minHeight: "100vh",
 					}}
 				>
 					{/* Historical Report Banner */}
@@ -727,7 +727,9 @@ export default function CoupleReportPage({ params }) {
 						<div className="container px-4 mx-auto mb-6">
 							<div className="p-4 border border-yellow-200 rounded-lg bg-yellow-50">
 								<p className="text-yellow-800">
-									<strong>{t("historicalBannerNotice")}</strong>
+									<strong>
+										{t("historicalBannerNotice")}
+									</strong>
 									{t("historicalBannerText")}
 									{t("calculationTime")}{" "}
 									{reportData.reportGeneratedAt
@@ -749,110 +751,112 @@ export default function CoupleReportPage({ params }) {
 
 					{/* Navigation Row */}
 					<div className="w-full bg-gradient-to-r from-[#C74772] to-[#D09900] py-4 sm:py-6">
-					<div className="max-w-6xl px-3 mx-auto sm:px-4">
-						<div className="flex items-center justify-center gap-3 sm:justify-between md:justify-center lg:justify-center xl:justify-center sm:gap-6">
-							{/* 姻緣合盤流年分析報告 Tab */}
-							<button
-								onClick={() => setActiveTab("analysis")}
-								className={`flex-1 max-w-[320px] px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-200 ${
-									activeTab === "analysis"
-										? "bg-gradient-to-r from-[#C74772] to-[#D09900] text-white shadow-[0_4px_14px_rgba(0,0,0,0.25)]"
-										: "bg-white text-[#374A37] shadow-inner shadow-[inset_0_4px_4px_rgba(0,0,0,0.25)]"
-								}`}
-								style={{
-									fontFamily: "Noto Serif TC, serif",
-									fontSize: "clamp(14px, 3.5vw, 18px)",
-									boxShadow: "0 4px 4px rgba(0, 0, 0, 0.25)",
-								}}
-							>
-								{t("analysisReportTab")}
-							</button>
+						<div className="max-w-6xl px-3 mx-auto sm:px-4">
+							<div className="flex items-center justify-center gap-3 sm:justify-between md:justify-center lg:justify-center xl:justify-center sm:gap-6">
+								{/* 姻緣合盤流年分析報告 Tab */}
+								<button
+									onClick={() => setActiveTab("analysis")}
+									className={`flex-1 max-w-[320px] px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-200 ${
+										activeTab === "analysis"
+											? "bg-gradient-to-r from-[#C74772] to-[#D09900] text-white shadow-[0_4px_14px_rgba(0,0,0,0.25)]"
+											: "bg-white text-[#374A37] shadow-inner shadow-[inset_0_4px_4px_rgba(0,0,0,0.25)]"
+									}`}
+									style={{
+										fontFamily: "Noto Serif TC, serif",
+										fontSize: "clamp(14px, 3.5vw, 18px)",
+										boxShadow:
+											"0 4px 4px rgba(0, 0, 0, 0.25)",
+									}}
+								>
+									{t("analysisReportTab")}
+								</button>
 
-							{/* 專屬問題解決方案 Tab */}
-							<button
-								onClick={() => setActiveTab("solution")}
-								className={`flex-1 max-w-[320px] px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-200 ${
-									activeTab === "solution"
-										? "bg-gradient-to-r from-[#C74772] to-[#D09900] text-white shadow-[0_4px_14px_rgba(0,0,0,0.25)]"
-										: "bg-white text-[#374A37] shadow-inner shadow-[inset_0_4px_4px_rgba(0,0,0,0.25)]"
-								}`}
-								style={{
-									fontFamily: "Noto Serif TC, serif",
-									fontSize: "clamp(14px, 3.5vw, 18px)",
-									boxShadow: "0 4px 4px rgba(0, 0, 0, 0.25)",
-								}}
-							>
-								{t("solutionTab")}
-							</button>
+								{/* 專屬問題解決方案 Tab */}
+								<button
+									onClick={() => setActiveTab("solution")}
+									className={`flex-1 max-w-[320px] px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-200 ${
+										activeTab === "solution"
+											? "bg-gradient-to-r from-[#C74772] to-[#D09900] text-white shadow-[0_4px_14px_rgba(0,0,0,0.25)]"
+											: "bg-white text-[#374A37] shadow-inner shadow-[inset_0_4px_4px_rgba(0,0,0,0.25)]"
+									}`}
+									style={{
+										fontFamily: "Noto Serif TC, serif",
+										fontSize: "clamp(14px, 3.5vw, 18px)",
+										boxShadow:
+											"0 4px 4px rgba(0, 0, 0, 0.25)",
+									}}
+								>
+									{t("solutionTab")}
+								</button>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div className="flex items-center justify-center w-full min-h-screen bg-[#EFEFEF]">
-					<div className="w-[95%] max-w-7xl px-3 sm:px-4 lg:px-6 py-4 sm:py-6 lg:py-8 mx-auto">
-						{/* Report Title */}
-						<div className="mb-4 sm:mb-6 lg:mb-8 text-start">
-							<h1
-								className="mb-2 font-extrabold leading-tight"
-								style={{
-									fontFamily: "Noto Serif TC, Serif",
-									fontWeight: 800,
-									fontSize: "clamp(32px, 8vw, 60px)",
-									color: "#D91A5A", // Pink color for couple theme
-								}}
-							>
-								{t("reportTitle")}
-							</h1>
-						</div>
+					<div className="flex items-center justify-center w-full min-h-screen bg-[#EFEFEF]">
+						<div className="w-[95%] max-w-7xl px-3 sm:px-4 lg:px-6 py-4 sm:py-6 lg:py-8 mx-auto">
+							{/* Report Title */}
+							<div className="mb-4 sm:mb-6 lg:mb-8 text-start">
+								<h1
+									className="mb-2 font-extrabold leading-tight"
+									style={{
+										fontFamily: "Noto Serif TC, Serif",
+										fontWeight: 800,
+										fontSize: "clamp(32px, 8vw, 60px)",
+										color: "#D91A5A", // Pink color for couple theme
+									}}
+								>
+									{t("reportTitle")}
+								</h1>
+							</div>
 
-						{/* Tab Content */}
-						{activeTab === "analysis" && (
-							<div className="tab-content">
-								{/* 姻緣合盤流年分析報告 Content */}
-								{shouldRenderComponents() ? (
-									<>
-										<CoupleAnnualAnalysis
-											user1={{
-												birthDateTime:
-													reportData.birthday,
-												gender: reportData.gender,
-											}}
-											user2={{
-												birthDateTime:
-													reportData.birthday2,
-												gender: reportData.gender2,
-											}}
-											calculateWuxingAnalysis={
-												calculateWuxingAnalysis
-											}
-											analyzeWuxingStrength={
-												analyzeWuxingStrength
-											}
-											determineUsefulGods={
-												determineUsefulGods
-											}
-										/>
-										<CoupleMingJu
-											user1={{
-												birthDateTime:
-													reportData.birthday,
-												gender: reportData.gender,
-												name:
-													reportData.name ||
-													t("manName"),
-											}}
-											user2={{
-												birthDateTime:
-													reportData.birthday2,
-												gender: reportData.gender2,
-												name:
-													reportData.name2 ||
-													t("womanName"),
-											}}
-											currentYear={new Date().getFullYear()}
-											isSimplified={isSimplified}
-										/>
-										{/* <CoupleGodExplain
+							{/* Tab Content */}
+							{activeTab === "analysis" && (
+								<div className="tab-content">
+									{/* 姻緣合盤流年分析報告 Content */}
+									{shouldRenderComponents() ? (
+										<>
+											<CoupleAnnualAnalysis
+												user1={{
+													birthDateTime:
+														reportData.birthday,
+													gender: reportData.gender,
+												}}
+												user2={{
+													birthDateTime:
+														reportData.birthday2,
+													gender: reportData.gender2,
+												}}
+												calculateWuxingAnalysis={
+													calculateWuxingAnalysis
+												}
+												analyzeWuxingStrength={
+													analyzeWuxingStrength
+												}
+												determineUsefulGods={
+													determineUsefulGods
+												}
+											/>
+											<CoupleMingJu
+												user1={{
+													birthDateTime:
+														reportData.birthday,
+													gender: reportData.gender,
+													name:
+														reportData.name ||
+														t("manName"),
+												}}
+												user2={{
+													birthDateTime:
+														reportData.birthday2,
+													gender: reportData.gender2,
+													name:
+														reportData.name2 ||
+														t("womanName"),
+												}}
+												currentYear={new Date().getFullYear()}
+												isSimplified={isSimplified}
+											/>
+											{/* <CoupleGodExplain
 											user1={{
 												birthDateTime:
 													reportData.birthday,
@@ -868,90 +872,90 @@ export default function CoupleReportPage({ params }) {
 											}}
 										/>
  */}
-										<CoupleSeason
-											user1={{
-												birthDateTime:
-													reportData.birthday,
-												gender: reportData.gender,
-												name:
-													reportData.name ||
-													t("manName"),
-											}}
-											user2={{
-												birthDateTime:
-													reportData.birthday2,
-												gender: reportData.gender2,
-												name:
-													reportData.name2 ||
-													t("womanName"),
-											}}
-											currentYear={new Date().getFullYear()}
-											isSimplified={isSimplified}
-										/>
-										<CoupleCoreSuggestion
-											user1={{
-												birthDateTime:
-													reportData.birthday,
-												gender: reportData.gender,
-												name:
-													reportData.name ||
-													t("manName"),
-											}}
-											user2={{
-												birthDateTime:
-													reportData.birthday2,
-												gender: reportData.gender2,
-												name:
-													reportData.name2 ||
-													t("womanName"),
-											}}
-											currentYear={new Date().getFullYear()}
-											isSimplified={isSimplified}
-										/>
-									</>
-								) : (
-									<div className="flex items-center justify-center py-16">
-										<div className="text-center">
-											<div className="w-8 h-8 mx-auto mb-4 border-b-2 border-pink-500 rounded-full animate-spin"></div>
-											<p className="text-gray-600">
-												{t("loadingHistoricalData")}
-											</p>
+											<CoupleSeason
+												user1={{
+													birthDateTime:
+														reportData.birthday,
+													gender: reportData.gender,
+													name:
+														reportData.name ||
+														t("manName"),
+												}}
+												user2={{
+													birthDateTime:
+														reportData.birthday2,
+													gender: reportData.gender2,
+													name:
+														reportData.name2 ||
+														t("womanName"),
+												}}
+												currentYear={new Date().getFullYear()}
+												isSimplified={isSimplified}
+											/>
+											<CoupleCoreSuggestion
+												user1={{
+													birthDateTime:
+														reportData.birthday,
+													gender: reportData.gender,
+													name:
+														reportData.name ||
+														t("manName"),
+												}}
+												user2={{
+													birthDateTime:
+														reportData.birthday2,
+													gender: reportData.gender2,
+													name:
+														reportData.name2 ||
+														t("womanName"),
+												}}
+												currentYear={new Date().getFullYear()}
+												isSimplified={isSimplified}
+											/>
+										</>
+									) : (
+										<div className="flex items-center justify-center py-16">
+											<div className="text-center">
+												<div className="w-8 h-8 mx-auto mb-4 border-b-2 border-pink-500 rounded-full animate-spin"></div>
+												<p className="text-gray-600">
+													{t("loadingHistoricalData")}
+												</p>
+											</div>
 										</div>
-									</div>
-								)}
-							</div>
-						)}
-
-						{/* Enhanced Couple Specific Problem Solution - Always mounted but conditionally visible */}
-						{shouldRenderComponents() &&
-							reportData &&
-							memoizedUser1 &&
-							memoizedUser2 && (
-								<div
-									className={`w-full mx-0 mb-6 ${activeTab === "solution" ? "block" : "hidden"}`}
-								>
-									<EnhancedCoupleSpecificProblemSolution
-										user1={memoizedUser1}
-										user2={memoizedUser2}
-										specificProblem={reportData.problem}
-										isSimplified={isSimplified}
-										calculateWuxingAnalysis={
-											calculateWuxingAnalysis
-										}
-										analyzeWuxingStrength={
-											analyzeWuxingStrength
-										}
-										determineUsefulGods={
-											determineUsefulGods
-										}
-									/>
+									)}
 								</div>
 							)}
 
-						{activeTab === "solution" && (
-							<div className="tab-content">
-								{/* Couple Compatibility Overview - HIDDEN */}
-								{/* {reportData && (
+							{/* Enhanced Couple Specific Problem Solution - Always mounted but conditionally visible */}
+							{shouldRenderComponents() &&
+								reportData &&
+								memoizedUser1 &&
+								memoizedUser2 && (
+									<div
+										className={`w-full mx-0 mb-6 ${activeTab === "solution" ? "block" : "hidden"}`}
+									>
+										<EnhancedCoupleSpecificProblemSolution
+											user1={memoizedUser1}
+											user2={memoizedUser2}
+											specificProblem={reportData.problem}
+											isSimplified={isSimplified}
+											calculateWuxingAnalysis={
+												calculateWuxingAnalysis
+											}
+											analyzeWuxingStrength={
+												analyzeWuxingStrength
+											}
+											determineUsefulGods={
+												determineUsefulGods
+											}
+										/>
+									</div>
+								)}
+
+							{activeTab === "solution" && (
+								<div className="tab-content">
+									{/* Couple Compatibility Overview - HIDDEN */}
+									{/* {reportData && (
 								<div className="w-full mx-auto mb-6">
 									<CoupleCompatibility
 										user1={{
@@ -976,8 +980,8 @@ export default function CoupleReportPage({ params }) {
 									/>
 								</div>
 							)} */}{" "}
-								{/* Individual Analysis Section - HIDDEN */}
-								{/* <div className="mb-8 text-start">
+									{/* Individual Analysis Section - HIDDEN */}
+									{/* <div className="mb-8 text-start">
 									<h1
 										className="mb-2 font-extrabold"
 										style={{
@@ -990,8 +994,8 @@ export default function CoupleReportPage({ params }) {
 										雙方命理分析
 									</h1>
 								</div> */}
-								{/* Couple Wuxing Analysis - HIDDEN */}
-								{/* {reportData && (
+									{/* Couple Wuxing Analysis - HIDDEN */}
+									{/* {reportData && (
 									<div className="w-full mx-auto mb-6">
 										<CoupleWuxingAnalysis
 											user1={{
@@ -1016,8 +1020,8 @@ export default function CoupleReportPage({ params }) {
 										/>
 									</div>
 								)} */}
-								{/* Relationship Fortune Section */}
-								{/* <div className="mb-8 text-start">
+									{/* Relationship Fortune Section */}
+									{/* <div className="mb-8 text-start">
 									<h1
 										className="mb-2 font-extrabold"
 										style={{
@@ -1030,8 +1034,8 @@ export default function CoupleReportPage({ params }) {
 										流年感情運勢
 									</h1>
 								</div> */}
-								{/* Relationship Fortune Analysis */}
-								{/* {reportData && (
+									{/* Relationship Fortune Analysis */}
+									{/* {reportData && (
 									<div className="w-full mx-auto mb-6">
 										<RelationshipFortune
 											user1={{
@@ -1052,8 +1056,8 @@ export default function CoupleReportPage({ params }) {
 										/>
 									</div>
 								)} */}
-								{/* Relationship Guidance Section - HIDDEN */}
-								{/* <div className="mb-8 text-start">
+									{/* Relationship Guidance Section - HIDDEN */}
+									{/* <div className="mb-8 text-start">
 									<h1
 										className="mb-2 font-extrabold"
 										style={{
@@ -1066,8 +1070,8 @@ export default function CoupleReportPage({ params }) {
 										感情開運建議
 									</h1>
 								</div> */}
-								{/* Couple Advice - HIDDEN */}
-								{/* {reportData && (
+									{/* Couple Advice - HIDDEN */}
+									{/* {reportData && (
 									<div className="w-full mx-auto mb-6">
 										<CoupleAdvice
 											user1={{
@@ -1097,8 +1101,8 @@ export default function CoupleReportPage({ params }) {
 										/>
 									</div>
 								)} */}
-								{/* Relationship Taboos - HIDDEN */}
-								{/* {reportData && (
+									{/* Relationship Taboos - HIDDEN */}
+									{/* {reportData && (
 									<div className="w-full mx-auto mb-6">
 										<RelationshipTaboos
 											user1={{
@@ -1127,8 +1131,8 @@ export default function CoupleReportPage({ params }) {
 										/>
 									</div>
 								)} */}
-								{/* Couple Feng Shui Layout - HIDDEN */}
-								{/* {reportData && (
+									{/* Couple Feng Shui Layout - HIDDEN */}
+									{/* {reportData && (
 									<div className="w-full mx-auto mb-6">
 										<CoupleFengShuiLayout
 											user1={{
@@ -1157,17 +1161,25 @@ export default function CoupleReportPage({ params }) {
 										/>
 									</div>
 								)} */}
-								{/* Enhanced Couple Specific Problem Solution - Moved outside tab to prevent unmounting */}
-							</div>
-						)}
+									{/* Enhanced Couple Specific Problem Solution - Moved outside tab to prevent unmounting */}
+								</div>
+							)}
+						</div>
 					</div>
-				</div>
 
-				{/* Footer */}
-				<Footer />
+					{/* Footer */}
+					<Footer />
 				</div>
 				{/* End of main content wrapper */}
 			</CoupleAnalysisProvider>
 		</LoadingProvider>
+	);
+}
+
+export default function CoupleReportPage({ params }) {
+	return (
+		<Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
+			<CoupleReportPageContent params={params} />
+		</Suspense>
 	);
 }

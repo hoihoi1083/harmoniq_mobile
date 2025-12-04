@@ -5,6 +5,7 @@ import { createContext, useContext, useState, useEffect } from "react";
 const CoupleAnalysisContext = createContext();
 
 export const useCoupleAnalysis = () => {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const context = useContext(CoupleAnalysisContext);
 	if (!context) {
 		throw new Error(
@@ -115,7 +116,7 @@ export const CoupleAnalysisProvider = ({
 					stableSessionId
 				);
 
-				const response = await fetch("/api/couple-analysis", {
+				const response = await fetch(`${API_BASE}/api/couple-analysis`, {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json",

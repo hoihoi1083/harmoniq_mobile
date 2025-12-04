@@ -71,7 +71,7 @@ const RelationshipFortuneAnalysis = ({
 			);
 
 			// Call the AI API
-			const response = await fetch("/api/relationship-fortune-analysis", {
+			const response = await fetch(`${API_BASE}/api/relationship-fortune-analysis`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ prompt, userInfo, wuxingData }),
@@ -159,6 +159,7 @@ const RelationshipFortuneAnalysis = ({
 	};
 
 	const generateMockRelationshipAnalysis = (userInfo, wuxingData) => {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 		const birthDate = new Date(userInfo.birthDateTime);
 		const currentYear = new Date().getFullYear();
 		const age = currentYear - birthDate.getFullYear();

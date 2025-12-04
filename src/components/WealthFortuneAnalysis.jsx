@@ -68,7 +68,7 @@ const WealthFortuneAnalysis = ({
 			const prompt = generateWealthFortunePrompt(userInfo, wuxingData);
 
 			// Call the AI API
-			const response = await fetch("/api/wealth-fortune-analysis", {
+			const response = await fetch(`${API_BASE}/api/wealth-fortune-analysis`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ prompt, userInfo, wuxingData }),
@@ -153,6 +153,7 @@ const WealthFortuneAnalysis = ({
 	};
 
 	const generateMockWealthAnalysis = (userInfo, wuxingData) => {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 		const birthDate = new Date(userInfo.birthDateTime);
 		const currentYear = new Date().getFullYear();
 		const age = currentYear - birthDate.getFullYear();

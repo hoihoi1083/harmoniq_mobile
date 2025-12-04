@@ -1,13 +1,14 @@
 import type { CapacitorConfig } from "@capacitor/cli";
 
-// 🚀 PRODUCTION CONFIG - Points to AWS Amplify deployment
+// 🚀 PRODUCTION CONFIG - App Store Build
+// Points to deployed mobile app server (app.harmoniqfengshui.com)
 const config: CapacitorConfig = {
-	appId: "com.chunhoi.fengshui",
-	appName: "HarmoniqFengShui",
+	appId: "com.harmoniq.windbell",
+	appName: "風鈴聊天室",
 	webDir: "out",
 	server: {
-		// 🚀 Production - Points to your EC2 server
-		url: "https://www.harmoniqfengshui.com",
+		// 🚀 Production - Points to mobile app deployment
+		url: "https://app.harmoniqfengshui.com",
 		cleartext: false, // Force HTTPS in production
 		androidScheme: "https",
 	},

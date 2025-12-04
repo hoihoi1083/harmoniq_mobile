@@ -11,6 +11,7 @@ import {
 } from "../utils/componentDataStore";
 
 export default function Season({ userInfo, currentYear = 2025 }) {
+	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
 	const locale = useLocale();
 	const t = useTranslations("fengShuiReport.components.season");
 	const [analysisData, setAnalysisData] = useState(null);
@@ -96,7 +97,7 @@ export default function Season({ userInfo, currentYear = 2025 }) {
 			setLoadingMessage("正在分析八字與季節運勢...");
 
 			// Simple fetch - let server handle all timeouts and retries
-			const response = await fetch("/api/season-analysis", {
+			const response = await fetch(`${API_BASE}/api/season-analysis`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
