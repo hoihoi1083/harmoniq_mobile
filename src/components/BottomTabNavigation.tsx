@@ -14,7 +14,7 @@ interface TabItem {
 
 /**
  * Mobile Bottom Tab Navigation
- * 4 tabs: 首頁 | 風鈴聊天室 | 服務定價 | 我的
+ * 5 tabs: 首頁 | 運程測算 | 風鈴聊天室 | 服務定價 | 我的
  */
 export default function BottomTabNavigation() {
 	const pathname = usePathname();
@@ -29,6 +29,16 @@ export default function BottomTabNavigation() {
 			path: `/${locale}/home`,
 			icon: <Home className="w-6 h-6" />,
 			label: "首頁",
+		},
+		{
+			name: "fortune",
+			path: `/${locale}/fortune-calculate`,
+			icon: (
+				<div className="w-6 h-6 flex items-center justify-center font-bold text-lg">
+					運
+				</div>
+			),
+			label: "運程測算",
 		},
 		{
 			name: "chat",
@@ -71,7 +81,7 @@ export default function BottomTabNavigation() {
 				boxShadow: "0 -1px 4.9px rgba(0, 0, 0, 0.25)",
 			}}
 		>
-			<div className="grid h-16 grid-cols-4 mx-auto">
+			<div className="grid h-16 grid-cols-5 mx-auto">
 				{tabs.map((tab) => {
 					const active = isActive(tab.path);
 					return (
