@@ -24,9 +24,10 @@ if [ -d "src/app/[locale]/customer" ]; then
   mv "src/app/[locale]/customer" "src/app/[locale]/_customer_disabled"
 fi
 
-if [ -d "src/app/[locale]/home" ]; then
-  mv "src/app/[locale]/home" "src/app/[locale]/_home_disabled"
-fi
+# REMOVED: Home page doesn't use server features, no need to disable
+# if [ -d "src/app/[locale]/home" ]; then
+#   mv "src/app/[locale]/home" "src/app/[locale]/_home_disabled"
+# fi
 
 # Disable pages with server-side searchParams
 if [ -d "src/app/[locale]/success" ]; then
@@ -91,24 +92,9 @@ fi
 echo "🔨 Building Next.js app..."
 CAPACITOR_BUILD=true npm run build
 
-# 4. Create index.html redirect for Capacitor
-echo "📄 Creating index.html redirect..."
-cat > out/index.html << 'EOF'
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0;url=/zh-TW/">
-  <script>
-    // Redirect to default locale
-    window.location.href = '/zh-TW/';
-  </script>
-</head>
-<body>
-  <p>Redirecting...</p>
-</body>
-</html>
-EOF
+# 4. Copy full HTML file for Capacitor (avoid redirect loop)
+echo "📄 Copying full index.html from zh-TW..."
+cp out/zh-TW/index.html out/index.html
 
 # 5. Sync with Capacitor
 echo "📱 Syncing with Capacitor..."
@@ -128,9 +114,10 @@ if [ -d "src/app/[locale]/_customer_disabled" ]; then
   mv "src/app/[locale]/_customer_disabled" "src/app/[locale]/customer"
 fi
 
-if [ -d "src/app/[locale]/_home_disabled" ]; then
-  mv "src/app/[locale]/_home_disabled" "src/app/[locale]/home"
-fi
+# REMOVED: Home page is now enabled for mobile
+# if [ -d "src/app/[locale]/_home_disabled" ]; then
+#   mv "src/app/[locale]/_home_disabled" "src/app/[locale]/home"
+# fi
 
 if [ -d "src/app/[locale]/_success_disabled" ]; then
   mv "src/app/[locale]/_success_disabled" "src/app/[locale]/success"

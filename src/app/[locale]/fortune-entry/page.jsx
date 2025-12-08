@@ -146,7 +146,7 @@ function FortuneEntryContent() {
 		setError("");
 	};
 
-	const handleNoSpecificProblem = () => {
+	const handleNoSpecificProblem = async () => {
 		const generalProblem = t("generalAnalysis", {
 			concernTitle: getConcernTitle(),
 		});
@@ -157,6 +157,25 @@ function FortuneEntryContent() {
 		}));
 
 		setIsSubmitting(true);
+
+		// 💾 Save birthday to Capacitor Preferences for mobile
+		if (Capacitor.isNativePlatform()) {
+			try {
+				let birthDateTime = formData.birthday;
+				if (formData.birthTime) {
+					birthDateTime += `T${formData.birthTime}:00`;
+				} else {
+					birthDateTime += 'T12:00:00';
+				}
+				await Preferences.set({
+					key: 'userBirthday',
+					value: birthDateTime
+				});
+				console.log('✅ Saved birthday to mobile preferences:', birthDateTime);
+			} catch (error) {
+				console.error('❌ Error saving birthday:', error);
+			}
+		}
 
 		// Auto submit after setting general problem
 		setTimeout(() => {
@@ -233,6 +252,21 @@ function FortuneEntryContent() {
 		setIsSubmitting(true);
 
 		try {
+			// 💾 Save birthday to Capacitor Preferences for mobile
+			if (Capacitor.isNativePlatform()) {
+				let birthDateTime = formData.birthday;
+				if (formData.birthTime) {
+					birthDateTime += `T${formData.birthTime}:00`;
+				} else {
+					birthDateTime += 'T12:00:00';
+				}
+				await Preferences.set({
+					key: 'userBirthday',
+					value: birthDateTime
+				});
+				console.log('✅ Saved birthday to mobile preferences:', birthDateTime);
+			}
+
 			// Determine which report page to route to based on payment type
 			// Fortune category payments (財運/愛情/健康/事業) → feng-shui-report
 			// Life report payment (命理) → report

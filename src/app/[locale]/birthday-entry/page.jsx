@@ -7,6 +7,8 @@ import { use } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/home/Footer";
 import { useMobileAuth } from "@/hooks/useMobileAuth";
+import { Preferences } from "@capacitor/preferences";
+import { Capacitor } from "@capacitor/core";
 
 function BirthdayEntryPageContent({ params }) {
 	const { locale } = use(params);
@@ -121,11 +123,21 @@ function BirthdayEntryPageContent({ params }) {
 				? `${formData.birthDate}T${formData.birthTime}`
 				: `${formData.birthDate}T12:00`; // Default to noon if no time provided
 
+			// 💾 Save birthday to Capacitor Preferences for mobile
+			if (Capacitor.isNativePlatform()) {
+				await Preferences.set({
+					key: 'userBirthday',
+					value: birthDateTime
+				});
+				console.log('✅ Saved birthday to mobile preferences:', birthDateTime);
+			}
+
 			// Redirect to report page with birth info
 			router.push(
 				`/report?birthDateTime=${encodeURIComponent(birthDateTime)}&gender=${formData.gender}&sessionId=${sessionId}`
 			);
 		} catch (err) {
+			console.error('❌ Error saving birthday:', err);
 			setError(t("submitError"));
 			setIsSubmitting(false);
 		}
