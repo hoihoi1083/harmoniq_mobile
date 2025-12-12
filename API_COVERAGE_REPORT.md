@@ -3,6 +3,7 @@
 ## APIs Mobile App Uses (50 endpoints):
 
 ### ✅ EXIST in FengShuiLayout Backend (48/50):
+
 - /api/ai-analysis ✅
 - /api/auth/apple/ios ✅
 - /api/auth/google/mobile ✅
@@ -53,10 +54,12 @@
 - /api/transfer-conversations ✅
 
 ### ❌ MISSING in FengShuiLayout Backend (2/50):
+
 - /api/auth/register ❌ (but auth/google/mobile and auth/apple/ios exist)
 - /api/checkoutSessions/payment2 ❌ (but payment4 exists)
 
 ### ⚠️ Not Critical:
+
 - /api/auth/logout ❌ (can use signout instead)
 - /api/create-checkout ❌ (uses payment4 instead)
 - /api/payment/create ❌ (uses payment-couple instead)
@@ -68,6 +71,7 @@
 **96% Coverage (48/50 endpoints)!**
 
 The 7 endpoints you migrated were the **CRITICAL** ones for mobile app to work:
+
 1. ✅ /api/auth/google/mobile - Login
 2. ✅ /api/auth/apple/ios - Login
 3. ✅ /api/smart-chat2 - Chatbot

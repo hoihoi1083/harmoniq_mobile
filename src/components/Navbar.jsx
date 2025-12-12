@@ -117,9 +117,19 @@ export default function Navbar({ from, backgroundColor = "transparent" }) {
 						{isLogined ? (
 							<Avatar />
 						) : (
-							<div className="flex items-center justify-center w-10 h-10 bg-gray-300 rounded-full">
-								<span className="text-lg text-white">?</span>
-							</div>
+							!pathname?.includes("/auth/") && (
+								<button
+									onClick={() => {
+										router.push("/auth/login");
+									}}
+									className="flex items-center justify-center px-3 h-10 bg-gray-300 rounded-full hover:bg-gray-400 transition-colors cursor-pointer"
+									aria-label="Login"
+								>
+									<span className="text-sm text-white font-medium">
+										登入
+									</span>
+								</button>
+							)
 						)}
 					</div>
 
@@ -140,7 +150,17 @@ export default function Navbar({ from, backgroundColor = "transparent" }) {
 							compact={true}
 						/>
 						<button
-							onClick={() => router.push("/demo")}
+							onClick={() => {
+								const pathParts = window.location.pathname
+									.split("/")
+									.filter(Boolean);
+								const locale = pathParts[0]?.match(
+									/^(zh-TW|zh-CN|zh-HK)$/
+								)
+									? pathParts[0]
+									: "zh-TW";
+								window.location.href = `/${locale}/demo`;
+							}}
 							className="p-2 transition-colors rounded-full hover:bg-gray-100"
 						>
 							<Eye className="w-6 h-6 text-gray-700" />

@@ -1178,7 +1178,13 @@ function CoupleReportPageContent({ params }) {
 
 export default function CoupleReportPage({ params }) {
 	return (
-		<Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
+		<Suspense
+			fallback={
+				<div className="flex items-center justify-center min-h-screen">
+					Loading...
+				</div>
+			}
+		>
 			<CoupleReportPageContent params={params} />
 		</Suspense>
 	);

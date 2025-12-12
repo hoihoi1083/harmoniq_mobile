@@ -43,7 +43,7 @@ const nextConfig: NextConfig = {
 	// Disable server features
 	experimental: {
 		// Optimize for client-side
-		optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
+		optimizePackageImports: ["lucide-react", "@radix-ui/react-icons"],
 	},
 	async rewrites() {
 		return [];

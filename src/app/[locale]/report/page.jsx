@@ -31,7 +31,13 @@ function ReportPageContent({ params }) {
 
 export default function ReportPage({ params }) {
 	return (
-		<Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
+		<Suspense
+			fallback={
+				<div className="flex justify-center items-center min-h-screen">
+					Loading...
+				</div>
+			}
+		>
 			<ReportPageContent params={params} />
 		</Suspense>
 	);

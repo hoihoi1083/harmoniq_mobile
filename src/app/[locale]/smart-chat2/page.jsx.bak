@@ -349,8 +349,6 @@ export default function SmartChat2() {
 		try {
 			const response = await fetch(`${API_BASE}/api/smart-chat2`, {
 				method: "POST",
-				mode: "cors",
-				credentials: "omit",
 				headers: {
 					"Content-Type": "application/json",
 				},
@@ -781,8 +779,6 @@ export default function SmartChat2() {
 		try {
 			const response = await fetch(`${API_BASE}/api/smart-chat2`, {
 				method: "POST",
-				mode: "cors",
-				credentials: "omit",
 				headers: {
 					"Content-Type": "application/json",
 				},

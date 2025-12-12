@@ -3,6 +3,7 @@
 ## ❌ What DOESN'T Work
 
 ### Option 1: Static Export (Current Attempt)
+
 ```
 Mobile App (capacitor://localhost)
 └── Loads static HTML files
@@ -18,8 +19,9 @@ Mobile App (capacitor://localhost)
 
 You have **2 real solutions**:
 
-### **Solution 1: Load Everything from Live Server** 
-*This is what you had working before!*
+### **Solution 1: Load Everything from Live Server**
+
+_This is what you had working before!_
 
 ```
 Mobile App
@@ -54,6 +56,7 @@ Architecture:
 ```
 
 **How it works:**
+
 1. Deploy `FengShuiLayout-mobileapp` to www.harmoniqfengshui.com
 2. Keep all API routes from `FengShuiLayout` (merge them)
 3. Mobile app loads from live server → gets mobile UI + working navigation
@@ -89,14 +92,14 @@ FengShuiLayout-mobileapp/src/app/api/
 ```typescript
 // capacitor.config.ts
 const config: CapacitorConfig = {
-  appId: "com.harmoniq.windbell",
-  appName: "風鈴聊天室",
-  webDir: "out",
-  server: {
-    url: "https://www.harmoniqfengshui.com",  // Load from deployed mobile app
-    cleartext: true,
-    androidScheme: "https",
-  },
+	appId: "com.harmoniq.windbell",
+	appName: "風鈴聊天室",
+	webDir: "out",
+	server: {
+		url: "https://www.harmoniqfengshui.com", // Load from deployed mobile app
+		cleartext: true,
+		androidScheme: "https",
+	},
 };
 ```
 
@@ -132,7 +135,7 @@ npx cap open ios
 ✅ No RSC payload errors  
 ✅ Chatbot works  
 ✅ Payments work  
-✅ Auth works  
+✅ Auth works
 
 ---
 
@@ -152,6 +155,7 @@ If you want to keep FengShuiLayout as web backend:
 ## 🚨 Bottom Line
 
 **You CANNOT use static export with RSC navigation.** You must either:
+
 1. Deploy the mobile app as a Next.js server (Solution 2)
 2. Convert all pages to client components (massive refactor)
 3. Use the web version from live server (no mobile UI)

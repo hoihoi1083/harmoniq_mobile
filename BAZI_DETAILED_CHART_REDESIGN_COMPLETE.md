@@ -3,6 +3,7 @@
 ## Date: January 2025
 
 ## Overview
+
 Successfully redesigned `BaziDetailedChart.jsx` (Tab 2: 基本排盤) to match the user's screenshot with improved styling and fixed the critical "待計算" (pending calculation) issue in the ten god calculations.
 
 ---
@@ -12,24 +13,30 @@ Successfully redesigned `BaziDetailedChart.jsx` (Tab 2: 基本排盤) to match t
 ### 1. **BaziDetailedChart.jsx Component Redesign**
 
 #### ✅ Header Replacement
+
 **Before:**
+
 - Header with `userName` and `birthDateTime` text display
 - Simple text-based information
 
 **After:**
+
 - Removed header completely
 - Added **Date Info Card** with:
-  - **Zodiac animal image** from `/images/animals/{animal}.png`
-  - 農曆 (Lunar) badge with formatted lunar date
-  - 陽曆 (Solar) badge with solar calendar date
-  - Visual representation of the year's zodiac animal
+    - **Zodiac animal image** from `/images/animals/{animal}.png`
+    - 農曆 (Lunar) badge with formatted lunar date
+    - 陽曆 (Solar) badge with solar calendar date
+    - Visual representation of the year's zodiac animal
 
 #### ✅ Four Pillars Display Enhancement
+
 **Before:**
+
 - Basic grid with gray backgrounds
 - Simple combined stem+branch display
 
 **After:**
+
 - Separated stem (天干) and branch (地支) display
 - Individual large characters for better visibility
 - Yellow border and background for **日主** (Day Master) pillar
@@ -38,29 +45,34 @@ Successfully redesigned `BaziDetailedChart.jsx` (Tab 2: 基本排盤) to match t
 - Improved styling with rounded corners
 
 #### ✅ Table Styling Overhaul
+
 **Before:**
+
 - Plain gray table with minimal styling
 - Basic row backgrounds
 
 **After:**
+
 - **Olive green** header column (bg-olive-500/600)
 - Color-coded rows matching screenshot:
-  - **Row 1 (干神)**: Purple background (text-purple-700, bg-purple-50)
-  - **Row 2 (天干)**: Blue text, large characters (text-blue-700)
-  - **Row 3 (地支)**: Green text, large characters (text-green-700, bg-green-50)
-  - **Rows 4-6 (藏干)**: Color-coded by element using `getElementColor()` function
-  - **Rows 7-9 (藏干神)**: Now displaying **proper ten god names** instead of "待計算"
-  - **Row 10 (星運)**: Star luck information
-  - **Row 11 (日坐)**: Day seat information
-  - **Row 12 (空亡)**: Empty void information
-  - **Row 13 (納音)**: Pink styling (text-pink-700, bg-pink-50)
+    - **Row 1 (干神)**: Purple background (text-purple-700, bg-purple-50)
+    - **Row 2 (天干)**: Blue text, large characters (text-blue-700)
+    - **Row 3 (地支)**: Green text, large characters (text-green-700, bg-green-50)
+    - **Rows 4-6 (藏干)**: Color-coded by element using `getElementColor()` function
+    - **Rows 7-9 (藏干神)**: Now displaying **proper ten god names** instead of "待計算"
+    - **Row 10 (星運)**: Star luck information
+    - **Row 11 (日坐)**: Day seat information
+    - **Row 12 (空亡)**: Empty void information
+    - **Row 13 (納音)**: Pink styling (text-pink-700, bg-pink-50)
 - Fixed column widths and table-fixed layout
 - Border styling: `border border-gray-300` throughout
 
 #### ✅ 命盤特徵 (Chart Features) Section - NEW!
+
 Added comprehensive feature display at bottom:
 
 **Structure:**
+
 ```jsx
 命盤特徵
 ├── 天干關係 (Stem Relationships)
@@ -72,14 +84,17 @@ Added comprehensive feature display at bottom:
 ```
 
 **Features:**
+
 - Green left border accent (`bg-olive-500`)
 - White cards with shadow for each category
 - Semicolon-separated relationships
 - Fallback message: "無特殊命盤特徵" if no features
 
 #### ✅ Helper Function Added
+
 **`getElementColor(element)`**
 Maps five elements to appropriate colors:
+
 - 金 (Metal): Gold (#b8860b)
 - 木 (Wood): Green (#22c55e)
 - 水 (Water): Blue (#3b82f6)
@@ -93,18 +108,22 @@ Used for color-coding hidden stems (藏干) in the table.
 ### 2. **baziChartData.js - Ten God Calculation FIX** ⚡
 
 #### 🐛 Critical Bug Fixed
+
 **The Problem:**
+
 ```javascript
 function calculateTenGod(stem, dayMaster) {
-    // This is a placeholder
-    return "待計算";  // ❌ All ten gods showed "待計算"
+	// This is a placeholder
+	return "待計算"; // ❌ All ten gods showed "待計算"
 }
 ```
 
 #### ✅ Solution Implemented
+
 Completely rewrote `calculateTenGod()` function with two approaches:
 
 **Primary Method: lunisolar char8ex plugin**
+
 ```javascript
 const lsr = lunisolar.Stem.create(stem);
 const tenGodResult = lsr.getTenGod(dayMaster);
@@ -113,14 +132,15 @@ return tenGodResult?.name || "-";
 
 **Fallback Method: Manual calculation**
 If char8ex fails, uses five elements relationship logic:
+
 - Maps 10 heavenly stems to their elements and yin/yang polarity
 - Calculates relationship using five elements cycle (木→火→土→金→水)
 - Returns proper ten god names based on relationship:
-  - Same element: 比肩 (same polarity), 劫財 (different polarity)
-  - Generate cycle (I give birth): 食神, 傷官
-  - Control cycle (I overcome): 偏財, 正財
-  - Controlled by: 偏官, 正官
-  - Generated by: 偏印, 正印
+    - Same element: 比肩 (same polarity), 劫財 (different polarity)
+    - Generate cycle (I give birth): 食神, 傷官
+    - Control cycle (I overcome): 偏財, 正財
+    - Controlled by: 偏官, 正官
+    - Generated by: 偏印, 正印
 
 **Result:**
 ✅ All "待計算" replaced with actual ten god names
@@ -132,9 +152,11 @@ If char8ex fails, uses five elements relationship logic:
 ### 3. **Tailwind Config Update**
 
 #### ✅ Added Olive Color Palette
+
 **File:** `tailwind.config.js`
 
 Added complete olive color scale (50-900) for table headers:
+
 ```javascript
 olive: {
     50: '#f8faf5',
@@ -155,60 +177,67 @@ olive: {
 ## Testing Checklist
 
 ### ✅ Build Status
+
 - [x] Clean build successful
 - [x] No TypeScript errors
 - [x] No linting errors
 - [x] Capacitor sync completed
 
 ### 🧪 Visual Testing (iOS Simulator)
+
 Test in Xcode with following checklist:
 
 #### **Tab 2: 基本排盤**
+
 - [ ] Date Info Card displays correctly
-  - [ ] Zodiac animal image visible (e.g., `/images/animals/rat.png`)
-  - [ ] 農曆 badge shows correct lunar date
-  - [ ] 陽曆 badge shows correct solar date
+    - [ ] Zodiac animal image visible (e.g., `/images/animals/rat.png`)
+    - [ ] 農曆 badge shows correct lunar date
+    - [ ] 陽曆 badge shows correct solar date
 - [ ] Four Pillars Display
-  - [ ] Day Master (日柱) has yellow border and background
-  - [ ] "日主" label visible
-  - [ ] Stems and branches displayed separately with proper size
-  - [ ] Ten god labels show above each pillar
+    - [ ] Day Master (日柱) has yellow border and background
+    - [ ] "日主" label visible
+    - [ ] Stems and branches displayed separately with proper size
+    - [ ] Ten god labels show above each pillar
 - [ ] Table Grid
-  - [ ] Header column has olive green background
-  - [ ] 干神 row has purple styling
-  - [ ] 天干 row has blue text, large characters
-  - [ ] 地支 row has green styling
-  - [ ] 藏干 rows show colored characters based on element
-  - [ ] **藏干神 rows show PROPER ten god names (NOT "待計算")**
-  - [ ] 星運, 日坐, 空亡 rows display correctly
-  - [ ] 納音 row has pink styling
+    - [ ] Header column has olive green background
+    - [ ] 干神 row has purple styling
+    - [ ] 天干 row has blue text, large characters
+    - [ ] 地支 row has green styling
+    - [ ] 藏干 rows show colored characters based on element
+    - [ ] **藏干神 rows show PROPER ten god names (NOT "待計算")**
+    - [ ] 星運, 日坐, 空亡 rows display correctly
+    - [ ] 納音 row has pink styling
 - [ ] 命盤特徵 Section
-  - [ ] Section title with green accent bar
-  - [ ] 天干關係 card displays if relationships exist
-  - [ ] 地支關係 card displays if relationships exist
-  - [ ] 整柱 card displays three harmony bureaus
-  - [ ] Fallback message shows if no features
+    - [ ] Section title with green accent bar
+    - [ ] 天干關係 card displays if relationships exist
+    - [ ] 地支關係 card displays if relationships exist
+    - [ ] 整柱 card displays three harmony bureaus
+    - [ ] Fallback message shows if no features
 
 ---
 
 ## File Changes Summary
 
 ### Modified Files
+
 1. **src/components/BaziDetailedChart.jsx** (271 lines → ~340 lines)
-   - Complete UI redesign
-   - Added zodiac animal integration
-   - Enhanced table styling
-   - Added 命盤特徵 section
+
+    - Complete UI redesign
+    - Added zodiac animal integration
+    - Enhanced table styling
+    - Added 命盤特徵 section
 
 2. **src/lib/baziChartData.js** (453 lines → ~540 lines)
-   - Fixed `calculateTenGod()` function
-   - Added `calculateTenGodManual()` fallback
-   - Proper ten god calculation logic
+
+    - Fixed `calculateTenGod()` function
+    - Added `calculateTenGodManual()` fallback
+    - Proper ten god calculation logic
 
 3. **tailwind.config.js**
-   - Added olive color palette (50-900)
+    - Added olive color palette (50-900)
 
 ### Build Files Updated
+
 - `out/` directory (Next.js static export)
 - `ios/App/App/public/` (Capacitor sync)
 - `android/app/src/main/assets/public/` (Capacitor sync)
@@ -218,6 +247,7 @@ Test in Xcode with following checklist:
 ## Technical Details
 
 ### Data Flow
+
 ```
 User Birthday Input
         ↓
@@ -238,6 +268,7 @@ BaziDetailedChart.jsx
 ```
 
 ### Dependencies Used
+
 - **lunisolar**: Core BaZi calculations
 - **@lunisolar/plugin-char8ex**: Ten god calculations
 - **next/image**: Zodiac animal images
@@ -259,11 +290,13 @@ BaziDetailedChart.jsx
 ## Next Steps (Optional Enhancements)
 
 ### Short-term
+
 - [ ] Test with various birth dates to verify ten god accuracy
 - [ ] Add loading states if calculation is slow
 - [ ] Implement swipe gestures for tab navigation
 
 ### Long-term
+
 - [ ] Add export to PDF/image functionality
 - [ ] Implement comparison between two BaZi charts
 - [ ] Add detailed explanations for each ten god
@@ -288,12 +321,14 @@ npm run cap:open:ios
 ## Screenshot Comparison
 
 ### Before
+
 - Plain gray table
 - "待計算" in 藏干神 rows
 - Basic header with text
 - No命盤特徵 section
 
 ### After
+
 - Color-coded table with olive headers
 - **Proper ten god names** in all rows
 - Zodiac animal + date badges
@@ -325,6 +360,7 @@ npm run cap:open:ios
 ## Deployment Ready ✅
 
 All changes have been:
+
 - ✅ Implemented
 - ✅ Built successfully
 - ✅ Synced to iOS/Android

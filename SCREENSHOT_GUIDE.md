@@ -3,6 +3,7 @@
 ## 🎯 Requirements Overview
 
 ### Technical Specs:
+
 - **Minimum:** 2 screenshots (required)
 - **Recommended:** 8 screenshots (better conversion)
 - **Resolution:** 1080 x 1920 px (minimum)
@@ -17,21 +18,24 @@
 ### 🔥 High Priority (Must Have - 4 screenshots)
 
 #### 1. Home Screen / Main Dashboard ⭐ MOST IMPORTANT
+
 **Purpose:** First impression - shows overall app interface
 
 **What to show:**
+
 - Bottom navigation bar visible
 - Top section with user greeting (if logged in)
 - Main feature cards clearly visible:
-  - 風水測算 (Feng Shui Analysis)
-  - 命理測算 (Fortune Calculation)
-  - 流年運程 (Fortune Forecast)
-  - 情侶合盤 (Couple Analysis)
-  - 智能聊天室 (AI Chat)
+    - 風水測算 (Feng Shui Analysis)
+    - 命理測算 (Fortune Calculation)
+    - 流年運程 (Fortune Forecast)
+    - 情侶合盤 (Couple Analysis)
+    - 智能聊天室 (AI Chat)
 
 **Path:** `/zh-TW/home`
 
 **Tips:**
+
 - Make sure you're logged in so it looks personalized
 - Clean interface (no error messages)
 - All icons/images loaded properly
@@ -39,9 +43,11 @@
 ---
 
 #### 2. BaZi Input Page ⭐ CORE FEATURE
+
 **Purpose:** Shows users can input birth info for fortune telling
 
 **What to show:**
+
 - Name input field (enter a sample name like "王小明")
 - Gender toggle buttons (男/女)
 - Calendar type toggle (公曆/農曆)
@@ -53,6 +59,7 @@
 **Path:** `/zh-TW/bazi-input`
 
 **Tips:**
+
 - Fill in sample data (don't leave empty)
 - Use realistic Chinese name
 - Shows paid report options at bottom
@@ -60,9 +67,11 @@
 ---
 
 #### 3. Fortune Report / Analysis Result ⭐ SHOWS VALUE
+
 **Purpose:** Demonstrates what users get after paying
 
 **What to show:**
+
 - Detailed BaZi chart or report
 - Chinese fortune analysis text
 - Visual elements (charts, diagrams)
@@ -72,6 +81,7 @@
 **Path:** After completing BaZi analysis (paid feature)
 
 **Options if you can't generate paid report:**
+
 - Screenshot from staging/test environment
 - Use test account with sample data
 - Show demo report if available
@@ -81,9 +91,11 @@
 ---
 
 #### 4. Home Layout Design Tool ⭐ UNIQUE FEATURE
+
 **Purpose:** Shows feng shui home analysis capability
 
 **What to show:**
+
 - Room layout or floor plan interface
 - Feng shui analysis elements
 - Interactive design tools
@@ -93,6 +105,7 @@
 **Path:** Feng shui design feature (exact path unknown, check app)
 
 **Tips:**
+
 - Show a completed or partially completed layout
 - Make sure it's clear this is feng shui analysis
 - Include Chinese text explaining features
@@ -102,9 +115,11 @@
 ### 🟡 Medium Priority (Nice to Have - 4 more screenshots)
 
 #### 5. AI Chat Interface
+
 **Purpose:** Shows chatbot consultation feature
 
 **What to show:**
+
 - Chat conversation with AI
 - Sample questions and answers about feng shui/fortune
 - Chinese conversation
@@ -114,6 +129,7 @@
 **Path:** `/zh-TW/chat` or chat feature
 
 **Sample conversation:**
+
 ```
 User: 我想问一下家里的风水布局
 AI: 好的，请问您想咨询哪个房间的风水布局呢？
@@ -122,9 +138,11 @@ AI: 好的，请问您想咨询哪个房间的风水布局呢？
 ---
 
 #### 6. Pricing / Premium Features Page
+
 **Purpose:** Shows transparent pricing (builds trust)
 
 **What to show:**
+
 - Free vs Premium comparison
 - Pricing cards (¥299/年)
 - Feature list for each tier
@@ -136,9 +154,11 @@ AI: 好的，请问您想咨询哪个房间的风水布局呢？
 ---
 
 #### 7. Fortune Forecast / Flow Year Analysis
+
 **Purpose:** Shows annual fortune prediction feature
 
 **What to show:**
+
 - Calendar or timeline view
 - Fortune predictions by month/period
 - Lucky/unlucky days
@@ -150,9 +170,11 @@ AI: 好的，请问您想咨询哪个房间的风水布局呢？
 ---
 
 #### 8. Couple Compatibility Analysis
+
 **Purpose:** Shows relationship matching feature
 
 **What to show:**
+
 - Two person input fields
 - Compatibility score or result
 - Analysis breakdown
@@ -168,6 +190,7 @@ AI: 好的，请问您想咨询哪个房间的风水布局呢？
 ### Option 1: Using Android Device (Recommended)
 
 #### Method A: Physical Device via Android Studio
+
 ```bash
 # 1. Connect your Android phone to computer
 # 2. Enable USB debugging on phone
@@ -184,6 +207,7 @@ npx cap open android
 ```
 
 #### Method B: Using Android Studio Emulator
+
 ```bash
 # 1. Open Android Studio
 npx cap open android
@@ -200,6 +224,7 @@ npx cap open android
 ```
 
 #### Method C: Direct from Phone
+
 ```bash
 # 1. Build and install APK on your phone
 # 2. Navigate to each screen
@@ -235,6 +260,7 @@ npx cap open ios
 ### After Capturing:
 
 #### 1. Crop to Proper Aspect Ratio
+
 ```bash
 # Install ImageMagick (if not installed)
 brew install imagemagick
@@ -245,6 +271,7 @@ magick input.png -resize 1080x1920^ -gravity center -extent 1080x1920 output.png
 ```
 
 #### 2. Or Use Preview (macOS):
+
 1. Open screenshot in Preview
 2. Tools → Adjust Size
 3. Set Width: 1080 pixels
@@ -252,6 +279,7 @@ magick input.png -resize 1080x1920^ -gravity center -extent 1080x1920 output.png
 5. Save
 
 #### 3. Or Use Online Tool:
+
 - Go to: https://www.iloveimg.com/resize-image
 - Upload screenshot
 - Set dimensions: 1080 x 1920 px
@@ -262,6 +290,7 @@ magick input.png -resize 1080x1920^ -gravity center -extent 1080x1920 output.png
 ### Optional Enhancements:
 
 #### Add Device Frame (More Professional):
+
 1. Go to: https://mockuphone.com/
 2. Select "Android" → Choose Pixel device
 3. Upload your screenshot
@@ -269,7 +298,9 @@ magick input.png -resize 1080x1920^ -gravity center -extent 1080x1920 output.png
 5. **Note:** This increases file size, only if under 8MB
 
 #### Add Subtle Captions (Optional):
+
 Use Canva or Figma to add text overlay:
+
 - "輸入生辰八字" on BaZi input screen
 - "查看詳細報告" on report screen
 - Keep text minimal, don't cover UI
@@ -281,6 +312,7 @@ Use Canva or Figma to add text overlay:
 ### Before Capturing:
 
 **App State:**
+
 - [ ] Logged in (shows personalized content)
 - [ ] Good internet connection (all images load)
 - [ ] No error messages visible
@@ -288,6 +320,7 @@ Use Canva or Figma to add text overlay:
 - [ ] All features loaded completely
 
 **Device Setup:**
+
 - [ ] Phone charged (no low battery indicator)
 - [ ] Full signal bars (looks professional)
 - [ ] Time showing (usually top-left)
@@ -295,6 +328,7 @@ Use Canva or Figma to add text overlay:
 - [ ] Brightness at 100%
 
 **Content:**
+
 - [ ] Chinese language (zh-TW preferred)
 - [ ] Sample data filled in forms
 - [ ] Realistic examples (not "test test" or "asdf")
@@ -304,6 +338,7 @@ Use Canva or Figma to add text overlay:
 ### After Capturing:
 
 **Technical Quality:**
+
 - [ ] Resolution: 1080x1920px minimum
 - [ ] Clear, not blurry
 - [ ] Good lighting/contrast
@@ -312,6 +347,7 @@ Use Canva or Figma to add text overlay:
 - [ ] Format: PNG or JPG
 
 **Content Quality:**
+
 - [ ] No personal information visible
 - [ ] No test/debug data showing
 - [ ] UI elements clearly visible
@@ -319,6 +355,7 @@ Use Canva or Figma to add text overlay:
 - [ ] Colors accurate
 
 **Compliance:**
+
 - [ ] Shows actual app (not mockup)
 - [ ] No copyrighted images
 - [ ] Represents current app version
@@ -342,6 +379,7 @@ Save screenshots with clear names:
 ```
 
 Create folder:
+
 ```bash
 mkdir ~/Desktop/google_play_screenshots
 cd ~/Desktop/google_play_screenshots
@@ -352,6 +390,7 @@ cd ~/Desktop/google_play_screenshots
 ## 🎨 Screenshot Examples (What Good Looks Like)
 
 ### ✅ Good Screenshot:
+
 - Clear UI with all elements visible
 - Chinese text readable
 - Shows app in action (form filled, content loaded)
@@ -360,6 +399,7 @@ cd ~/Desktop/google_play_screenshots
 - No distractions
 
 ### ❌ Bad Screenshot:
+
 - Blank/empty screens
 - Loading spinners visible
 - Error messages showing
@@ -375,69 +415,78 @@ cd ~/Desktop/google_play_screenshots
 ### Fastest Method:
 
 1. **Connect Android Phone:**
-   ```bash
-   # Build app
-   npm run build:mobile
-   npx cap sync android
-   
-   # Open in Android Studio
-   npx cap open android
-   ```
+
+    ```bash
+    # Build app
+    npm run build:mobile
+    npx cap sync android
+
+    # Open in Android Studio
+    npx cap open android
+    ```
 
 2. **Run on Device:**
-   - Click Run (green play button)
-   - Wait for app to load on phone
+
+    - Click Run (green play button)
+    - Wait for app to load on phone
 
 3. **Take 4 Essential Screenshots:**
-   - Home screen (press Power + Volume Down)
-   - BaZi input (fill form first, then screenshot)
-   - Navigate to any report/result (screenshot)
-   - Navigate to layout design (screenshot)
+
+    - Home screen (press Power + Volume Down)
+    - BaZi input (fill form first, then screenshot)
+    - Navigate to any report/result (screenshot)
+    - Navigate to layout design (screenshot)
 
 4. **Transfer to Computer:**
-   ```bash
-   # Via ADB
-   adb pull /sdcard/Pictures/Screenshots/ ~/Desktop/google_play_screenshots/
-   ```
+
+    ```bash
+    # Via ADB
+    adb pull /sdcard/Pictures/Screenshots/ ~/Desktop/google_play_screenshots/
+    ```
 
 5. **Done!** Use these 4 screenshots in:
-   - Feature graphic (3 of them)
-   - Google Play screenshots section (all 4)
+    - Feature graphic (3 of them)
+    - Google Play screenshots section (all 4)
 
 ---
 
 ## 🆘 Troubleshooting
 
 ### Issue: App crashes when taking screenshot
+
 **Solution:** Take screenshot from outside simulator (Cmd+Shift+4 on Mac)
 
 ### Issue: Screenshots too large (over 8MB)
-**Solution:** 
+
+**Solution:**
+
 ```bash
 # Compress with ImageMagick
 magick input.png -quality 85 output.png
 ```
 
 ### Issue: Can't run app on device
+
 **Solution:** Check USB debugging enabled on Android phone (Settings → Developer Options)
 
 ### Issue: Simulator not available
+
 **Solution:** Use physical device or ask teammate to take screenshots
 
 ---
 
 ## 📊 Priority Matrix
 
-| Screenshot | Priority | Difficulty | Time | For Feature Graphic? |
-|-----------|----------|-----------|------|---------------------|
-| Home Screen | HIGH | Easy | 2 min | ✅ Yes (use in graphic) |
-| BaZi Input | HIGH | Easy | 5 min | ✅ Yes (use in graphic) |
-| Fortune Report | HIGH | Medium | 10 min | ✅ Yes (use in graphic) |
-| Layout Design | HIGH | Medium | 10 min | Optional |
-| Chat Interface | MEDIUM | Easy | 5 min | No |
-| Pricing | MEDIUM | Easy | 2 min | No |
-| Forecast | LOW | Easy | 5 min | No |
-| Couple Analysis | LOW | Medium | 5 min | No |
+| Screenshot      | Priority | Difficulty | Time   | For Feature Graphic?    |
+| --------------- | -------- | ---------- | ------ | ----------------------- |
+| Home Screen     | HIGH     | Easy       | 2 min  | ✅ Yes (use in graphic) |
+| BaZi Input      | HIGH     | Easy       | 5 min  | ✅ Yes (use in graphic) |
+| Fortune Report  | HIGH     | Medium     | 10 min | ✅ Yes (use in graphic) |
+| Layout Design   | HIGH     | Medium     | 10 min | Optional                |
+| Chat Interface  | MEDIUM   | Easy       | 5 min  | No                      |
+| Pricing         | MEDIUM   | Easy       | 2 min  | No                      |
+| Forecast        | LOW      | Easy       | 5 min  | No                      |
+| Couple Analysis | LOW      | Medium     | 5 min  | No                      |
 
 **Recommendation:** Start with top 4 HIGH priority screenshots.
 

@@ -23,7 +23,9 @@ import { useRegionDetection } from "@/hooks/useRegionDetectionEnhanced";
 import { useTranslations } from "next-intl";
 
 export default function Home() {
-	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
+	const API_BASE =
+		process.env.NEXT_PUBLIC_API_BASE_URL ||
+		"https://www.harmoniqfengshui.com";
 	const t = useTranslations("chatPage");
 	const { data: session, status } = useSession();
 	const { mobileSession, isMobile: isCapacitorMobile } = useMobileAuth();
@@ -400,7 +402,7 @@ export default function Home() {
 		if (!effectiveSession) {
 			localStorage.setItem("pendingChatMessage", inputMessage.trim());
 			localStorage.setItem("pendingChatTimestamp", Date.now().toString());
-			
+
 			// Use window.location for Capacitor compatibility (static export)
 			const loginUrl = `/${currentLocale}/auth/login/index.html`;
 			if (isCapacitorMobile) {
@@ -473,7 +475,9 @@ export default function Home() {
 				});
 
 				// 🌐 MOBILE FIX: Use full API URL to connect to live server
-				const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
+				const API_BASE =
+					process.env.NEXT_PUBLIC_API_BASE_URL ||
+					"https://www.harmoniqfengshui.com";
 				const paymentApiUrl = `${API_BASE}/api/payment-couple`;
 				console.log("📡 Calling Payment API:", paymentApiUrl);
 
@@ -571,7 +575,9 @@ export default function Home() {
 			console.log("🌐 AI response locale (from URL):", aiLocale);
 
 			// 🌐 MOBILE FIX: Use full API URL to connect to live server
-			const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
+			const API_BASE =
+				process.env.NEXT_PUBLIC_API_BASE_URL ||
+				"https://www.harmoniqfengshui.com";
 			const apiUrl = `${API_BASE}/api/smart-chat2`;
 			console.log("📡 Calling API:", apiUrl);
 
@@ -586,6 +592,8 @@ export default function Home() {
 
 			const response = await fetch(apiUrl, {
 				method: "POST",
+				mode: "cors",
+				credentials: "omit",
 				headers: {
 					"Content-Type": "application/json",
 				},
@@ -595,11 +603,15 @@ export default function Home() {
 			console.log("📥 Response status:", response.status);
 			console.log("📥 Response ok:", response.ok);
 			console.log("📥 Response headers:", {
-				contentType: response.headers.get('content-type'),
+				contentType: response.headers.get("content-type"),
 				corsHeaders: {
-					accessControlAllowOrigin: response.headers.get('access-control-allow-origin'),
-					accessControlAllowMethods: response.headers.get('access-control-allow-methods'),
-				}
+					accessControlAllowOrigin: response.headers.get(
+						"access-control-allow-origin"
+					),
+					accessControlAllowMethods: response.headers.get(
+						"access-control-allow-methods"
+					),
+				},
 			});
 
 			const data = await response.json();
@@ -967,7 +979,7 @@ export default function Home() {
 				message: error?.message || "Unknown error",
 				name: error?.name || "Unknown name",
 				stack: error?.stack || "No stack trace",
-				toString: error?.toString() || "Cannot convert to string"
+				toString: error?.toString() || "Cannot convert to string",
 			});
 			const errorMessage = {
 				role: "assistant",
@@ -993,12 +1005,12 @@ export default function Home() {
 		// 🔥 FIX: Always allow setting input message from shortcuts
 		// Login check happens on send, not on shortcut click
 		setInputMessage(shortcutText);
-		
+
 		// Hide landing page when shortcut is clicked
 		if (showLandingPage) {
 			setShowLandingPage(false);
 		}
-		
+
 		// 自動聚焦到輸入框
 		setTimeout(() => {
 			const textarea = document.querySelector("textarea");
@@ -1054,6 +1066,8 @@ export default function Home() {
 		try {
 			const response = await fetch(`${API_BASE}/api/smart-chat2`, {
 				method: "POST",
+				mode: "cors",
+				credentials: "omit",
 				headers: {
 					"Content-Type": "application/json",
 				},
@@ -1151,7 +1165,9 @@ export default function Home() {
 					"⚠️ No session email in state, trying to fetch session..."
 				);
 				try {
-					const sessionResponse = await fetch(`${API_BASE}/api/auth/session`);
+					const sessionResponse = await fetch(
+						`${API_BASE}/api/auth/session`
+					);
 					if (sessionResponse.ok) {
 						const sessionData = await sessionResponse.json();
 						console.log("📦 Fetched session data:", sessionData);
@@ -1230,16 +1246,19 @@ export default function Home() {
 				return;
 			}
 
-			const response = await fetch(`${API_BASE}/api/transfer-conversations`, {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({
-					oldUserId: oldAnonymousId,
-					newUserId: newUserEmail,
-				}),
-			});
+			const response = await fetch(
+				`${API_BASE}/api/transfer-conversations`,
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						oldUserId: oldAnonymousId,
+						newUserId: newUserEmail,
+					}),
+				}
+			);
 
 			if (response.ok) {
 				const data = await response.json();

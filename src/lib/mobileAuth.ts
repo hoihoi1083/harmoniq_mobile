@@ -165,7 +165,9 @@ export const signInWithApple = async () => {
 		console.log("✅ Apple Sign In successful");
 
 		// Get the backend API URL
-		const apiUrl = process.env.NEXT_PUBLIC_API_URL || "";
+		const apiUrl =
+			process.env.NEXT_PUBLIC_API_BASE_URL ||
+			"https://www.harmoniqfengshui.com";
 
 		// Send to backend for verification
 		const response = await fetch(`${apiUrl}/api/auth/apple/mobile`, {

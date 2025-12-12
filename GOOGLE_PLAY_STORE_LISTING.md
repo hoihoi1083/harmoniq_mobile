@@ -12,21 +12,27 @@
 ## 📝 Short Description (80 characters max)
 
 ### 繁體中文 (Traditional Chinese)
+
 ```
 AI風水命理顧問：家居佈局分析、八字測算、流年運程預測，專業開運建議
 ```
+
 (79 characters)
 
 ### 简体中文 (Simplified Chinese)
+
 ```
 AI风水命理顾问：家居布局分析、八字测算、流年运程预测，专业开运建议
 ```
+
 (79 characters)
 
 ### English
+
 ```
 AI Feng Shui & BaZi Advisor: Home layout analysis, fortune telling & luck tips
 ```
+
 (78 characters)
 
 ---
@@ -113,7 +119,7 @@ AI Feng Shui & BaZi Advisor: Home layout analysis, fortune telling & luck tips
 📞 聯絡我們
 
 • 官網：www.harmoniqfengshui.com
-• Facebook：@harmoniq_fengshui  
+• Facebook：@harmoniq_fengshui
 • Instagram：@harmoniq_fengshui
 • 客服郵箱：support@harmoniqfengshui.com
 
@@ -206,7 +212,7 @@ AI Feng Shui & BaZi Advisor: Home layout analysis, fortune telling & luck tips
 📞 联络我们
 
 • 官网：www.harmoniqfengshui.com
-• Facebook：@harmoniq_fengshui  
+• Facebook：@harmoniq_fengshui
 • Instagram：@harmoniq_fengshui
 • 客服邮箱：support@harmoniqfengshui.com
 
@@ -299,7 +305,7 @@ HarmoniQ combines traditional Chinese Feng Shui wisdom with modern AI technology
 📞 Contact Us
 
 • Website: www.harmoniqfengshui.com
-• Facebook: @harmoniq_fengshui  
+• Facebook: @harmoniq_fengshui
 • Instagram: @harmoniq_fengshui
 • Support Email: support@harmoniqfengshui.com
 
@@ -324,25 +330,27 @@ Download HarmoniQ now and unlock your fortunate life! 🍀
 ### Content Guidelines
 
 ✅ **MUST Include:**
+
 1. **App Icon/Logo** - Place prominently (top-left or center)
 2. **Clear Tagline** - Both Chinese and English
-   - 中文: "AI風水命理顧問 - 開啟幸運人生"
-   - English: "AI Feng Shui Advisor - Unlock Your Fortune"
+    - 中文: "AI風水命理顧問 - 開啟幸運人生"
+    - English: "AI Feng Shui Advisor - Unlock Your Fortune"
 3. **Feature Icons** showing:
-   - 🏠 Home/Room layout icon
-   - 📅 BaZi calendar icon
-   - 💰 Wealth/coins icon
-   - ❤️ Heart/relationship icon
+    - 🏠 Home/Room layout icon
+    - 📅 BaZi calendar icon
+    - 💰 Wealth/coins icon
+    - ❤️ Heart/relationship icon
 4. **App Screenshots** - 2-3 actual app screens showing:
-   - Home layout analysis interface
-   - BaZi chart display
-   - Fortune report sample
+    - Home layout analysis interface
+    - BaZi chart display
+    - Fortune report sample
 5. **Trust Elements:**
-   - "98% 用戶滿意" badge
-   - "24/7 AI諮詢" text
-   - "90天退款保證" seal
+    - "98% 用戶滿意" badge
+    - "24/7 AI諮詢" text
+    - "90天退款保證" seal
 
 ❌ **MUST NOT Include:**
+
 - Generic stock photos without app context
 - Misleading images not showing actual app features
 - Just promotional text without app screenshots
@@ -391,52 +399,60 @@ Download HarmoniQ now and unlock your fortunate life! 🍀
 
 ### Required Screenshots (Minimum 2, Recommended 8)
 
-**Dimensions:** 
+**Dimensions:**
+
 - Phone: 1080 x 1920 px (or 1080 x 2340 px for tall screens)
 - Tablet (optional): 1200 x 1920 px
 
 ### Recommended Screenshot Set
 
 1. **Home Screen / Main Interface**
-   - Show navigation bar
-   - Feature cards visible
-   - Chinese & English text
+
+    - Show navigation bar
+    - Feature cards visible
+    - Chinese & English text
 
 2. **BaZi Input Form**
-   - Show the form fields
-   - Calendar type selection
-   - Gender toggle
-   - Call-to-action button
+
+    - Show the form fields
+    - Calendar type selection
+    - Gender toggle
+    - Call-to-action button
 
 3. **Home Layout Design Tool**
-   - Show the canvas with room layout
-   - Furniture items
-   - Compass direction
+
+    - Show the canvas with room layout
+    - Furniture items
+    - Compass direction
 
 4. **Fortune Report Sample**
-   - Show a section of the BaZi report
-   - Charts/graphics
-   - Analysis text
+
+    - Show a section of the BaZi report
+    - Charts/graphics
+    - Analysis text
 
 5. **Chat Interface**
-   - Show AI consultation chat
-   - Questions and answers
-   - Professional interface
+
+    - Show AI consultation chat
+    - Questions and answers
+    - Professional interface
 
 6. **Pricing Page**
-   - Show service packages
-   - Clear pricing
-   - Features comparison
+
+    - Show service packages
+    - Clear pricing
+    - Features comparison
 
 7. **Fortune Calculate Page**
-   - Show different fortune types
-   - Service cards
-   - Icons and descriptions
+
+    - Show different fortune types
+    - Service cards
+    - Icons and descriptions
 
 8. **Couple Analysis**
-   - Show couple compatibility interface
-   - Dual profile inputs
-   - Results preview
+    - Show couple compatibility interface
+    - Dual profile inputs
+    - Results preview
 
 ### Screenshot Best Practices
 
@@ -460,9 +476,10 @@ Download HarmoniQ now and unlock your fortunate life! 🍀
 **Secondary Category:** Personalization
 
 **Keywords/Tags:**
+
 ```
-风水, 命理, 八字, 算命, fortune telling, feng shui, bazi, chinese astrology, 
-home layout, 家居布局, 运势, luck, fortune, 占卜, divination, AI advisor, 
+风水, 命理, 八字, 算命, fortune telling, feng shui, bazi, chinese astrology,
+home layout, 家居布局, 运势, luck, fortune, 占卜, divination, AI advisor,
 风水顾问, 命理师, fortune teller, 流年, annual fortune, 桃花运, love fortune,
 财运, wealth, 事业运, career, 健康, health, 合盘, compatibility
 ```
@@ -474,9 +491,11 @@ home layout, 家居布局, 运势, luck, fortune, 占卜, divination, AI advisor
 **Recommended Rating:** Everyone / Suitable for all ages
 
 **Content Descriptors:**
+
 - None (fortune telling/advisory content is informational)
 
 **Interactive Elements:**
+
 - Users can interact
 - Shares personal information
 - In-app purchases
@@ -535,6 +554,7 @@ Before submitting to Google Play:
 ## 📞 Need Help?
 
 If you encounter issues:
+
 1. Check Google Play Console "Policy Status" for specific violations
 2. Review "Pre-launch Report" for crashes
 3. Consult Google Play Developer Policy Center

@@ -42,7 +42,9 @@ const ROOM_TYPE_MAPPING = {
 };
 
 function BazhaiReportPageContent() {
-	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
+	const API_BASE =
+		process.env.NEXT_PUBLIC_API_BASE_URL ||
+		"https://www.harmoniqfengshui.com";
 	const [analysisData, setAnalysisData] = useState(null);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
@@ -966,7 +968,13 @@ function BazhaiReportPageContent() {
 
 export default function BazhaiReportPage() {
 	return (
-		<Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
+		<Suspense
+			fallback={
+				<div className="flex justify-center items-center min-h-screen">
+					Loading...
+				</div>
+			}
+		>
 			<BazhaiReportPageContent />
 		</Suspense>
 	);

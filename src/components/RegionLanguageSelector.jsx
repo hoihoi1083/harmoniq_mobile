@@ -122,15 +122,11 @@ export default function RegionLanguageSelector({
 				const pathParts = pathname.split("/").filter(Boolean);
 				const pathWithoutLocale = pathParts.slice(1).join("/");
 				const newPathname = pathWithoutLocale
-					? `/${pathWithoutLocale}`
-					: "/";
+					? `/${regionConfig.locale}/${pathWithoutLocale}`
+					: `/${regionConfig.locale}`;
 
-				// Start navigation immediately - don't wait
-				router.replace(newPathname, { locale: regionConfig.locale });
-
-				// Keep switching state visible for a brief moment for user feedback
-				setTimeout(() => setSwitching(false), 150);
-			} else {
+				// Use window.location.href for Capacitor compatibility
+				window.location.href = newPathname;
 				// Same locale but different region (HK vs TW) - need to refresh for pricing updates
 				console.log(
 					`✅ Same locale (${regionConfig.locale}), refreshing page for region change (${region} → ${selectedRegion})`

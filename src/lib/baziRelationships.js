@@ -275,10 +275,7 @@ export function analyzeAllRelationships(baziData) {
 	// Check all stem pairs
 	for (let i = 0; i < stems.length; i++) {
 		for (let j = i + 1; j < stems.length; j++) {
-			const combo = analyzeStemCombination(
-				stems[i].stem,
-				stems[j].stem
-			);
+			const combo = analyzeStemCombination(stems[i].stem, stems[j].stem);
 			if (combo) {
 				relationships.stemCombinations.push({
 					pillar1: stems[i].pillar,

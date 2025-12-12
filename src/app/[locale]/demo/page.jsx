@@ -14,7 +14,9 @@ import Footer from "@/components/home/Footer";
 import { getCurrencySymbol } from "@/utils/regionalPricing";
 
 function DemoPageContent() {
-	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
+	const API_BASE =
+		process.env.NEXT_PUBLIC_API_BASE_URL ||
+		"https://www.harmoniqfengshui.com";
 	const t = useTranslations("demoPage");
 	const locale = useLocale();
 	const searchParams = useSearchParams();
@@ -419,16 +421,19 @@ function DemoPageContent() {
 					effectiveSession.user.userId || effectiveSession.user.id;
 			}
 
-			const response = await fetch(`${API_BASE}/api/checkoutSessions/payment2`, {
-				method: "POST",
-				headers: headers,
-				body: JSON.stringify({
-					quantity: 1,
-					directPayment: true,
-					locale: freshLocale,
-					region: storedRegion,
-				}),
-			});
+			const response = await fetch(
+				`${API_BASE}/api/checkoutSessions/payment2`,
+				{
+					method: "POST",
+					headers: headers,
+					body: JSON.stringify({
+						quantity: 1,
+						directPayment: true,
+						locale: freshLocale,
+						region: storedRegion,
+					}),
+				}
+			);
 
 			if (response.ok) {
 				const data = await response.json();
@@ -664,16 +669,19 @@ function DemoPageContent() {
 						effectiveSession.user.id;
 				}
 
-				const response = await fetch(`${API_BASE}/api/checkoutSessions/payment4`, {
-					method: "POST",
-					headers: headers,
-					body: JSON.stringify({
-						quantity: 1,
-						directPayment: true,
-						locale: freshLocale, // Add locale parameter
-						region: storedRegion, // Add region parameter for NTD support
-					}),
-				});
+				const response = await fetch(
+					`${API_BASE}/api/checkoutSessions/payment4`,
+					{
+						method: "POST",
+						headers: headers,
+						body: JSON.stringify({
+							quantity: 1,
+							directPayment: true,
+							locale: freshLocale, // Add locale parameter
+							region: storedRegion, // Add region parameter for NTD support
+						}),
+					}
+				);
 
 				if (response.ok) {
 					const data = await response.json();
@@ -1558,7 +1566,13 @@ function DemoPageContent() {
 
 export default function DemoPage(props) {
 	return (
-		<Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
+		<Suspense
+			fallback={
+				<div className="flex justify-center items-center min-h-screen">
+					Loading...
+				</div>
+			}
+		>
 			<DemoPageContent {...props} />
 		</Suspense>
 	);

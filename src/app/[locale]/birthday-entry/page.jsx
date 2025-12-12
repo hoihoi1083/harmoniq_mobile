@@ -126,10 +126,13 @@ function BirthdayEntryPageContent({ params }) {
 			// 💾 Save birthday to Capacitor Preferences for mobile
 			if (Capacitor.isNativePlatform()) {
 				await Preferences.set({
-					key: 'userBirthday',
-					value: birthDateTime
+					key: "userBirthday",
+					value: birthDateTime,
 				});
-				console.log('✅ Saved birthday to mobile preferences:', birthDateTime);
+				console.log(
+					"✅ Saved birthday to mobile preferences:",
+					birthDateTime
+				);
 			}
 
 			// Redirect to report page with birth info
@@ -137,7 +140,7 @@ function BirthdayEntryPageContent({ params }) {
 				`/report?birthDateTime=${encodeURIComponent(birthDateTime)}&gender=${formData.gender}&sessionId=${sessionId}`
 			);
 		} catch (err) {
-			console.error('❌ Error saving birthday:', err);
+			console.error("❌ Error saving birthday:", err);
 			setError(t("submitError"));
 			setIsSubmitting(false);
 		}
@@ -183,7 +186,13 @@ function BirthdayEntryPageContent({ params }) {
 	return (
 		<div className="min-h-screen bg-[#EFEFEF]">
 			<Navbar />
-			<div className="container px-4 mx-auto" style={{ paddingTop: "calc(4rem + env(safe-area-inset-top))", paddingBottom: "2rem" }}>
+			<div
+				className="container px-4 mx-auto"
+				style={{
+					paddingTop: "calc(4rem + env(safe-area-inset-top))",
+					paddingBottom: "2rem",
+				}}
+			>
 				<div className="max-w-md p-8 mx-auto bg-white shadow-lg rounded-xl">
 					<div className="mb-8 text-center">
 						<p className="text-gray-600">{t("fillDataPrompt")}</p>
@@ -309,7 +318,13 @@ function BirthdayEntryPageContent({ params }) {
 
 export default function BirthdayEntryPage({ params }) {
 	return (
-		<Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
+		<Suspense
+			fallback={
+				<div className="flex justify-center items-center min-h-screen">
+					Loading...
+				</div>
+			}
+		>
 			<BirthdayEntryPageContent params={params} />
 		</Suspense>
 	);

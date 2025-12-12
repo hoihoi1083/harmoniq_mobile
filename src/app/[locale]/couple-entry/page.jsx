@@ -10,7 +10,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/home/Footer";
 
 function CoupleEntryPageContent({ params }) {
-	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
+	const API_BASE =
+		process.env.NEXT_PUBLIC_API_BASE_URL ||
+		"https://www.harmoniqfengshui.com";
 	const { locale } = use(params);
 	const t = useTranslations("coupleEntry");
 	const searchParams = useSearchParams();
@@ -117,13 +119,16 @@ function CoupleEntryPageContent({ params }) {
 			}
 
 			try {
-				const response = await fetch(`${API_BASE}/api/verify-couple-payment`, {
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-					},
-					body: JSON.stringify({ sessionId }),
-				});
+				const response = await fetch(
+					`${API_BASE}/api/verify-couple-payment`,
+					{
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+						},
+						body: JSON.stringify({ sessionId }),
+					}
+				);
 
 				const data = await response.json();
 				if (data.status === 0) {
@@ -686,7 +691,13 @@ function CoupleEntryPageContent({ params }) {
 
 export default function CoupleEntryPage(props) {
 	return (
-		<Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
+		<Suspense
+			fallback={
+				<div className="flex justify-center items-center min-h-screen">
+					Loading...
+				</div>
+			}
+		>
 			<CoupleEntryPageContent {...props} />
 		</Suspense>
 	);

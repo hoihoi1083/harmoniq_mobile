@@ -10,7 +10,9 @@ import { useResponsiveScale } from "../../hooks/useResponsiveScale";
 import { useRegionDetection } from "@/hooks/useRegionDetectionEnhanced";
 
 export default function Hero() {
-	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
+	const API_BASE =
+		process.env.NEXT_PUBLIC_API_BASE_URL ||
+		"https://www.harmoniqfengshui.com";
 	const t = useTranslations("home.hero");
 	const isMobile = useMobile();
 	const { scaleRatio, isMobileLayout } = useResponsiveScale();
@@ -188,10 +190,11 @@ export default function Hero() {
 				/> */}
 
 				{/* Main Content Container */}
-				<div 
+				<div
 					className="relative z-10 flex flex-col px-4 py-8"
 					style={{
-						marginTop: "calc(4rem + env(safe-area-inset-top) + 1rem)"
+						marginTop:
+							"calc(4rem + env(safe-area-inset-top) + 1rem)",
 					}}
 				>
 					{/* Header Section */}

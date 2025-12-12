@@ -80,7 +80,10 @@ function BaziChartContent() {
 			<div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">
 				<div className="sticky top-0 z-10 bg-white shadow-sm">
 					<div className="bg-white border-b border-gray-200 px-4 py-3 flex items-center">
-						<button onClick={() => router.back()} className="p-2 -ml-2">
+						<button
+							onClick={() => router.back()}
+							className="p-2 -ml-2"
+						>
 							<svg
 								className="w-6 h-6"
 								fill="none"
@@ -118,13 +121,17 @@ function BaziChartContent() {
 	return (
 		<div className="min-h-screen bg-gradient-to-b from-purple-50 to-white pb-20">
 			{/* Top Navbar */}
-			<Navbar from="bazi-chart" title="八字排盤" backgroundColor="white" />
+			<Navbar
+				from="bazi-chart"
+				title="八字排盤"
+				backgroundColor="white"
+			/>
 
 			{/* Tab Navigation - Position below navbar with safe area consideration */}
-			<div 
+			<div
 				className="fixed left-0 right-0 z-20 bg-white shadow-sm border-b border-gray-200"
 				style={{
-					top: 'calc(4rem + env(safe-area-inset-top))',
+					top: "calc(4rem + env(safe-area-inset-top))",
 				}}
 			>
 				<div className="flex">
@@ -145,10 +152,10 @@ function BaziChartContent() {
 			</div>
 
 			{/* Tab Content - Add top padding for fixed navbar + tabs */}
-			<div 
+			<div
 				className="pb-6"
 				style={{
-					paddingTop: 'calc(7rem + env(safe-area-inset-top))', // navbar (4rem) + tabs (3rem) + safe area
+					paddingTop: "calc(7rem + env(safe-area-inset-top))", // navbar (4rem) + tabs (3rem) + safe area
 				}}
 			>
 				<ActiveComponent baziData={baziData} />
@@ -158,47 +165,111 @@ function BaziChartContent() {
 			<div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50">
 				<div className="flex items-center justify-around h-16">
 					<button
-						onClick={() => router.push(`/${pathname?.split("/")[1] || "zh-TW"}/`)}
+						onClick={() =>
+							router.push(
+								`/${pathname?.split("/")[1] || "zh-TW"}/`
+							)
+						}
 						className="flex flex-col items-center justify-center flex-1 py-2 text-gray-600 hover:text-gray-900"
 					>
-						<svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+						<svg
+							className="w-6 h-6"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								strokeWidth={2}
+								d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+							/>
 						</svg>
 						<span className="text-xs mt-1">首頁</span>
 					</button>
 					<button
-						onClick={() => router.push(`/${pathname?.split("/")[1] || "zh-TW"}/fortune-calculate`)}
+						onClick={() =>
+							router.push(
+								`/${pathname?.split("/")[1] || "zh-TW"}/fortune-calculate`
+							)
+						}
 						className="flex flex-col items-center justify-center flex-1 py-2 text-gray-600 hover:text-gray-900"
 					>
-						<svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+						<svg
+							className="w-6 h-6"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								strokeWidth={2}
+								d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+							/>
 						</svg>
 						<span className="text-xs mt-1">運程測算</span>
 					</button>
 					<button
-						onClick={() => router.push(`/${pathname?.split("/")[1] || "zh-TW"}/chat`)}
+						onClick={() =>
+							router.push(
+								`/${pathname?.split("/")[1] || "zh-TW"}/chat`
+							)
+						}
 						className="flex flex-col items-center justify-center flex-1 py-2 text-[#A3B116] hover:text-[#8B9914]"
 					>
-						<svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+						<svg
+							className="w-6 h-6"
+							fill="currentColor"
+							viewBox="0 0 24 24"
+						>
 							<path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
 						</svg>
 						<span className="text-xs mt-1">風鈴聊天室</span>
 					</button>
 					<button
-						onClick={() => router.push(`/${pathname?.split("/")[1] || "zh-TW"}/services`)}
+						onClick={() =>
+							router.push(
+								`/${pathname?.split("/")[1] || "zh-TW"}/services`
+							)
+						}
 						className="flex flex-col items-center justify-center flex-1 py-2 text-gray-600 hover:text-gray-900"
 					>
-						<svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+						<svg
+							className="w-6 h-6"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								strokeWidth={2}
+								d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+							/>
 						</svg>
 						<span className="text-xs mt-1">服務定價</span>
 					</button>
 					<button
-						onClick={() => router.push(`/${pathname?.split("/")[1] || "zh-TW"}/profile`)}
+						onClick={() =>
+							router.push(
+								`/${pathname?.split("/")[1] || "zh-TW"}/profile`
+							)
+						}
 						className="flex flex-col items-center justify-center flex-1 py-2 text-gray-600 hover:text-gray-900"
 					>
-						<svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+						<svg
+							className="w-6 h-6"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								strokeWidth={2}
+								d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+							/>
 						</svg>
 						<span className="text-xs mt-1">我的</span>
 					</button>
@@ -224,4 +295,3 @@ export default function BaziChartPage() {
 		</Suspense>
 	);
 }
-

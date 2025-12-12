@@ -24,11 +24,13 @@
 ## 📝 Content Hierarchy (Left to Right)
 
 ### Layer 1: Background (Full Canvas)
+
 - **Color:** Gradient from #086E56 (left) to #25826D (right) OR White background
 - **Style:** Clean, professional, not cluttered
 - **Optional:** Subtle feng shui pattern (八卦, clouds) at 10% opacity
 
 ### Layer 2: App Branding (Top-Left) - 250px width
+
 ```
 ┌─────────────────┐
 │  [App Icon]     │  App Icon: 80x80px
@@ -37,11 +39,13 @@
 │  Feng Shui      │  Subtitle: 16px light
 └─────────────────┘
 ```
+
 - Position: 40px from left, 30px from top
 - Font: Noto Sans HK (Chinese), Inter (English)
 - Color: White text on dark background, or #374A37 on light background
 
 ### Layer 3: App Screenshots (Center) - 650px width
+
 ```
 ┌──────────┬──────────┬──────────┐
 │ Screen 1 │ Screen 2 │ Screen 3 │
@@ -51,18 +55,21 @@
 ```
 
 **Screenshot 1: Home Layout Tool** (Left)
+
 - Show the design canvas with room layout
 - Visible: Compass, furniture items, controls
 - Size: 250 x 450 px
 - Add subtle shadow/border for depth
 
 **Screenshot 2: BaZi Chart** (Center)
+
 - Show the four pillars display
 - Visible: Year/Month/Day/Hour pillars with Chinese characters
 - Size: 250 x 450 px
 - Highlight: The colorful five elements
 
 **Screenshot 3: Fortune Report** (Right)
+
 - Show a section of analysis report
 - Visible: Text analysis, charts, recommendations
 - Size: 250 x 450 px
@@ -74,9 +81,11 @@
 - Optional: Add device frame (iPhone mockup)
 
 ### Layer 4: Feature Icons (Bottom) - Full width
+
 ```
 🏠 智能風水    📅 八字測算    💰 流年運程    ❤️ 感情合盤
 ```
+
 - Position: 30px from bottom
 - Font Size: 16px
 - Spacing: Evenly distributed across width
@@ -84,9 +93,11 @@
 - Icons: Use emojis or custom icons (48x48px)
 
 ### Layer 5: Trust Badges (Bottom-Right) - 350px width
+
 ```
 ⭐ 98%用戶滿意  |  🔒 隱私安全  |  💯 90天退款
 ```
+
 - Position: 350px from right, 10px from bottom
 - Font Size: 14px
 - Style: Light badges with icons
@@ -97,30 +108,36 @@
 ## 🎨 Design Variations
 
 ### Option A: Dark Background with Light Text
+
 ```
 Background: Gradient #086E56 → #25826D
 Text: White (#FFFFFF)
 Screenshots: With white border/frame
 Trust badges: Light gold (#FFD700)
 ```
+
 **Pros:** Matches app theme, stands out
 **Cons:** Text needs good contrast
 
 ### Option B: Light Background with Dark Text
+
 ```
 Background: White or #F5F5F5
 Text: Dark gray (#374A37)
 Screenshots: With subtle shadow
 Trust badges: Green (#A3B116)
 ```
+
 **Pros:** Clean, professional, easier to read
 **Cons:** Less distinctive
 
 ### Option C: Split Design (Recommended)
+
 ```
 Left 30%: Dark green (#086E56) with white text
 Right 70%: Light background with screenshots and features
 ```
+
 **Pros:** Best of both worlds, clear hierarchy
 **Cons:** Requires careful balance
 
@@ -129,6 +146,7 @@ Right 70%: Light background with screenshots and features
 ## 📱 Visual Elements to Include
 
 ### Required Elements (Must Have)
+
 1. ✅ App icon/logo
 2. ✅ App name in Chinese (風鈴命理)
 3. ✅ English subtitle (HarmoniQ Feng Shui)
@@ -137,6 +155,7 @@ Right 70%: Light background with screenshots and features
 6. ✅ At least one trust indicator
 
 ### Recommended Elements (Should Have)
+
 1. ⭐ User satisfaction percentage (98%)
 2. 🔒 Privacy/security indicator
 3. 💯 Money-back guarantee mention
@@ -144,6 +163,7 @@ Right 70%: Light background with screenshots and features
 5. 📊 Visual hierarchy with clear sections
 
 ### Optional Elements (Nice to Have)
+
 1. Subtle background pattern (八卦, feng shui elements)
 2. Gradient overlays for depth
 3. Small decorative elements (Chinese knots, clouds)
@@ -155,6 +175,7 @@ Right 70%: Light background with screenshots and features
 ## 🚫 What NOT to Include
 
 ❌ **Avoid These:**
+
 1. Generic stock photos unrelated to app
 2. People's faces (unless they're using the app)
 3. Text-only design without app screenshots
@@ -171,17 +192,20 @@ Right 70%: Light background with screenshots and features
 ## 🎭 Typography Guidelines
 
 ### Font Families
+
 - **Chinese Text:** Noto Sans TC or Noto Serif TC
 - **English Text:** Inter, Roboto, or SF Pro Display
 - **Numbers:** Tabular figures for consistency
 
 ### Font Sizes
+
 - App Name: 28-32px (Bold)
 - Tagline: 18-22px (Medium)
 - Features: 16-18px (Regular)
 - Trust Badges: 14-16px (Light)
 
 ### Text Colors
+
 - On Dark Background: #FFFFFF (white) or #EFEFEF (off-white)
 - On Light Background: #374A37 (dark green) or #2E3933 (dark gray)
 - Accent Text: #A3B116 (brand green) or #FFD700 (gold)
@@ -191,6 +215,7 @@ Right 70%: Light background with screenshots and features
 ## 🌈 Color Palette
 
 ### Primary Colors (From App)
+
 ```
 #A3B116 - Brand Green (Primary CTA)
 #374A37 - Dark Green (Headers)
@@ -198,6 +223,7 @@ Right 70%: Light background with screenshots and features
 ```
 
 ### Secondary Colors
+
 ```
 #086E56 - Deep Teal (Gradient start)
 #25826D - Teal (Gradient end)
@@ -206,6 +232,7 @@ Right 70%: Light background with screenshots and features
 ```
 
 ### Accent Colors
+
 ```
 #8B9914 - Olive Green (Hover states)
 #073E31 - Very Dark Green (Strong text)
@@ -217,17 +244,20 @@ Right 70%: Light background with screenshots and features
 ## 📐 Spacing & Alignment
 
 ### Margins
+
 - Left/Right Margin: 40px
 - Top Margin: 30px
 - Bottom Margin: 20px
 
 ### Element Spacing
+
 - Between screenshots: 15px
 - Between sections: 25px
 - Icon to text: 8px
 - Badge separation: 12px with "|" divider
 
 ### Alignment
+
 - App icon & name: Left-aligned, 40px from left
 - Screenshots: Center-aligned horizontally
 - Features: Center-aligned, 30px from bottom
@@ -240,48 +270,54 @@ Right 70%: Light background with screenshots and features
 ### Recommended Tools
 
 1. **Canva (Easiest)**
-   - URL: https://www.canva.com
-   - Template: Custom dimensions 1024x500px
-   - Free plan sufficient
-   - Export as PNG
+
+    - URL: https://www.canva.com
+    - Template: Custom dimensions 1024x500px
+    - Free plan sufficient
+    - Export as PNG
 
 2. **Figma (Professional)**
-   - URL: https://www.figma.com
-   - Best for precise design
-   - Free for personal use
-   - Collaborative
+
+    - URL: https://www.figma.com
+    - Best for precise design
+    - Free for personal use
+    - Collaborative
 
 3. **Photoshop (Advanced)**
-   - Full control over design
-   - Best for photo editing
-   - Requires license
+
+    - Full control over design
+    - Best for photo editing
+    - Requires license
 
 4. **GIMP (Free Alternative)**
-   - URL: https://www.gimp.org
-   - Free and open source
-   - Similar to Photoshop
+    - URL: https://www.gimp.org
+    - Free and open source
+    - Similar to Photoshop
 
 ### Stock Resources (Free)
 
-- **Icons:** 
-  - Flaticon.com (with attribution)
-  - Icons8.com (free with link)
-  - Font Awesome (free icons)
+- **Icons:**
+
+    - Flaticon.com (with attribution)
+    - Icons8.com (free with link)
+    - Font Awesome (free icons)
 
 - **Fonts:**
-  - Google Fonts (free)
-  - Noto Sans TC/SC (Chinese)
-  - Inter, Roboto (English)
+
+    - Google Fonts (free)
+    - Noto Sans TC/SC (Chinese)
+    - Inter, Roboto (English)
 
 - **Mockups:**
-  - Mockuper.net (device frames)
-  - Smartmockups.com (free tier)
+    - Mockuper.net (device frames)
+    - Smartmockups.com (free tier)
 
 ---
 
 ## 📋 Step-by-Step Creation Process
 
 ### Step 1: Gather Assets (30 minutes)
+
 - [ ] App icon PNG (512x512px or larger)
 - [ ] 3 app screenshots from actual app
 - [ ] Brand colors hex codes
@@ -290,12 +326,14 @@ Right 70%: Light background with screenshots and features
 - [ ] Trust badges/stats to display
 
 ### Step 2: Set Up Canvas (10 minutes)
+
 - [ ] Create new file 1024x500px
 - [ ] Set color mode to RGB
 - [ ] Resolution 72 DPI
 - [ ] Background color or gradient
 
 ### Step 3: Add Screenshots (30 minutes)
+
 - [ ] Import 3 screenshots
 - [ ] Resize to 250x450px each
 - [ ] Position in center area
@@ -304,6 +342,7 @@ Right 70%: Light background with screenshots and features
 - [ ] Optional: Add device frame
 
 ### Step 4: Add Branding (20 minutes)
+
 - [ ] Place app icon (80x80px) top-left
 - [ ] Add app name "風鈴命理" (28px bold)
 - [ ] Add English name "HarmoniQ Feng Shui" (18px)
@@ -311,12 +350,14 @@ Right 70%: Light background with screenshots and features
 - [ ] Ensure good contrast with background
 
 ### Step 5: Add Feature Icons (20 minutes)
+
 - [ ] Place 4 feature icons across bottom
 - [ ] Add Chinese text under each icon
 - [ ] Ensure even spacing
 - [ ] Make text readable
 
 ### Step 6: Add Trust Elements (15 minutes)
+
 - [ ] Add "98%用戶滿意" badge
 - [ ] Add "隱私安全" indicator
 - [ ] Add "90天退款" guarantee
@@ -324,6 +365,7 @@ Right 70%: Light background with screenshots and features
 - [ ] Use accent colors
 
 ### Step 7: Review & Refine (25 minutes)
+
 - [ ] Check all text is readable
 - [ ] Verify screenshots are clear
 - [ ] Ensure proper alignment
@@ -333,6 +375,7 @@ Right 70%: Light background with screenshots and features
 - [ ] Get feedback from colleague
 
 ### Step 8: Export (10 minutes)
+
 - [ ] Export as PNG (24-bit)
 - [ ] File size under 1 MB
 - [ ] Dimensions exactly 1024x500px
@@ -348,6 +391,7 @@ Right 70%: Light background with screenshots and features
 Before uploading, verify:
 
 ### Technical
+
 - [ ] Dimensions: Exactly 1024 x 500 pixels
 - [ ] Format: PNG or JPEG
 - [ ] File size: Under 1 MB
@@ -355,6 +399,7 @@ Before uploading, verify:
 - [ ] No transparency issues
 
 ### Content
+
 - [ ] App name clearly visible
 - [ ] Shows actual app screenshots (not mockups)
 - [ ] Features accurately represent app
@@ -363,6 +408,7 @@ Before uploading, verify:
 - [ ] Chinese and English text present
 
 ### Design Quality
+
 - [ ] High resolution (not pixelated)
 - [ ] Good contrast (text readable)
 - [ ] Professional appearance
@@ -371,6 +417,7 @@ Before uploading, verify:
 - [ ] Brand colors used consistently
 
 ### Compliance
+
 - [ ] No copyrighted images used without permission
 - [ ] No competitor references
 - [ ] No prohibited content
@@ -383,48 +430,73 @@ Before uploading, verify:
 ## 🎨 Example Layout Code (HTML/CSS for Reference)
 
 ```html
-<div style="width: 1024px; height: 500px; background: linear-gradient(90deg, #086E56 0%, #25826D 100%);">
-  
-  <!-- App Branding -->
-  <div style="position: absolute; left: 40px; top: 30px;">
-    <img src="app_icon.png" width="80" height="80" />
-    <h1 style="color: white; font-size: 28px; margin: 10px 0;">風鈴命理</h1>
-    <h2 style="color: rgba(255,255,255,0.9); font-size: 18px;">HarmoniQ Feng Shui</h2>
-    <p style="color: rgba(255,255,255,0.8); font-size: 16px;">AI風水命理顧問</p>
-  </div>
-  
-  <!-- Screenshots -->
-  <div style="position: absolute; left: 320px; top: 25px; display: flex; gap: 15px;">
-    <img src="screenshot1.png" width="250" height="450" style="box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
-    <img src="screenshot2.png" width="250" height="450" style="box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
-    <img src="screenshot3.png" width="250" height="450" style="box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
-  </div>
-  
-  <!-- Features -->
-  <div style="position: absolute; bottom: 50px; left: 320px; right: 40px; display: flex; justify-content: space-around;">
-    <div style="text-align: center; color: white;">
-      <span style="font-size: 32px;">🏠</span>
-      <p style="font-size: 16px; margin-top: 5px;">智能風水</p>
-    </div>
-    <div style="text-align: center; color: white;">
-      <span style="font-size: 32px;">📅</span>
-      <p style="font-size: 16px; margin-top: 5px;">八字測算</p>
-    </div>
-    <div style="text-align: center; color: white;">
-      <span style="font-size: 32px;">💰</span>
-      <p style="font-size: 16px; margin-top: 5px;">流年運程</p>
-    </div>
-    <div style="text-align: center; color: white;">
-      <span style="font-size: 32px;">❤️</span>
-      <p style="font-size: 16px; margin-top: 5px;">感情合盤</p>
-    </div>
-  </div>
-  
-  <!-- Trust Badges -->
-  <div style="position: absolute; bottom: 10px; right: 40px; color: #FFD700; font-size: 14px;">
-    ⭐ 98%用戶滿意 | 🔒 隱私安全 | 💯 90天退款
-  </div>
-  
+<div
+	style="width: 1024px; height: 500px; background: linear-gradient(90deg, #086E56 0%, #25826D 100%);"
+>
+	<!-- App Branding -->
+	<div style="position: absolute; left: 40px; top: 30px;">
+		<img src="app_icon.png" width="80" height="80" />
+		<h1 style="color: white; font-size: 28px; margin: 10px 0;">風鈴命理</h1>
+		<h2 style="color: rgba(255,255,255,0.9); font-size: 18px;">
+			HarmoniQ Feng Shui
+		</h2>
+		<p style="color: rgba(255,255,255,0.8); font-size: 16px;">
+			AI風水命理顧問
+		</p>
+	</div>
+
+	<!-- Screenshots -->
+	<div
+		style="position: absolute; left: 320px; top: 25px; display: flex; gap: 15px;"
+	>
+		<img
+			src="screenshot1.png"
+			width="250"
+			height="450"
+			style="box-shadow: 0 4px 12px rgba(0,0,0,0.15);"
+		/>
+		<img
+			src="screenshot2.png"
+			width="250"
+			height="450"
+			style="box-shadow: 0 4px 12px rgba(0,0,0,0.15);"
+		/>
+		<img
+			src="screenshot3.png"
+			width="250"
+			height="450"
+			style="box-shadow: 0 4px 12px rgba(0,0,0,0.15);"
+		/>
+	</div>
+
+	<!-- Features -->
+	<div
+		style="position: absolute; bottom: 50px; left: 320px; right: 40px; display: flex; justify-content: space-around;"
+	>
+		<div style="text-align: center; color: white;">
+			<span style="font-size: 32px;">🏠</span>
+			<p style="font-size: 16px; margin-top: 5px;">智能風水</p>
+		</div>
+		<div style="text-align: center; color: white;">
+			<span style="font-size: 32px;">📅</span>
+			<p style="font-size: 16px; margin-top: 5px;">八字測算</p>
+		</div>
+		<div style="text-align: center; color: white;">
+			<span style="font-size: 32px;">💰</span>
+			<p style="font-size: 16px; margin-top: 5px;">流年運程</p>
+		</div>
+		<div style="text-align: center; color: white;">
+			<span style="font-size: 32px;">❤️</span>
+			<p style="font-size: 16px; margin-top: 5px;">感情合盤</p>
+		</div>
+	</div>
+
+	<!-- Trust Badges -->
+	<div
+		style="position: absolute; bottom: 10px; right: 40px; color: #FFD700; font-size: 14px;"
+	>
+		⭐ 98%用戶滿意 | 🔒 隱私安全 | 💯 90天退款
+	</div>
 </div>
 ```
 
@@ -435,12 +507,14 @@ Before uploading, verify:
 If you prefer to hire a designer:
 
 ### Freelance Platforms
+
 1. **Fiverr** - $10-50 for feature graphic
 2. **Upwork** - $30-100 for professional design
 3. **99designs** - Contest style, multiple options
 4. **Freelancer** - Fixed price or hourly
 
 ### Design Brief Template
+
 ```
 Project: Google Play Feature Graphic Design
 Dimensions: 1024 x 500 pixels
@@ -471,16 +545,19 @@ Budget: $20-50 USD
 If creating separate graphics for different languages:
 
 ### zh-TW (Traditional Chinese - Hong Kong/Taiwan)
+
 - Use 繁體中文
 - Feature graphic with Traditional Chinese text
 - File: `feature_graphic_zh_TW.png`
 
 ### zh-CN (Simplified Chinese - Mainland China)
+
 - Use 简体中文
 - Same design, simplified characters
 - File: `feature_graphic_zh_CN.png`
 
 ### en-US (English)
+
 - English text only
 - Same layout and design
 - File: `feature_graphic_en.png`
@@ -494,16 +571,19 @@ If creating separate graphics for different languages:
 Once approved, consider testing different versions:
 
 ### Version A: Screenshot-Heavy
+
 - 3 large screenshots prominent
 - Minimal text
 - Focus on visual appeal
 
 ### Version B: Feature-Heavy
+
 - Smaller screenshots
 - More feature icons and text
 - Focus on functionality
 
 ### Version C: Trust-Heavy
+
 - Prominent badges and ratings
 - Testimonials or review quotes
 - Focus on credibility

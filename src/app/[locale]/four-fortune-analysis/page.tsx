@@ -61,7 +61,13 @@ function FourFortuneAnalysisContent() {
 
 export default function FourFortuneAnalysisPage() {
 	return (
-		<Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
+		<Suspense
+			fallback={
+				<div className="flex justify-center items-center min-h-screen">
+					Loading...
+				</div>
+			}
+		>
 			<FourFortuneAnalysisContent />
 		</Suspense>
 	);

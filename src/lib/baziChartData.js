@@ -21,16 +21,17 @@ lunisolar.extend(takeSound).extend(char8ex);
  * @param {string} userName - User's name for display
  * @returns {Object} Complete BaZi chart data
  */
-export function getBaziChartData(birthDateTime, gender = "male", userName = "用戶") {
+export function getBaziChartData(
+	birthDateTime,
+	gender = "male",
+	userName = "用戶"
+) {
 	try {
 		// 1. Get basic BaZi calculation
 		const baziBasic = calculateAccurateBaZi(birthDateTime);
 
 		// 2. Get comprehensive wuxing data (includes hidden stems and ten gods)
-		const wuxingData = getWuxingData(
-			new Date(birthDateTime),
-			gender
-		);
+		const wuxingData = getWuxingData(new Date(birthDateTime), gender);
 
 		// 3. Analyze all relationships
 		const relationships = analyzeAllRelationships({
@@ -194,12 +195,16 @@ function calculateElementDistribution(wuxingData) {
 	});
 
 	// Calculate total
-	const total = Object.values(elementCounts).reduce((sum, count) => sum + count, 0);
+	const total = Object.values(elementCounts).reduce(
+		(sum, count) => sum + count,
+		0
+	);
 
 	// Calculate percentages
 	const percentages = {};
 	Object.entries(elementCounts).forEach(([element, count]) => {
-		percentages[element] = total > 0 ? Math.round((count / total) * 100) : 0;
+		percentages[element] =
+			total > 0 ? Math.round((count / total) * 100) : 0;
 	});
 
 	return {
@@ -388,28 +393,13 @@ export function getDetailedChartData(baziChartData) {
 		],
 
 		// Rows 10-12: 星運 (Star Luck) - placeholder for now
-		starLuck: [
-			"-",
-			"-",
-			"-",
-			"-",
-		],
+		starLuck: ["-", "-", "-", "-"],
 
 		// 日坐 (Day Seat) - placeholder for now
-		daySeats: [
-			"-",
-			"-",
-			"-",
-			"-",
-		],
+		daySeats: ["-", "-", "-", "-"],
 
 		// 空亡 (Empty Void) - placeholder for now
-		emptyVoid: [
-			"-",
-			"-",
-			"-",
-			"-",
-		],
+		emptyVoid: ["-", "-", "-", "-"],
 
 		// 納音 (Nayin) - from pillars
 		nayin: [
@@ -479,16 +469,16 @@ function calculateTenGod(stem, dayMaster) {
 function calculateTenGodManual(stem, dayMaster) {
 	// Map stems to their elements and yin/yang
 	const stemInfo = {
-		'甲': { element: '木', yinyang: 'yang' },
-		'乙': { element: '木', yinyang: 'yin' },
-		'丙': { element: '火', yinyang: 'yang' },
-		'丁': { element: '火', yinyang: 'yin' },
-		'戊': { element: '土', yinyang: 'yang' },
-		'己': { element: '土', yinyang: 'yin' },
-		'庚': { element: '金', yinyang: 'yang' },
-		'辛': { element: '金', yinyang: 'yin' },
-		'壬': { element: '水', yinyang: 'yang' },
-		'癸': { element: '水', yinyang: 'yin' },
+		甲: { element: "木", yinyang: "yang" },
+		乙: { element: "木", yinyang: "yin" },
+		丙: { element: "火", yinyang: "yang" },
+		丁: { element: "火", yinyang: "yin" },
+		戊: { element: "土", yinyang: "yang" },
+		己: { element: "土", yinyang: "yin" },
+		庚: { element: "金", yinyang: "yang" },
+		辛: { element: "金", yinyang: "yin" },
+		壬: { element: "水", yinyang: "yang" },
+		癸: { element: "水", yinyang: "yin" },
 	};
 
 	const stemData = stemInfo[stem];
@@ -508,7 +498,7 @@ function calculateTenGodManual(stem, dayMaster) {
 	}
 
 	// Five elements cycle
-	const elementCycle = ['木', '火', '土', '金', '水'];
+	const elementCycle = ["木", "火", "土", "金", "水"];
 	const stemIndex = elementCycle.indexOf(stemData.element);
 	const dayIndex = elementCycle.indexOf(dayMasterData.element);
 

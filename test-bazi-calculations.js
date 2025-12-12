@@ -1,7 +1,7 @@
 /**
  * BaZi Calculation Verification Test
  * Tests the accuracy of BaZi calculations against known examples
- * 
+ *
  * Run this in browser console on /zh-TW/bazi-chart page or use Next.js dev server
  */
 
@@ -9,7 +9,7 @@
 const testData = {
 	birthDate: "2025-12-17 18:37",
 	gender: "male",
-	name: "Mic"
+	name: "Mic",
 };
 
 console.log("===== BaZi Calculation Verification =====\n");
@@ -46,12 +46,14 @@ console.log("");
 
 console.log("Relationships:");
 console.log("天干關係: 乙+庚 合化金 (年柱↔日柱), 庚+乙 合化金 (日柱↔時柱)");
-console.log("地支關係: 巳+申 相沖 (年柱↔日柱), 巳+酉 半合金局 (年柱↔時柱), 申+酉 六合 (日柱↔時柱)");
+console.log(
+	"地支關係: 巳+申 相沖 (年柱↔日柱), 巳+酉 半合金局 (年柱↔時柱), 申+酉 六合 (日柱↔時柱)"
+);
 console.log("");
 
-console.log("=" .repeat(50));
+console.log("=".repeat(50));
 console.log("📋 TO VERIFY IN APP:");
-console.log("=" .repeat(50));
+console.log("=".repeat(50));
 console.log("1. Navigate to /zh-TW/bazi-input");
 console.log("2. Fill in:");
 console.log("   - Name: Mic (or any name)");
@@ -66,7 +68,9 @@ console.log("Tab 1 (干支圖況) - Verify:");
 console.log("  ✓ Four pillars match: 乙巳, 戊子, 庚申, 乙酉");
 console.log("  ✓ Day master highlighted: 庚申");
 console.log("  ✓ Stem relationships shown: 乙+庚 合化金");
-console.log("  ✓ Branch relationships shown: 巳+申 相沖, 巳+酉 半合金局, 申+酉 六合");
+console.log(
+	"  ✓ Branch relationships shown: 巳+申 相沖, 巳+酉 半合金局, 申+酉 六合"
+);
 console.log("");
 console.log("Tab 2 (基本排盤) - Verify:");
 console.log("  ✓ Row 1 (干神): 正財, 梟神, 日主, 正財");
@@ -81,7 +85,7 @@ console.log("  ✓ Day master: 庚 (金, 陽)");
 console.log("  ✓ Five elements bar chart shows distribution");
 console.log("  ✓ Element analysis (缺失/過旺/適中/偏弱)");
 console.log("");
-console.log("=" .repeat(50));
+console.log("=".repeat(50));
 
 console.log("\n✨ To run actual verification:");
 console.log("1. Open the app in iOS simulator");
@@ -90,4 +94,3 @@ console.log("3. Rebuild and run");
 console.log("4. Navigate to BaZi input page");
 console.log("5. Fill in the test data above");
 console.log("6. Compare all values against this reference");
-

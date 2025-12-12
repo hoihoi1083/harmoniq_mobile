@@ -31,7 +31,9 @@ if (typeof window !== "undefined") {
 }
 
 function FengShuiReportPageContent() {
-	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
+	const API_BASE =
+		process.env.NEXT_PUBLIC_API_BASE_URL ||
+		"https://www.harmoniqfengshui.com";
 	const t = useTranslations("fengShuiReport.page");
 	const [reportData, setReportData] = useState(null);
 	const [loading, setLoading] = useState(true);
@@ -758,16 +760,19 @@ function FengShuiReportPageContent() {
 			);
 
 			// Update the database with complete content
-			const updateResponse = await fetch(`${API_BASE}/api/fortune-report`, {
-				method: "PUT",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({
-					sessionId,
-					reportContent: completeReportContent,
-				}),
-			});
+			const updateResponse = await fetch(
+				`${API_BASE}/api/fortune-report`,
+				{
+					method: "PUT",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						sessionId,
+						reportContent: completeReportContent,
+					}),
+				}
+			);
 
 			const updateData = await updateResponse.json();
 			if (updateData.status === 0) {
@@ -1205,7 +1210,13 @@ function FengShuiReportPageContent() {
 
 export default function FengShuiReportPage() {
 	return (
-		<Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
+		<Suspense
+			fallback={
+				<div className="flex justify-center items-center min-h-screen">
+					Loading...
+				</div>
+			}
+		>
 			<FengShuiReportPageContent />
 		</Suspense>
 	);

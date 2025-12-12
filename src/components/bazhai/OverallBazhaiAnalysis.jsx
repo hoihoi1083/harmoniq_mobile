@@ -14,7 +14,9 @@ export default function OverallBazhaiAnalysis({
 	roomAnalyses,
 	yearlyAdvice,
 }) {
-	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
+	const API_BASE =
+		process.env.NEXT_PUBLIC_API_BASE_URL ||
+		"https://www.harmoniqfengshui.com";
 	const [activeSection, setActiveSection] = useState("overview");
 	const [activeRoomIndex, setActiveRoomIndex] = useState(0); // Set first room as active by default
 	const [localPersonalData, setLocalPersonalData] = useState(null);

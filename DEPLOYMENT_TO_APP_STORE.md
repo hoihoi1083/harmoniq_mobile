@@ -1,6 +1,7 @@
 # 📱 Mobile App Store Deployment Guide
 
 ## Overview
+
 This guide explains how to deploy your mobile app to the iOS App Store and Android Play Store, and verify it's working correctly.
 
 ---
@@ -63,6 +64,7 @@ npm run build:mobile
 ```
 
 **What this does:**
+
 - Builds Next.js app with `CAPACITOR_BUILD=true`
 - Disables API routes (app will call production backend instead)
 - Creates static HTML/JS/CSS in `out/` folder
@@ -82,55 +84,60 @@ npm run cap:open:ios
 
 1. **Select Target**: Click "App" in the left panel
 2. **General Tab**:
-   - **Bundle Identifier**: `com.harmoniqfengshui` (must match Apple Developer portal)
-   - **Version**: `1.0.0` (your app version)
-   - **Build**: `1` (increment for each submission)
-   - **Team**: Select your Apple Developer Team
+
+    - **Bundle Identifier**: `com.harmoniqfengshui` (must match Apple Developer portal)
+    - **Version**: `1.0.0` (your app version)
+    - **Build**: `1` (increment for each submission)
+    - **Team**: Select your Apple Developer Team
 
 3. **Signing & Capabilities Tab**:
-   - ✅ **Automatically manage signing**
-   - Select your **Team**
-   - Ensure **Provisioning Profile** is valid
+    - ✅ **Automatically manage signing**
+    - Select your **Team**
+    - Ensure **Provisioning Profile** is valid
 
 #### 2.3 Archive and Upload to App Store Connect
 
 1. **Select Target Device**: Choose "Any iOS Device (arm64)" from the device dropdown
 2. **Archive**:
-   - Menu: `Product` → `Archive`
-   - Wait for build to complete (~5-10 minutes)
+    - Menu: `Product` → `Archive`
+    - Wait for build to complete (~5-10 minutes)
 3. **Organizer Window Opens**:
-   - Click **"Distribute App"**
-   - Select **"App Store Connect"**
-   - Click **"Upload"**
-   - Follow prompts to upload
+    - Click **"Distribute App"**
+    - Select **"App Store Connect"**
+    - Click **"Upload"**
+    - Follow prompts to upload
 
 #### 2.4 Configure App Store Connect
 
 1. Go to [App Store Connect](https://appstoreconnect.apple.com/)
 2. **My Apps** → Select your app → **App Store** tab
 3. Fill in:
-   - **App Name**: HarmoniqFengShui
-   - **Subtitle**: Your feng shui subtitle
-   - **Description**: Full app description
-   - **Keywords**: feng shui, astrology, bazi, etc.
-   - **Screenshots**: iPhone and iPad screenshots (required)
-   - **App Preview** (optional): Video demo
+
+    - **App Name**: HarmoniqFengShui
+    - **Subtitle**: Your feng shui subtitle
+    - **Description**: Full app description
+    - **Keywords**: feng shui, astrology, bazi, etc.
+    - **Screenshots**: iPhone and iPad screenshots (required)
+    - **App Preview** (optional): Video demo
 
 4. **Pricing and Availability**:
-   - Select countries/regions
-   - Set price tier (or free)
+
+    - Select countries/regions
+    - Set price tier (or free)
 
 5. **App Privacy**:
-   - Fill out privacy questionnaire
-   - Add privacy policy URL
+
+    - Fill out privacy questionnaire
+    - Add privacy policy URL
 
 6. **Build**:
-   - Select the uploaded build
-   - Save
+
+    - Select the uploaded build
+    - Save
 
 7. **Submit for Review**:
-   - Click **"Submit for Review"**
-   - Review typically takes 1-3 days
+    - Click **"Submit for Review"**
+    - Review typically takes 1-3 days
 
 ---
 
@@ -145,26 +152,27 @@ npm run cap:open:android
 #### 3.2 Configure App Settings
 
 1. **Update `build.gradle` (app level)**:
-   ```gradle
-   android {
-       defaultConfig {
-           applicationId "com.harmoniqfengshui"
-           versionCode 1  // Increment for each release
-           versionName "1.0.0"
-       }
-   }
-   ```
+    ```gradle
+    android {
+        defaultConfig {
+            applicationId "com.harmoniqfengshui"
+            versionCode 1  // Increment for each release
+            versionName "1.0.0"
+        }
+    }
+    ```
 
 #### 3.3 Generate Signed APK/Bundle
 
 1. **Build** → **Generate Signed Bundle / APK**
 2. Select **"Android App Bundle"** (recommended)
 3. **Create New Keystore**:
-   - Save location: `android/release.keystore`
-   - Password: [create secure password]
-   - Alias: `harmoniq-release`
-   - Validity: 25 years
-   - **Save keystore info** - you'll need it for future updates!
+
+    - Save location: `android/release.keystore`
+    - Password: [create secure password]
+    - Alias: `harmoniq-release`
+    - Validity: 25 years
+    - **Save keystore info** - you'll need it for future updates!
 
 4. Select **"release"** build variant
 5. Click **"Finish"** - bundle will be created at `android/app/release/app-release.aab`
@@ -173,37 +181,42 @@ npm run cap:open:android
 
 1. Go to [Google Play Console](https://play.google.com/console)
 2. **Create App** (if first time):
-   - App name: HarmoniqFengShui
-   - Default language: Chinese (Traditional)
-   - App or Game: App
-   - Free or Paid: Free
+
+    - App name: HarmoniqFengShui
+    - Default language: Chinese (Traditional)
+    - App or Game: App
+    - Free or Paid: Free
 
 3. **Dashboard** → **Production** → **Create new release**
 4. **Upload** the `app-release.aab` file
 5. Fill in:
-   - **Release name**: `1.0.0`
-   - **Release notes**: Describe features
+    - **Release name**: `1.0.0`
+    - **Release notes**: Describe features
 6. **Save** and **Review release**
 
 #### 3.5 Complete Store Listing
 
 1. **Store Listing**:
-   - App name, description, icon
-   - Screenshots (min 2 per device type)
-   - Feature graphic (1024x500px)
+
+    - App name, description, icon
+    - Screenshots (min 2 per device type)
+    - Feature graphic (1024x500px)
 
 2. **Content Rating**:
-   - Complete questionnaire
-   - Get rating
+
+    - Complete questionnaire
+    - Get rating
 
 3. **Target Audience**:
-   - Select age groups
+
+    - Select age groups
 
 4. **Privacy Policy**:
-   - Add privacy policy URL
+
+    - Add privacy policy URL
 
 5. **Submit for Review**:
-   - Can take 3-7 days for first review
+    - Can take 3-7 days for first review
 
 ---
 
@@ -217,12 +230,12 @@ Before public release, test via TestFlight:
 2. Add internal testers (your email)
 3. Install TestFlight app on iPhone
 4. Open test app and verify:
-   - ✅ Bottom navigation appears
-   - ✅ Google Sign-In works
-   - ✅ Apple Sign-In works
-   - ✅ Payment flow completes
-   - ✅ Reports generate correctly
-   - ✅ No crashes or errors
+    - ✅ Bottom navigation appears
+    - ✅ Google Sign-In works
+    - ✅ Apple Sign-In works
+    - ✅ Payment flow completes
+    - ✅ Reports generate correctly
+    - ✅ No crashes or errors
 
 #### 4.2 Internal Testing (Android)
 
@@ -230,19 +243,20 @@ Before public release, test via TestFlight:
 2. Create internal testing track
 3. Add testers (your email)
 4. Download from Play Store and verify:
-   - ✅ Same checklist as iOS above
+    - ✅ Same checklist as iOS above
 
 #### 4.3 Monitor Production Logs
 
 After public release:
 
 1. **iOS**:
-   - **Xcode** → **Window** → **Organizer** → **Crashes**
-   - Check crash reports daily
+
+    - **Xcode** → **Window** → **Organizer** → **Crashes**
+    - Check crash reports daily
 
 2. **Android**:
-   - **Play Console** → **Quality** → **Android vitals**
-   - Monitor crash rate, ANR rate
+    - **Play Console** → **Quality** → **Android vitals**
+    - Monitor crash rate, ANR rate
 
 ---
 
@@ -251,17 +265,20 @@ After public release:
 When you make changes to the mobile app:
 
 1. **Increment version numbers**:
-   - iOS: Xcode → General → Build number
-   - Android: `android/app/build.gradle` → versionCode
+
+    - iOS: Xcode → General → Build number
+    - Android: `android/app/build.gradle` → versionCode
 
 2. **Build production app**:
-   ```bash
-   npm run build:mobile
-   ```
+
+    ```bash
+    npm run build:mobile
+    ```
 
 3. **Upload new builds**:
-   - iOS: Archive → Upload to App Store Connect
-   - Android: Generate signed bundle → Upload to Play Console
+
+    - iOS: Archive → Upload to App Store Connect
+    - Android: Generate signed bundle → Upload to Play Console
 
 4. **Submit for review** in both stores
 
@@ -270,31 +287,41 @@ When you make changes to the mobile app:
 ## 🐛 Common Issues & Solutions
 
 ### Issue: "API calls return 404"
+
 **Solution**: Verify backend is deployed and endpoints exist:
+
 ```bash
 curl https://www.harmoniqfengshui.com/api/auth/google/mobile
 ```
 
 ### Issue: "Google Sign-In doesn't work"
-**Solution**: 
+
+**Solution**:
+
 1. Verify `NEXT_PUBLIC_GOOGLE_IOS_CLIENT_ID` in `.env.production`
 2. Check Google OAuth consent screen is published
 3. Verify bundle ID matches in Google Console
 
 ### Issue: "Apple Sign-In fails"
+
 **Solution**:
+
 1. Verify Apple capabilities enabled in Xcode
 2. Check APPLE_ID matches bundle identifier
 3. Verify private key in backend `.env`
 
 ### Issue: "Payment doesn't complete"
+
 **Solution**:
+
 1. Check Stripe publishable key is correct
 2. Verify webhook endpoint configured in Stripe dashboard
 3. Test with Stripe test cards first
 
 ### Issue: "App rejected by Apple"
+
 **Common reasons**:
+
 - Missing privacy policy
 - Incomplete metadata (screenshots, description)
 - Crashes during review
@@ -345,6 +372,7 @@ Before submitting to stores:
 ## 🎉 Success!
 
 Once approved:
+
 - **iOS**: App appears in App Store within 24 hours
 - **Android**: App appears in Play Store within 1-2 hours
 

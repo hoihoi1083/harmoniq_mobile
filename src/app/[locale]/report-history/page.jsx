@@ -9,7 +9,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/home/Footer";
 
 const ReportHistoryPage = () => {
-	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
+	const API_BASE =
+		process.env.NEXT_PUBLIC_API_BASE_URL ||
+		"https://www.harmoniqfengshui.com";
 	const { data: session, status } = useSession();
 	const router = useRouter();
 	const params = useParams();
@@ -89,7 +91,9 @@ const ReportHistoryPage = () => {
 				limit: "12",
 			});
 
-			const response = await fetch(`${API_BASE}/api/reports/history?${queryParams}`);
+			const response = await fetch(
+				`${API_BASE}/api/reports/history?${queryParams}`
+			);
 			const data = await response.json();
 
 			if (data.status === 0) {
@@ -221,7 +225,9 @@ const ReportHistoryPage = () => {
 				params.append("userId", possibleUserIds[0]);
 			}
 
-			const response = await fetch(`${API_BASE}/api/reports/life-history?${params}`);
+			const response = await fetch(
+				`${API_BASE}/api/reports/life-history?${params}`
+			);
 			const data = await response.json();
 
 			if (data.status === 0) {

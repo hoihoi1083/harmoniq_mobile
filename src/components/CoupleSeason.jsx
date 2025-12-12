@@ -15,7 +15,9 @@ export default function CoupleSeason({
 	currentYear = 2025,
 	isSimplified = false,
 }) {
-	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
+	const API_BASE =
+		process.env.NEXT_PUBLIC_API_BASE_URL ||
+		"https://www.harmoniqfengshui.com";
 	const { data: session } = useSession();
 	const { coupleSeasonCache, setCoupleSeasonCache } = useCoupleAnalysis();
 	const t = useTranslations("coupleReport.coupleSeason");
@@ -65,28 +67,33 @@ export default function CoupleSeason({
 			const seasonInfo = getCurrentSeasonInfo();
 			console.log("📅 CoupleSeason current season info:", seasonInfo);
 
-			const response = await fetch(`${API_BASE}/api/couple-season-analysis`, {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({
-					user1Info: {
-						birthday: user1?.birthDateTime || "",
-						gender: user1?.gender || "male",
-						name: user1?.name || (isSimplified ? "男方" : "男方"),
+			const response = await fetch(
+				`${API_BASE}/api/couple-season-analysis`,
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
 					},
-					user2Info: {
-						birthday: user2?.birthDateTime || "",
-						gender: user2?.gender || "female",
-						name: user2?.name || (isSimplified ? "女方" : "女方"),
-					},
-					currentYear: year,
-					currentDate: seasonInfo, // Add current season context
-					concern: "感情", // Default concern for couple analysis
-					isSimplified: isSimplified,
-				}),
-			});
+					body: JSON.stringify({
+						user1Info: {
+							birthday: user1?.birthDateTime || "",
+							gender: user1?.gender || "male",
+							name:
+								user1?.name || (isSimplified ? "男方" : "男方"),
+						},
+						user2Info: {
+							birthday: user2?.birthDateTime || "",
+							gender: user2?.gender || "female",
+							name:
+								user2?.name || (isSimplified ? "女方" : "女方"),
+						},
+						currentYear: year,
+						currentDate: seasonInfo, // Add current season context
+						concern: "感情", // Default concern for couple analysis
+						isSimplified: isSimplified,
+					}),
+				}
+			);
 
 			if (!response.ok) {
 				throw new Error(`API request failed: ${response.status}`);

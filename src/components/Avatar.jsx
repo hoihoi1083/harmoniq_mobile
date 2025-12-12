@@ -17,7 +17,11 @@ export default function Avatar({ from }) {
 	const t2 = useTranslations("toast");
 	const router = useRouter();
 	const { data: session } = useSession();
-	const { mobileSession, clearMobileSession, isMobile: isCapacitorMobile } = useMobileAuth();
+	const {
+		mobileSession,
+		clearMobileSession,
+		isMobile: isCapacitorMobile,
+	} = useMobileAuth();
 
 	// Use mobile session if on mobile, otherwise use web session
 	const effectiveSession =
@@ -62,13 +66,18 @@ export default function Avatar({ from }) {
 						/>
 					) : (
 						<span className="text-xl font-bold text-white select-none">
-							{effectiveSession.user.name?.slice(0, 1).toUpperCase() || "?"}
+							{effectiveSession.user.name
+								?.slice(0, 1)
+								.toUpperCase() || "?"}
 						</span>
 					)}
 				</div>
 			</DropdownMenuTrigger>
 			<DropdownMenuContent align="end" className="bg-white">
-				<DropdownMenuItem onClick={handleLogout} className="cursor-pointer text-red-600 focus:text-red-600 focus:bg-red-50">
+				<DropdownMenuItem
+					onClick={handleLogout}
+					className="cursor-pointer text-red-600 focus:text-red-600 focus:bg-red-50"
+				>
 					{t("logout")}
 				</DropdownMenuItem>
 			</DropdownMenuContent>

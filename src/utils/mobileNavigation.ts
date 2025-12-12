@@ -29,18 +29,18 @@ export function navigateMobile(path: string) {
 	} else {
 		// 🔧 FIX: For static export, add locale prefix and /index.html
 		console.log("📱 Local navigation:", path);
-		
+
 		// Get current locale from URL (e.g., /zh-TW/ or /zh-CN/)
-		const currentLocale = window.location.pathname.split('/')[1] || 'zh-TW';
-		
+		const currentLocale = window.location.pathname.split("/")[1] || "zh-TW";
+
 		// Add locale prefix if path doesn't already have it
 		// For Capacitor, pages are at /locale/path/index.html
-		const finalPath = path.startsWith(`/${currentLocale}`) 
-			? `${path}/index.html` 
+		const finalPath = path.startsWith(`/${currentLocale}`)
+			? `${path}/index.html`
 			: `/${currentLocale}${path}/index.html`;
-		
+
 		console.log("🔄 Navigating to:", finalPath);
-		
+
 		// Force page reload to navigate (static export)
 		window.location.href = finalPath;
 	}

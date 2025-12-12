@@ -65,11 +65,13 @@ export default function BottomTabNavigation() {
 		if (path === `/${locale}`) {
 			return pathname === `/${locale}` || pathname === `/${locale}/`;
 		}
-		// Starts with for other paths
-		return pathname?.startsWith(path);
+		// For other paths, check exact match or path + slash to avoid false positives
+		// e.g., /zh-TW/price should NOT match /zh-TW
+		return pathname === path || pathname?.startsWith(path + "/");
 	};
 
 	const handleTabClick = (path: string) => {
+		// Use Next.js router for proper client-side navigation
 		router.push(path);
 	};
 

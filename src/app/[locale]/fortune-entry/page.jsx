@@ -9,7 +9,9 @@ import { Capacitor } from "@capacitor/core";
 import { Preferences } from "@capacitor/preferences";
 
 function FortuneEntryContent() {
-	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
+	const API_BASE =
+		process.env.NEXT_PUBLIC_API_BASE_URL ||
+		"https://www.harmoniqfengshui.com";
 	const params = useParams();
 	const { locale } = params;
 	const t = useTranslations("fortuneEntry");
@@ -60,9 +62,12 @@ function FortuneEntryContent() {
 					if (userId) headers["X-User-ID"] = userId;
 				}
 
-				const response = await fetch(`${API_BASE}/api/get-user-birthday`, {
-					headers,
-				});
+				const response = await fetch(
+					`${API_BASE}/api/get-user-birthday`,
+					{
+						headers,
+					}
+				);
 				if (response.ok) {
 					const data = await response.json();
 					if (data.success && data.birthday) {
@@ -98,13 +103,16 @@ function FortuneEntryContent() {
 			}
 
 			try {
-				const response = await fetch(`${API_BASE}/api/verify-fortune-payment`, {
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-					},
-					body: JSON.stringify({ sessionId }),
-				});
+				const response = await fetch(
+					`${API_BASE}/api/verify-fortune-payment`,
+					{
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+						},
+						body: JSON.stringify({ sessionId }),
+					}
+				);
 
 				const data = await response.json();
 				if (data.status === 0) {
@@ -165,15 +173,18 @@ function FortuneEntryContent() {
 				if (formData.birthTime) {
 					birthDateTime += `T${formData.birthTime}:00`;
 				} else {
-					birthDateTime += 'T12:00:00';
+					birthDateTime += "T12:00:00";
 				}
 				await Preferences.set({
-					key: 'userBirthday',
-					value: birthDateTime
+					key: "userBirthday",
+					value: birthDateTime,
 				});
-				console.log('✅ Saved birthday to mobile preferences:', birthDateTime);
+				console.log(
+					"✅ Saved birthday to mobile preferences:",
+					birthDateTime
+				);
 			} catch (error) {
-				console.error('❌ Error saving birthday:', error);
+				console.error("❌ Error saving birthday:", error);
 			}
 		}
 
@@ -258,13 +269,16 @@ function FortuneEntryContent() {
 				if (formData.birthTime) {
 					birthDateTime += `T${formData.birthTime}:00`;
 				} else {
-					birthDateTime += 'T12:00:00';
+					birthDateTime += "T12:00:00";
 				}
 				await Preferences.set({
-					key: 'userBirthday',
-					value: birthDateTime
+					key: "userBirthday",
+					value: birthDateTime,
 				});
-				console.log('✅ Saved birthday to mobile preferences:', birthDateTime);
+				console.log(
+					"✅ Saved birthday to mobile preferences:",
+					birthDateTime
+				);
 			}
 
 			// Determine which report page to route to based on payment type

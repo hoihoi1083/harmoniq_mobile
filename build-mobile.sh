@@ -29,18 +29,19 @@ fi
 #   mv "src/app/[locale]/home" "src/app/[locale]/_home_disabled"
 # fi
 
-# Disable pages with server-side searchParams
-if [ -d "src/app/[locale]/success" ]; then
-  mv "src/app/[locale]/success" "src/app/[locale]/_success_disabled"
-fi
+# Keep auth and report pages enabled for mobile
+# They are now using client-side navigation with window.location.href
+# if [ -d "src/app/[locale]/success" ]; then
+#   mv "src/app/[locale]/success" "src/app/[locale]/_success_disabled"
+# fi
 
-if [ -d "src/app/[locale]/auth" ]; then
-  mv "src/app/[locale]/auth" "src/app/[locale]/_auth_disabled"
-fi
+# if [ -d "src/app/[locale]/auth" ]; then
+#   mv "src/app/[locale]/auth" "src/app/[locale]/_auth_disabled"
+# fi
 
-if [ -d "src/app/[locale]/report" ]; then
-  mv "src/app/[locale]/report" "src/app/[locale]/_report_disabled"
-fi
+# if [ -d "src/app/[locale]/report" ]; then
+#   mv "src/app/[locale]/report" "src/app/[locale]/_report_disabled"
+# fi
 
 if [ -d "src/app/[locale]/four-fortune-analysis" ]; then
   mv "src/app/[locale]/four-fortune-analysis" "src/app/[locale]/_four-fortune-analysis_disabled"
@@ -119,17 +120,18 @@ fi
 #   mv "src/app/[locale]/_home_disabled" "src/app/[locale]/home"
 # fi
 
-if [ -d "src/app/[locale]/_success_disabled" ]; then
-  mv "src/app/[locale]/_success_disabled" "src/app/[locale]/success"
-fi
+# These pages are now kept enabled, no need to restore
+# if [ -d "src/app/[locale]/_success_disabled" ]; then
+#   mv "src/app/[locale]/_success_disabled" "src/app/[locale]/success"
+# fi
 
-if [ -d "src/app/[locale]/_auth_disabled" ]; then
-  mv "src/app/[locale]/_auth_disabled" "src/app/[locale]/auth"
-fi
+# if [ -d "src/app/[locale]/_auth_disabled" ]; then
+#   mv "src/app/[locale]/_auth_disabled" "src/app/[locale]/auth"
+# fi
 
-if [ -d "src/app/[locale]/_report_disabled" ]; then
-  mv "src/app/[locale]/_report_disabled" "src/app/[locale]/report"
-fi
+# if [ -d "src/app/[locale]/_report_disabled" ]; then
+#   mv "src/app/[locale]/_report_disabled" "src/app/[locale]/report"
+# fi
 
 if [ -d "src/app/[locale]/_four-fortune-analysis_disabled" ]; then
   mv "src/app/[locale]/_four-fortune-analysis_disabled" "src/app/[locale]/four-fortune-analysis"

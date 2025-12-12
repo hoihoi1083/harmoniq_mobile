@@ -14,7 +14,7 @@ export default function BaziPersonalityAnalysis({ baziData }) {
 	// Element colors matching the screenshot
 	const elementColors = {
 		金: "#5B7FBF", // Blue
-		木: "#4CAF50", // Green  
+		木: "#4CAF50", // Green
 		水: "#3F83C9", // Blue
 		火: "#E35A5F", // Red
 		土: "#D4A76A", // Brown/Gold
@@ -25,16 +25,16 @@ export default function BaziPersonalityAnalysis({ baziData }) {
 
 	// Map day master stem to character image
 	const characterImageMap = {
-		"甲": "/images/element-characters/甲木.png",
-		"乙": "/images/element-characters/乙木.PNG",
-		"丙": "/images/element-characters/丙火.PNG",
-		"丁": "/images/element-characters/丁火.png",
-		"戊": "/images/element-characters/戊土.PNG",
-		"己": "/images/element-characters/己土.png",
-		"庚": "/images/element-characters/庚金.png",
-		"辛": "/images/element-characters/辛金.png",
-		"壬": "/images/element-characters/壬水.PNG",
-		"癸": "/images/element-characters/癸水.PNG",
+		甲: "/images/element-characters/甲木.png",
+		乙: "/images/element-characters/乙木.PNG",
+		丙: "/images/element-characters/丙火.PNG",
+		丁: "/images/element-characters/丁火.png",
+		戊: "/images/element-characters/戊土.PNG",
+		己: "/images/element-characters/己土.png",
+		庚: "/images/element-characters/庚金.png",
+		辛: "/images/element-characters/辛金.png",
+		壬: "/images/element-characters/壬水.PNG",
+		癸: "/images/element-characters/癸水.PNG",
 	};
 
 	const characterImage = characterImageMap[dayMaster.stem];
@@ -44,11 +44,15 @@ export default function BaziPersonalityAnalysis({ baziData }) {
 			{/* Day Master Info - No Header */}
 			<div className="p-6 mb-4 text-center bg-white rounded-2xl shadow-sm">
 				<div className="mb-2 text-lg text-gray-600">
-					本命天干 {dayMaster.stem}{dayMaster.element}-{dayMaster.yinYang}{dayMaster.element}
+					本命天干 {dayMaster.stem}
+					{dayMaster.element}-{dayMaster.yinYang}
+					{dayMaster.element}
 				</div>
-				<div 
+				<div
 					className="inline-block px-6 py-3 mb-6 text-xl font-bold text-white rounded-full"
-					style={{ backgroundColor: elementColors[dayMaster.element] }}
+					style={{
+						backgroundColor: elementColors[dayMaster.element],
+					}}
 				>
 					{dayMaster.personality.title}
 				</div>
@@ -80,7 +84,12 @@ export default function BaziPersonalityAnalysis({ baziData }) {
 				</div>
 
 				{/* Personality Traits */}
-				<div className="p-4 mb-4 rounded-xl" style={{ backgroundColor: `${elementColors[dayMaster.element]}15` }}>
+				<div
+					className="p-4 mb-4 rounded-xl"
+					style={{
+						backgroundColor: `${elementColors[dayMaster.element]}15`,
+					}}
+				>
 					<h3 className="mb-3 text-sm font-semibold text-gray-700">
 						性格特質
 					</h3>
@@ -89,7 +98,10 @@ export default function BaziPersonalityAnalysis({ baziData }) {
 							<span
 								key={index}
 								className="px-4 py-2 text-sm font-medium text-white rounded-full shadow-sm"
-								style={{ backgroundColor: elementColors[dayMaster.element] }}
+								style={{
+									backgroundColor:
+										elementColors[dayMaster.element],
+								}}
 							>
 								{trait}
 							</span>
@@ -106,7 +118,10 @@ export default function BaziPersonalityAnalysis({ baziData }) {
 							elementDistribution.percentages[element];
 
 						return (
-							<div key={element} className="flex items-center gap-3">
+							<div
+								key={element}
+								className="flex items-center gap-3"
+							>
 								<span className="text-base font-medium text-gray-700 w-8">
 									{element}
 								</span>
@@ -115,7 +130,8 @@ export default function BaziPersonalityAnalysis({ baziData }) {
 										className="h-full transition-all duration-500 rounded-full"
 										style={{
 											width: `${percentage}%`,
-											backgroundColor: elementColors[element],
+											backgroundColor:
+												elementColors[element],
 										}}
 									/>
 								</div>

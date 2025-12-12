@@ -10,7 +10,9 @@ import { toast } from "react-toastify";
 import { useTranslations } from "next-intl";
 
 export default function RegisterPage() {
-	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
+	const API_BASE =
+		process.env.NEXT_PUBLIC_API_BASE_URL ||
+		"https://www.harmoniqfengshui.com";
 	const router = useRouter();
 	const t = useTranslations("register");
 	const t2 = useTranslations("toast");

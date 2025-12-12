@@ -64,7 +64,9 @@ export default function ReportPage({
 	sessionId: propSessionId,
 	showHistorical,
 }) {
-	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
+	const API_BASE =
+		process.env.NEXT_PUBLIC_API_BASE_URL ||
+		"https://www.harmoniqfengshui.com";
 	const isMobile = useMobile();
 	const router = useRouter();
 	const searchParams = useSearchParams();
@@ -573,15 +575,18 @@ export default function ReportPage({
 		setIsLoadingFlowAnalysis(true);
 		try {
 			console.log("🔥 Generating fresh element flow analysis");
-			const response = await fetch(`${API_BASE}/api/element-flow-analysis`, {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({
-					userInfo,
-				}),
-			});
+			const response = await fetch(
+				`${API_BASE}/api/element-flow-analysis`,
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						userInfo,
+					}),
+				}
+			);
 
 			if (response.ok) {
 				const result = await response.json();
@@ -655,22 +660,25 @@ export default function ReportPage({
 
 			const stage = stageMapping[pillarType] || "人生阶段";
 
-			const response = await fetch(`${API_BASE}/api/life-stage-analysis`, {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({
-					pillarType,
-					stage,
-					pillarData,
-					userInfo,
-					prompt: `关联人生阶段（${pillarType}=${stage}）
+			const response = await fetch(
+				`${API_BASE}/api/life-stage-analysis`,
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						pillarType,
+						stage,
+						pillarData,
+						userInfo,
+						prompt: `关联人生阶段（${pillarType}=${stage}）
 白话直断**（分两段）：  
    - **{关键词}**：生活场景说明（如"竞争与规则并存"）  
    - **现实案例**：如"被父母要求先写作业才能玩"`,
-				}),
-			});
+					}),
+				}
+			);
 
 			if (response.ok) {
 				const result = await response.json();
@@ -762,16 +770,19 @@ export default function ReportPage({
 			console.log(
 				`🔥 Generating fresh interpersonal advice for ${pillar}`
 			);
-			const response = await fetch(`${API_BASE}/api/interpersonal-advice`, {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({
-					pillar,
-					userInfo,
-				}),
-			});
+			const response = await fetch(
+				`${API_BASE}/api/interpersonal-advice`,
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						pillar,
+						userInfo,
+					}),
+				}
+			);
 
 			if (response.ok) {
 				const result = await response.json();
@@ -830,16 +841,19 @@ export default function ReportPage({
 
 		try {
 			console.log(`🔥 Generating fresh life advice for ${pillar}`);
-			const response = await fetch(`${API_BASE}/api/comprehensive-advice`, {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({
-					pillar,
-					userInfo,
-				}),
-			});
+			const response = await fetch(
+				`${API_BASE}/api/comprehensive-advice`,
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						pillar,
+						userInfo,
+					}),
+				}
+			);
 
 			if (response.ok) {
 				const result = await response.json();
@@ -884,16 +898,19 @@ export default function ReportPage({
 		wuxingData
 	) => {
 		try {
-			const response = await fetch(`${API_BASE}/api/comprehensive-interpersonal`, {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({
-					userInfo,
-					wuxingData,
-				}),
-			});
+			const response = await fetch(
+				`${API_BASE}/api/comprehensive-interpersonal`,
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						userInfo,
+						wuxingData,
+					}),
+				}
+			);
 
 			if (response.ok) {
 				const result = await response.json();
@@ -959,16 +976,19 @@ export default function ReportPage({
 
 		try {
 			console.log("🔥 Generating fresh comprehensive life advice");
-			const response = await fetch(`${API_BASE}/api/comprehensive-life-advice`, {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({
-					userInfo,
-					wuxingData,
-				}),
-			});
+			const response = await fetch(
+				`${API_BASE}/api/comprehensive-life-advice`,
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						userInfo,
+						wuxingData,
+					}),
+				}
+			);
 
 			if (response.ok) {
 				const result = await response.json();
@@ -2571,7 +2591,12 @@ export default function ReportPage({
 
 			{/* Historical Report Banner */}
 			{!isPrinting && showHistorical && (
-				<div className="max-w-6xl px-4 mx-auto" style={{ paddingTop: "calc(4rem + env(safe-area-inset-top))" }}>
+				<div
+					className="max-w-6xl px-4 mx-auto"
+					style={{
+						paddingTop: "calc(4rem + env(safe-area-inset-top))",
+					}}
+				>
 					<div className="p-4 border border-yellow-200 rounded-lg bg-yellow-50">
 						<p className="text-yellow-800">
 							<strong>注意：</strong>
@@ -2589,7 +2614,14 @@ export default function ReportPage({
 
 			{/* Navigation Row */}
 			{!isPrinting && (
-				<div className="w-full bg-gradient-to-r from-[#A3B116] to-[#3D5C2D] py-4 sm:py-6" style={{ marginTop: showHistorical ? "1rem" : "calc(4rem + env(safe-area-inset-top))" }}>
+				<div
+					className="w-full bg-gradient-to-r from-[#A3B116] to-[#3D5C2D] py-4 sm:py-6"
+					style={{
+						marginTop: showHistorical
+							? "1rem"
+							: "calc(4rem + env(safe-area-inset-top))",
+					}}
+				>
 					<div className="max-w-6xl px-3 mx-auto sm:px-4">
 						<div className="flex items-center justify-center gap-3 sm:justify-between md:justify-center lg:justify-center xl:justify-center sm:gap-6">
 							{/* 命理分析報告 Tab */}

@@ -15,7 +15,9 @@ import { Capacitor } from "@capacitor/core";
 import { Preferences } from "@capacitor/preferences";
 
 function LoginPageContent() {
-	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
+	const API_BASE =
+		process.env.NEXT_PUBLIC_API_BASE_URL ||
+		"https://www.harmoniqfengshui.com";
 	const router = useRouter();
 	const searchParams = useSearchParams();
 	const t = useTranslations("login");
@@ -111,40 +113,53 @@ function LoginPageContent() {
 						JSON.stringify(googleUser, null, 2)
 					);
 
-				// Send the ID token to our custom endpoint
-				console.log("📡 Calling API:", `${API_BASE}/api/auth/google/mobile`);
-				console.log("📤 Request body:", JSON.stringify({
-					idToken: "REDACTED",
-					email: googleUser.email,
-					name: googleUser.name,
-					imageUrl: googleUser.imageUrl,
-				}));
+					// Send the ID token to our custom endpoint
+					console.log(
+						"📡 Calling API:",
+						`${API_BASE}/api/auth/google/mobile`
+					);
+					console.log(
+						"📤 Request body:",
+						JSON.stringify({
+							idToken: "REDACTED",
+							email: googleUser.email,
+							name: googleUser.name,
+							imageUrl: googleUser.imageUrl,
+						})
+					);
 
-				const response = await fetch(`${API_BASE}/api/auth/google/mobile`, {
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-					},
-					body: JSON.stringify({
-						idToken: googleUser.authentication.idToken,
-						email: googleUser.email,
-						name: googleUser.name,
-						imageUrl: googleUser.imageUrl,
-					}),
-				});
+					const response = await fetch(
+						`${API_BASE}/api/auth/google/mobile`,
+						{
+							method: "POST",
+							headers: {
+								"Content-Type": "application/json",
+							},
+							body: JSON.stringify({
+								idToken: googleUser.authentication.idToken,
+								email: googleUser.email,
+								name: googleUser.name,
+								imageUrl: googleUser.imageUrl,
+							}),
+						}
+					);
 
-				console.log("📥 Response status:", response.status);
-				console.log("📥 Response ok:", response.ok);
+					console.log("📥 Response status:", response.status);
+					console.log("📥 Response ok:", response.ok);
 
-				const data = await response.json();
-				console.log("📥 Response data:", JSON.stringify(data, null, 2));
+					const data = await response.json();
+					console.log(
+						"📥 Response data:",
+						JSON.stringify(data, null, 2)
+					);
 
-				if (!response.ok || !data.success) {
-					console.error("❌ Server error:", data.error);
-					toast.error(t("loginFailed"));
-					setIsLoading(false);
-					return;
-				}					console.log("✅ User created/updated:", data.user);
+					if (!response.ok || !data.success) {
+						console.error("❌ Server error:", data.error);
+						toast.error(t("loginFailed"));
+						setIsLoading(false);
+						return;
+					}
+					console.log("✅ User created/updated:", data.user);
 
 					// Store user session in Capacitor Preferences
 					await Preferences.set({
@@ -157,18 +172,24 @@ function LoginPageContent() {
 					});
 
 					console.log("✅ Session stored in Capacitor Preferences");
-					
+
 					// Verify storage
-					const { value } = await Preferences.get({ key: "userSession" });
-					console.log("🔍 Verified stored session:", value ? "✅ Exists" : "❌ Not found");
-					
+					const { value } = await Preferences.get({
+						key: "userSession",
+					});
+					console.log(
+						"🔍 Verified stored session:",
+						value ? "✅ Exists" : "❌ Not found"
+					);
+
 					toast.success(t("loginSuccess"));
 
 					// Small delay to ensure storage completes, then redirect
-					await new Promise(resolve => setTimeout(resolve, 100));
-					
+					await new Promise((resolve) => setTimeout(resolve, 100));
+
 					// Redirect to main chat page using window.location for Capacitor
-					const locale = window.location.pathname.split('/')[1] || 'zh-TW';
+					const locale =
+						window.location.pathname.split("/")[1] || "zh-TW";
 					console.log("🔄 Redirecting to:", `/${locale}/index.html`);
 					window.location.href = `/${locale}/index.html`;
 					setIsLoading(false);
@@ -179,8 +200,9 @@ function LoginPageContent() {
 						message: error?.message || "Unknown error",
 						name: error?.name || "Unknown name",
 						stack: error?.stack || "No stack trace",
-						toString: error?.toString() || "Cannot convert to string",
-						code: error?.code || "No code"
+						toString:
+							error?.toString() || "Cannot convert to string",
+						code: error?.code || "No code",
 					});
 
 					if (
@@ -254,20 +276,23 @@ function LoginPageContent() {
 					);
 
 					// Send the identity token to our custom endpoint
-					const response = await fetch(`${API_BASE}/api/auth/apple/ios`, {
-						method: "POST",
-						headers: {
-							"Content-Type": "application/json",
-						},
-						body: JSON.stringify({
-							identityToken: result.response.identityToken,
-							authorizationCode:
-								result.response.authorizationCode,
-							email: result.response.email,
-							givenName: result.response.givenName,
-							familyName: result.response.familyName,
-						}),
-					});
+					const response = await fetch(
+						`${API_BASE}/api/auth/apple/mobile`,
+						{
+							method: "POST",
+							headers: {
+								"Content-Type": "application/json",
+							},
+							body: JSON.stringify({
+								identityToken: result.response.identityToken,
+								authorizationCode:
+									result.response.authorizationCode,
+								email: result.response.email,
+								givenName: result.response.givenName,
+								familyName: result.response.familyName,
+							}),
+						}
+					);
 
 					const data = await response.json();
 
@@ -632,7 +657,13 @@ function LoginPageContent() {
 
 export default function LoginPage() {
 	return (
-		<Suspense fallback={<div className="flex justify-center items-center min-h-screen">Loading...</div>}>
+		<Suspense
+			fallback={
+				<div className="flex justify-center items-center min-h-screen">
+					Loading...
+				</div>
+			}
+		>
 			<LoginPageContent />
 		</Suspense>
 	);

@@ -19,7 +19,9 @@ import EmotionalAnalyzer from "@/components/EmotionalAnalyzer";
 import BirthdayAnalyzer from "@/components/BirthdayAnalyzer";
 
 export default function ChatPage() {
-	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
+	const API_BASE =
+		process.env.NEXT_PUBLIC_API_BASE_URL ||
+		"https://www.harmoniqfengshui.com";
 	const { data: session } = useSession();
 	const router = useRouter();
 	const [messages, setMessages] = useState([
@@ -97,7 +99,7 @@ export default function ChatPage() {
 					className="text-blue-600 underline cursor-pointer hover:text-blue-800"
 					onClick={(e) => {
 						e.preventDefault();
-						router.push(match[2]);
+						window.location.href = match[2];
 					}}
 				>
 					{match[1]}

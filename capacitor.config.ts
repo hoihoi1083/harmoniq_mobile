@@ -9,7 +9,7 @@ const config: CapacitorConfig = {
 	webDir: "out",
 	server: {
 		androidScheme: "https",
-		iosScheme: "capacitor"
+		iosScheme: "capacitor",
 	},
 	// No server.url = loads from bundled files
 	plugins: {

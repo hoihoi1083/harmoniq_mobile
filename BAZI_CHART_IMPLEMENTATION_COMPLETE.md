@@ -1,67 +1,77 @@
 # BaZi Chart Feature Implementation Complete
 
 ## Overview
+
 Successfully implemented a comprehensive BaZi (八字) chart visualization feature with three interactive tabs, matching the functionality shown in the user-provided screenshots.
 
 ## Implementation Date
+
 January 2025
 
 ## Features Implemented
 
 ### Tab 1: 干支圖況 (Stem-Branch Relationship Diagram)
+
 **Component:** `src/components/BaziRelationshipDiagram.jsx`
 
 **Features:**
+
 - Four pillars display (年柱、月柱、日柱、時柱) with day master highlighting
 - Comprehensive relationship analysis showing:
-  - 天干合化 (Heavenly Stem Combinations): 甲己合化土, 乙庚合化金, etc.
-  - 地支六合 (Six Harmonies): 子丑合, 寅亥合, etc.
-  - 地支三合 (Three Harmonies): 申子辰三合水局, etc.
-  - 地支半合 (Half Harmonies): 申子半合水局, etc.
-  - 相沖 (Clashes), 相刑 (Punishments), 相破 (Destructions), 相害 (Harms)
-  - 暗合 (Hidden Combinations) for non-adjacent pillars
+    - 天干合化 (Heavenly Stem Combinations): 甲己合化土, 乙庚合化金, etc.
+    - 地支六合 (Six Harmonies): 子丑合, 寅亥合, etc.
+    - 地支三合 (Three Harmonies): 申子辰三合水局, etc.
+    - 地支半合 (Half Harmonies): 申子半合水局, etc.
+    - 相沖 (Clashes), 相刑 (Punishments), 相破 (Destructions), 相害 (Harms)
+    - 暗合 (Hidden Combinations) for non-adjacent pillars
 - Color-coded relationship badges matching relationship types
 - Relationship summary section with complete description text
 
 ### Tab 2: 基本排盤 (Detailed Chart Grid)
+
 **Component:** `src/components/BaziDetailedChart.jsx`
 
 **Features:**
+
 - 12-row detailed breakdown table:
-  1. **干神 (Stem Ten Gods):** 食神、正官、偏印、劫財, etc.
-  2. **天干 (Heavenly Stems):** 甲、乙、丙、丁、戊、己、庚、辛、壬、癸
-  3. **地支 (Earthly Branches):** 子、丑、寅、卯、辰、巳、午、未、申、酉、戌、亥
-  4-6. **藏干 (Hidden Stems):** Up to 3 rows showing hidden stems per branch
-  7-9. **藏干神 (Hidden Stem Ten Gods):** Ten god relationships for hidden stems
-  10-12. **星運 (Star Luck/Nayin):** 納音 (Nayin sounds) for each pillar
+    1. **干神 (Stem Ten Gods):** 食神、正官、偏印、劫財, etc.
+    2. **天干 (Heavenly Stems):** 甲、乙、丙、丁、戊、己、庚、辛、壬、癸
+    3. **地支 (Earthly Branches):** 子、丑、寅、卯、辰、巳、午、未、申、酉、戌、亥
+       4-6. **藏干 (Hidden Stems):** Up to 3 rows showing hidden stems per branch
+       7-9. **藏干神 (Hidden Stem Ten Gods):** Ten god relationships for hidden stems
+       10-12. **星運 (Star Luck/Nayin):** 納音 (Nayin sounds) for each pillar
 - Responsive color-coded grid with clear visual hierarchy
 - Relationship notes displayed below the table
 - Day master column highlighted in yellow
 
 ### Tab 3: 本命天干 (Day Master Personality Analysis)
+
 **Component:** `src/components/BaziPersonalityAnalysis.jsx`
 
 **Features:**
+
 - Day master display with element and yin/yang classification
 - Character title based on day stem (智善隨形, 柔韌靈動, etc.)
 - Personality trait badges (正直、有領導力、理想主義, etc.)
 - **Five Elements Bar Chart:**
-  - Animated horizontal bars showing percentage distribution
-  - Color-coded by element (金=silver, 木=green, 水=blue, 火=red, 土=brown)
-  - Shows count values and percentages
-  - Weighted calculation: 天干=3分, 地支=2分, 藏干=1分
+    - Animated horizontal bars showing percentage distribution
+    - Color-coded by element (金=silver, 木=green, 水=blue, 火=red, 土=brown)
+    - Shows count values and percentages
+    - Weighted calculation: 天干=3分, 地支=2分, 藏干=1分
 - **人格簡析 (Personality Analysis):** Detailed description based on day stem
 - **五行強弱分析 (Element Strength Analysis):**
-  - Identifies missing elements (缺失)
-  - Highlights excessive elements (過旺)
-  - Provides balance recommendations
+    - Identifies missing elements (缺失)
+    - Highlights excessive elements (過旺)
+    - Provides balance recommendations
 
 ## Core Utilities Created
 
 ### 1. `src/lib/baziRelationships.js`
+
 **Purpose:** Calculate all stem/branch relationships
 
 **Key Functions:**
+
 - `analyzeStemCombination(stem1, stem2)` - Identifies 合化 transformations
 - `analyzeBranchRelationship(branch1, branch2)` - Checks 六合/半合/沖/刑/破/害
 - `checkThreeHarmony(branch1, branch2, branch3)` - Detects 三合局
@@ -69,14 +79,17 @@ January 2025
 - `getRelationshipColor(type)` - Returns color codes for visualization
 
 **Data Structures:**
+
 - Complete mappings for all stem combinations (甲己合化土, etc.)
 - Complete mappings for branch harmonies (六合、三合、半合)
 - Complete mappings for negative relationships (沖、刑、破、害)
 
 ### 2. `src/lib/baziChartData.js`
+
 **Purpose:** Process user birthday into complete chart data structure
 
 **Key Functions:**
+
 - `getBaziChartData(birthDateTime, gender, userName)` - Main data processor
 - `calculateElementDistribution(wuxingData)` - Calculates five elements percentages
 - `getDayMasterPersonality(dayStem, dayElement)` - Returns personality analysis
@@ -84,6 +97,7 @@ January 2025
 - `getLunarDateInfo(birthDateTime)` - Converts to lunar calendar
 
 **Integration:**
+
 - Uses `calculateAccurateBaZi()` from `accurateBaziCalculation.js`
 - Uses `getWuxingData()` from `nayin.js` for hidden stems and ten gods
 - Uses lunisolar library with takeSound, char8ex, theGods plugins
@@ -110,6 +124,7 @@ Three tabs render with processed data
 ## Files Modified/Created
 
 ### New Files (7 files)
+
 1. `src/lib/baziRelationships.js` (424 lines)
 2. `src/lib/baziChartData.js` (380 lines)
 3. `src/components/BaziRelationshipDiagram.jsx` (170 lines)
@@ -117,12 +132,14 @@ Three tabs render with processed data
 5. `src/components/BaziPersonalityAnalysis.jsx` (220 lines)
 
 ### Modified Files (2 files)
+
 6. `src/app/[locale]/bazi-chart/page.tsx` - Replaced placeholder with tab navigation
 7. `src/app/[locale]/bazi-input/page.tsx` - Updated navigation to pass correct params
 
 ## Technical Details
 
 ### Dependencies Used
+
 - **lunisolar** - Accurate BaZi calculations
 - **@lunisolar/plugin-takesound** - Nayin (納音) calculations
 - **@lunisolar/plugin-char8ex** - Ten gods (十神) calculations
@@ -132,6 +149,7 @@ Three tabs render with processed data
 - **Next.js** - App routing and server components
 
 ### Calculation Accuracy
+
 - Uses lunisolar library for accurate solar-to-lunar conversions
 - Handles time zone considerations for accurate pillar calculations
 - Includes fallback calculations if lunisolar fails
@@ -139,6 +157,7 @@ Three tabs render with processed data
 - Accurately determines ten gods (十神) relationships
 
 ### Performance
+
 - Data cached in localStorage to avoid recalculation
 - All calculations done client-side for immediate response
 - No external API calls required
@@ -147,6 +166,7 @@ Three tabs render with processed data
 ## User Experience
 
 ### Navigation Flow
+
 1. User enters birthday on `/bazi-input` page
 2. Click "開始免費排盤" button
 3. Redirects to `/bazi-chart?birthday=...&gender=...&name=...`
@@ -155,6 +175,7 @@ Three tabs render with processed data
 6. Can click back button to return and modify birthday
 
 ### Mobile Responsiveness
+
 - All components designed mobile-first
 - Horizontal scrolling for wide tables
 - Touch-friendly tab navigation
@@ -164,6 +185,7 @@ Three tabs render with processed data
 ## Data Accuracy Validation
 
 ### Existing Calculation Infrastructure
+
 ✅ Basic four pillars calculation (accurateBaziCalculation.js)
 ✅ Hidden stems calculation (nayin.js using lunisolar)
 ✅ Ten gods calculation (nayin.js using char8ex plugin)
@@ -171,6 +193,7 @@ Three tabs render with processed data
 ✅ Element classification (wuXing mappings)
 
 ### New Relationship Calculations
+
 ✅ Stem combinations (合化土/金/水/木/火)
 ✅ Six harmonies (子丑合、寅亥合, etc.)
 ✅ Three harmonies (申子辰三合水局, etc.)
@@ -183,26 +206,30 @@ Three tabs render with processed data
 ## Testing Recommendations
 
 ### Manual Testing
+
 1. **Test with known birthdays:**
-   - Input: 1985-05-15 12:00 (甲申年、己巳月、壬子日、庚子時)
-   - Verify four pillars match traditional calculations
-   - Check relationships: 甲己合化土, 巳申相刑/相破
-   - Validate hidden stems display correctly
+
+    - Input: 1985-05-15 12:00 (甲申年、己巳月、壬子日、庚子時)
+    - Verify four pillars match traditional calculations
+    - Check relationships: 甲己合化土, 巳申相刑/相破
+    - Validate hidden stems display correctly
 
 2. **Test edge cases:**
-   - Midnight births (23:00-01:00) for hour pillar accuracy
-   - Leap years and leap months
-   - Different genders (male vs female may affect some interpretations)
-   - Missing time (should default to 12:00)
+
+    - Midnight births (23:00-01:00) for hour pillar accuracy
+    - Leap years and leap months
+    - Different genders (male vs female may affect some interpretations)
+    - Missing time (should default to 12:00)
 
 3. **Test navigation:**
-   - From bazi-input to bazi-chart
-   - Back button functionality
-   - Tab switching persistence
-   - URL parameter handling
-   - localStorage fallback when no URL params
+    - From bazi-input to bazi-chart
+    - Back button functionality
+    - Tab switching persistence
+    - URL parameter handling
+    - localStorage fallback when no URL params
 
 ### Visual Testing
+
 1. **Tab 1:** Verify relationship colors match relationship types
 2. **Tab 2:** Ensure grid is readable on mobile devices
 3. **Tab 3:** Check bar chart animations and percentages add to 100%
@@ -243,6 +270,7 @@ The BaZi chart feature is now fully functional and matches the reference screens
 Users can now access this feature by entering their birthday on the bazi-input page and clicking the "開始免費排盤" button.
 
 ## Compilation Status
+
 ✅ No TypeScript/JavaScript errors
 ✅ All components render without errors
 ✅ Navigation flow tested and working

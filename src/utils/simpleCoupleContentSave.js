@@ -16,7 +16,9 @@ export const saveComponentContent = async (
 	content,
 	metadata = {}
 ) => {
-	const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://www.harmoniqfengshui.com';
+	const API_BASE =
+		process.env.NEXT_PUBLIC_API_BASE_URL ||
+		"https://www.harmoniqfengshui.com";
 	try {
 		if (!sessionId || !componentName || !content) {
 			console.error("❌ Missing required parameters for saving");
